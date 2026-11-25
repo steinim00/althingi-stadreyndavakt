@@ -18,7 +18,8 @@
     "url": "https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T133419.html"
  },
  {
   "key": "seed-2",
@@ -39,7 +40,8 @@
     "url": "https://www.althingi.is/altext/erindi/158/158-4.pdf"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T134815.html"
  },
  {
   "key": "seed-3",
@@ -56,7 +58,11 @@
     "url": "https://innri.hafogvatn.is/static/extras/images/01-Cod%20(1)1141503.pdf"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261110T133648.html"
+  ]
  },
  {
   "key": "seed-4",
@@ -73,7 +79,13 @@
     "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261118T133419.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261118T133832.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261118T134247.html"
+  ]
  },
  {
   "key": "seed-5",
@@ -90,7 +102,13 @@
     "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/07/07/Ferdum-landsmanna-fjolgar-litillega-a-ny-samkvaemt-nyrri-ferdavenjukonnun/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261116T142021.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261116T142441.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261116T150004.html"
+  ]
  },
  {
   "key": "seed-6",
@@ -107,7 +125,8 @@
     "url": "https://www.mbl.is/frettir/innlent/2026/11/09/eg_veit_ekki_hvar_hann_faer_thessa_130_milljarda/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1
  },
  {
   "key": "seed-7",
@@ -119,7 +138,13 @@
   "date": "09.11.2026",
   "facts": "Þorbjörg Sigríður Gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara Filippseyja.",
   "sources": [],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261109T163841.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261109T181732.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261109T182004.html"
+  ]
  },
  {
   "key": "seed-8",
@@ -136,7 +161,12 @@
     "url": "https://aljazeera.com/news/2026/11/17/why-are-five-eu-countries-reviving-plans-to-deport-migrants-to-rwanda"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261118T140418.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261118T140901.html"
+  ]
  },
  {
   "key": "seed-9",
@@ -153,7 +183,13 @@
     "url": "https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261118T133159.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261118T133645.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261118T144258.html"
+  ]
  },
  {
   "key": "seed-10",
@@ -178,7 +214,13 @@
     "url": "https://www.althingi.is/altext/158/s/0254.html"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261116T141851.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261116T144531.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261116T164719.html"
+  ]
  },
  {
   "key": "seed-11",
@@ -195,7 +237,8 @@
     "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/06/18/Althingi-samthykkir-ad-haekka-stofnframlog-rikisins-til-ad-byggja-hagkvaemar-leiguibudir/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T160551.html"
  },
  {
   "key": "seed-12",
@@ -216,7 +259,11 @@
     "url": "https://island.is/s/utlendingastofnun/frett/arid-2025-i-toelum"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261109T165411.html"
+  ]
  },
  {
   "key": "seed-13",
@@ -233,7 +280,11 @@
     "url": "https://statice.is/publications/news-archive/external-trade/trade-in-goods-2025/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261110T134532.html"
+  ]
  },
  {
   "key": "seed-14",
@@ -250,7 +301,12 @@
     "url": "https://www.mbl.is/frettir/innlent/2026/10/22/vid_eigum_ad_verjast/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261109T150619.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261109T151034.html"
+  ]
  },
  {
   "key": "bad986bfc7b9",
@@ -267,7 +323,8 @@
     "url": "https://tradingeconomics.com/iceland/inflation-cpi/news/596205"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135500.html"
  },
  {
   "key": "8baf86c7dbd4",
@@ -288,7 +345,8 @@
     "url": "https://tradingeconomics.com/iceland/inflation-cpi/news/596205"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133124.html"
  },
  {
   "key": "37eacffef279",
@@ -305,7 +363,8 @@
     "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2023/02/21/450-milljardar-krona-i-motvaegisadgerdir-vegna-heimsfaraldurs/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html"
  },
  {
   "key": "0adc8c132b50",
@@ -326,7 +385,8 @@
     "url": "https://tradingeconomics.com/iceland/unemployment-rate/news/593804"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T134146.html"
  },
  {
   "key": "3938a8ff262a",
@@ -343,7 +403,8 @@
     "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/03/19/Log-samthykkt-a-Althingi-sem-fela-i-ser-ad-greidslur-almannatrygginga-fylgja-launavisitolu"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T133814.html"
  },
  {
   "key": "e7da2501ea6f",
@@ -364,7 +425,8 @@
     "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T134950.html"
  },
  {
   "key": "3d3ea90cfa0e",
@@ -385,7 +447,8 @@
     "url": "https://www.althingi.is/altext/pdf/154/s/0616.pdf"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T134519.html"
  },
  {
   "key": "c700c45f1cac",
@@ -402,6 +465,7 @@
     "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/langtimahorfur/2-efnahagslegar-framfarir-og-ahaetta/"
    }
   ],
-  "checked": "2026-11-25"
+  "checked": "2026-11-25",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T134146.html"
  }
 ]
