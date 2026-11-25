@@ -36,6 +36,72 @@ def claim_key(speaker: str, date: str, claim: str) -> str:
     return hashlib.sha1(f"{speaker}|{date}|{claim[:80]}".encode()).hexdigest()[:12]
 
 
+def _norm(t: str) -> str:
+    return "".join(ch for ch in t.lower() if ch.isalnum())
+
+
+def _same_person(a: str, b: str) -> bool:
+    wa, wb = set(a.lower().split()), set(b.lower().split())
+    return bool(wa) and bool(wb) and (wa <= wb or wb <= wa)
+
+
+def _html_url(s: dict) -> str:
+    if s.get("html"):
+        return s["html"]
+    return s["xml"].replace("/xml/", "/altext/raeda/").replace("/raedur/", "/").replace(".xml", ".html")
+
+
+def backfill(session, items: list, budget: int) -> int:
+    """Finnur ræðuna á bak við hverja fullyrðingu sem vantar slóð á ræðu."""
+    todo = [i for i in items if not i.get("speech") and i.get("tries", 0) < 3]
+    if not todo or budget <= 0:
+        return 0
+    dates = []
+    for i in todo:
+        try:
+            dates.append(datetime.strptime(i["date"], "%d.%m.%Y"))
+        except ValueError:
+            pass
+    if not dates:
+        return 0
+    days = (datetime.now(timezone.utc).replace(tzinfo=None) - min(dates)).days + 2
+    try:
+        allsp = fetch.speech_list(session, LTHING, days)
+    except fetch.Blocked as e:
+        print(f"Backfill lokað: {e}")
+        return 0
+    cache: dict = {}
+    used = 0
+    for i in todo:
+        sps = [x for x in allsp if x["dagur"] == i["date"] and _same_person(i["speaker"], x["nafn"])]
+        needle = _norm(i["claim"])[:60]
+        found = ""
+        for x in sps:
+            if x["xml"] not in cache:
+                if used >= budget:
+                    break
+                try:
+                    fetch.polite_sleep()
+                    cache[x["xml"]] = _norm(fetch.speech_text(session, x["xml"]))
+                except fetch.Blocked as e:
+                    print(f"Backfill lokað: {e}")
+                    return used
+                except Exception as e:
+                    print(f"Backfill sleppir {x['xml']}: {e}")
+                    cache[x["xml"]] = ""
+                used += 1
+            if needle and needle in cache.get(x["xml"], ""):
+                found = _html_url(x)
+                break
+        if found:
+            i["speech"] = found
+        else:
+            i["tries"] = i.get("tries", 0) + 1
+            if sps:
+                i["speech_guess"] = [_html_url(x) for x in sps][:3]
+    return used
+
+
 def main() -> int:
     seen: dict = load("seen.json", {"urls": []})
     seen_urls = set(seen["urls"])
@@ -91,7 +157,7 @@ def main() -> int:
                 continue
             new_claims.append(
                 {"key": key, "speaker": s["nafn"], "party_name": party,
-                 "date": s["dagur"], "claim": c}
+                 "date": s["dagur"], "claim": c, "speech": _html_url(s)}
             )
 
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -99,28 +165,34 @@ def main() -> int:
     if os.environ.get("ANTHROPIC_API_KEY"):
         pool = candidates and [
             {"key": c["key"], "speaker": c["speaker"], "party_name": c["party"],
-             "date": c["date"], "claim": c["claim"]} for c in candidates
+             "date": c["date"], "claim": c["claim"], "speech": c.get("speech", "")} for c in candidates
         ] or []
         results, complete = check.check_all(pool + new_claims, MAX_CLAIMS)
+        speech_by_key = {c["key"]: c.get("speech", "") for c in pool + new_claims}
         by_claim = {(c["speaker"], c["date"], c["claim"]): c["key"] for c in pool + new_claims}
         for r in results:
             key = by_claim.get((r["speaker"], r["date"], r["claim"]))
             if key and key not in known_keys:
-                findings.append({**r, "key": key, "checked": stamp})
+                findings.append({**r, "key": key, "checked": stamp,
+                                 "speech": speech_by_key.get(key, "")})
                 known_keys.add(key)
         if complete:
             seen["urls"] = sorted(seen_urls | set(fetched))
         candidates = [c for c in candidates if c["key"] not in known_keys]
         if not complete:
             candidates += [{"key": c["key"], "speaker": c["speaker"], "party": c["party_name"],
-                            "date": c["date"], "claim": c["claim"]} for c in new_claims
+                            "date": c["date"], "claim": c["claim"], "speech": c.get("speech", "")} for c in new_claims
                            if c["key"] not in {x["key"] for x in candidates}]
     else:
         # án API-lykils: engin sjálfvirk staðreyndapróf, fullyrðingar bíða yfirferðar
         seen["urls"] = sorted(seen_urls | set(fetched))
         candidates += [{"key": c["key"], "speaker": c["speaker"], "party": c["party_name"],
-                        "date": c["date"], "claim": c["claim"]} for c in new_claims]
+                        "date": c["date"], "claim": c["claim"], "speech": c.get("speech", "")} for c in new_claims]
     candidates = candidates[-MAX_CANDIDATES:]
+
+    used = backfill(session, findings + candidates, int(os.environ.get("BACKFILL_FETCH", "80")))
+    if used:
+        print(f"Backfill: sótti {used} ræður til að finna slóðir")
 
     save("seen.json", seen)
     save("candidates.json", candidates)

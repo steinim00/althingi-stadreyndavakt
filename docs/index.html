@@ -99,6 +99,15 @@ header p { margin: 0; color: var(--muted); max-width: 62ch; }
 .tile.open { border-left-color: var(--open); }
 .tile.ok { border-left-color: var(--ok); }
 .tile.new { border-left-color: var(--muted); }
+button.tile { font: inherit; color: inherit; text-align: left; cursor: pointer; }
+button.tile:hover { border-color: var(--accent); }
+button.tile[aria-pressed="true"] { outline: 3px solid var(--accent); outline-offset: 1px; }
+button.tile:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.cite { margin: 12px 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.cite-h { margin: 0 0 6px; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.cite blockquote { margin: 0 0 6px; border-left: 3px solid var(--accent); padding-left: 12px; color: var(--ink); }
+.cite-l { margin: 0; font-size: 14px; color: var(--muted); }
+.cite.src ul { margin: 0; padding-left: 20px; }
 
 h2 {
   font-family: var(--font-display);
@@ -179,10 +188,10 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 </header>
 
 <section class="summary" aria-label="Yfirlit">
-  <div class="tile wrong"><b>2</b><span>líklega röng eða ónákvæm</span></div>
-  <div class="tile open"><b>8</b><span>óstaðfest</span></div>
-  <div class="tile ok"><b>12</b><span>staðfest rétt</span></div>
-  <div class="tile new"><b>32</b><span>óyfirfarnar fullyrðingar</span></div>
+  <button type="button" class="tile wrong" data-f="wrong"><b>2</b><span>líklega röng eða ónákvæm</span></button>
+  <button type="button" class="tile open" data-f="open"><b>8</b><span>óstaðfest</span></button>
+  <button type="button" class="tile ok" data-f="ok"><b>12</b><span>staðfest rétt</span></button>
+  <button type="button" class="tile new" data-f="new"><b>32</b><span>óyfirfarnar fullyrðingar</span></button>
 </section>
 
 <section class="limits" aria-label="Takmarkanir">
@@ -208,19 +217,31 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 <article class="card" data-s="wrong">
   <span class="pill wrong">Líklega rangt</span>
   <h3>Vextir „enn 1% lægri“ en við valdatöku</h3>
-  <p class="who">Þorgerður Katrín Gunnarsdóttir, Viðreisn · 18. nóvember</p>
-  <p class="claim">Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.</p>
-  <p class="facts"><strong>Gögn:</strong> Stýrivextir eru 8% eftir ákvörðun 18. nóvember. Þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. Munurinn er 0,5 prósentustig. Miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a>, <a href="https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf">Seðlabankinn: yfirlýsing 20. nóvember 2024</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.“</blockquote>
+    <p class="cite-l">Þorgerður Katrín Gunnarsdóttir, Viðreisn, 18. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Stýrivextir eru 8% eftir ákvörðun 18. nóvember. Þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. Munurinn er 0,5 prósentustig. Miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a></li><li><a href="https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf">Seðlabankinn: yfirlýsing 20. nóvember 2024</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="wrong">
   <span class="pill wrong">Líklega rangt</span>
   <h3>Halli ársins 2026 „úr 28 milljörðum í 90“</h3>
-  <p class="who">Stefán Vagn Stefánsson, Framsókn · 18. nóvember</p>
-  <p class="claim">Hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.</p>
-  <p class="facts"><strong>Gögn:</strong> Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.althingi.is/altext/raeda/157/rad20251202T143152.html">Alþingi: framsaga um fjárlög 2026</a>, <a href="https://www.althingi.is/altext/erindi/158/158-4.pdf">Alþingi: kynning á frumvarpi 2027</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.“</blockquote>
+    <p class="cite-l">Stefán Vagn Stefánsson, Framsókn, 18. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.althingi.is/altext/raeda/157/rad20251202T143152.html">Alþingi: framsaga um fjárlög 2026</a></li><li><a href="https://www.althingi.is/altext/erindi/158/158-4.pdf">Alþingi: kynning á frumvarpi 2027</a></li></ul>
+  </div>
 </article>
 
 <h2>Óstaðfest</h2>
@@ -229,73 +250,121 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>Bætur hækka um 7,3% í stað 4%</h3>
-  <p class="who">Sigurjón Þórðarson, Flokkur fólksins · 24. nóvember</p>
-  <p class="claim">Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.</p>
-  <p class="facts"><strong>Gögn:</strong> Lög frá mars 2026 binda hækkun almannatrygginga við launavísitölu frá 1. janúar 2027 (þó aldrei minna en verðlag). Talan 7,3% og samanburðurinn við 4% fundust ekki í fjárlagagögnum. Óstaðfest.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/03/19/Log-samthykkt-a-Althingi-sem-fela-i-ser-ad-greidslur-almannatrygginga-fylgja-launavisitolu">Stjórnarráðið: greiðslur fylgja launavísitölu</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.“</blockquote>
+    <p class="cite-l">Sigurjón Þórðarson, Flokkur fólksins, 24. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Lög frá mars 2026 binda hækkun almannatrygginga við launavísitölu frá 1. janúar 2027 (þó aldrei minna en verðlag). Talan 7,3% og samanburðurinn við 4% fundust ekki í fjárlagagögnum. Óstaðfest.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/03/19/Log-samthykkt-a-Althingi-sem-fela-i-ser-ad-greidslur-almannatrygginga-fylgja-launavisitolu">Stjórnarráðið: greiðslur fylgja launavísitölu</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>Ríkisendurskoðun „tvívegis, 2021 og 2023“ um sameiningu menningarstofnana</h3>
-  <p class="who">Gunnar Guðjónsson, Viðreisn · 24. nóvember</p>
-  <p class="claim">Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.</p>
-  <p class="facts"><strong>Gögn:</strong> Skýrsla Ríkisendurskoðunar um stofnanir ríkisins frá desember 2021 og eftirfylgniskýrsla í október 2026 nefna tækifæri til að sameina stofnanir í menningarmálum. Skýrsla frá 2023 fannst um Sinfóníuhljómsveitina en ekki hvort hún hvetji til sameiningar. Því aðeins hluti staðfestur.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/10/22/gagnryna_vinnubrogd_vid_sameiningu_skola/">Mbl.is: eftirfylgniskýrsla Ríkisendurskoðunar, okt. 2026</a>, <a href="https://www.althingi.is/altext/pdf/154/s/0616.pdf">Alþingi: álit um skýrslu Ríkisendurskoðunar um Sinfóníuhljómsveitina (2023)</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.“</blockquote>
+    <p class="cite-l">Gunnar Guðjónsson, Viðreisn, 24. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Skýrsla Ríkisendurskoðunar um stofnanir ríkisins frá desember 2021 og eftirfylgniskýrsla í október 2026 nefna tækifæri til að sameina stofnanir í menningarmálum. Skýrsla frá 2023 fannst um Sinfóníuhljómsveitina en ekki hvort hún hvetji til sameiningar. Því aðeins hluti staðfestur.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.mbl.is/frettir/innlent/2026/10/22/gagnryna_vinnubrogd_vid_sameiningu_skola/">Mbl.is: eftirfylgniskýrsla Ríkisendurskoðunar, okt. 2026</a></li><li><a href="https://www.althingi.is/altext/pdf/154/s/0616.pdf">Alþingi: álit um skýrslu Ríkisendurskoðunar um Sinfóníuhljómsveitina (2023)</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>Atvinnuleysi „um 4,3%“</h3>
-  <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
-  <p class="claim">Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.</p>
-  <p class="facts"><strong>Gögn:</strong> Vinnumálastofnun mældi skráð atvinnuleysi 4,0% í september 2026. Október-talan fannst ekki. Vinnumarkaðskönnun Hagstofunnar sýnir hærri tölur (árstíðaleiðrétt 5,7% í september), svo talan fer eftir mælikvarða. Ekki hægt að segja til um hvort 4,3% sé rétt.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://island.is/en/o/directorate-of-labour/news/skrad-atvinnuleysi-i-september-var-4-0">Vinnumálastofnun: vinnumarkaðurinn í september 2026</a>, <a href="https://tradingeconomics.com/iceland/unemployment-rate/news/593804">Trading Economics: atvinnuleysi í september 2026</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.“</blockquote>
+    <p class="cite-l">Kristrún Frostadóttir, Samfylkingin, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Vinnumálastofnun mældi skráð atvinnuleysi 4,0% í september 2026. Október-talan fannst ekki. Vinnumarkaðskönnun Hagstofunnar sýnir hærri tölur (árstíðaleiðrétt 5,7% í september), svo talan fer eftir mælikvarða. Ekki hægt að segja til um hvort 4,3% sé rétt.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://island.is/en/o/directorate-of-labour/news/skrad-atvinnuleysi-i-september-var-4-0">Vinnumálastofnun: vinnumarkaðurinn í september 2026</a></li><li><a href="https://tradingeconomics.com/iceland/unemployment-rate/news/593804">Trading Economics: atvinnuleysi í september 2026</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>„0% hagvöxtur á mann í sjö til átta ár“</h3>
-  <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
-  <p class="claim">Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.</p>
-  <p class="facts"><strong>Gögn:</strong> Ég fann engin gögn sem staðfesta eða hrekja þetta. Mat á hagvexti á mann fer eftir því hvaða tímabil og mælikvarði er notaður. Óstaðfest.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/verkefni/opinber-fjarmal/langtimahorfur/2-efnahagslegar-framfarir-og-ahaetta/">Stjórnarráðið: langtímahorfur, landsframleiðsla á mann</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.“</blockquote>
+    <p class="cite-l">Kristrún Frostadóttir, Samfylkingin, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Ég fann engin gögn sem staðfesta eða hrekja þetta. Mat á hagvexti á mann fer eftir því hvaða tímabil og mælikvarði er notaður. Óstaðfest.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/verkefni/opinber-fjarmal/langtimahorfur/2-efnahagslegar-framfarir-og-ahaetta/">Stjórnarráðið: langtímahorfur, landsframleiðsla á mann</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>Skatttekjur „undir 24%“ og samanburður við 2013–2016</h3>
-  <p class="who">Þorgerður Katrín Gunnarsdóttir, Viðreisn · 18. nóvember</p>
-  <p class="claim">Skatttekjur eru að fara undir 24% af landsframleiðslu á næsta ári. Árin 2013–2016 voru þær 27, 28 og 29%.</p>
-  <p class="facts"><strong>Gögn:</strong> Fjármálaráðuneytið segir skatta og tryggingagjöld ríkissjóðs 27,0% af landsframleiðslu 2027. Ef tryggingagjöld eru undanskilin gæti 24% staðist, en þá gæti samanburðurinn við fyrri ár notað aðra skilgreiningu. Tölurnar frá 2013–2016 fundust ekki.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/">Fjármála- og efnahagsráðuneytið: tekjur A1-hluta, frumvarp 2027</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Skatttekjur eru að fara undir 24% af landsframleiðslu á næsta ári. Árin 2013–2016 voru þær 27, 28 og 29%.“</blockquote>
+    <p class="cite-l">Þorgerður Katrín Gunnarsdóttir, Viðreisn, 18. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Fjármálaráðuneytið segir skatta og tryggingagjöld ríkissjóðs 27,0% af landsframleiðslu 2027. Ef tryggingagjöld eru undanskilin gæti 24% staðist, en þá gæti samanburðurinn við fyrri ár notað aðra skilgreiningu. Tölurnar frá 2013–2016 fundust ekki.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/">Fjármála- og efnahagsráðuneytið: tekjur A1-hluta, frumvarp 2027</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>Hlutdeild strætó 5% samkvæmt ferðavenjum 2025</h3>
-  <p class="who">Guðlaugur Þór Þórðarson, Sjálfstæðisflokkurinn · 16. nóvember</p>
-  <p class="claim">Samkvæmt ferðavenjum 2025 nýtir enn aðeins 5% fólks strætó.</p>
-  <p class="facts"><strong>Gögn:</strong> Talan fannst ekki í niðurstöðum könnunarinnar sem birtust í júlí 2026. Þar kemur fram að um 41% landsmanna greiddu fyrir strætóferð haustið 2025, en það er annar mælikvarði en hlutdeild í ferðum.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/07/07/Ferdum-landsmanna-fjolgar-litillega-a-ny-samkvaemt-nyrri-ferdavenjukonnun/">Stjórnarráðið: ferðavenjukönnun 2025</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Samkvæmt ferðavenjum 2025 nýtir enn aðeins 5% fólks strætó.“</blockquote>
+    <p class="cite-l">Guðlaugur Þór Þórðarson, Sjálfstæðisflokkurinn, 16. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Talan fannst ekki í niðurstöðum könnunarinnar sem birtust í júlí 2026. Þar kemur fram að um 41% landsmanna greiddu fyrir strætóferð haustið 2025, en það er annar mælikvarði en hlutdeild í ferðum.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/07/07/Ferdum-landsmanna-fjolgar-litillega-a-ny-samkvaemt-nyrri-ferdavenjukonnun/">Stjórnarráðið: ferðavenjukönnun 2025</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>Endurmat Hafró á þorskstofni 2019</h3>
-  <p class="who">Sigurjón Þórðarson, Flokkur fólksins · 10. nóvember</p>
-  <p class="claim">Samkvæmt þingskjölum telur Hafró þorskstofninn hafa verið 270.000 tonnum minni árið 2019 en hann var mældur.</p>
-  <p class="facts"><strong>Gögn:</strong> Hvorki þingskjalið né önnur heimild fannst. Stofnmat Hafró 2019 gaf ráðgjöf upp á 272.411 tonn, sem er ekki sama stærð. Nákvæmasta leiðin er að spyrja Hafró eða atvinnuveganefnd.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://innri.hafogvatn.is/static/extras/images/01-Cod%20(1)1141503.pdf">Hafrannsóknastofnun: ráðgjöf og stofnmat þorsks 2019</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Samkvæmt þingskjölum telur Hafró þorskstofninn hafa verið 270.000 tonnum minni árið 2019 en hann var mældur.“</blockquote>
+    <p class="cite-l">Sigurjón Þórðarson, Flokkur fólksins, 10. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Hvorki þingskjalið né önnur heimild fannst. Stofnmat Hafró 2019 gaf ráðgjöf upp á 272.411 tonn, sem er ekki sama stærð. Nákvæmasta leiðin er að spyrja Hafró eða atvinnuveganefnd.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://innri.hafogvatn.is/static/extras/images/01-Cod%20(1)1141503.pdf">Hafrannsóknastofnun: ráðgjöf og stofnmat þorsks 2019</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
   <h3>Mat á Sundabraut: 130 milljarðar nefndir af ráðherra</h3>
-  <p class="who">Bergþór Ólason, Miðflokkurinn · nóvember 2026</p>
-  <p class="claim">Mat á Sundabraut og Hvalfjarðargöngum fór úr 130 í 200 milljarða á fimm mánuðum og ráðherra nefndi 130.</p>
-  <p class="facts"><strong>Gögn:</strong> Ráðherra neitaði að hafa nefnt töluna. Ekki fannst hver nefndi 130 fyrst. Eyjólfur Ármannsson sagði að enginn gæti kostnaðarmetið verkið fyrr en ljóst væri hvort það yrðu göng eða brú.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/11/09/eg_veit_ekki_hvar_hann_faer_thessa_130_milljarda/">Mbl.is: Sundabraut, 9. nóvember 2026</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Mat á Sundabraut og Hvalfjarðargöngum fór úr 130 í 200 milljarða á fimm mánuðum og ráðherra nefndi 130.“</blockquote>
+    <p class="cite-l">Bergþór Ólason, Miðflokkurinn, nóvember 2026 · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Ráðherra neitaði að hafa nefnt töluna. Ekki fannst hver nefndi 130 fyrst. Eyjólfur Ármannsson sagði að enginn gæti kostnaðarmetið verkið fyrr en ljóst væri hvort það yrðu göng eða brú.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.mbl.is/frettir/innlent/2026/11/09/eg_veit_ekki_hvar_hann_faer_thessa_130_milljarda/">Mbl.is: Sundabraut, 9. nóvember 2026</a></li></ul>
+  </div>
 </article>
 
 <h2>Staðfest rétt</h2>
@@ -304,109 +373,178 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Stýrivextir 8% og verðbólga 5,9%</h3>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.</p>
-  <p class="facts"><strong>Gögn:</strong> Seðlabankinn hélt stýrivöxtum óbreyttum í 8% 18. nóvember 2026. Verðbólga var 5,9% í október. Hvort tvennt stenst.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.ruv.is/utvarp/spila/hadegisfrettir/25243/bhs82i">RÚV: stýrivextir áfram átta prósent, 18. nóv. 2026</a>, <a href="https://tradingeconomics.com/iceland/inflation-cpi/news/596205">Trading Economics: verðbólga 5,9%</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Seðlabankinn hélt stýrivöxtum óbreyttum í 8% 18. nóvember 2026. Verðbólga var 5,9% í október. Hvort tvennt stenst.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.ruv.is/utvarp/spila/hadegisfrettir/25243/bhs82i">RÚV: stýrivextir áfram átta prósent, 18. nóv. 2026</a></li><li><a href="https://tradingeconomics.com/iceland/inflation-cpi/news/596205">Trading Economics: verðbólga 5,9%</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Covid kostaði yfir 300 milljarða</h3>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.</p>
-  <p class="facts"><strong>Gögn:</strong> Fjármálaráðuneytið mat að af 450 milljörðum í mótvægisaðgerðir hafi um 320 milljarðar haft bein áhrif á afkomu ríkissjóðs. Það samræmist „yfir 300 milljörðum“, en tölur eru breytilegar eftir því hvernig er talið (aðrar áætlanir nefna hátt í 300). Hvort allur uppsafnaði hallinn sé 800 milljarðar var ekki prófað.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2023/02/21/450-milljardar-krona-i-motvaegisadgerdir-vegna-heimsfaraldurs/">Stjórnarráðið: 450 milljarðar í mótvægisaðgerðir (2023)</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Fjármálaráðuneytið mat að af 450 milljörðum í mótvægisaðgerðir hafi um 320 milljarðar haft bein áhrif á afkomu ríkissjóðs. Það samræmist „yfir 300 milljörðum“, en tölur eru breytilegar eftir því hvernig er talið (aðrar áætlanir nefna hátt í 300). Hvort allur uppsafnaði hallinn sé 800 milljarðar var ekki prófað.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2023/02/21/450-milljardar-krona-i-motvaegisadgerdir-vegna-heimsfaraldurs/">Stjórnarráðið: 450 milljarðar í mótvægisaðgerðir (2023)</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Verðbólga 5,9%</h3>
-  <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
-  <p class="claim">Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.</p>
-  <p class="facts"><strong>Gögn:</strong> Árstaktur verðbólgu var 5,9% í október 2026 samkvæmt Hagstofunni (óbreytt frá september). Seinni hluti fullyrðingarinnar, að hún hafi verið 4,8% við valdatöku, var ekki flettur upp sérstaklega.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://tradingeconomics.com/iceland/inflation-cpi/news/596205">Trading Economics: verðbólga 5,9% í október 2026</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.“</blockquote>
+    <p class="cite-l">Stefán Vagn Stefánsson, Framsókn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Árstaktur verðbólgu var 5,9% í október 2026 samkvæmt Hagstofunni (óbreytt frá september). Seinni hluti fullyrðingarinnar, að hún hafi verið 4,8% við valdatöku, var ekki flettur upp sérstaklega.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://tradingeconomics.com/iceland/inflation-cpi/news/596205">Trading Economics: verðbólga 5,9% í október 2026</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Samgöngusáttmáli 2019 og uppfærsla fyrir tveimur árum</h3>
-  <p class="who">Árni Rúnar Þorvaldsson, Samfylkingin · 19. nóvember</p>
-  <p class="claim">Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.</p>
-  <p class="facts"><strong>Gögn:</strong> Sáttmálinn var fyrst undirritaður 26. september 2019 og uppfærður 21. ágúst 2024 af ríkinu og sex sveitarfélögum (Garðabæ, Hafnarfirði, Kópavogi, Mosfellsbæ, Reykjavík og Seltjarnarnesi). Það stenst.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/samgongusattmali-hofudborgarsvaedisins/">Stjórnarráðið: samgöngusáttmáli höfuðborgarsvæðisins</a>, <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/">Stjórnarráðið: uppfærður sáttmáli 21. ágúst 2024</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.“</blockquote>
+    <p class="cite-l">Árni Rúnar Þorvaldsson, Samfylkingin, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Sáttmálinn var fyrst undirritaður 26. september 2019 og uppfærður 21. ágúst 2024 af ríkinu og sex sveitarfélögum (Garðabæ, Hafnarfirði, Kópavogi, Mosfellsbæ, Reykjavík og Seltjarnarnesi). Það stenst.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/samgongusattmali-hofudborgarsvaedisins/">Stjórnarráðið: samgöngusáttmáli höfuðborgarsvæðisins</a></li><li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/">Stjórnarráðið: uppfærður sáttmáli 21. ágúst 2024</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Brottvísunarstöð í Rúanda 2027</h3>
-  <p class="who">Snorri Másson, Miðflokkurinn · 18. nóvember</p>
-  <p class="claim">Austurríki, Danmörk, Holland, Þýskaland og Grikkland ætla í sameiningu að opna fyrstu brottvísunarstöðina í Rúanda árið 2027.</p>
-  <p class="facts"><strong>Gögn:</strong> Ríkin fimm kynntu áformin 16. nóvember og stefna á flutninga 2027. Samningur er ekki undirritaður.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://aljazeera.com/news/2026/11/17/why-are-five-eu-countries-reviving-plans-to-deport-migrants-to-rwanda">Al Jazeera: fimm ESB-ríki og Rúanda</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Austurríki, Danmörk, Holland, Þýskaland og Grikkland ætla í sameiningu að opna fyrstu brottvísunarstöðina í Rúanda árið 2027.“</blockquote>
+    <p class="cite-l">Snorri Másson, Miðflokkurinn, 18. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Ríkin fimm kynntu áformin 16. nóvember og stefna á flutninga 2027. Samningur er ekki undirritaður.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://aljazeera.com/news/2026/11/17/why-are-five-eu-countries-reviving-plans-to-deport-migrants-to-rwanda">Al Jazeera: fimm ESB-ríki og Rúanda</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Stýrivextir 8% og verðbólga tæp 6%</h3>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 18. nóvember</p>
-  <p class="claim">Stýrivextir standa í 8% og verðbólgan í tæpum 6%.</p>
-  <p class="facts"><strong>Gögn:</strong> Peningastefnunefnd hélt stýrivöxtum í 8% 18. nóvember. Verðbólga mældist 5,9% í október.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Stýrivextir standa í 8% og verðbólgan í tæpum 6%.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 18. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Peningastefnunefnd hélt stýrivöxtum í 8% 18. nóvember. Verðbólga mældist 5,9% í október.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Samgöngusáttmálinn: 120 í 311 milljarða, Keldnaland 50, ríkið um 90%</h3>
-  <p class="who">Sigurður Örn Hilmarsson, Sjálfstæðisflokkurinn · 16. nóvember</p>
-  <p class="claim">Samgöngusáttmálinn hljóðar upp á 311 milljarða og ríkið á að bera 90% af kostnaðinum.</p>
-  <p class="facts"><strong>Gögn:</strong> Sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. Keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. Skipting er 87,5% ríki og 12,5% sveitarfélög, sem er rúnnað í 90%. Guðlaugur Þór Þórðarson nefndi sömu tölur.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/">Stjórnarráðið: uppfærður samgöngusáttmáli 2024</a>, <a href="https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/sattmali-um-samgongur-a-hofudborgarsvaedinu/">Stjórnarráðið: sáttmáli 2019</a>, <a href="https://www.althingi.is/altext/158/s/0254.html">Alþingi: þingskjal 254 um Keldnaland</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Samgöngusáttmálinn hljóðar upp á 311 milljarða og ríkið á að bera 90% af kostnaðinum.“</blockquote>
+    <p class="cite-l">Sigurður Örn Hilmarsson, Sjálfstæðisflokkurinn, 16. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. Keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. Skipting er 87,5% ríki og 12,5% sveitarfélög, sem er rúnnað í 90%. Guðlaugur Þór Þórðarson nefndi sömu tölur.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/">Stjórnarráðið: uppfærður samgöngusáttmáli 2024</a></li><li><a href="https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/sattmali-um-samgongur-a-hofudborgarsvaedinu/">Stjórnarráðið: sáttmáli 2019</a></li><li><a href="https://www.althingi.is/altext/158/s/0254.html">Alþingi: þingskjal 254 um Keldnaland</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Stofnframlög hækkuð úr 18% í 23%</h3>
-  <p class="who">Árni Helgason, Sjálfstæðisflokkurinn · 16. nóvember</p>
-  <p class="claim">Framlag ríkisins var upphaflega 20% en fór upp í 23% núna í vor.</p>
-  <p class="facts"><strong>Gögn:</strong> Alþingi samþykkti hækkun í júní 2026. Árni sagði upphaflega framlagið 20% en ráðuneytið talar um 18%. Frávikið er lítið.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/06/18/Althingi-samthykkir-ad-haekka-stofnframlog-rikisins-til-ad-byggja-hagkvaemar-leiguibudir/">Stjórnarráðið: hækkun stofnframlaga</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Framlag ríkisins var upphaflega 20% en fór upp í 23% núna í vor.“</blockquote>
+    <p class="cite-l">Árni Helgason, Sjálfstæðisflokkurinn, 16. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Alþingi samþykkti hækkun í júní 2026. Árni sagði upphaflega framlagið 20% en ráðuneytið talar um 18%. Frávikið er lítið.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/06/18/Althingi-samthykkir-ad-haekka-stofnframlog-rikisins-til-ad-byggja-hagkvaemar-leiguibudir/">Stjórnarráðið: hækkun stofnframlaga</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Sjávarafurðir og ál rúm 73% af vöruútflutningi</h3>
-  <p class="who">Karl Liljendal Hólmgeirsson, Miðflokkurinn · 10. nóvember</p>
-  <p class="claim">Sjávarafurðir og ál eru rúm 73% af vöruútflutningi.</p>
-  <p class="facts"><strong>Gögn:</strong> Sjávarafurðir voru 38,9% af útflutningsverðmæti 2025 og ál 34,5%, samtals um 73%.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://statice.is/publications/news-archive/external-trade/trade-in-goods-2025/">Hagstofa: vöruviðskipti 2025</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Sjávarafurðir og ál eru rúm 73% af vöruútflutningi.“</blockquote>
+    <p class="cite-l">Karl Liljendal Hólmgeirsson, Miðflokkurinn, 10. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Sjávarafurðir voru 38,9% af útflutningsverðmæti 2025 og ál 34,5%, samtals um 73%.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://statice.is/publications/news-archive/external-trade/trade-in-goods-2025/">Hagstofa: vöruviðskipti 2025</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>78% au pair-leyfa til Filippseyinga</h3>
-  <p class="who">Jón Pétur Zimsen, Sjálfstæðisflokkurinn · 9. nóvember</p>
-  <p class="claim">Nokkuð ljóst að langflest leyfin eru til filippseyskra stúlkna, líklega 78%.</p>
-  <p class="facts"><strong>Gögn:</strong> Þorbjörg Sigríður Gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara Filippseyja.</p>
-  
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Nokkuð ljóst að langflest leyfin eru til filippseyskra stúlkna, líklega 78%.“</blockquote>
+    <p class="cite-l">Jón Pétur Zimsen, Sjálfstæðisflokkurinn, 9. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Þorbjörg Sigríður Gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara Filippseyja.</p>
+
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Dvalarleyfishafar utan EES: um 4.000 í um 20.000</h3>
-  <p class="who">Eiríkur Björn Björgvinsson, Viðreisn · 9. nóvember</p>
-  <p class="claim">Dvalarleyfishöfum utan EES hefur fjölgað úr um 4.000 árið 2017 í um 20.000 árið 2025.</p>
-  <p class="facts"><strong>Gögn:</strong> Ráðuneytið segir fjöldann hafa nær fimmfaldast frá 2017. Útlendingastofnun skráði 11.820 umsóknir 2025. Þorbjörg Sigríður Gunnlaugsdóttir (Viðreisn) og Snorri Másson (Miðflokkurinn) nefndu sömu tölur.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/11/20/Fjoldi-dvalarleyfishafa-fimmfaldast-fra-2017-Nidurstodur-starfshops-um-dvalarleyfi/">Dómsmálaráðuneytið: fjöldi dvalarleyfishafa</a>, <a href="https://island.is/s/utlendingastofnun/frett/arid-2025-i-toelum">Útlendingastofnun: árið 2025 í tölum</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Dvalarleyfishöfum utan EES hefur fjölgað úr um 4.000 árið 2017 í um 20.000 árið 2025.“</blockquote>
+    <p class="cite-l">Eiríkur Björn Björgvinsson, Viðreisn, 9. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> Ráðuneytið segir fjöldann hafa nær fimmfaldast frá 2017. Útlendingastofnun skráði 11.820 umsóknir 2025. Þorbjörg Sigríður Gunnlaugsdóttir (Viðreisn) og Snorri Másson (Miðflokkurinn) nefndu sömu tölur.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/11/20/Fjoldi-dvalarleyfishafa-fimmfaldast-fra-2017-Nidurstodur-starfshops-um-dvalarleyfi/">Dómsmálaráðuneytið: fjöldi dvalarleyfishafa</a></li><li><a href="https://island.is/s/utlendingastofnun/frett/arid-2025-i-toelum">Útlendingastofnun: árið 2025 í tölum</a></li></ul>
+  </div>
 </article>
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
   <h3>Bókun 35 og málsókn ESA</h3>
-  <p class="who">Ingibjörg Davíðsdóttir, Miðflokkurinn · 9. nóvember</p>
-  <p class="claim">ESA hefur stefnt Íslandi fyrir EFTA-dómstólinn vegna bókunar 35, sem var innleidd fyrir rúmum 30 árum.</p>
-  <p class="facts"><strong>Gögn:</strong> ESA stefndi Íslandi 30. september. Bókunin var innleidd fyrir 34 árum.</p>
-  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/10/22/vid_eigum_ad_verjast/">Mbl.is: ESA og bókun 35</a></p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„ESA hefur stefnt Íslandi fyrir EFTA-dómstólinn vegna bókunar 35, sem var innleidd fyrir rúmum 30 árum.“</blockquote>
+    <p class="cite-l">Ingibjörg Davíðsdóttir, Miðflokkurinn, 9. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
+  <p class="facts"><strong>Niðurstaða:</strong> ESA stefndi Íslandi 30. september. Bókunin var innleidd fyrir 34 árum.</p>
+  <div class="cite src">
+    <p class="cite-h">Heimildir</p>
+    <ul><li><a href="https://www.mbl.is/frettir/innlent/2026/10/22/vid_eigum_ad_verjast/">Mbl.is: ESA og bókun 35</a></li></ul>
+  </div>
 </article>
 
 <h2>Óyfirfarið</h2>
@@ -415,193 +553,321 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Jens Garðar Helgason, Sjálfstæðisflokkurinn · 24. nóvember</p>
-  <p class="claim">Með því að ráða Heiðu Kristínu sem verktaka er skattprósentan samtals 37,6% í stað þeirrar hefðbundnu sem gildir.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Með því að ráða Heiðu Kristínu sem verktaka er skattprósentan samtals 37,6% í stað þeirrar hefðbundnu sem gildir.“</blockquote>
+    <p class="cite-l">Jens Garðar Helgason, Sjálfstæðisflokkurinn, 24. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Ingveldur Anna Sigurðardóttir, Sjálfstæðisflokkurinn · 24. nóvember</p>
-  <p class="claim">Það tók rúmlega 20 ár að koma Suðurnesjalínu 2 í gagnið, 20 ár, og á þeim tíma hefur samfélagið breyst, atvinnulífið þróast og raforkuþörfin aukist til muna.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Það tók rúmlega 20 ár að koma Suðurnesjalínu 2 í gagnið, 20 ár, og á þeim tíma hefur samfélagið breyst, atvinnulífið þróast og raforkuþörfin aukist til muna.“</blockquote>
+    <p class="cite-l">Ingveldur Anna Sigurðardóttir, Sjálfstæðisflokkurinn, 24. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Sigurjón Þórðarson, Flokkur fólksins · 24. nóvember</p>
-  <p class="claim">Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.“</blockquote>
+    <p class="cite-l">Sigurjón Þórðarson, Flokkur fólksins, 24. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Gunnar Guðjónsson, Viðreisn · 24. nóvember</p>
-  <p class="claim">Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.“</blockquote>
+    <p class="cite-l">Gunnar Guðjónsson, Viðreisn, 24. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Karl Gauti Hjaltason, Miðflokkurinn · 24. nóvember</p>
-  <p class="claim">Þá er enn eitt skattahækkunarfrumvarp ríkisstjórnarinnar, svonefndur bandormur 2, einnig nýkomið inn en þar á að kreista 450 milljónir út úr einstaklingum sem dettur í hug að afla sér tekna sem ná ekki 2 millj.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Þá er enn eitt skattahækkunarfrumvarp ríkisstjórnarinnar, svonefndur bandormur 2, einnig nýkomið inn en þar á að kreista 450 milljónir út úr einstaklingum sem dettur í hug að afla sér tekna sem ná ekki 2 millj.“</blockquote>
+    <p class="cite-l">Karl Gauti Hjaltason, Miðflokkurinn, 24. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
-  <p class="claim">Margt vel gert, annað flóknara, rúmir 800 milljarðar í uppsafnaðan halla.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Margt vel gert, annað flóknara, rúmir 800 milljarðar í uppsafnaðan halla.“</blockquote>
+    <p class="cite-l">Kristrún Frostadóttir, Samfylkingin, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">en horfist ekki í augu við það að hafa sjálf gefið út 140 milljarða útgjaldaauka um síðustu áramót þannig að af þessum 800 milljörðum á ríkisstjórn Kristrúnar Frostadóttur sjálf 140 milljarða.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„en horfist ekki í augu við það að hafa sjálf gefið út 140 milljarða útgjaldaauka um síðustu áramót þannig að af þessum 800 milljörðum á ríkisstjórn Kristrúnar Frostadóttur sjálf 140 milljarða.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">Enn mætir hér forsætisráðherra og talar um hallann sem hún hafi erft upp á 800 milljarða kr.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Enn mætir hér forsætisráðherra og talar um hallann sem hún hafi erft upp á 800 milljarða kr.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">Það er nú ekki mikið í samanburði við það sem fyrri ríkisstjórn þurfti að glíma við, sem var Covid upp á 300 milljarða og síðan Reykjaneseldar upp á annað hundrað milljarða.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Það er nú ekki mikið í samanburði við það sem fyrri ríkisstjórn þurfti að glíma við, sem var Covid upp á 300 milljarða og síðan Reykjaneseldar upp á annað hundrað milljarða.“</blockquote>
+    <p class="cite-l">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
-  <p class="claim">Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.“</blockquote>
+    <p class="cite-l">Kristrún Frostadóttir, Samfylkingin, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
-  <p class="claim">Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.“</blockquote>
+    <p class="cite-l">Kristrún Frostadóttir, Samfylkingin, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
-  <p class="claim">Það er um 2,5% á meðal Íslendinga hér á landi þannig að þrátt fyrir að staðan sé erfið er hún, miðað við það sem við sjáum í mörgum öðrum löndum, ekki skelfileg en auðvitað verðum við að passa upp á þessa einstaklinga.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Það er um 2,5% á meðal Íslendinga hér á landi þannig að þrátt fyrir að staðan sé erfið er hún, miðað við það sem við sjáum í mörgum öðrum löndum, ekki skelfileg en auðvitað verðum við að passa upp á þessa einstaklinga.“</blockquote>
+    <p class="cite-l">Kristrún Frostadóttir, Samfylkingin, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Ólafur Adolfsson, Sjálfstæðisflokkurinn · 23. nóvember</p>
-  <p class="claim">á mánuði og var krafan um vinnuframlag einungis 25 klukkustundir á viku, sem ég verð að segja að er ansi góður díll fyrir 60% starf en hins vegar ekki alveg nógu góður að mati hæstv.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„á mánuði og var krafan um vinnuframlag einungis 25 klukkustundir á viku, sem ég verð að segja að er ansi góður díll fyrir 60% starf en hins vegar ekki alveg nógu góður að mati hæstv.“</blockquote>
+    <p class="cite-l">Ólafur Adolfsson, Sjálfstæðisflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Bergþór Ólason, Miðflokkurinn · 23. nóvember</p>
-  <p class="claim">Fyrir ekki löngu síðan voru málefni 5,3% pottsins, byggðahluta aflamarkskerfisins, í umsjón og verkahring hæstv.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Fyrir ekki löngu síðan voru málefni 5,3% pottsins, byggðahluta aflamarkskerfisins, í umsjón og verkahring hæstv.“</blockquote>
+    <p class="cite-l">Bergþór Ólason, Miðflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Hanna Katrín Friðriksson, Viðreisn · 23. nóvember</p>
-  <p class="claim">Það eru náttúrlega ákveðin markmið, þessi 5,3% pottur liggur einmitt mjög vel við almennum markmiðum Byggðastofnunar og þar undir er auðvitað sértæki byggðakvótinn.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Það eru náttúrlega ákveðin markmið, þessi 5,3% pottur liggur einmitt mjög vel við almennum markmiðum Byggðastofnunar og þar undir er auðvitað sértæki byggðakvótinn.“</blockquote>
+    <p class="cite-l">Hanna Katrín Friðriksson, Viðreisn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Bergþór Ólason, Miðflokkurinn · 23. nóvember</p>
-  <p class="claim">ráðherra muni aðstoða við og hvetja til raunar og styðja við með öllum tiltækum ráðum undirstofnanir sínar, að skoðaðir verði þeir samningar um breytt eignarhald sem gerðir voru á þessum viðkvæma tíma í tengslum við endurskipulagningu hluta 5,3% pottsins.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„ráðherra muni aðstoða við og hvetja til raunar og styðja við með öllum tiltækum ráðum undirstofnanir sínar, að skoðaðir verði þeir samningar um breytt eignarhald sem gerðir voru á þessum viðkvæma tíma í tengslum við endurskipulagningu hluta 5,3% pottsins.“</blockquote>
+    <p class="cite-l">Bergþór Ólason, Miðflokkurinn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Halla Hrund Logadóttir, Framsókn · 23. nóvember</p>
-  <p class="claim">Við eigum 28 sinnum meira land á hvern íbúa en að meðaltali innan Evrópusambandsins og ef við horfum á þjóðlendurnar einar og sér, sem eru 40% af Íslandi, eru þær álíka stórt svæði og þjóðríkið Danmörk.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Við eigum 28 sinnum meira land á hvern íbúa en að meðaltali innan Evrópusambandsins og ef við horfum á þjóðlendurnar einar og sér, sem eru 40% af Íslandi, eru þær álíka stórt svæði og þjóðríkið Danmörk.“</blockquote>
+    <p class="cite-l">Halla Hrund Logadóttir, Framsókn, 23. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Ásthildur Lóa Þórsdóttir, Flokkur fólksins · 19. nóvember</p>
-  <p class="claim">meira í hverjum mánuði en það myndi gera af láni með 4% vöxtum.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„meira í hverjum mánuði en það myndi gera af láni með 4% vöxtum.“</blockquote>
+    <p class="cite-l">Ásthildur Lóa Þórsdóttir, Flokkur fólksins, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Ásthildur Lóa Þórsdóttir, Flokkur fólksins · 19. nóvember</p>
-  <p class="claim">Eins og staðan er í dag bera rétt um 25% skuldugra heimila mestu byrðarnar af hávaxtastefnu Seðlabankans.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Eins og staðan er í dag bera rétt um 25% skuldugra heimila mestu byrðarnar af hávaxtastefnu Seðlabankans.“</blockquote>
+    <p class="cite-l">Ásthildur Lóa Þórsdóttir, Flokkur fólksins, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðmundur Ingi Kristinsson, utan þingflokka · 19. nóvember</p>
-  <p class="claim">Þá setja þau 100 milljónir inn en síðan borga þau út 50 milljónir og þá eru 50 milljónir eftir í sjóðnum.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Þá setja þau 100 milljónir inn en síðan borga þau út 50 milljónir og þá eru 50 milljónir eftir í sjóðnum.“</blockquote>
+    <p class="cite-l">Guðmundur Ingi Kristinsson, utan þingflokka, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðmundur Ingi Kristinsson, utan þingflokka · 19. nóvember</p>
-  <p class="claim">Hvað verður um þessar 50 milljónir síðar, sem verða kannski tífalt það, komnar í 500 milljónir, milljarða?</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Hvað verður um þessar 50 milljónir síðar, sem verða kannski tífalt það, komnar í 500 milljónir, milljarða?“</blockquote>
+    <p class="cite-l">Guðmundur Ingi Kristinsson, utan þingflokka, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Guðmundur Ingi Kristinsson, utan þingflokka · 19. nóvember</p>
-  <p class="claim">Jú, vegna þess að heildareignir tryggingafélaganna voru 360 milljarðar í febrúar síðastliðnum.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Jú, vegna þess að heildareignir tryggingafélaganna voru 360 milljarðar í febrúar síðastliðnum.“</blockquote>
+    <p class="cite-l">Guðmundur Ingi Kristinsson, utan þingflokka, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Árni Rúnar Þorvaldsson, Samfylkingin · 19. nóvember</p>
-  <p class="claim">Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.“</blockquote>
+    <p class="cite-l">Árni Rúnar Þorvaldsson, Samfylkingin, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
-  <p class="claim">Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.“</blockquote>
+    <p class="cite-l">Stefán Vagn Stefánsson, Framsókn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
-  <p class="claim">Það liggur fyrir að allt tal um vondan viðskilnað síðustu ríkisstjórnar stenst enga skoðun og ef ríkisstjórnin hefði haldið sig við fjárlög fyrri ríkisstjórnar fyrir árið 2025 hefðu þau orðið hallalaus.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Það liggur fyrir að allt tal um vondan viðskilnað síðustu ríkisstjórnar stenst enga skoðun og ef ríkisstjórnin hefði haldið sig við fjárlög fyrri ríkisstjórnar fyrir árið 2025 hefðu þau orðið hallalaus.“</blockquote>
+    <p class="cite-l">Stefán Vagn Stefánsson, Framsókn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
-  <p class="claim">Þeir sem hömpuðu sér og börðu sér á brjóst fyrir að skila fjárlögum með aðeins 15 milljarða kr.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Þeir sem hömpuðu sér og börðu sér á brjóst fyrir að skila fjárlögum með aðeins 15 milljarða kr.“</blockquote>
+    <p class="cite-l">Stefán Vagn Stefánsson, Framsókn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
-  <p class="claim">halla sitja núna hljóðir þegar fyrir liggur að hallinn verður um 90 milljarðar.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„halla sitja núna hljóðir þegar fyrir liggur að hallinn verður um 90 milljarðar.“</blockquote>
+    <p class="cite-l">Stefán Vagn Stefánsson, Framsókn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Rósa Guðbjartsdóttir, Sjálfstæðisflokkurinn · 19. nóvember</p>
-  <p class="claim">Það hefur verið metið að alls hafi 5,5 milljarðar kr.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Það hefur verið metið að alls hafi 5,5 milljarðar kr.“</blockquote>
+    <p class="cite-l">Rósa Guðbjartsdóttir, Sjálfstæðisflokkurinn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Berglind Harpa Svavarsdóttir, Sjálfstæðisflokkurinn · 19. nóvember</p>
-  <p class="claim">Samband sveitarfélaga á Austurlandi hefur farið í faglegar greiningar sem sýna glögglega að aðeins um 2,9% landsmanna standa undir um fjórðungi vöruútflutnings hér á landi, sem gerir um 240 milljarða.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Samband sveitarfélaga á Austurlandi hefur farið í faglegar greiningar sem sýna glögglega að aðeins um 2,9% landsmanna standa undir um fjórðungi vöruútflutnings hér á landi, sem gerir um 240 milljarða.“</blockquote>
+    <p class="cite-l">Berglind Harpa Svavarsdóttir, Sjálfstæðisflokkurinn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
   <p class="who">Berglind Harpa Svavarsdóttir, Sjálfstæðisflokkurinn · 19. nóvember</p>
-  <p class="claim">Orkuframleiðsla á Austurlandi er einnig um 30% af orkuframleiðslu hér á landi og gríðarleg tækifæri til frekari orkuframleiðslu.</p>
+  <div class="cite">
+    <p class="cite-h">Úr ræðu</p>
+    <blockquote>„Orkuframleiðsla á Austurlandi er einnig um 30% af orkuframleiðslu hér á landi og gríðarleg tækifæri til frekari orkuframleiðslu.“</blockquote>
+    <p class="cite-l">Berglind Harpa Svavarsdóttir, Sjálfstæðisflokkurinn, 19. nóvember · Slóð á ræðuna fannst ekki.</p>
+  </div>
 </article>
 
 <h2>Heimildir</h2>
@@ -639,12 +905,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 </main>
 <script>
 (function () {
-  var buttons = document.querySelectorAll('.filters button');
+  var buttons = document.querySelectorAll('[data-f]');
   var cards = document.querySelectorAll('.card[data-s]');
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
       var f = b.getAttribute('data-f');
-      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-f') === f ? 'true' : 'false'); });
+      if (b.classList.contains('tile')) { var fl = document.querySelector('.filters'); if (fl) fl.scrollIntoView({behavior: 'smooth', block: 'start'}); }
       cards.forEach(function (c) {
         c.classList.toggle('hidden', f !== 'all' && c.getAttribute('data-s') !== f);
       });

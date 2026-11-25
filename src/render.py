@@ -1,6 +1,7 @@
 """Býr til docs/index.html úr data/*.json og src/template.html."""
 import html
 import json
+import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -32,22 +33,48 @@ def _pretty(d: str) -> str:
         return d
 
 
+def _speech_link(url: str, claim: str) -> str:
+    """Slóð á ræðuna; nútímavafrar auðkenna upphaf tilvitnunarinnar á síðunni."""
+    words = claim.replace("…", " ").split()[:6]
+    frag = urllib.parse.quote(" ".join(words), safe="") if len(words) >= 3 else ""
+    return url + (f"#:~:text={frag}" if frag else "")
+
+
+def _speech_block(f: dict, extra_class: str = "") -> str:
+    if f.get("speech"):
+        href = _speech_link(f["speech"], f["claim"])
+        link = f'<a href="{E(href, quote=True)}">Opna ræðuna á althingi.is</a>'
+    elif f.get("speech_guess"):
+        links = ", ".join(
+            f'<a href="{E(u, quote=True)}">ræða {i}</a>' for i, u in enumerate(f["speech_guess"], 1)
+        )
+        link = f"Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: {links}"
+    else:
+        link = "Slóð á ræðuna fannst ekki."
+    return (
+        f'  <div class="cite{extra_class}">\n'
+        f'    <p class="cite-h">Úr ræðu</p>\n'
+        f'    <blockquote>„{E(f["claim"])}“</blockquote>\n'
+        f'    <p class="cite-l">{E(f["speaker"])}, {E(f["party"])}, {E(_pretty(f["date"]))} · {link}</p>\n'
+        f"  </div>"
+    )
+
+
 def card(f: dict) -> str:
     srcs = ""
     if f.get("sources"):
-        links = ", ".join(
-            f'<a href="{E(s["url"], quote=True)}">{E(s["title"])}</a>' for s in f["sources"]
+        links = "".join(
+            f'<li><a href="{E(s["url"], quote=True)}">{E(s["title"])}</a></li>' for s in f["sources"]
         )
-        srcs = f'<p class="facts"><strong>Heimildir:</strong> {links}</p>'
+        srcs = f'  <div class="cite src">\n    <p class="cite-h">Heimildir</p>\n    <ul>{links}</ul>\n  </div>'
     pill = {"wrong": "Líklega rangt", "open": "Óstaðfest", "ok": "Rétt"}[f["status"]]
     return (
         f'<article class="card" data-s="{f["status"]}">\n'
         f'  <span class="pill {f["status"]}">{pill}</span>\n'
         f'  <h3>{E(f["title"])}</h3>\n'
-        f'  <p class="who">{E(f["speaker"])}, {E(f["party"])} · {E(_pretty(f["date"]))}</p>\n'
-        f'  <p class="claim">{E(f["claim"])}</p>\n'
-        f'  <p class="facts"><strong>Gögn:</strong> {E(f["facts"])}</p>\n'
-        f"  {srcs}\n</article>"
+        f'{_speech_block(f)}\n'
+        f'  <p class="facts"><strong>Niðurstaða:</strong> {E(f["facts"])}</p>\n'
+        f"{srcs}\n</article>"
     )
 
 
@@ -63,10 +90,10 @@ def render(root: Path) -> None:
     counts = {k: sum(1 for f in findings if f["status"] == k) for k in ("wrong", "open", "ok")}
     tiles = (
         '<section class="summary" aria-label="Yfirlit">\n'
-        f'  <div class="tile wrong"><b>{counts["wrong"]}</b><span>líklega röng eða ónákvæm</span></div>\n'
-        f'  <div class="tile open"><b>{counts["open"]}</b><span>óstaðfest</span></div>\n'
-        f'  <div class="tile ok"><b>{counts["ok"]}</b><span>staðfest rétt</span></div>\n'
-        f'  <div class="tile new"><b>{len(cands)}</b><span>óyfirfarnar fullyrðingar</span></div>\n'
+        f'  <button type="button" class="tile wrong" data-f="wrong"><b>{counts["wrong"]}</b><span>líklega röng eða ónákvæm</span></button>\n'
+        f'  <button type="button" class="tile open" data-f="open"><b>{counts["open"]}</b><span>óstaðfest</span></button>\n'
+        f'  <button type="button" class="tile ok" data-f="ok"><b>{counts["ok"]}</b><span>staðfest rétt</span></button>\n'
+        f'  <button type="button" class="tile new" data-f="new"><b>{len(cands)}</b><span>óyfirfarnar fullyrðingar</span></button>\n'
         "</section>"
     )
 
@@ -98,7 +125,7 @@ def render(root: Path) -> None:
             cards.append(
                 '<article class="card" data-s="new">\n  <span class="pill new">Óyfirfarið</span>\n'
                 f'  <p class="who">{E(c["speaker"])}, {E(c["party"])} · {E(_pretty(c["date"]))}</p>\n'
-                f'  <p class="claim">{E(c["claim"])}</p>\n</article>'
+                f'{_speech_block({**c, "speaker": c["speaker"], "party": c["party"]})}\n</article>'
             )
 
     seen_urls, sources = set(), []
