@@ -60,9 +60,7 @@
   ],
   "checked": "2026-11-25",
   "tries": 0,
-  "speech_guess": [
-   "https://www.althingi.is/altext/raeda/158/rad20261110T133648.html"
-  ]
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261110T133648.html"
  },
  {
   "key": "seed-4",
@@ -81,11 +79,7 @@
   ],
   "checked": "2026-11-25",
   "tries": 0,
-  "speech_guess": [
-   "https://www.althingi.is/altext/raeda/158/rad20261118T133419.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261118T133832.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261118T134247.html"
-  ]
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T133419.html"
  },
  {
   "key": "seed-5",
@@ -103,7 +97,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 0,
+  "tries": 1,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261116T142021.html",
    "https://www.althingi.is/altext/raeda/158/rad20261116T142441.html",
@@ -126,7 +120,12 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 0
+  "tries": 1,
+  "speech_guess": [
+   "https://www.althingi.is/altext/raeda/158/rad20261103T133809.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261103T135108.html",
+   "https://www.althingi.is/altext/raeda/158/rad20261104T155533.html"
+  ]
  },
  {
   "key": "seed-7",
@@ -140,11 +139,7 @@
   "sources": [],
   "checked": "2026-11-25",
   "tries": 0,
-  "speech_guess": [
-   "https://www.althingi.is/altext/raeda/158/rad20261109T163841.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261109T181732.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261109T182004.html"
-  ]
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261109T190355.html"
  },
  {
   "key": "seed-8",
@@ -163,10 +158,7 @@
   ],
   "checked": "2026-11-25",
   "tries": 0,
-  "speech_guess": [
-   "https://www.althingi.is/altext/raeda/158/rad20261118T140418.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261118T140901.html"
-  ]
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T140418.html"
  },
  {
   "key": "seed-9",
@@ -185,11 +177,7 @@
   ],
   "checked": "2026-11-25",
   "tries": 0,
-  "speech_guess": [
-   "https://www.althingi.is/altext/raeda/158/rad20261118T133159.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261118T133645.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261118T144258.html"
-  ]
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T133159.html"
  },
  {
   "key": "seed-10",
@@ -216,11 +204,7 @@
   ],
   "checked": "2026-11-25",
   "tries": 0,
-  "speech_guess": [
-   "https://www.althingi.is/altext/raeda/158/rad20261116T141851.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261116T144531.html",
-   "https://www.althingi.is/altext/raeda/158/rad20261116T164719.html"
-  ]
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T144531.html"
  },
  {
   "key": "seed-11",
@@ -260,7 +244,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 0,
+  "tries": 1,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261109T165411.html"
   ]
@@ -282,9 +266,7 @@
   ],
   "checked": "2026-11-25",
   "tries": 0,
-  "speech_guess": [
-   "https://www.althingi.is/altext/raeda/158/rad20261110T134532.html"
-  ]
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261110T134532.html"
  },
  {
   "key": "seed-14",
@@ -302,7 +284,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 0,
+  "tries": 1,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261109T150619.html",
    "https://www.althingi.is/altext/raeda/158/rad20261109T151034.html"
