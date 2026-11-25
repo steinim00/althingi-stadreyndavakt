@@ -1,1 +1,226 @@
-[]
+[
+ {
+  "key": "0356d127b45f",
+  "speaker": "Ásthildur Lóa Þórsdóttir",
+  "party": "Flokkur fólksins",
+  "date": "19.11.2026",
+  "claim": "meira í hverjum mánuði en það myndi gera af láni með 4% vöxtum."
+ },
+ {
+  "key": "1f2b268f9ae9",
+  "speaker": "Ásthildur Lóa Þórsdóttir",
+  "party": "Flokkur fólksins",
+  "date": "19.11.2026",
+  "claim": "Eins og staðan er í dag bera rétt um 25% skuldugra heimila mestu byrðarnar af hávaxtastefnu Seðlabankans."
+ },
+ {
+  "key": "81c29ee55831",
+  "speaker": "Guðmundur Ingi Kristinsson",
+  "party": "utan þingflokka",
+  "date": "19.11.2026",
+  "claim": "Þá setja þau 100 milljónir inn en síðan borga þau út 50 milljónir og þá eru 50 milljónir eftir í sjóðnum."
+ },
+ {
+  "key": "834397090c0f",
+  "speaker": "Guðmundur Ingi Kristinsson",
+  "party": "utan þingflokka",
+  "date": "19.11.2026",
+  "claim": "Hvað verður um þessar 50 milljónir síðar, sem verða kannski tífalt það, komnar í 500 milljónir, milljarða?"
+ },
+ {
+  "key": "24d45b473221",
+  "speaker": "Guðmundur Ingi Kristinsson",
+  "party": "utan þingflokka",
+  "date": "19.11.2026",
+  "claim": "Jú, vegna þess að heildareignir tryggingafélaganna voru 360 milljarðar í febrúar síðastliðnum."
+ },
+ {
+  "key": "e7da2501ea6f",
+  "speaker": "Árni Rúnar Þorvaldsson",
+  "party": "Samfylkingin",
+  "date": "19.11.2026",
+  "claim": "Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan."
+ },
+ {
+  "key": "bad986bfc7b9",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "claim": "Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti."
+ },
+ {
+  "key": "8463b230971e",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "claim": "Það liggur fyrir að allt tal um vondan viðskilnað síðustu ríkisstjórnar stenst enga skoðun og ef ríkisstjórnin hefði haldið sig við fjárlög fyrri ríkisstjórnar fyrir árið 2025 hefðu þau orðið hallalaus."
+ },
+ {
+  "key": "8f320eff0ed6",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "claim": "Þeir sem hömpuðu sér og börðu sér á brjóst fyrir að skila fjárlögum með aðeins 15 milljarða kr."
+ },
+ {
+  "key": "5718e227cc13",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "claim": "halla sitja núna hljóðir þegar fyrir liggur að hallinn verður um 90 milljarðar."
+ },
+ {
+  "key": "7c5b9844e8e8",
+  "speaker": "Rósa Guðbjartsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "19.11.2026",
+  "claim": "Það hefur verið metið að alls hafi 5,5 milljarðar kr."
+ },
+ {
+  "key": "81cc4cfc770d",
+  "speaker": "Berglind Harpa Svavarsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "19.11.2026",
+  "claim": "Samband sveitarfélaga á Austurlandi hefur farið í faglegar greiningar sem sýna glögglega að aðeins um 2,9% landsmanna standa undir um fjórðungi vöruútflutnings hér á landi, sem gerir um 240 milljarða."
+ },
+ {
+  "key": "dea5d52ae9bd",
+  "speaker": "Berglind Harpa Svavarsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "19.11.2026",
+  "claim": "Orkuframleiðsla á Austurlandi er einnig um 30% af orkuframleiðslu hér á landi og gríðarleg tækifæri til frekari orkuframleiðslu."
+ },
+ {
+  "key": "8baf86c7dbd4",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "claim": "Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%."
+ },
+ {
+  "key": "eb7a4428217c",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "claim": "Margt vel gert, annað flóknara, rúmir 800 milljarðar í uppsafnaðan halla."
+ },
+ {
+  "key": "7ec672ad54cb",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "claim": "en horfist ekki í augu við það að hafa sjálf gefið út 140 milljarða útgjaldaauka um síðustu áramót þannig að af þessum 800 milljörðum á ríkisstjórn Kristrúnar Frostadóttur sjálf 140 milljarða."
+ },
+ {
+  "key": "37eacffef279",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "claim": "Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid."
+ },
+ {
+  "key": "2c1502679175",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "claim": "Enn mætir hér forsætisráðherra og talar um hallann sem hún hafi erft upp á 800 milljarða kr."
+ },
+ {
+  "key": "96a0bbc5b162",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "claim": "Það er nú ekki mikið í samanburði við það sem fyrri ríkisstjórn þurfti að glíma við, sem var Covid upp á 300 milljarða og síðan Reykjaneseldar upp á annað hundrað milljarða."
+ },
+ {
+  "key": "c700c45f1cac",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "claim": "Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár."
+ },
+ {
+  "key": "0adc8c132b50",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "claim": "Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%."
+ },
+ {
+  "key": "fd1516d84762",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "claim": "Það er um 2,5% á meðal Íslendinga hér á landi þannig að þrátt fyrir að staðan sé erfið er hún, miðað við það sem við sjáum í mörgum öðrum löndum, ekki skelfileg en auðvitað verðum við að passa upp á þessa einstaklinga."
+ },
+ {
+  "key": "5bec4923a3c3",
+  "speaker": "Ólafur Adolfsson",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "claim": "á mánuði og var krafan um vinnuframlag einungis 25 klukkustundir á viku, sem ég verð að segja að er ansi góður díll fyrir 60% starf en hins vegar ekki alveg nógu góður að mati hæstv."
+ },
+ {
+  "key": "05437a1c91de",
+  "speaker": "Bergþór Ólason",
+  "party": "Miðflokkurinn",
+  "date": "23.11.2026",
+  "claim": "Fyrir ekki löngu síðan voru málefni 5,3% pottsins, byggðahluta aflamarkskerfisins, í umsjón og verkahring hæstv."
+ },
+ {
+  "key": "2e75661ab730",
+  "speaker": "Hanna Katrín Friðriksson",
+  "party": "Viðreisn",
+  "date": "23.11.2026",
+  "claim": "Það eru náttúrlega ákveðin markmið, þessi 5,3% pottur liggur einmitt mjög vel við almennum markmiðum Byggðastofnunar og þar undir er auðvitað sértæki byggðakvótinn."
+ },
+ {
+  "key": "e4bf65007567",
+  "speaker": "Bergþór Ólason",
+  "party": "Miðflokkurinn",
+  "date": "23.11.2026",
+  "claim": "ráðherra muni aðstoða við og hvetja til raunar og styðja við með öllum tiltækum ráðum undirstofnanir sínar, að skoðaðir verði þeir samningar um breytt eignarhald sem gerðir voru á þessum viðkvæma tíma í tengslum við endurskipulagningu hluta 5,3% pottsins."
+ },
+ {
+  "key": "e544f0cbfbc5",
+  "speaker": "Halla Hrund Logadóttir",
+  "party": "Framsókn",
+  "date": "23.11.2026",
+  "claim": "Við eigum 28 sinnum meira land á hvern íbúa en að meðaltali innan Evrópusambandsins og ef við horfum á þjóðlendurnar einar og sér, sem eru 40% af Íslandi, eru þær álíka stórt svæði og þjóðríkið Danmörk."
+ },
+ {
+  "key": "8386b267a3d2",
+  "speaker": "Jens Garðar Helgason",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "24.11.2026",
+  "claim": "Með því að ráða Heiðu Kristínu sem verktaka er skattprósentan samtals 37,6% í stað þeirrar hefðbundnu sem gildir."
+ },
+ {
+  "key": "8fd5ec44fb2a",
+  "speaker": "Ingveldur Anna Sigurðardóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "24.11.2026",
+  "claim": "Það tók rúmlega 20 ár að koma Suðurnesjalínu 2 í gagnið, 20 ár, og á þeim tíma hefur samfélagið breyst, atvinnulífið þróast og raforkuþörfin aukist til muna."
+ },
+ {
+  "key": "3938a8ff262a",
+  "speaker": "Sigurjón Þórðarson",
+  "party": "Flokkur fólksins",
+  "date": "24.11.2026",
+  "claim": "Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%."
+ },
+ {
+  "key": "3d3ea90cfa0e",
+  "speaker": "Gunnar Guðjónsson",
+  "party": "Viðreisn",
+  "date": "24.11.2026",
+  "claim": "Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður."
+ },
+ {
+  "key": "2fc7232e0638",
+  "speaker": "Karl Gauti Hjaltason",
+  "party": "Miðflokkurinn",
+  "date": "24.11.2026",
+  "claim": "Þá er enn eitt skattahækkunarfrumvarp ríkisstjórnarinnar, svonefndur bandormur 2, einnig nýkomið inn en þar á að kreista 450 milljónir út úr einstaklingum sem dettur í hug að afla sér tekna sem ná ekki 2 millj."
+ }
+]
