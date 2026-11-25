@@ -251,5 +251,98 @@
    }
   ],
   "checked": "2026-11-25"
+ },
+ {
+  "key": "bad986bfc7b9",
+  "status": "ok",
+  "title": "Verðbólga 5,9%",
+  "claim": "Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "facts": "Árstaktur verðbólgu var 5,9% í október 2026 samkvæmt Hagstofunni (óbreytt frá september). Seinni hluti fullyrðingarinnar, að hún hafi verið 4,8% við valdatöku, var ekki flettur upp sérstaklega.",
+  "sources": [
+   {
+    "title": "Trading Economics: verðbólga 5,9% í október 2026",
+    "url": "https://tradingeconomics.com/iceland/inflation-cpi/news/596205"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "8baf86c7dbd4",
+  "status": "ok",
+  "title": "Stýrivextir 8% og verðbólga 5,9%",
+  "claim": "Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "facts": "Seðlabankinn hélt stýrivöxtum óbreyttum í 8% 18. nóvember 2026. Verðbólga var 5,9% í október. Hvort tvennt stenst.",
+  "sources": [
+   {
+    "title": "RÚV: stýrivextir áfram átta prósent, 18. nóv. 2026",
+    "url": "https://www.ruv.is/utvarp/spila/hadegisfrettir/25243/bhs82i"
+   },
+   {
+    "title": "Trading Economics: verðbólga 5,9%",
+    "url": "https://tradingeconomics.com/iceland/inflation-cpi/news/596205"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "37eacffef279",
+  "status": "ok",
+  "title": "Covid kostaði yfir 300 milljarða",
+  "claim": "Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "facts": "Fjármálaráðuneytið mat að af 450 milljörðum í mótvægisaðgerðir hafi um 320 milljarðar haft bein áhrif á afkomu ríkissjóðs. Það samræmist „yfir 300 milljörðum“, en tölur eru breytilegar eftir því hvernig er talið (aðrar áætlanir nefna hátt í 300). Hvort allur uppsafnaði hallinn sé 800 milljarðar var ekki prófað.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: 450 milljarðar í mótvægisaðgerðir (2023)",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2023/02/21/450-milljardar-krona-i-motvaegisadgerdir-vegna-heimsfaraldurs/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "0adc8c132b50",
+  "status": "open",
+  "title": "Atvinnuleysi „um 4,3%“",
+  "claim": "Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "facts": "Vinnumálastofnun mældi skráð atvinnuleysi 4,0% í september 2026. Október-talan fannst ekki. Vinnumarkaðskönnun Hagstofunnar sýnir hærri tölur (árstíðaleiðrétt 5,7% í september), svo talan fer eftir mælikvarða. Ekki hægt að segja til um hvort 4,3% sé rétt.",
+  "sources": [
+   {
+    "title": "Vinnumálastofnun: vinnumarkaðurinn í september 2026",
+    "url": "https://island.is/en/o/directorate-of-labour/news/skrad-atvinnuleysi-i-september-var-4-0"
+   },
+   {
+    "title": "Trading Economics: atvinnuleysi í september 2026",
+    "url": "https://tradingeconomics.com/iceland/unemployment-rate/news/593804"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "3938a8ff262a",
+  "status": "open",
+  "title": "Bætur hækka um 7,3% í stað 4%",
+  "claim": "Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.",
+  "speaker": "Sigurjón Þórðarson",
+  "party": "Flokkur fólksins",
+  "date": "24.11.2026",
+  "facts": "Lög frá mars 2026 binda hækkun almannatrygginga við launavísitölu frá 1. janúar 2027 (þó aldrei minna en verðlag). Talan 7,3% og samanburðurinn við 4% fundust ekki í fjárlagagögnum. Óstaðfest.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: greiðslur fylgja launavísitölu",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/03/19/Log-samthykkt-a-Althingi-sem-fela-i-ser-ad-greidslur-almannatrygginga-fylgja-launavisitolu"
+   }
+  ],
+  "checked": "2026-11-25"
  }
 ]

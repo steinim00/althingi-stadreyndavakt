@@ -2,7 +2,8 @@ name: Daglegt staðreyndapróf
 
 on:
   schedule:
-    - cron: "23 7 * * *"   # á hverjum degi kl. 07:23 UTC
+    - cron: "23 7 * * *"        # á hverjum degi kl. 07:23 UTC
+    - cron: "40 14-23 * * 1-5"  # mán-fös á klukkutíma fresti frá kl. 14:40 til 23:40 (þingfundir hefjast kl. 13:30)
   workflow_dispatch: {}
 
 permissions:
