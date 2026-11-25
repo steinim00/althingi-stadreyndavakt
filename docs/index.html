@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staðreyndavakt Alþingis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: one narrow reading column; summary strip first, then findings grouped by certainty. */
+:root {
+  --bg: #f4f5f3;
+  --surface: #ffffff;
+  --ink: #1b2326;
+  --muted: #5b676b;
+  --line: #d9dedb;
+  --accent: #1f4e5f;
+  --wrong: #a2362b;
+  --wrong-bg: #f8e4e1;
+  --open: #8a6200;
+  --open-bg: #f6ecd0;
+  --ok: #2d6a45;
+  --ok-bg: #dfeee4;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14191b;
+    --surface: #1c2326;
+    --ink: #e6ebe9;
+    --muted: #9aa6a9;
+    --line: #2f3a3e;
+    --accent: #7fc0d6;
+    --wrong: #f0988d;
+    --wrong-bg: #3a2220;
+    --open: #e5c066;
+    --open-bg: #38301a;
+    --ok: #86c9a0;
+    --ok-bg: #1d3226;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14191b;
+  --surface: #1c2326;
+  --ink: #e6ebe9;
+  --muted: #9aa6a9;
+  --line: #2f3a3e;
+  --accent: #7fc0d6;
+  --wrong: #f0988d;
+  --wrong-bg: #3a2220;
+  --open: #e5c066;
+  --open-bg: #38301a;
+  --ok: #86c9a0;
+  --ok-bg: #1d3226;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.55;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 72px; }
+header h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(30px, 6vw, 42px);
+  line-height: 1.1;
+  margin: 0 0 10px;
+  text-wrap: balance;
+}
+header p { margin: 0; color: var(--muted); max-width: 62ch; }
+.meta { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 28px 0 8px;
+}
+.tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left-width: 4px;
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+.tile b { display: block; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.tile span { font-size: 14px; color: var(--muted); }
+.tile.wrong { border-left-color: var(--wrong); }
+.tile.open { border-left-color: var(--open); }
+.tile.ok { border-left-color: var(--ok); }
+.tile.new { border-left-color: var(--muted); }
+
+h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  margin: 44px 0 6px;
+  text-wrap: balance;
+}
+.lede { color: var(--muted); margin: 0 0 16px; max-width: 62ch; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 28px 0 0; }
+.filters button {
+  font: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+.filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.filters button:focus-visible, a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin: 0 0 14px;
+}
+.card h3 { font-size: 18px; margin: 0 0 4px; line-height: 1.3; }
+.who { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+.card p { margin: 0 0 10px; }
+.card p:last-child { margin-bottom: 0; }
+.pill {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+.pill.wrong { background: var(--wrong-bg); color: var(--wrong); }
+.pill.open { background: var(--open-bg); color: var(--open); }
+.pill.ok { background: var(--ok-bg); color: var(--ok); }
+.pill.new { background: var(--line); color: var(--muted); }
+.claim { border-left: 3px solid var(--line); padding-left: 12px; color: var(--ink); }
+.facts { font-size: 15px; color: var(--muted); }
+.facts strong { color: var(--ink); }
+
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; padding: 9px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+td.bad { color: var(--wrong); text-decoration: line-through; text-decoration-thickness: 1px; }
+
+.limits { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 18px; }
+.limits ul { margin: 8px 0 0; padding-left: 20px; }
+.limits li { margin-bottom: 6px; }
+
+.sources { font-size: 15px; padding-left: 20px; }
+.sources li { margin-bottom: 4px; }
+a { color: var(--accent); }
+footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+.hidden { display: none; }
+@media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+  <h1>Staðreyndavakt Alþingis</h1>
+  <p>Tölur og fullyrðingar úr ræðum þingmanna, bornar saman við opinber gögn. Allir flokkar fá sömu meðferð. Síðan uppfærist sjálfkrafa á hverjum degi.</p>
+  <p class="meta">Síðast keyrt 25. nóvember 2026.</p>
+</header>
+
+<section class="summary" aria-label="Yfirlit">
+  <div class="tile wrong"><b>2</b><span>líklega röng eða ónákvæm</span></div>
+  <div class="tile open"><b>4</b><span>óstaðfest</span></div>
+  <div class="tile ok"><b>8</b><span>staðfest rétt</span></div>
+  <div class="tile new"><b>0</b><span>óyfirfarnar fullyrðingar</span></div>
+</section>
+
+<section class="limits" aria-label="Takmarkanir">
+  <strong>Hvað þetta nær yfir</strong>
+  <ul>
+    <li>Leitað er að tölum og fullyrðingum sem hægt er að bera saman við opinber gögn. Túlkun, rökstuðningur og pólitískt mat eru ekki metin. Fyrirspurnir og fundarstjórn eru undanskilin.</li>
+    <li>„Fann ekki heimild“ þýðir ekki að fullyrðingin sé röng.</li>
+  </ul>
+</section>
+
+<div class="filters" role="group" aria-label="Sía eftir niðurstöðu">
+  <button type="button" data-f="all" aria-pressed="true">Allt</button>
+  <button type="button" data-f="wrong" aria-pressed="false">Líklega rangt</button>
+  <button type="button" data-f="open" aria-pressed="false">Óstaðfest</button>
+  <button type="button" data-f="ok" aria-pressed="false">Rétt</button>
+  <button type="button" data-f="new" aria-pressed="false">Óyfirfarið</button>
+</div>
+
+<h2>Líklega rangt eða ónákvæmt</h2>
+<p class="lede">Þessar fullyrðingar standast ekki þau gögn sem fundust. Það er ekki sama og að þær séu vísvitandi rangar.</p>
+
+<article class="card" data-s="wrong">
+  <span class="pill wrong">Líklega rangt</span>
+  <h3>Vextir „enn 1% lægri“ en við valdatöku</h3>
+  <p class="who">Þorgerður Katrín Gunnarsdóttir, Viðreisn · 18. nóvember</p>
+  <p class="claim">Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.</p>
+  <p class="facts"><strong>Gögn:</strong> Stýrivextir eru 8% eftir ákvörðun 18. nóvember. Þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. Munurinn er 0,5 prósentustig. Miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a>, <a href="https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf">Seðlabankinn: yfirlýsing 20. nóvember 2024</a></p>
+</article>
+
+<article class="card" data-s="wrong">
+  <span class="pill wrong">Líklega rangt</span>
+  <h3>Halli ársins 2026 „úr 28 milljörðum í 90“</h3>
+  <p class="who">Stefán Vagn Stefánsson, Framsókn · 18. nóvember</p>
+  <p class="claim">Hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.</p>
+  <p class="facts"><strong>Gögn:</strong> Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.althingi.is/altext/raeda/157/rad20251202T143152.html">Alþingi: framsaga um fjárlög 2026</a>, <a href="https://www.althingi.is/altext/erindi/158/158-4.pdf">Alþingi: kynning á frumvarpi 2027</a></p>
+</article>
+
+<h2>Óstaðfest</h2>
+<p class="lede">Hvorki fannst stuðningur né andstaða í opinberum gögnum.</p>
+
+<article class="card" data-s="open">
+  <span class="pill open">Óstaðfest</span>
+  <h3>Skatttekjur „undir 24%“ og samanburður við 2013–2016</h3>
+  <p class="who">Þorgerður Katrín Gunnarsdóttir, Viðreisn · 18. nóvember</p>
+  <p class="claim">Skatttekjur eru að fara undir 24% af landsframleiðslu á næsta ári. Árin 2013–2016 voru þær 27, 28 og 29%.</p>
+  <p class="facts"><strong>Gögn:</strong> Fjármálaráðuneytið segir skatta og tryggingagjöld ríkissjóðs 27,0% af landsframleiðslu 2027. Ef tryggingagjöld eru undanskilin gæti 24% staðist, en þá gæti samanburðurinn við fyrri ár notað aðra skilgreiningu. Tölurnar frá 2013–2016 fundust ekki.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/">Fjármála- og efnahagsráðuneytið: tekjur A1-hluta, frumvarp 2027</a></p>
+</article>
+
+<article class="card" data-s="open">
+  <span class="pill open">Óstaðfest</span>
+  <h3>Hlutdeild strætó 5% samkvæmt ferðavenjum 2025</h3>
+  <p class="who">Guðlaugur Þór Þórðarson, Sjálfstæðisflokkurinn · 16. nóvember</p>
+  <p class="claim">Samkvæmt ferðavenjum 2025 nýtir enn aðeins 5% fólks strætó.</p>
+  <p class="facts"><strong>Gögn:</strong> Talan fannst ekki í niðurstöðum könnunarinnar sem birtust í júlí 2026. Þar kemur fram að um 41% landsmanna greiddu fyrir strætóferð haustið 2025, en það er annar mælikvarði en hlutdeild í ferðum.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/07/07/Ferdum-landsmanna-fjolgar-litillega-a-ny-samkvaemt-nyrri-ferdavenjukonnun/">Stjórnarráðið: ferðavenjukönnun 2025</a></p>
+</article>
+
+<article class="card" data-s="open">
+  <span class="pill open">Óstaðfest</span>
+  <h3>Endurmat Hafró á þorskstofni 2019</h3>
+  <p class="who">Sigurjón Þórðarson, Flokkur fólksins · 10. nóvember</p>
+  <p class="claim">Samkvæmt þingskjölum telur Hafró þorskstofninn hafa verið 270.000 tonnum minni árið 2019 en hann var mældur.</p>
+  <p class="facts"><strong>Gögn:</strong> Hvorki þingskjalið né önnur heimild fannst. Stofnmat Hafró 2019 gaf ráðgjöf upp á 272.411 tonn, sem er ekki sama stærð. Nákvæmasta leiðin er að spyrja Hafró eða atvinnuveganefnd.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://innri.hafogvatn.is/static/extras/images/01-Cod%20(1)1141503.pdf">Hafrannsóknastofnun: ráðgjöf og stofnmat þorsks 2019</a></p>
+</article>
+
+<article class="card" data-s="open">
+  <span class="pill open">Óstaðfest</span>
+  <h3>Mat á Sundabraut: 130 milljarðar nefndir af ráðherra</h3>
+  <p class="who">Bergþór Ólason, Miðflokkurinn · nóvember 2026</p>
+  <p class="claim">Mat á Sundabraut og Hvalfjarðargöngum fór úr 130 í 200 milljarða á fimm mánuðum og ráðherra nefndi 130.</p>
+  <p class="facts"><strong>Gögn:</strong> Ráðherra neitaði að hafa nefnt töluna. Ekki fannst hver nefndi 130 fyrst. Eyjólfur Ármannsson sagði að enginn gæti kostnaðarmetið verkið fyrr en ljóst væri hvort það yrðu göng eða brú.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/11/09/eg_veit_ekki_hvar_hann_faer_thessa_130_milljarda/">Mbl.is: Sundabraut, 9. nóvember 2026</a></p>
+</article>
+
+<h2>Staðfest rétt</h2>
+<p class="lede">Þessar fullyrðingar stemma við opinberar heimildir.</p>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>Brottvísunarstöð í Rúanda 2027</h3>
+  <p class="who">Snorri Másson, Miðflokkurinn · 18. nóvember</p>
+  <p class="claim">Austurríki, Danmörk, Holland, Þýskaland og Grikkland ætla í sameiningu að opna fyrstu brottvísunarstöðina í Rúanda árið 2027.</p>
+  <p class="facts"><strong>Gögn:</strong> Ríkin fimm kynntu áformin 16. nóvember og stefna á flutninga 2027. Samningur er ekki undirritaður.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://aljazeera.com/news/2026/11/17/why-are-five-eu-countries-reviving-plans-to-deport-migrants-to-rwanda">Al Jazeera: fimm ESB-ríki og Rúanda</a></p>
+</article>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>Stýrivextir 8% og verðbólga tæp 6%</h3>
+  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 18. nóvember</p>
+  <p class="claim">Stýrivextir standa í 8% og verðbólgan í tæpum 6%.</p>
+  <p class="facts"><strong>Gögn:</strong> Peningastefnunefnd hélt stýrivöxtum í 8% 18. nóvember. Verðbólga mældist 5,9% í október.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a></p>
+</article>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>Samgöngusáttmálinn: 120 í 311 milljarða, Keldnaland 50, ríkið um 90%</h3>
+  <p class="who">Sigurður Örn Hilmarsson, Sjálfstæðisflokkurinn · 16. nóvember</p>
+  <p class="claim">Samgöngusáttmálinn hljóðar upp á 311 milljarða og ríkið á að bera 90% af kostnaðinum.</p>
+  <p class="facts"><strong>Gögn:</strong> Sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. Keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. Skipting er 87,5% ríki og 12,5% sveitarfélög, sem er rúnnað í 90%. Guðlaugur Þór Þórðarson nefndi sömu tölur.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/">Stjórnarráðið: uppfærður samgöngusáttmáli 2024</a>, <a href="https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/sattmali-um-samgongur-a-hofudborgarsvaedinu/">Stjórnarráðið: sáttmáli 2019</a>, <a href="https://www.althingi.is/altext/158/s/0254.html">Alþingi: þingskjal 254 um Keldnaland</a></p>
+</article>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>Stofnframlög hækkuð úr 18% í 23%</h3>
+  <p class="who">Árni Helgason, Sjálfstæðisflokkurinn · 16. nóvember</p>
+  <p class="claim">Framlag ríkisins var upphaflega 20% en fór upp í 23% núna í vor.</p>
+  <p class="facts"><strong>Gögn:</strong> Alþingi samþykkti hækkun í júní 2026. Árni sagði upphaflega framlagið 20% en ráðuneytið talar um 18%. Frávikið er lítið.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/06/18/Althingi-samthykkir-ad-haekka-stofnframlog-rikisins-til-ad-byggja-hagkvaemar-leiguibudir/">Stjórnarráðið: hækkun stofnframlaga</a></p>
+</article>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>Sjávarafurðir og ál rúm 73% af vöruútflutningi</h3>
+  <p class="who">Karl Liljendal Hólmgeirsson, Miðflokkurinn · 10. nóvember</p>
+  <p class="claim">Sjávarafurðir og ál eru rúm 73% af vöruútflutningi.</p>
+  <p class="facts"><strong>Gögn:</strong> Sjávarafurðir voru 38,9% af útflutningsverðmæti 2025 og ál 34,5%, samtals um 73%.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://statice.is/publications/news-archive/external-trade/trade-in-goods-2025/">Hagstofa: vöruviðskipti 2025</a></p>
+</article>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>78% au pair-leyfa til Filippseyinga</h3>
+  <p class="who">Jón Pétur Zimsen, Sjálfstæðisflokkurinn · 9. nóvember</p>
+  <p class="claim">Nokkuð ljóst að langflest leyfin eru til filippseyskra stúlkna, líklega 78%.</p>
+  <p class="facts"><strong>Gögn:</strong> Þorbjörg Sigríður Gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara Filippseyja.</p>
+  
+</article>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>Dvalarleyfishafar utan EES: um 4.000 í um 20.000</h3>
+  <p class="who">Eiríkur Björn Björgvinsson, Viðreisn · 9. nóvember</p>
+  <p class="claim">Dvalarleyfishöfum utan EES hefur fjölgað úr um 4.000 árið 2017 í um 20.000 árið 2025.</p>
+  <p class="facts"><strong>Gögn:</strong> Ráðuneytið segir fjöldann hafa nær fimmfaldast frá 2017. Útlendingastofnun skráði 11.820 umsóknir 2025. Þorbjörg Sigríður Gunnlaugsdóttir (Viðreisn) og Snorri Másson (Miðflokkurinn) nefndu sömu tölur.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/11/20/Fjoldi-dvalarleyfishafa-fimmfaldast-fra-2017-Nidurstodur-starfshops-um-dvalarleyfi/">Dómsmálaráðuneytið: fjöldi dvalarleyfishafa</a>, <a href="https://island.is/s/utlendingastofnun/frett/arid-2025-i-toelum">Útlendingastofnun: árið 2025 í tölum</a></p>
+</article>
+
+<article class="card" data-s="ok">
+  <span class="pill ok">Rétt</span>
+  <h3>Bókun 35 og málsókn ESA</h3>
+  <p class="who">Ingibjörg Davíðsdóttir, Miðflokkurinn · 9. nóvember</p>
+  <p class="claim">ESA hefur stefnt Íslandi fyrir EFTA-dómstólinn vegna bókunar 35, sem var innleidd fyrir rúmum 30 árum.</p>
+  <p class="facts"><strong>Gögn:</strong> ESA stefndi Íslandi 30. september. Bókunin var innleidd fyrir 34 árum.</p>
+  <p class="facts"><strong>Heimildir:</strong> <a href="https://www.mbl.is/frettir/innlent/2026/10/22/vid_eigum_ad_verjast/">Mbl.is: ESA og bókun 35</a></p>
+</article>
+
+<h2>Heimildir</h2>
+<ul class="sources">
+  <li><a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a></li>
+  <li><a href="https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf">Seðlabankinn: yfirlýsing 20. nóvember 2024</a></li>
+  <li><a href="https://www.althingi.is/altext/raeda/157/rad20251202T143152.html">Alþingi: framsaga um fjárlög 2026</a></li>
+  <li><a href="https://www.althingi.is/altext/erindi/158/158-4.pdf">Alþingi: kynning á frumvarpi 2027</a></li>
+  <li><a href="https://innri.hafogvatn.is/static/extras/images/01-Cod%20(1)1141503.pdf">Hafrannsóknastofnun: ráðgjöf og stofnmat þorsks 2019</a></li>
+  <li><a href="https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/">Fjármála- og efnahagsráðuneytið: tekjur A1-hluta, frumvarp 2027</a></li>
+  <li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/07/07/Ferdum-landsmanna-fjolgar-litillega-a-ny-samkvaemt-nyrri-ferdavenjukonnun/">Stjórnarráðið: ferðavenjukönnun 2025</a></li>
+  <li><a href="https://www.mbl.is/frettir/innlent/2026/11/09/eg_veit_ekki_hvar_hann_faer_thessa_130_milljarda/">Mbl.is: Sundabraut, 9. nóvember 2026</a></li>
+  <li><a href="https://aljazeera.com/news/2026/11/17/why-are-five-eu-countries-reviving-plans-to-deport-migrants-to-rwanda">Al Jazeera: fimm ESB-ríki og Rúanda</a></li>
+  <li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/">Stjórnarráðið: uppfærður samgöngusáttmáli 2024</a></li>
+  <li><a href="https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/sattmali-um-samgongur-a-hofudborgarsvaedinu/">Stjórnarráðið: sáttmáli 2019</a></li>
+  <li><a href="https://www.althingi.is/altext/158/s/0254.html">Alþingi: þingskjal 254 um Keldnaland</a></li>
+  <li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/06/18/Althingi-samthykkir-ad-haekka-stofnframlog-rikisins-til-ad-byggja-hagkvaemar-leiguibudir/">Stjórnarráðið: hækkun stofnframlaga</a></li>
+  <li><a href="https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/11/20/Fjoldi-dvalarleyfishafa-fimmfaldast-fra-2017-Nidurstodur-starfshops-um-dvalarleyfi/">Dómsmálaráðuneytið: fjöldi dvalarleyfishafa</a></li>
+  <li><a href="https://island.is/s/utlendingastofnun/frett/arid-2025-i-toelum">Útlendingastofnun: árið 2025 í tölum</a></li>
+  <li><a href="https://statice.is/publications/news-archive/external-trade/trade-in-goods-2025/">Hagstofa: vöruviðskipti 2025</a></li>
+  <li><a href="https://www.mbl.is/frettir/innlent/2026/10/22/vid_eigum_ad_verjast/">Mbl.is: ESA og bókun 35</a></li>
+</ul>
+
+<footer>Sjálfvirk samantekt úr ræðum á althingi.is. Niðurstöður eru unnar af gervigreind með vefleit og koma ekki í stað eigin athugunar á heimildum.</footer>
+</main>
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.filters button');
+  var cards = document.querySelectorAll('.card[data-s]');
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-f');
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cards.forEach(function (c) {
+        c.classList.toggle('hidden', f !== 'all' && c.getAttribute('data-s') !== f);
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,255 @@
+[
+ {
+  "key": "seed-1",
+  "status": "wrong",
+  "title": "Vextir „enn 1% lægri“ en við valdatöku",
+  "claim": "Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.",
+  "speaker": "Þorgerður Katrín Gunnarsdóttir",
+  "party": "Viðreisn",
+  "date": "18.11.2026",
+  "facts": "Stýrivextir eru 8% eftir ákvörðun 18. nóvember. Þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. Munurinn er 0,5 prósentustig. Miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.",
+  "sources": [
+   {
+    "title": "Mbl.is: stýrivextir óbreyttir í 8%",
+    "url": "https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/"
+   },
+   {
+    "title": "Seðlabankinn: yfirlýsing 20. nóvember 2024",
+    "url": "https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-2",
+  "status": "wrong",
+  "title": "Halli ársins 2026 „úr 28 milljörðum í 90“",
+  "claim": "Hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "18.11.2026",
+  "facts": "Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki.",
+  "sources": [
+   {
+    "title": "Alþingi: framsaga um fjárlög 2026",
+    "url": "https://www.althingi.is/altext/raeda/157/rad20251202T143152.html"
+   },
+   {
+    "title": "Alþingi: kynning á frumvarpi 2027",
+    "url": "https://www.althingi.is/altext/erindi/158/158-4.pdf"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-3",
+  "status": "open",
+  "title": "Endurmat Hafró á þorskstofni 2019",
+  "claim": "Samkvæmt þingskjölum telur Hafró þorskstofninn hafa verið 270.000 tonnum minni árið 2019 en hann var mældur.",
+  "speaker": "Sigurjón Þórðarson",
+  "party": "Flokkur fólksins",
+  "date": "10.11.2026",
+  "facts": "Hvorki þingskjalið né önnur heimild fannst. Stofnmat Hafró 2019 gaf ráðgjöf upp á 272.411 tonn, sem er ekki sama stærð. Nákvæmasta leiðin er að spyrja Hafró eða atvinnuveganefnd.",
+  "sources": [
+   {
+    "title": "Hafrannsóknastofnun: ráðgjöf og stofnmat þorsks 2019",
+    "url": "https://innri.hafogvatn.is/static/extras/images/01-Cod%20(1)1141503.pdf"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-4",
+  "status": "open",
+  "title": "Skatttekjur „undir 24%“ og samanburður við 2013–2016",
+  "claim": "Skatttekjur eru að fara undir 24% af landsframleiðslu á næsta ári. Árin 2013–2016 voru þær 27, 28 og 29%.",
+  "speaker": "Þorgerður Katrín Gunnarsdóttir",
+  "party": "Viðreisn",
+  "date": "18.11.2026",
+  "facts": "Fjármálaráðuneytið segir skatta og tryggingagjöld ríkissjóðs 27,0% af landsframleiðslu 2027. Ef tryggingagjöld eru undanskilin gæti 24% staðist, en þá gæti samanburðurinn við fyrri ár notað aðra skilgreiningu. Tölurnar frá 2013–2016 fundust ekki.",
+  "sources": [
+   {
+    "title": "Fjármála- og efnahagsráðuneytið: tekjur A1-hluta, frumvarp 2027",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-5",
+  "status": "open",
+  "title": "Hlutdeild strætó 5% samkvæmt ferðavenjum 2025",
+  "claim": "Samkvæmt ferðavenjum 2025 nýtir enn aðeins 5% fólks strætó.",
+  "speaker": "Guðlaugur Þór Þórðarson",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "16.11.2026",
+  "facts": "Talan fannst ekki í niðurstöðum könnunarinnar sem birtust í júlí 2026. Þar kemur fram að um 41% landsmanna greiddu fyrir strætóferð haustið 2025, en það er annar mælikvarði en hlutdeild í ferðum.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: ferðavenjukönnun 2025",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/07/07/Ferdum-landsmanna-fjolgar-litillega-a-ny-samkvaemt-nyrri-ferdavenjukonnun/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-6",
+  "status": "open",
+  "title": "Mat á Sundabraut: 130 milljarðar nefndir af ráðherra",
+  "claim": "Mat á Sundabraut og Hvalfjarðargöngum fór úr 130 í 200 milljarða á fimm mánuðum og ráðherra nefndi 130.",
+  "speaker": "Bergþór Ólason",
+  "party": "Miðflokkurinn",
+  "date": "nóvember 2026",
+  "facts": "Ráðherra neitaði að hafa nefnt töluna. Ekki fannst hver nefndi 130 fyrst. Eyjólfur Ármannsson sagði að enginn gæti kostnaðarmetið verkið fyrr en ljóst væri hvort það yrðu göng eða brú.",
+  "sources": [
+   {
+    "title": "Mbl.is: Sundabraut, 9. nóvember 2026",
+    "url": "https://www.mbl.is/frettir/innlent/2026/11/09/eg_veit_ekki_hvar_hann_faer_thessa_130_milljarda/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-7",
+  "status": "ok",
+  "title": "78% au pair-leyfa til Filippseyinga",
+  "claim": "Nokkuð ljóst að langflest leyfin eru til filippseyskra stúlkna, líklega 78%.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "09.11.2026",
+  "facts": "Þorbjörg Sigríður Gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara Filippseyja.",
+  "sources": [],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-8",
+  "status": "ok",
+  "title": "Brottvísunarstöð í Rúanda 2027",
+  "claim": "Austurríki, Danmörk, Holland, Þýskaland og Grikkland ætla í sameiningu að opna fyrstu brottvísunarstöðina í Rúanda árið 2027.",
+  "speaker": "Snorri Másson",
+  "party": "Miðflokkurinn",
+  "date": "18.11.2026",
+  "facts": "Ríkin fimm kynntu áformin 16. nóvember og stefna á flutninga 2027. Samningur er ekki undirritaður.",
+  "sources": [
+   {
+    "title": "Al Jazeera: fimm ESB-ríki og Rúanda",
+    "url": "https://aljazeera.com/news/2026/11/17/why-are-five-eu-countries-reviving-plans-to-deport-migrants-to-rwanda"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-9",
+  "status": "ok",
+  "title": "Stýrivextir 8% og verðbólga tæp 6%",
+  "claim": "Stýrivextir standa í 8% og verðbólgan í tæpum 6%.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "18.11.2026",
+  "facts": "Peningastefnunefnd hélt stýrivöxtum í 8% 18. nóvember. Verðbólga mældist 5,9% í október.",
+  "sources": [
+   {
+    "title": "Mbl.is: stýrivextir óbreyttir í 8%",
+    "url": "https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-10",
+  "status": "ok",
+  "title": "Samgöngusáttmálinn: 120 í 311 milljarða, Keldnaland 50, ríkið um 90%",
+  "claim": "Samgöngusáttmálinn hljóðar upp á 311 milljarða og ríkið á að bera 90% af kostnaðinum.",
+  "speaker": "Sigurður Örn Hilmarsson",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "16.11.2026",
+  "facts": "Sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. Keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. Skipting er 87,5% ríki og 12,5% sveitarfélög, sem er rúnnað í 90%. Guðlaugur Þór Þórðarson nefndi sömu tölur.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: uppfærður samgöngusáttmáli 2024",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/"
+   },
+   {
+    "title": "Stjórnarráðið: sáttmáli 2019",
+    "url": "https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/sattmali-um-samgongur-a-hofudborgarsvaedinu/"
+   },
+   {
+    "title": "Alþingi: þingskjal 254 um Keldnaland",
+    "url": "https://www.althingi.is/altext/158/s/0254.html"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-11",
+  "status": "ok",
+  "title": "Stofnframlög hækkuð úr 18% í 23%",
+  "claim": "Framlag ríkisins var upphaflega 20% en fór upp í 23% núna í vor.",
+  "speaker": "Árni Helgason",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "16.11.2026",
+  "facts": "Alþingi samþykkti hækkun í júní 2026. Árni sagði upphaflega framlagið 20% en ráðuneytið talar um 18%. Frávikið er lítið.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: hækkun stofnframlaga",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/06/18/Althingi-samthykkir-ad-haekka-stofnframlog-rikisins-til-ad-byggja-hagkvaemar-leiguibudir/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-12",
+  "status": "ok",
+  "title": "Dvalarleyfishafar utan EES: um 4.000 í um 20.000",
+  "claim": "Dvalarleyfishöfum utan EES hefur fjölgað úr um 4.000 árið 2017 í um 20.000 árið 2025.",
+  "speaker": "Eiríkur Björn Björgvinsson",
+  "party": "Viðreisn",
+  "date": "09.11.2026",
+  "facts": "Ráðuneytið segir fjöldann hafa nær fimmfaldast frá 2017. Útlendingastofnun skráði 11.820 umsóknir 2025. Þorbjörg Sigríður Gunnlaugsdóttir (Viðreisn) og Snorri Másson (Miðflokkurinn) nefndu sömu tölur.",
+  "sources": [
+   {
+    "title": "Dómsmálaráðuneytið: fjöldi dvalarleyfishafa",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/11/20/Fjoldi-dvalarleyfishafa-fimmfaldast-fra-2017-Nidurstodur-starfshops-um-dvalarleyfi/"
+   },
+   {
+    "title": "Útlendingastofnun: árið 2025 í tölum",
+    "url": "https://island.is/s/utlendingastofnun/frett/arid-2025-i-toelum"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-13",
+  "status": "ok",
+  "title": "Sjávarafurðir og ál rúm 73% af vöruútflutningi",
+  "claim": "Sjávarafurðir og ál eru rúm 73% af vöruútflutningi.",
+  "speaker": "Karl Liljendal Hólmgeirsson",
+  "party": "Miðflokkurinn",
+  "date": "10.11.2026",
+  "facts": "Sjávarafurðir voru 38,9% af útflutningsverðmæti 2025 og ál 34,5%, samtals um 73%.",
+  "sources": [
+   {
+    "title": "Hagstofa: vöruviðskipti 2025",
+    "url": "https://statice.is/publications/news-archive/external-trade/trade-in-goods-2025/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "seed-14",
+  "status": "ok",
+  "title": "Bókun 35 og málsókn ESA",
+  "claim": "ESA hefur stefnt Íslandi fyrir EFTA-dómstólinn vegna bókunar 35, sem var innleidd fyrir rúmum 30 árum.",
+  "speaker": "Ingibjörg Davíðsdóttir",
+  "party": "Miðflokkurinn",
+  "date": "09.11.2026",
+  "facts": "ESA stefndi Íslandi 30. september. Bókunin var innleidd fyrir 34 árum.",
+  "sources": [
+   {
+    "title": "Mbl.is: ESA og bókun 35",
+    "url": "https://www.mbl.is/frettir/innlent/2026/10/22/vid_eigum_ad_verjast/"
+   }
+  ],
+  "checked": "2026-11-25"
+ }
+]
