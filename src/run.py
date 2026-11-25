@@ -51,9 +51,13 @@ def _html_url(s: dict) -> str:
     return s["xml"].replace("/xml/", "/altext/raeda/").replace("/raedur/", "/").replace(".xml", ".html")
 
 
+def _words(t: str) -> set:
+    return {w for w in "".join(ch if ch.isalnum() else " " for ch in t.lower()).split() if len(w) > 3}
+
+
 def backfill(session, items: list, budget: int) -> int:
     """Finnur ræðuna á bak við hverja fullyrðingu sem vantar slóð á ræðu."""
-    todo = [i for i in items if not i.get("speech") and i.get("tries", 0) < 3]
+    todo = [i for i in items if not i.get("speech") and i.get("tries", 0) < 4]
     if not todo or budget <= 0:
         return 0
     dates = []
@@ -61,10 +65,8 @@ def backfill(session, items: list, budget: int) -> int:
         try:
             dates.append(datetime.strptime(i["date"], "%d.%m.%Y"))
         except ValueError:
-            pass
-    if not dates:
-        return 0
-    days = (datetime.now(timezone.utc).replace(tzinfo=None) - min(dates)).days + 2
+            dates.append(datetime(2026, 11, 1))  # óljós dagsetning: leita í nóvember
+    days = min(100, (datetime.now(timezone.utc).replace(tzinfo=None) - min(dates)).days + 2)
     try:
         allsp = fetch.speech_list(session, LTHING, days)
     except fetch.Blocked as e:
@@ -72,29 +74,52 @@ def backfill(session, items: list, budget: int) -> int:
         return 0
     cache: dict = {}
     used = 0
+
+    def text_of(x):
+        nonlocal used
+        if x["xml"] in cache:
+            return cache[x["xml"]]
+        if used >= budget:
+            return None
+        try:
+            fetch.polite_sleep()
+            t = fetch.speech_text(session, x["xml"])
+        except fetch.Blocked:
+            raise
+        except Exception as e:
+            print(f"Backfill sleppir {x['xml']}: {e}")
+            t = ""
+        used += 1
+        cache[x["xml"]] = t
+        return t
+
     for i in todo:
-        sps = [x for x in allsp if x["dagur"] == i["date"] and _same_person(i["speaker"], x["nafn"])]
+        exact_day = i["date"][:1].isdigit()
+        sps = [x for x in allsp if _same_person(i["speaker"], x["nafn"])
+               and (x["dagur"] == i["date"] if exact_day else x["dagur"].endswith(".11.2026"))]
+        if not exact_day:
+            sps = sps[:30]
         needle = _norm(i["claim"])[:60]
-        found = ""
-        for x in sps:
-            if x["xml"] not in cache:
-                if used >= budget:
+        cw = _words(i["claim"])
+        best, best_score = "", 0.0
+        try:
+            for x in sps:
+                t = text_of(x)
+                if t is None:
                     break
-                try:
-                    fetch.polite_sleep()
-                    cache[x["xml"]] = _norm(fetch.speech_text(session, x["xml"]))
-                except fetch.Blocked as e:
-                    print(f"Backfill lokað: {e}")
-                    return used
-                except Exception as e:
-                    print(f"Backfill sleppir {x['xml']}: {e}")
-                    cache[x["xml"]] = ""
-                used += 1
-            if needle and needle in cache.get(x["xml"], ""):
-                found = _html_url(x)
-                break
-        if found:
-            i["speech"] = found
+                if needle and needle in _norm(t):
+                    best, best_score = _html_url(x), 1.0
+                    break
+                if cw:
+                    score = len(cw & _words(t)) / len(cw)
+                    if score > best_score:
+                        best, best_score = _html_url(x), score
+        except fetch.Blocked as e:
+            print(f"Backfill lokað: {e}")
+            return used
+        if best and best_score >= 0.8:
+            i["speech"] = best
+            i.pop("speech_guess", None)
         else:
             i["tries"] = i.get("tries", 0) + 1
             if sps:

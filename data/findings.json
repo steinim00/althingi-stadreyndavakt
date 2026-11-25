@@ -59,7 +59,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261110T133648.html"
   ]
@@ -80,7 +80,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261118T133419.html",
    "https://www.althingi.is/altext/raeda/158/rad20261118T133832.html",
@@ -103,7 +103,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261116T142021.html",
    "https://www.althingi.is/altext/raeda/158/rad20261116T142441.html",
@@ -126,7 +126,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1
+  "tries": 0
  },
  {
   "key": "seed-7",
@@ -139,7 +139,7 @@
   "facts": "Þorbjörg Sigríður Gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara Filippseyja.",
   "sources": [],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261109T163841.html",
    "https://www.althingi.is/altext/raeda/158/rad20261109T181732.html",
@@ -162,7 +162,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261118T140418.html",
    "https://www.althingi.is/altext/raeda/158/rad20261118T140901.html"
@@ -184,7 +184,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261118T133159.html",
    "https://www.althingi.is/altext/raeda/158/rad20261118T133645.html",
@@ -215,7 +215,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261116T141851.html",
    "https://www.althingi.is/altext/raeda/158/rad20261116T144531.html",
@@ -260,7 +260,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261109T165411.html"
   ]
@@ -281,7 +281,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261110T134532.html"
   ]
@@ -302,7 +302,7 @@
    }
   ],
   "checked": "2026-11-25",
-  "tries": 1,
+  "tries": 0,
   "speech_guess": [
    "https://www.althingi.is/altext/raeda/158/rad20261109T150619.html",
    "https://www.althingi.is/altext/raeda/158/rad20261109T151034.html"
