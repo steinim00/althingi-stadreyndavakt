@@ -344,5 +344,64 @@
    }
   ],
   "checked": "2026-11-25"
+ },
+ {
+  "key": "e7da2501ea6f",
+  "status": "ok",
+  "title": "Samgöngusáttmáli 2019 og uppfærsla fyrir tveimur árum",
+  "claim": "Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.",
+  "speaker": "Árni Rúnar Þorvaldsson",
+  "party": "Samfylkingin",
+  "date": "19.11.2026",
+  "facts": "Sáttmálinn var fyrst undirritaður 26. september 2019 og uppfærður 21. ágúst 2024 af ríkinu og sex sveitarfélögum (Garðabæ, Hafnarfirði, Kópavogi, Mosfellsbæ, Reykjavík og Seltjarnarnesi). Það stenst.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: samgöngusáttmáli höfuðborgarsvæðisins",
+    "url": "https://www.stjornarradid.is/verkefni/samgongur/samgonguaaetlun/samgongusattmali-hofudborgarsvaedisins/"
+   },
+   {
+    "title": "Stjórnarráðið: uppfærður sáttmáli 21. ágúst 2024",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/08/21/Rikid-og-sex-sveitarfelog-gera-samkomulag-um-uppfaerdan-samgongusattmala/"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "3d3ea90cfa0e",
+  "status": "open",
+  "title": "Ríkisendurskoðun „tvívegis, 2021 og 2023“ um sameiningu menningarstofnana",
+  "claim": "Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.",
+  "speaker": "Gunnar Guðjónsson",
+  "party": "Viðreisn",
+  "date": "24.11.2026",
+  "facts": "Skýrsla Ríkisendurskoðunar um stofnanir ríkisins frá desember 2021 og eftirfylgniskýrsla í október 2026 nefna tækifæri til að sameina stofnanir í menningarmálum. Skýrsla frá 2023 fannst um Sinfóníuhljómsveitina en ekki hvort hún hvetji til sameiningar. Því aðeins hluti staðfestur.",
+  "sources": [
+   {
+    "title": "Mbl.is: eftirfylgniskýrsla Ríkisendurskoðunar, okt. 2026",
+    "url": "https://www.mbl.is/frettir/innlent/2026/10/22/gagnryna_vinnubrogd_vid_sameiningu_skola/"
+   },
+   {
+    "title": "Alþingi: álit um skýrslu Ríkisendurskoðunar um Sinfóníuhljómsveitina (2023)",
+    "url": "https://www.althingi.is/altext/pdf/154/s/0616.pdf"
+   }
+  ],
+  "checked": "2026-11-25"
+ },
+ {
+  "key": "c700c45f1cac",
+  "status": "open",
+  "title": "„0% hagvöxtur á mann í sjö til átta ár“",
+  "claim": "Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "facts": "Ég fann engin gögn sem staðfesta eða hrekja þetta. Mat á hagvexti á mann fer eftir því hvaða tímabil og mælikvarði er notaður. Óstaðfest.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: langtímahorfur, landsframleiðsla á mann",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/langtimahorfur/2-efnahagslegar-framfarir-og-ahaetta/"
+   }
+  ],
+  "checked": "2026-11-25"
  }
 ]
