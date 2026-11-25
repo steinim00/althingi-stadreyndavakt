@@ -103,7 +103,7 @@ def render(root: Path) -> None:
         if v["read"] < v["total"]
     ]
     limits = ['<section class="limits" aria-label="Takmarkanir">', "  <strong>Hvað þetta nær yfir</strong>", "  <ul>"]
-    limits.append("    <li>Leitað er að tölum og fullyrðingum sem hægt er að bera saman við opinber gögn. Túlkun, rökstuðningur og pólitískt mat eru ekki metin. Fyrirspurnir og fundarstjórn eru undanskilin.</li>")
+    limits.append("    <li>Sjálfvirki hlutinn finnur aðeins setningar með tölum. Staðreyndavillur án talna (rangar fullyrðingar um atburði, lög, landafræði eða hvað einhver sagði) finnast ekki sjálfkrafa heldur aðeins þegar ræða er lesin í heild. Túlkun, rökstuðningur og pólitískt mat eru ekki metin. Fyrirspurnir og fundarstjórn eru undanskilin.</li>")
     limits.append("    <li>„Fann ekki heimild“ þýðir ekki að fullyrðingin sé röng.</li>")
     if cov.get("start"):
         limits.append(f"    <li>Sjálfvirk lestur nær yfir ræður frá {_pretty(cov['start'])}. Eldri niðurstöður voru unnar handvirkt og ná ekki yfir allar ræður.</li>")
