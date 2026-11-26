@@ -40,30 +40,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T134522.html"
  },
  {
-  "key": "e7da2501ea6f",
-  "speaker": "Árni Rúnar Þorvaldsson",
-  "party": "Samfylkingin",
-  "date": "19.11.2026",
-  "claim": "Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T134950.html"
- },
- {
-  "key": "bad986bfc7b9",
-  "speaker": "Stefán Vagn Stefánsson",
-  "party": "Framsókn",
-  "date": "19.11.2026",
-  "claim": "Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135500.html"
- },
- {
-  "key": "8463b230971e",
-  "speaker": "Stefán Vagn Stefánsson",
-  "party": "Framsókn",
-  "date": "19.11.2026",
-  "claim": "Það liggur fyrir að allt tal um vondan viðskilnað síðustu ríkisstjórnar stenst enga skoðun og ef ríkisstjórnin hefði haldið sig við fjárlög fyrri ríkisstjórnar fyrir árið 2025 hefðu þau orðið hallalaus.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135500.html"
- },
- {
   "key": "8f320eff0ed6",
   "speaker": "Stefán Vagn Stefánsson",
   "party": "Framsókn",
@@ -104,14 +80,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T140359.html"
  },
  {
-  "key": "8baf86c7dbd4",
-  "speaker": "Guðrún Hafsteinsdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "23.11.2026",
-  "claim": "Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133124.html"
- },
- {
   "key": "eb7a4428217c",
   "speaker": "Kristrún Frostadóttir",
   "party": "Samfylkingin",
@@ -128,44 +96,12 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html"
  },
  {
-  "key": "37eacffef279",
-  "speaker": "Guðrún Hafsteinsdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "23.11.2026",
-  "claim": "Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html"
- },
- {
   "key": "2c1502679175",
   "speaker": "Guðrún Hafsteinsdóttir",
   "party": "Sjálfstæðisflokkurinn",
   "date": "23.11.2026",
   "claim": "Enn mætir hér forsætisráðherra og talar um hallann sem hún hafi erft upp á 800 milljarða kr.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html"
- },
- {
-  "key": "96a0bbc5b162",
-  "speaker": "Guðrún Hafsteinsdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "23.11.2026",
-  "claim": "Það er nú ekki mikið í samanburði við það sem fyrri ríkisstjórn þurfti að glíma við, sem var Covid upp á 300 milljarða og síðan Reykjaneseldar upp á annað hundrað milljarða.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html"
- },
- {
-  "key": "c700c45f1cac",
-  "speaker": "Kristrún Frostadóttir",
-  "party": "Samfylkingin",
-  "date": "23.11.2026",
-  "claim": "Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T134146.html"
- },
- {
-  "key": "0adc8c132b50",
-  "speaker": "Kristrún Frostadóttir",
-  "party": "Samfylkingin",
-  "date": "23.11.2026",
-  "claim": "Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T134146.html"
  },
  {
   "key": "fd1516d84762",
@@ -224,30 +160,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T133126.html"
  },
  {
-  "key": "8fd5ec44fb2a",
-  "speaker": "Ingveldur Anna Sigurðardóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "24.11.2026",
-  "claim": "Það tók rúmlega 20 ár að koma Suðurnesjalínu 2 í gagnið, 20 ár, og á þeim tíma hefur samfélagið breyst, atvinnulífið þróast og raforkuþörfin aukist til muna.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T133402.html"
- },
- {
-  "key": "3938a8ff262a",
-  "speaker": "Sigurjón Þórðarson",
-  "party": "Flokkur fólksins",
-  "date": "24.11.2026",
-  "claim": "Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T133814.html"
- },
- {
-  "key": "3d3ea90cfa0e",
-  "speaker": "Gunnar Guðjónsson",
-  "party": "Viðreisn",
-  "date": "24.11.2026",
-  "claim": "Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T134519.html"
- },
- {
   "key": "2fc7232e0638",
   "speaker": "Karl Gauti Hjaltason",
   "party": "Miðflokkurinn",
@@ -256,52 +168,12 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T135413.html"
  },
  {
-  "key": "f802f67fc66d",
-  "speaker": "Ingibjörg Davíðsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "25.11.2026",
-  "claim": "Bent er á í greininni að í arðgreiðslustefnu bankans sé gert ráð fyrir að reglulegar arðgreiðslur nemi að jafnaði um 50% af hagnaði fyrra árs.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133324.html"
- },
- {
-  "key": "327348cbb5ba",
-  "speaker": "Ingibjörg Davíðsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "25.11.2026",
-  "claim": "Bankinn hafi einnig greitt sérstakar arðgreiðslur, nú síðast 16 milljarða kr.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133324.html"
- },
- {
   "key": "4a0e81cb4df7",
   "speaker": "Rósa Guðbjartsdóttir",
   "party": "Sjálfstæðisflokkurinn",
   "date": "25.11.2026",
   "claim": "Og hvernig á að fá allar þær 2,3 milljónir ferðamanna sem hingað koma til landsins, sem flestir fara Gullna hringinn, til að hlaða niður smáforriti til að geta greitt þetta gjald?",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133536.html"
- },
- {
-  "key": "b79a1ab5ac4c",
-  "speaker": "Sigmar Guðmundsson",
-  "party": "Viðreisn",
-  "date": "25.11.2026",
-  "claim": "Við erum að sjá það í nýrri könnun sem hefur verið gerð að 72% þjóðarinnar styðja þessa tilteknu gjaldtöku með þeim hætti sem hún er skipulögð.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133752.html"
- },
- {
-  "key": "b538db5ec09a",
-  "speaker": "Jón Pétur Zimsen",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "25.11.2026",
-  "claim": "Mun fleiri karlar eru heimilislausir og 90–95% fanga eru karlar.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T134237.html"
- },
- {
-  "key": "538f01767f60",
-  "speaker": "Karl Gauti Hjaltason",
-  "party": "Miðflokkurinn",
-  "date": "25.11.2026",
-  "claim": "Tollvörðum hefur fækkað frá 2019 úr 124 í 107 á síðasta ári og 93 á þessu ári.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T134658.html"
  },
  {
   "key": "df57f6334508",

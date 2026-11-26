@@ -88,6 +88,8 @@ def render(root: Path) -> None:
     tpl = (root / "src" / "template.html").read_text(encoding="utf-8")
     cand_p = data / "candidates.json"
     cands = json.loads(cand_p.read_text(encoding="utf-8")) if cand_p.exists() else []
+    _fk = {f["key"] for f in findings}
+    cands = [c for c in cands if c["key"] not in _fk]
 
     counts = {k: sum(1 for f in findings if f["status"] == k) for k in ("wrong", "open", "ok")}
     tiles = (

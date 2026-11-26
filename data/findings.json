@@ -338,7 +338,7 @@
   "speaker": "Guðrún Hafsteinsdóttir",
   "party": "Sjálfstæðisflokkurinn",
   "date": "23.11.2026",
-  "facts": "Fjármálaráðuneytið mat að af 450 milljörðum í mótvægisaðgerðir hafi um 320 milljarðar haft bein áhrif á afkomu ríkissjóðs. Það samræmist „yfir 300 milljörðum“, en tölur eru breytilegar eftir því hvernig er talið (aðrar áætlanir nefna hátt í 300). Hvort allur uppsafnaði hallinn sé 800 milljarðar var ekki prófað.",
+  "facts": "Fjármálaráðuneytið mat að af 450 milljörðum í mótvægisaðgerðir hafi um 320 milljarðar haft bein áhrif á afkomu ríkissjóðs. Það samræmist „yfir 300 milljörðum“, en tölur eru breytilegar eftir því hvernig er talið (aðrar áætlanir nefna hátt í 300). Hvort allur uppsafnaði hallinn sé 800 milljarðar var ekki prófað. Athugið: í áliti meiri hluta fjárlaganefndar er heildarkostnaður allra áfalla og náttúruvár síðasta áratug nefndur tæpir 338 milljarðar, svo tölurnar fara eftir því hvernig er talið.",
   "sources": [
    {
     "title": "Stjórnarráðið: 450 milljarðar í mótvægisaðgerðir (2023)",
@@ -560,5 +560,161 @@
   ],
   "checked": "2026-11-26",
   "kind": "ekki-tala"
+ },
+ {
+  "key": "538f01767f60",
+  "status": "ok",
+  "title": "Tollvörðum hefur fækkað úr 124 í 93",
+  "claim": "Tollvörðum hefur fækkað frá 2019 úr 124 í 107 á síðasta ári og 93 á þessu ári.",
+  "speaker": "Karl Gauti Hjaltason",
+  "party": "Miðflokkurinn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T134658.html",
+  "facts": "Formaður Tollvarðafélags Íslands sagði 2. nóvember 2026 að starfandi tollvörðum hefði fækkað úr 124 í 93 á innan við áratug, sem samræmist tölum þingmannsins. Millitalan 107 og upphafsárið 2019 voru ekki staðfest sérstaklega.",
+  "sources": [
+   {
+    "title": "Mbl.is: tollvörðum fækkað úr 124 í 93, 2. nóv. 2026",
+    "url": "https://www.mbl.is/frettir/innlent/2026/11/02/212_kilo_af_kokaini_rum_tvofoldun/"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "f802f67fc66d",
+  "status": "ok",
+  "title": "Arðgreiðslustefna bankans: um 50% af hagnaði",
+  "claim": "Bent er á í greininni að í arðgreiðslustefnu bankans sé gert ráð fyrir að reglulegar arðgreiðslur nemi að jafnaði um 50% af hagnaði fyrra árs.",
+  "speaker": "Ingibjörg Davíðsdóttir",
+  "party": "Miðflokkurinn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133324.html",
+  "facts": "Landsbankinn greiðir reglulegan arð sem nemur um 50% af hagnaði fyrra árs samkvæmt arðgreiðslustefnu. Greinin sem þingmaðurinn vísar í var ekki lesin, þannig að þetta byggir á því að átt sé við Landsbankann, en tölurnar passa.",
+  "sources": [
+   {
+    "title": "Landsbankinn: skýrsla bankaráðs 2026",
+    "url": "https://www.landsbankinn.is/uploads/documents/bankinn/hluthafafundir/2026/2026-03-18-skyrsla-bankarads.pdf"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "327348cbb5ba",
+  "status": "ok",
+  "title": "Sérstök arðgreiðsla 16 milljarðar",
+  "claim": "Bankinn hafi einnig greitt sérstakar arðgreiðslur, nú síðast 16 milljarða kr.",
+  "speaker": "Ingibjörg Davíðsdóttir",
+  "party": "Miðflokkurinn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133324.html",
+  "facts": "Aðalfundur Landsbankans 18. mars 2026 samþykkti sérstaka arðgreiðslu upp á 16,1 milljarð króna, auk reglulegra greiðslna. Þetta passar við „16 milljarða“, ef átt er við Landsbankann.",
+  "sources": [
+   {
+    "title": "Landsbankinn: niðurstöður aðalfundar 2026",
+    "url": "https://www.landsbankinn.is/uploads/documents/bankinn/hluthafafundir/2026/2026-03-18-nidurstodur-adalfundar-landsbankans-2026.pdf"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "b538db5ec09a",
+  "status": "open",
+  "title": "„90–95% fanga eru karlar“",
+  "claim": "Mun fleiri karlar eru heimilislausir og 90–95% fanga eru karlar.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T134237.html",
+  "facts": "Hlutfall kvenna í íslenskum fangelsum var 8 til rúmlega 11% árið 2022 og Fangelsismálastofnun segir það aldrei hafa verið hærra, svo hlutfall karla er líklega um 89–92%. Talan er nærri lagi en efri hluti bilsins (95%) virðist of hár. Nákvæm tala núna fannst ekki.",
+  "sources": [
+   {
+    "title": "RÚV: konur í íslenskum fangelsum (2022)",
+    "url": "https://ruv.is/utvarp/spila/thetta-helst/33405/9uicp0"
+   },
+   {
+    "title": "Fangelsismálastofnun: umsögn til Alþingis 2026",
+    "url": "https://www.althingi.is/altext/erindi/158/158-322.pdf"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "b79a1ab5ac4c",
+  "status": "open",
+  "title": "„72% þjóðarinnar styðja þessa gjaldtöku“",
+  "claim": "Við erum að sjá það í nýrri könnun sem hefur verið gerð að 72% þjóðarinnar styðja þessa tilteknu gjaldtöku með þeim hætti sem hún er skipulögð.",
+  "speaker": "Sigmar Guðmundsson",
+  "party": "Viðreisn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133752.html",
+  "facts": "Ég fann hvorki könnunina né töluna 72%. Frumvarpið sjálft staðfestir gjaldið (4.500 kr., 3.000 kr. utan háannar) en ekki stuðninginn.",
+  "sources": [
+   {
+    "title": "Alþingi: frumvarp um náttúru- og innviðagjald",
+    "url": "https://www.althingi.is/altext/pdf/158/s/0418.pdf"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "8fd5ec44fb2a",
+  "status": "open",
+  "title": "Suðurnesjalína 2 „rúmlega 20 ár“",
+  "claim": "Það tók rúmlega 20 ár að koma Suðurnesjalínu 2 í gagnið, 20 ár, og á þeim tíma hefur samfélagið breyst, atvinnulífið þróast og raforkuþörfin aukist til muna.",
+  "speaker": "Ingveldur Anna Sigurðardóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "24.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T133402.html",
+  "facts": "Bæjarráð lýsti því árið 2021 að undirbúningur hefði staðið „á annan áratug“ og Landsnet sótti um framkvæmdaleyfi 2014. Hvort línan sé komin í gagnið og hvenær undirbúningur hófst nákvæmlega var ekki staðfest.",
+  "sources": [
+   {
+    "title": "Alþingi: erindi bæjarráðs um Suðurnesjalínu 2",
+    "url": "https://www.althingi.is/altext/erindi/152/152-645.pdf"
+   },
+   {
+    "title": "Alþingi: þingskjal um Suðurnesjalínu",
+    "url": "https://www.althingi.is/altext/151/s/0439.html"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "8463b230971e",
+  "status": "open",
+  "title": "Hefðu fjárlög 2025 orðið hallalaus?",
+  "claim": "Það liggur fyrir að allt tal um vondan viðskilnað síðustu ríkisstjórnar stenst enga skoðun og ef ríkisstjórnin hefði haldið sig við fjárlög fyrri ríkisstjórnar fyrir árið 2025 hefðu þau orðið hallalaus.",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135500.html",
+  "facts": "Fjárlög 2025 sem fyrri stjórn samþykkti gerðu ráð fyrir tæplega 63 milljarða halla. Hallinn varð um 35 milljarðar samkvæmt mati ráðuneytisins. Engin heimild sýnir að óbreytt fjárlög hefðu verið hallalaus, en fullyrðingin er tilgáta um hvað hefði gerst og ekki beinlínis hægt að afsanna hana.",
+  "sources": [
+   {
+    "title": "Fjármálaráðuneytið: fjárlög 2025 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/11/18/Fjarlog-fyrir-arid-2025-samthykkt-a-Althingi-Aframhaldandi-adhald-sem-stydur-vid-laekkun-verdbolgu/"
+   },
+   {
+    "title": "Fjármálaráðuneytið: uppgjör janúar–september 2025",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/12/Uppgjor-rikissjods-fyrir-januarseptember-2025-Betri-afkomuhorfur-fyrir-arid-i-heild/"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "96a0bbc5b162",
+  "status": "open",
+  "title": "Covid 300 ma. og Reykjaneseldar „annað hundrað milljarða“",
+  "claim": "Það er nú ekki mikið í samanburði við það sem fyrri ríkisstjórn þurfti að glíma við, sem var Covid upp á 300 milljarða og síðan Reykjaneseldar upp á annað hundrað milljarða.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html",
+  "facts": "Í áliti meiri hluta fjárlaganefndar kemur fram að beinn kostnaður ríkissjóðs vegna allra efnahagsáfalla og náttúruvár síðasta áratug hafi verið tæpir 338 milljarðar. Það rúmast ekki með 300 milljörðum í Covid og yfir 100 í Reykjaneseldum, nema mælt sé á ólíkan hátt. Ráðuneytið mat Covid-kostnað um 320 milljarða árið 2023, þannig að ósamræmið liggur í aðferðinni, ekki endilega í tölunni.",
+  "sources": [
+   {
+    "title": "Alþingi: nefndarálit meiri hluta fjárlaganefndar",
+    "url": "https://www.althingi.is/altext/157/s/0465.html"
+   }
+  ],
+  "checked": "2026-11-26"
  }
 ]
