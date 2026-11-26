@@ -716,5 +716,437 @@
    }
   ],
   "checked": "2026-11-26"
+ },
+ {
+  "key": "0356d127b45f",
+  "status": "open",
+  "title": "Vaxtamunur á 50 m. kr. láni",
+  "claim": "meira í hverjum mánuði en það myndi gera af láni með 4% vöxtum.",
+  "speaker": "Ásthildur Lóa Þórsdóttir",
+  "party": "Flokkur fólksins",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T133816.html",
+  "facts": "Útreikningurinn byggir á vaxtastigi sem ekki kemur fram í tilvitnuninni. Ég fann ekki heimild til að staðfesta upphæðina, en talan er af þeirri stærðargráðu sem vaxtamunur af svo háu láni gefur.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "1f2b268f9ae9",
+  "status": "open",
+  "title": "„Rétt um 25% skuldugra heimila bera mestu byrðarnar“",
+  "claim": "Eins og staðan er í dag bera rétt um 25% skuldugra heimila mestu byrðarnar af hávaxtastefnu Seðlabankans.",
+  "speaker": "Ásthildur Lóa Þórsdóttir",
+  "party": "Flokkur fólksins",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T133816.html",
+  "facts": "Ég fann enga greiningu Seðlabankans eða annarra sem setur töluna 25% fram með þessum hætti. Fullyrðingin er því óstaðfest.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "81c29ee55831",
+  "status": "open",
+  "title": "Tryggingafélag: 100 m. inn og 50 m. út",
+  "claim": "Þá setja þau 100 milljónir inn en síðan borga þau út 50 milljónir og þá eru 50 milljónir eftir í sjóðnum.",
+  "speaker": "Guðmundur Ingi Kristinsson",
+  "party": "utan þingflokka",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T134522.html",
+  "facts": "Um er að ræða dæmi þingmannsins um hvernig sjóður gæti þróast, ekki mælanlega staðreynd.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "834397090c0f",
+  "status": "open",
+  "title": "„Verða kannski tífalt það, 500 milljónir“",
+  "claim": "Hvað verður um þessar 50 milljónir síðar, sem verða kannski tífalt það, komnar í 500 milljónir, milljarða?",
+  "speaker": "Guðmundur Ingi Kristinsson",
+  "party": "utan þingflokka",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T134522.html",
+  "facts": "Þetta er spurning og tilgáta um framtíðarþróun og því ekki hægt að sannreyna hana.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "24d45b473221",
+  "status": "ok",
+  "title": "Heildareignir tryggingafélaga 360 milljarðar",
+  "claim": "Jú, vegna þess að heildareignir tryggingafélaganna voru 360 milljarðar í febrúar síðastliðnum.",
+  "speaker": "Guðmundur Ingi Kristinsson",
+  "party": "utan þingflokka",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T134522.html",
+  "facts": "Seðlabankinn birti að heildareignir vátryggingafélaga hefðu numið 361,9 milljörðum króna í lok janúar 2026, sem samræmist 360 milljörðum í febrúar.",
+  "sources": [
+   {
+    "title": "Seðlabankinn: vátryggingafélög í janúar 2026",
+    "url": "https://cb.is/news-and-publications/article/insurance-companies-in-january-2026"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "8f320eff0ed6",
+  "status": "ok",
+  "title": "Fjárlög með 15 milljarða halla",
+  "claim": "Þeir sem hömpuðu sér og börðu sér á brjóst fyrir að skila fjárlögum með aðeins 15 milljarða kr.",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135500.html",
+  "facts": "Í greinargerð með frumvarpi til fjárlaga 2026 var áætlað að afkoma ríkissjóðs yrði neikvæð um rúma 15 milljarða, sem samræmist fullyrðingunni.",
+  "sources": [
+   {
+    "title": "Alþingi: ræða framsögumanns fjárlaga 2026 (2. des. 2025)",
+    "url": "https://www.althingi.is/altext/raeda/157/rad20251202T143152.html"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "5718e227cc13",
+  "status": "open",
+  "title": "„Hallinn verður um 90 milljarðar“",
+  "claim": "halla sitja núna hljóðir þegar fyrir liggur að hallinn verður um 90 milljarðar.",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135500.html",
+  "facts": "Opinberar tölur sem ég fann eru lægri: fjárlög 2025 gerðu ráð fyrir tæplega 63 ma.kr. halla og mat ráðuneytisins í desember 2025 var um 35 ma.kr. Ég fann ekki heimild fyrir 90 milljörðum. Hún gæti átt við aðra mælingu eða annað ár, svo ég flokka þetta sem óstaðfest en ekki rangt.",
+  "sources": [
+   {
+    "title": "Fjármálaráðuneytið: fjárlög 2025 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/11/18/Fjarlog-fyrir-arid-2025-samthykkt-a-Althingi-Aframhaldandi-adhald-sem-stydur-vid-laekkun-verdbolgu/"
+   },
+   {
+    "title": "Fjármálaráðuneytið: uppgjör janúar–september 2025",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/12/Uppgjor-rikissjods-fyrir-januarseptember-2025-Betri-afkomuhorfur-fyrir-arid-i-heild/"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "7c5b9844e8e8",
+  "status": "open",
+  "title": "„Metið að alls hafi 5,5 milljarðar“",
+  "claim": "Það hefur verið metið að alls hafi 5,5 milljarðar kr.",
+  "speaker": "Rósa Guðbjartsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135737.html",
+  "facts": "Tilvitnunin sýnir hvorki hvað er metið né hver mat það. Ég fann enga heimild.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "81cc4cfc770d",
+  "status": "ok",
+  "title": "Austurland: 2,9% landsmanna og fjórðungur vöruútflutnings",
+  "claim": "Samband sveitarfélaga á Austurlandi hefur farið í faglegar greiningar sem sýna glögglega að aðeins um 2,9% landsmanna standa undir um fjórðungi vöruútflutnings hér á landi, sem gerir um 240 milljarða.",
+  "speaker": "Berglind Harpa Svavarsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T140359.html",
+  "facts": "Greining Analytica fyrir SSA sýnir að Austurland standi undir um fjórðungi vöruútflutningstekna þótt þar búi innan við þrjú prósent landsmanna. SSA nefndi 230 milljarða á haustþingi 2025, svo 240 milljarðar eru nærri lagi en ég staðfesti ekki nákvæmlega þá tölu.",
+  "sources": [
+   {
+    "title": "Austurbrú: Efnahagsumsvif Austurlands 2025",
+    "url": "https://austurbru.is/wp-content/uploads/2025/11/Efnahagsumsvif_Austurland_2025.pdf"
+   },
+   {
+    "title": "SSA: fundargerð haustþings 2025",
+    "url": "https://austurbru.is/wp-content/uploads/2025/10/Fundargerd-Haustthing-2025.pdf"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "dea5d52ae9bd",
+  "status": "open",
+  "title": "Austurland: um 30% orkuframleiðslu",
+  "claim": "Orkuframleiðsla á Austurlandi er einnig um 30% af orkuframleiðslu hér á landi og gríðarleg tækifæri til frekari orkuframleiðslu.",
+  "speaker": "Berglind Harpa Svavarsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "19.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T140359.html",
+  "facts": "Kárahnjúkavirkjun (690 MW) var um fjórðungur uppsetts afls landsins árið 2014. Hlutdeild í framleiðslu núna fannst ekki, svo 30% er hvorki staðfest né afsönnuð.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: íslenska raforkukerfið (viðauki)",
+    "url": "https://www.stjornarradid.is/library/RammaaAetlun/Vi%c3%b0auki%2087%20%c3%8dslenska%20raforkukerfi%c3%b0.pdf"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "eb7a4428217c",
+  "status": "open",
+  "title": "„Rúmir 800 milljarðar í uppsafnaðan halla“",
+  "claim": "Margt vel gert, annað flóknara, rúmir 800 milljarðar í uppsafnaðan halla.",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133349.html",
+  "facts": "Stjórnvöld segja ríkissjóð hafa verið rekinn með halla átta ár samfleytt. Ég fann ekki heildarupphæðina 800 milljarðar í opinberu gagni og hún fer eftir því hvaða ár og mælikvarði eru notuð.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: langvinnur hallarekstur stöðvaður (7. sept. 2026)",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/langvinnur-hallarekstur-stodvadur"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "7ec672ad54cb",
+  "status": "open",
+  "title": "„Ríkisstjórnin á sjálf 140 milljarða af 800“",
+  "claim": "en horfist ekki í augu við það að hafa sjálf gefið út 140 milljarða útgjaldaauka um síðustu áramót þannig að af þessum 800 milljörðum á ríkisstjórn Kristrúnar Frostadóttur sjálf 140 milljarða.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html",
+  "facts": "Ég fann enga heimild fyrir 140 milljarða útgjaldaaukanum. Hvort hann er réttur fer eftir því hvernig hann er reiknaður.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "2c1502679175",
+  "status": "open",
+  "title": "„Hallinn sem hún erfði upp á 800 milljarða“",
+  "claim": "Enn mætir hér forsætisráðherra og talar um hallann sem hún hafi erft upp á 800 milljarða kr.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T133613.html",
+  "facts": "Sama tala og áður (800 milljarðar) og hún fannst ekki í opinberu gagni. Um hana er pólitískur ágreiningur og hún fer eftir því hvort átt er við uppsafnaðan halla eða skuldaaukningu.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: langvinnur hallarekstur stöðvaður (7. sept. 2026)",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/langvinnur-hallarekstur-stodvadur"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "fd1516d84762",
+  "status": "open",
+  "title": "Atvinnuleysi „um 2,5% meðal Íslendinga“",
+  "claim": "Það er um 2,5% á meðal Íslendinga hér á landi þannig að þrátt fyrir að staðan sé erfið er hún, miðað við það sem við sjáum í mörgum öðrum löndum, ekki skelfileg en auðvitað verðum við að passa upp á þessa einstaklinga.",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T134146.html",
+  "facts": "Skráð atvinnuleysi allra var 4,0% í júní 2026. Talan 2,5% gæti átt við Íslendinga eingöngu, en ég fann ekki sundurliðun sem staðfestir hana.",
+  "sources": [
+   {
+    "title": "Vinnumálastofnun: skráð atvinnuleysi í júní 2026",
+    "url": "https://island.is/s/vinnumalastofnun?wa_lid=t10"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "5bec4923a3c3",
+  "status": "open",
+  "title": "25 klst. vinnuframlag á viku fyrir 60% starf",
+  "claim": "á mánuði og var krafan um vinnuframlag einungis 25 klukkustundir á viku, sem ég verð að segja að er ansi góður díll fyrir 60% starf en hins vegar ekki alveg nógu góður að mati hæstv.",
+  "speaker": "Ólafur Adolfsson",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T134643.html",
+  "facts": "Tilvitnunin segir hvorki um hvaða starf eða samning er að ræða. Ég fann enga heimild.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "05437a1c91de",
+  "status": "open",
+  "title": "Umsjón 5,3% pottsins",
+  "claim": "Fyrir ekki löngu síðan voru málefni 5,3% pottsins, byggðahluta aflamarkskerfisins, í umsjón og verkahring hæstv.",
+  "speaker": "Bergþór Ólason",
+  "party": "Miðflokkurinn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T135313.html",
+  "facts": "Fullyrðingin er um hver fór með málaflokkinn og snýr fremur að stjórnsýslu en tölum. Ekki sannreynt.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "2e75661ab730",
+  "status": "open",
+  "title": "„5,3% potturinn liggur vel við markmiðum Byggðastofnunar“",
+  "claim": "Það eru náttúrlega ákveðin markmið, þessi 5,3% pottur liggur einmitt mjög vel við almennum markmiðum Byggðastofnunar og þar undir er auðvitað sértæki byggðakvótinn.",
+  "speaker": "Hanna Katrín Friðriksson",
+  "party": "Viðreisn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T135541.html",
+  "facts": "Þetta er mat ráðherra á samræmi við markmið, ekki mælanleg staðreynd.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "e4bf65007567",
+  "status": "open",
+  "title": "Samningar um breytt eignarhald á „viðkvæmum tíma“",
+  "claim": "ráðherra muni aðstoða við og hvetja til raunar og styðja við með öllum tiltækum ráðum undirstofnanir sínar, að skoðaðir verði þeir samningar um breytt eignarhald sem gerðir voru á þessum viðkvæma tíma í tengslum við endurskipulagningu hluta 5,3% pottsins.",
+  "speaker": "Bergþór Ólason",
+  "party": "Miðflokkurinn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T135728.html",
+  "facts": "Þetta er skoðun og lýsing á tímasetningu, ekki mælanleg fullyrðing.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "e544f0cbfbc5",
+  "status": "open",
+  "title": "Land á íbúa 28 sinnum meira en ESB; þjóðlendur ígildi Danmerkur",
+  "claim": "Við eigum 28 sinnum meira land á hvern íbúa en að meðaltali innan Evrópusambandsins og ef við horfum á þjóðlendurnar einar og sér, sem eru 40% af Íslandi, eru þær álíka stórt svæði og þjóðríkið Danmörk.",
+  "speaker": "Halla Hrund Logadóttir",
+  "party": "Framsókn",
+  "date": "23.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261123T135945.html",
+  "facts": "Danmörk er 43.094 km² og Ísland um 103.000 km², svo 40% af Íslandi (um 41.000 km²) er nærri flatarmáli Danmerkur. Ég staðfesti hvorki að þjóðlendur séu 40% né tölu ESB í leitinni.",
+  "sources": [
+   {
+    "title": "Wikipedia: Geography of Denmark",
+    "url": "https://en.wikipedia.com/wiki/Geography_of_Denmark"
+   },
+   {
+    "title": "Vísindavefurinn: flatarmál Íslands",
+    "url": "https://www.visindavefur.is/svar.php?id=14349"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "8386b267a3d2",
+  "status": "ok",
+  "title": "Verktaki: samanlögð skattprósenta 37,6%",
+  "claim": "Með því að ráða Heiðu Kristínu sem verktaka er skattprósentan samtals 37,6% í stað þeirrar hefðbundnu sem gildir.",
+  "speaker": "Jens Garðar Helgason",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "24.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T133126.html",
+  "facts": "Skatturinn birtir 20% tekjuskatt félaga og 22% skatt á arð. Samanlagt gera þau 37,6% (20% + 22% af þeim 80% sem eftir eru). Talan stenst því ef átt er við einkahlutafélag sem greiðir arð.",
+  "sources": [
+   {
+    "title": "Skatturinn: forsendur álagningar 2026",
+    "url": "https://www.skatturinn.is/atvinnurekstur/framtal-og-alagning/alagningarsedill-og-forsendur/2026/"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "2fc7232e0638",
+  "status": "open",
+  "title": "Bandormur 2: 450 milljónir úr tekjulágum einstaklingum",
+  "claim": "Þá er enn eitt skattahækkunarfrumvarp ríkisstjórnarinnar, svonefndur bandormur 2, einnig nýkomið inn en þar á að kreista 450 milljónir út úr einstaklingum sem dettur í hug að afla sér tekna sem ná ekki 2 millj.",
+  "speaker": "Karl Gauti Hjaltason",
+  "party": "Miðflokkurinn",
+  "date": "24.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261124T135413.html",
+  "facts": "Ég fann ekki matið á tekjuáhrifum sem vísað er í. Fullyrðingin er óstaðfest.",
+  "sources": [],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "4a0e81cb4df7",
+  "status": "ok",
+  "title": "2,3 milljónir ferðamanna",
+  "claim": "Og hvernig á að fá allar þær 2,3 milljónir ferðamanna sem hingað koma til landsins, sem flestir fara Gullna hringinn, til að hlaða niður smáforriti til að geta greitt þetta gjald?",
+  "speaker": "Rósa Guðbjartsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T133536.html",
+  "facts": "Ferðamálastofa mælir 2.267.638 brottfarir erlendra farþega um Keflavíkurflugvöll árið 2025, sem samræmist 2,3 milljónum.",
+  "sources": [
+   {
+    "title": "Ferðamálastofa: ferðaþjónusta í tölum, janúar 2026",
+    "url": "https://www.ferdamalastofa.is/static/files/ferdamalastofa/talnaefni/ferdatjonusta-i-tolum/2026/jan/januar-2026.pdf"
+   },
+   {
+    "title": "Isavia: 8 milljónir gesta 2025",
+    "url": "https://file.kefairport.is/news/8-million-guests-in-2025"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "df57f6334508",
+  "status": "open",
+  "title": "Tollverðir í Keflavík 63 → 42",
+  "claim": "Tollvörðum á landamærunum í Keflavík hefur fækkað úr því að vera 63 árið 2019 í 42 nú eða um þriðjung.",
+  "speaker": "Karl Gauti Hjaltason",
+  "party": "Miðflokkurinn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T134658.html",
+  "facts": "Í svari ráðherra voru tollverðir í Keflavík 58 árið 2019 en ekki 63. Munurinn gæti stafað af ólíkri talningu. Formaður Tollvarðafélagsins staðfestir fækkun á landsvísu úr 124 í 93, en 42 í Keflavík fannst ekki.",
+  "sources": [
+   {
+    "title": "Alþingi: svar um fjölda tollvarða 2011–2021",
+    "url": "https://www.althingi.is/altext/152/s/0922.html"
+   },
+   {
+    "title": "Mbl.is: tollvörðum fækkað úr 124 í 93",
+    "url": "https://www.mbl.is/frettir/innlent/2026/11/02/212_kilo_af_kokaini_rum_tvofoldun/"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "dcf86521c655",
+  "status": "open",
+  "title": "95% koma inn um Keflavík, yfir 2,5 milljónir árlega",
+  "claim": "Þar koma 95% af þeim sem inn í landið koma, yfir 2,5 milljónir manns árlega.",
+  "speaker": "Karl Gauti Hjaltason",
+  "party": "Miðflokkurinn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T134658.html",
+  "facts": "Um 2,25 milljónir erlendra ferðamanna fóru um Keflavík árið 2025 og við bætast Íslendingar. Hlutfallið 95% fannst ekki, svo tölurnar eru óstaðfestar.",
+  "sources": [
+   {
+    "title": "Isavia: 8 milljónir gesta 2025",
+    "url": "https://file.kefairport.is/news/8-million-guests-in-2025"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "8954a2ea5448",
+  "status": "open",
+  "title": "Þingeyri: börnum +46%, íbúum +7,8%",
+  "claim": "Góð umræða hefur skapast um byggðamál á vestfirska miðlinum bb.is síðustu daga í kjölfar jákvæðra tíðinda frá Þingeyri, en grunnskólabörnum þar hefur fjölgað um 46% og íbúum hefur fjölgað um 7,8% á milli áranna 2025 og 2026.",
+  "speaker": "Arna Lára Jónsdóttir",
+  "party": "Samfylkingin",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T135607.html",
+  "facts": "Bæjarins besta greindi frá 46% fjölgun grunnskólanema, úr 37 í vor í 54, en það er innan eins árs frá vori til hausts. Íbúar voru 289 í ársbyrjun 2026. Ég fann ekki íbúafjöldann 2025 og gat því ekki staðfest 7,8%.",
+  "sources": [
+   {
+    "title": "Bæjarins besta: Þingeyri, nærri helmingsfjölgun nemenda",
+    "url": "https://bb.is/2026/11/thingeyri-naerri-helmingsfjolgun-nemenda/"
+   },
+   {
+    "title": "Bæjarins besta: Byggðastefna er atvinna",
+    "url": "https://bb.is/2026/11/byggdastefna-er-atvinna/"
+   }
+  ],
+  "checked": "2026-11-26"
+ },
+ {
+  "key": "1c62ee969a0b",
+  "status": "open",
+  "title": "„Þetta er veruleikinn í velferðarsamfélaginu 2026“",
+  "claim": "Þetta er veruleikinn í okkar velferðarsamfélagi árið 2026.",
+  "speaker": "Ingibjörg Isaksen",
+  "party": "Framsókn",
+  "date": "25.11.2026",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261125T140037.html",
+  "facts": "Þetta er mat og áhersla en ekki mælanleg fullyrðing.",
+  "sources": [],
+  "checked": "2026-11-26"
  }
 ]
