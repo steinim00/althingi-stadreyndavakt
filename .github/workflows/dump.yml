@@ -1,0 +1,24 @@
+name: Sækja ræður til yfirlestrar
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python -m src.dump
+      - name: Vista á sérgrein (ekki main)
+        run: |
+          git config user.name "staðreyndavakt-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b speech-dump
+          git add -f data/dump
+          git commit -m "Ræður til yfirlestrar" || exit 0
+          git push -f origin speech-dump
