@@ -55,7 +55,7 @@ def _speech_block(f: dict, extra_class: str = "") -> str:
         f'  <div class="cite{extra_class}">\n'
         f'    <p class="cite-h">Úr ræðu</p>\n'
         f'    <blockquote>„{E(f["claim"])}“</blockquote>\n'
-        f'    <p class="cite-l">{E(f["speaker"])}, {E(f["party"])}, {E(_pretty(f["date"]))} · {link}</p>\n'
+        f'    <p class="cite-l"><strong>{E(f["speaker"])}</strong>, {E(f["party"])}, {E(_pretty(f["date"]))} · {link}</p>\n'
         f"  </div>"
     )
 

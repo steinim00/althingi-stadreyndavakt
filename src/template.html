@@ -95,7 +95,9 @@ header p { margin: 0; color: var(--muted); max-width: 62ch; }
 }
 .tile b { display: block; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .tile span { font-size: 14px; color: var(--muted); }
-.tile.wrong { border-left-color: var(--wrong); }
+.tile.wrong { border: 5px solid var(--wrong); }
+.card[data-s="wrong"] { border: 5px solid var(--wrong); }
+.cite-l strong { color: var(--ink); font-weight: 800; }
 .tile.open { border-left-color: var(--open); }
 .tile.ok { border-left-color: var(--ok); }
 .tile.new { border-left-color: var(--muted); }
