@@ -55,7 +55,7 @@ def _speech_block(f: dict, extra_class: str = "") -> str:
         f'  <div class="cite{extra_class}">\n'
         f'    <p class="cite-h">Úr ræðu</p>\n'
         f'    <blockquote>„{E(f["claim"])}“</blockquote>\n'
-        f'    <p class="cite-l"><strong>{E(f["speaker"])}</strong>, {E(f["party"])}, {E(_pretty(f["date"]))} · {link}</p>\n'
+        f'    <p class="cite-l">Ræða {E(_pretty(f["date"]))} · {link}</p>\n'
         f"  </div>"
     )
 
@@ -71,7 +71,9 @@ def card(f: dict) -> str:
     return (
         f'<article class="card" data-s="{f["status"]}">\n'
         f'  <span class="pill {f["status"]}">{pill}</span>\n'
-        f'  <h3>{E(f["title"])}</h3>\n'
+        f'  <h3>{E(f["speaker"])}</h3>\n'
+        f'  <p class="who">{E(f["party"])} · {E(_pretty(f["date"]))}</p>\n'
+        f'  <p class="topic">{E(f["title"])}</p>\n'
         f'{_speech_block(f)}\n'
         f'  <p class="facts"><strong>Niðurstaða:</strong> {E(f["facts"])}</p>\n'
         f"{srcs}\n</article>"
@@ -124,7 +126,7 @@ def render(root: Path) -> None:
         for c in sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:60]:
             cards.append(
                 '<article class="card" data-s="new">\n  <span class="pill new">Óyfirfarið</span>\n'
-                f'  <p class="who">{E(c["speaker"])}, {E(c["party"])} · {E(_pretty(c["date"]))}</p>\n'
+                f'  <h3>{E(c["speaker"])}</h3>\n  <p class="who">{E(c["party"])} · {E(_pretty(c["date"]))}</p>\n'
                 f'{_speech_block({**c, "speaker": c["speaker"], "party": c["party"]})}\n</article>'
             )
 

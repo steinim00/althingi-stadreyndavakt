@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Staðreyndavakt Alþingis</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a5f'/%3E%3Cpath d='M16 34l12 12 22-26' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
@@ -140,7 +142,9 @@ h2 {
   padding: 16px 18px;
   margin: 0 0 14px;
 }
-.card h3 { font-size: 18px; margin: 0 0 4px; line-height: 1.3; }
+.card h3 { font-size: 22px; font-weight: 800; margin: 6px 0 2px; line-height: 1.25; }
+.card .who { margin: 0 0 8px; font-size: 15px; color: var(--muted); }
+.card .topic { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--ink); }
 .who { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
 .card p { margin: 0 0 10px; }
 .card p:last-child { margin-bottom: 0; }
@@ -218,11 +222,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="wrong">
   <span class="pill wrong">Líklega rangt</span>
-  <h3>Vextir „enn 1% lægri“ en við valdatöku</h3>
+  <h3>Þorgerður Katrín Gunnarsdóttir</h3>
+  <p class="who">Viðreisn · 18. nóvember</p>
+  <p class="topic">Vextir „enn 1% lægri“ en við valdatöku</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.“</blockquote>
-    <p class="cite-l"><strong>Þorgerður Katrín Gunnarsdóttir</strong>, Viðreisn, 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T133419.html#:~:text=Vi%C3%B0%20erum%20enn%20me%C3%B0%201%25%20l%C3%A6gri">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T133419.html#:~:text=Vi%C3%B0%20erum%20enn%20me%C3%B0%201%25%20l%C3%A6gri">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Stýrivextir eru 8% eftir ákvörðun 18. nóvember. Þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. Munurinn er 0,5 prósentustig. Miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.</p>
   <div class="cite src">
@@ -233,11 +239,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="wrong">
   <span class="pill wrong">Líklega rangt</span>
-  <h3>Halli ársins 2026 „úr 28 milljörðum í 90“</h3>
+  <h3>Stefán Vagn Stefánsson</h3>
+  <p class="who">Framsókn · 18. nóvember</p>
+  <p class="topic">Halli ársins 2026 „úr 28 milljörðum í 90“</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.“</blockquote>
-    <p class="cite-l"><strong>Stefán Vagn Stefánsson</strong>, Framsókn, 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T134815.html#:~:text=Hallinn%20%C3%A1%20fj%C3%A1rl%C3%B6gum%20fyrir%20%C3%A1ri%C3%B0%202026">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T134815.html#:~:text=Hallinn%20%C3%A1%20fj%C3%A1rl%C3%B6gum%20fyrir%20%C3%A1ri%C3%B0%202026">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki.</p>
   <div class="cite src">
@@ -251,11 +259,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Bætur hækka um 7,3% í stað 4%</h3>
+  <h3>Sigurjón Þórðarson</h3>
+  <p class="who">Flokkur fólksins · 24. nóvember</p>
+  <p class="topic">Bætur hækka um 7,3% í stað 4%</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.“</blockquote>
-    <p class="cite-l"><strong>Sigurjón Þórðarson</strong>, Flokkur fólksins, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133814.html#:~:text=%C3%9Eessi%20mikilv%C3%A6ga%20breyting%20felur%20%C3%AD%20s%C3%A9r">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133814.html#:~:text=%C3%9Eessi%20mikilv%C3%A6ga%20breyting%20felur%20%C3%AD%20s%C3%A9r">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Lög frá mars 2026 binda hækkun almannatrygginga við launavísitölu frá 1. janúar 2027 (þó aldrei minna en verðlag). Talan 7,3% og samanburðurinn við 4% fundust ekki í fjárlagagögnum. Óstaðfest.</p>
   <div class="cite src">
@@ -266,11 +276,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Ríkisendurskoðun „tvívegis, 2021 og 2023“ um sameiningu menningarstofnana</h3>
+  <h3>Gunnar Guðjónsson</h3>
+  <p class="who">Viðreisn · 24. nóvember</p>
+  <p class="topic">Ríkisendurskoðun „tvívegis, 2021 og 2023“ um sameiningu menningarstofnana</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.“</blockquote>
-    <p class="cite-l"><strong>Gunnar Guðjónsson</strong>, Viðreisn, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T134519.html#:~:text=R%C3%ADkisendursko%C3%B0un%20hefur%20tv%C3%ADvegis%2C%20%C3%A1ri%C3%B0%202021%20og">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T134519.html#:~:text=R%C3%ADkisendursko%C3%B0un%20hefur%20tv%C3%ADvegis%2C%20%C3%A1ri%C3%B0%202021%20og">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Skýrsla Ríkisendurskoðunar um stofnanir ríkisins frá desember 2021 og eftirfylgniskýrsla í október 2026 nefna tækifæri til að sameina stofnanir í menningarmálum. Skýrsla frá 2023 fannst um Sinfóníuhljómsveitina en ekki hvort hún hvetji til sameiningar. Því aðeins hluti staðfestur.</p>
   <div class="cite src">
@@ -281,11 +293,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Atkvæði hjá UN Women: „39:1“ og „Arabalöndin greiddu með“</h3>
+  <h3>Sigmundur Ernir Rúnarsson</h3>
+  <p class="who">Samfylkingin · 24. nóvember</p>
+  <p class="topic">Atkvæði hjá UN Women: „39:1“ og „Arabalöndin greiddu með“</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þau fóru 39:1. Hvert var þetta eina ríki? Bandaríkin sem banna orðið kynjajafnrétti í dag. Arabalöndin greiddu atkvæði með kynjajafnrétti en ekki Bandaríkin.“</blockquote>
-    <p class="cite-l"><strong>Sigmundur Ernir Rúnarsson</strong>, Samfylkingin, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T140326.html#:~:text=%C3%9Eau%20f%C3%B3ru%2039%3A1.%20Hvert%20var%20%C3%BEetta">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T140326.html#:~:text=%C3%9Eau%20f%C3%B3ru%2039%3A1.%20Hvert%20var%20%C3%BEetta">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Bandaríkin voru ein á móti í atkvæðagreiðslu í kvennanefnd Sameinuðu þjóðanna (CSW) í mars 2026, sem var í fyrsta sinn sem greidd voru atkvæði um samþykktina. Þar voru 37 með, ekki 39, og sex sátu hjá, þar á meðal Egyptaland og Sádi-Arabía, svo „Arabalöndin greiddu með“ stenst ekki fyrir þá atkvæðagreiðslu. Það er óvíst hvort hann á við þessa atkvæðagreiðslu eða aðra hjá UN Women, og atkvæðagreiðslan var um niðurstöður nefndarinnar, ekki um orðið „kynjajafnrétti“ sérstaklega. Ósamræmið er nægilegt til að tölurnar teljist óstaðfestar.</p>
   <div class="cite src">
@@ -296,11 +310,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>„Nýr samgöngusáttmáli samþykktur fyrir einu ári síðan“</h3>
+  <h3>Árni Rúnar Þorvaldsson</h3>
+  <p class="who">Samfylkingin · 24. nóvember</p>
+  <p class="topic">„Nýr samgöngusáttmáli samþykktur fyrir einu ári síðan“</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„nýr samgöngusáttmáli samþykktur hér fyrir einu ári síðan eða svo, sá fyrsti síðan 2020“</blockquote>
-    <p class="cite-l"><strong>Árni Rúnar Þorvaldsson</strong>, Samfylkingin, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T140059.html#:~:text=n%C3%BDr%20samg%C3%B6ngus%C3%A1ttm%C3%A1li%20sam%C3%BEykktur%20h%C3%A9r%20fyrir%20einu">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T140059.html#:~:text=n%C3%BDr%20samg%C3%B6ngus%C3%A1ttm%C3%A1li%20sam%C3%BEykktur%20h%C3%A9r%20fyrir%20einu">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Uppfærður samgöngusáttmáli var undirritaður 21. ágúst 2024, rúmlega tveimur árum fyrr, og sá fyrsti 26. september 2019. Hann sagði sjálfur 19. nóvember að uppfærslan væri „fyrir tveimur árum“. Mögulegt er að hann eigi við samgönguáætlun, sem ég athugaði ekki. Þess vegna óstaðfest.</p>
   <div class="cite src">
@@ -311,11 +327,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Atvinnuleysi „um 4,3%“</h3>
+  <h3>Kristrún Frostadóttir</h3>
+  <p class="who">Samfylkingin · 23. nóvember</p>
+  <p class="topic">Atvinnuleysi „um 4,3%“</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.“</blockquote>
-    <p class="cite-l"><strong>Kristrún Frostadóttir</strong>, Samfylkingin, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=E%C3%B0li%20m%C3%A1lsins%20samkv%C3%A6mt%20felur%20%C3%BEa%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=E%C3%B0li%20m%C3%A1lsins%20samkv%C3%A6mt%20felur%20%C3%BEa%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Vinnumálastofnun mældi skráð atvinnuleysi 4,0% í september 2026. Október-talan fannst ekki. Vinnumarkaðskönnun Hagstofunnar sýnir hærri tölur (árstíðaleiðrétt 5,7% í september), svo talan fer eftir mælikvarða. Ekki hægt að segja til um hvort 4,3% sé rétt.</p>
   <div class="cite src">
@@ -326,11 +344,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>„0% hagvöxtur á mann í sjö til átta ár“</h3>
+  <h3>Kristrún Frostadóttir</h3>
+  <p class="who">Samfylkingin · 23. nóvember</p>
+  <p class="topic">„0% hagvöxtur á mann í sjö til átta ár“</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.“</blockquote>
-    <p class="cite-l"><strong>Kristrún Frostadóttir</strong>, Samfylkingin, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=Var%C3%B0andi%20ofk%C3%A6lingu%20ver%C3%B0%20%C3%A9g%20a%C3%B0%20segja">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=Var%C3%B0andi%20ofk%C3%A6lingu%20ver%C3%B0%20%C3%A9g%20a%C3%B0%20segja">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Ég fann engin gögn sem staðfesta eða hrekja þetta. Mat á hagvexti á mann fer eftir því hvaða tímabil og mælikvarði er notaður. Óstaðfest.</p>
   <div class="cite src">
@@ -341,11 +361,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Skatttekjur „undir 24%“ og samanburður við 2013–2016</h3>
+  <h3>Þorgerður Katrín Gunnarsdóttir</h3>
+  <p class="who">Viðreisn · 18. nóvember</p>
+  <p class="topic">Skatttekjur „undir 24%“ og samanburður við 2013–2016</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Skatttekjur eru að fara undir 24% af landsframleiðslu á næsta ári. Árin 2013–2016 voru þær 27, 28 og 29%.“</blockquote>
-    <p class="cite-l"><strong>Þorgerður Katrín Gunnarsdóttir</strong>, Viðreisn, 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T133419.html#:~:text=Skatttekjur%20eru%20a%C3%B0%20fara%20undir%2024%25">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T133419.html#:~:text=Skatttekjur%20eru%20a%C3%B0%20fara%20undir%2024%25">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Fjármálaráðuneytið segir skatta og tryggingagjöld ríkissjóðs 27,0% af landsframleiðslu 2027. Ef tryggingagjöld eru undanskilin gæti 24% staðist, en þá gæti samanburðurinn við fyrri ár notað aðra skilgreiningu. Tölurnar frá 2013–2016 fundust ekki.</p>
   <div class="cite src">
@@ -356,11 +378,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Hlutdeild strætó 5% samkvæmt ferðavenjum 2025</h3>
+  <h3>Guðlaugur Þór Þórðarson</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 16. nóvember</p>
+  <p class="topic">Hlutdeild strætó 5% samkvæmt ferðavenjum 2025</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Samkvæmt ferðavenjum 2025 nýtir enn aðeins 5% fólks strætó.“</blockquote>
-    <p class="cite-l"><strong>Guðlaugur Þór Þórðarson</strong>, Sjálfstæðisflokkurinn, 16. nóvember · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261116T142021.html">ræða 1</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261116T142441.html">ræða 2</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261116T150004.html">ræða 3</a></p>
+    <p class="cite-l">Ræða 16. nóvember · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261116T142021.html">ræða 1</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261116T142441.html">ræða 2</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261116T150004.html">ræða 3</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Talan fannst ekki í niðurstöðum könnunarinnar sem birtust í júlí 2026. Þar kemur fram að um 41% landsmanna greiddu fyrir strætóferð haustið 2025, en það er annar mælikvarði en hlutdeild í ferðum.</p>
   <div class="cite src">
@@ -371,11 +395,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Endurmat Hafró á þorskstofni 2019</h3>
+  <h3>Sigurjón Þórðarson</h3>
+  <p class="who">Flokkur fólksins · 10. nóvember</p>
+  <p class="topic">Endurmat Hafró á þorskstofni 2019</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Samkvæmt þingskjölum telur Hafró þorskstofninn hafa verið 270.000 tonnum minni árið 2019 en hann var mældur.“</blockquote>
-    <p class="cite-l"><strong>Sigurjón Þórðarson</strong>, Flokkur fólksins, 10. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261110T133648.html#:~:text=Samkv%C3%A6mt%20%C3%BEingskj%C3%B6lum%20telur%20Hafr%C3%B3%20%C3%BEorskstofninn%20hafa">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 10. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261110T133648.html#:~:text=Samkv%C3%A6mt%20%C3%BEingskj%C3%B6lum%20telur%20Hafr%C3%B3%20%C3%BEorskstofninn%20hafa">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Hvorki þingskjalið né önnur heimild fannst. Stofnmat Hafró 2019 gaf ráðgjöf upp á 272.411 tonn, sem er ekki sama stærð. Nákvæmasta leiðin er að spyrja Hafró eða atvinnuveganefnd.</p>
   <div class="cite src">
@@ -386,11 +412,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="open">
   <span class="pill open">Óstaðfest</span>
-  <h3>Mat á Sundabraut: 130 milljarðar nefndir af ráðherra</h3>
+  <h3>Bergþór Ólason</h3>
+  <p class="who">Miðflokkurinn · nóvember 2026</p>
+  <p class="topic">Mat á Sundabraut: 130 milljarðar nefndir af ráðherra</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Mat á Sundabraut og Hvalfjarðargöngum fór úr 130 í 200 milljarða á fimm mánuðum og ráðherra nefndi 130.“</blockquote>
-    <p class="cite-l"><strong>Bergþór Ólason</strong>, Miðflokkurinn, nóvember 2026 · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261103T133809.html">ræða 1</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261103T135108.html">ræða 2</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261104T155533.html">ræða 3</a></p>
+    <p class="cite-l">Ræða nóvember 2026 · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261103T133809.html">ræða 1</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261103T135108.html">ræða 2</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261104T155533.html">ræða 3</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Ráðherra neitaði að hafa nefnt töluna. Ekki fannst hver nefndi 130 fyrst. Eyjólfur Ármannsson sagði að enginn gæti kostnaðarmetið verkið fyrr en ljóst væri hvort það yrðu göng eða brú.</p>
   <div class="cite src">
@@ -404,11 +432,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Stofnun atvinnuveganna tekur til starfa um áramót</h3>
+  <h3>Pawel Bartoszek</h3>
+  <p class="who">Viðreisn · 24. nóvember</p>
+  <p class="topic">Stofnun atvinnuveganna tekur til starfa um áramót</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Um áramótin tekur t.d. til starfa ný Stofnun atvinnuveganna. Þar verða Fiskistofa, Matvælastofnun og Verðlagsstofa skiptaverðs sameinaðar í eina stofnun auk þess sem verkefni flytjast frá heilbrigðiseftirlitum sveitarfélaga.“</blockquote>
-    <p class="cite-l"><strong>Pawel Bartoszek</strong>, Viðreisn, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T135649.html#:~:text=Um%20%C3%A1ram%C3%B3tin%20tekur%20t.d.%20til%20starfa">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T135649.html#:~:text=Um%20%C3%A1ram%C3%B3tin%20tekur%20t.d.%20til%20starfa">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Lög nr. 85/2026 taka gildi 1. janúar 2027 og leggja niður Matvælastofnun, Fiskistofu og Verðlagsstofu skiptaverðs. Matvælaeftirlit heilbrigðisnefnda sveitarfélaga flyst til nýju stofnunarinnar. Fullyrðingar um sýslumannsembætti og afstöðu stjórnarandstöðunnar í sömu ræðu voru ekki prófaðar.</p>
   <div class="cite src">
@@ -419,11 +449,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Yfirlýsing um stafrænt fullveldi 6. nóvember</h3>
+  <h3>Dagbjört Hákonardóttir</h3>
+  <p class="who">Samfylkingin · 24. nóvember</p>
+  <p class="topic">Yfirlýsing um stafrænt fullveldi 6. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þann 6. nóvember sl. samþykktu ráðherrar Norðurlandanna og Eystrasaltsríkjanna sameiginlega yfirlýsingu um að styrkja einmitt þetta, stafrænt fullveldi“</blockquote>
-    <p class="cite-l"><strong>Dagbjört Hákonardóttir</strong>, Samfylkingin, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T134722.html#:~:text=%C3%9Eann%206.%20n%C3%B3vember%20sl.%20sam%C3%BEykktu%20r%C3%A1%C3%B0herrar">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T134722.html#:~:text=%C3%9Eann%206.%20n%C3%B3vember%20sl.%20sam%C3%BEykktu%20r%C3%A1%C3%B0herrar">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Norrænir og baltneskir ráðherrar stafvæðingar samþykktu sameiginlega yfirlýsingu um stafrænt fullveldi á fundi í Kaupmannahöfn 6. nóvember 2026. Seinni hluti setningarinnar, um stefnumótun á Norðurlandaráðsþingi í Helsinki, var ekki prófaður.</p>
   <div class="cite src">
@@ -434,11 +466,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Stýrivextir 8% og verðbólga 5,9%</h3>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <p class="topic">Stýrivextir 8% og verðbólga 5,9%</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133124.html#:~:text=N%C3%BA%20t%C3%A6pum%20tveimur%20%C3%A1rum%20s%C3%AD%C3%B0ar%20eru">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133124.html#:~:text=N%C3%BA%20t%C3%A6pum%20tveimur%20%C3%A1rum%20s%C3%AD%C3%B0ar%20eru">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Seðlabankinn hélt stýrivöxtum óbreyttum í 8% 18. nóvember 2026. Verðbólga var 5,9% í október. Hvort tvennt stenst.</p>
   <div class="cite src">
@@ -449,11 +483,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Covid kostaði yfir 300 milljarða</h3>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <p class="topic">Covid kostaði yfir 300 milljarða</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=Af%20%C3%BEessum%20800%20millj%C3%B6r%C3%B0um%20eru%20l%C3%ADka">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=Af%20%C3%BEessum%20800%20millj%C3%B6r%C3%B0um%20eru%20l%C3%ADka">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Fjármálaráðuneytið mat að af 450 milljörðum í mótvægisaðgerðir hafi um 320 milljarðar haft bein áhrif á afkomu ríkissjóðs. Það samræmist „yfir 300 milljörðum“, en tölur eru breytilegar eftir því hvernig er talið (aðrar áætlanir nefna hátt í 300). Hvort allur uppsafnaði hallinn sé 800 milljarðar var ekki prófað.</p>
   <div class="cite src">
@@ -464,11 +500,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Verðbólga 5,9%</h3>
+  <h3>Stefán Vagn Stefánsson</h3>
+  <p class="who">Framsókn · 19. nóvember</p>
+  <p class="topic">Verðbólga 5,9%</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.“</blockquote>
-    <p class="cite-l"><strong>Stefán Vagn Stefánsson</strong>, Framsókn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=Ver%C3%B0b%C3%B3lgan%20er%205%2C9%25%2C%20h%C3%BAn%20var%204%2C8%25">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=Ver%C3%B0b%C3%B3lgan%20er%205%2C9%25%2C%20h%C3%BAn%20var%204%2C8%25">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Árstaktur verðbólgu var 5,9% í október 2026 samkvæmt Hagstofunni (óbreytt frá september). Seinni hluti fullyrðingarinnar, að hún hafi verið 4,8% við valdatöku, var ekki flettur upp sérstaklega.</p>
   <div class="cite src">
@@ -479,11 +517,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Samgöngusáttmáli 2019 og uppfærsla fyrir tveimur árum</h3>
+  <h3>Árni Rúnar Þorvaldsson</h3>
+  <p class="who">Samfylkingin · 19. nóvember</p>
+  <p class="topic">Samgöngusáttmáli 2019 og uppfærsla fyrir tveimur árum</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.“</blockquote>
-    <p class="cite-l"><strong>Árni Rúnar Þorvaldsson</strong>, Samfylkingin, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134950.html#:~:text=%C3%9Eess%20vegna%20voru%20%C3%BEa%C3%B0%20mikil%20t%C3%ADmam%C3%B3t">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134950.html#:~:text=%C3%9Eess%20vegna%20voru%20%C3%BEa%C3%B0%20mikil%20t%C3%ADmam%C3%B3t">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Sáttmálinn var fyrst undirritaður 26. september 2019 og uppfærður 21. ágúst 2024 af ríkinu og sex sveitarfélögum (Garðabæ, Hafnarfirði, Kópavogi, Mosfellsbæ, Reykjavík og Seltjarnarnesi). Það stenst.</p>
   <div class="cite src">
@@ -494,11 +534,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Hæstiréttur og ESA um bókun 35</h3>
+  <h3>Gunnar Guðjónsson</h3>
+  <p class="who">Viðreisn · 19. nóvember</p>
+  <p class="topic">Hæstiréttur og ESA um bókun 35</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Hæstiréttur hefur sagt okkur að innleiðingin sé ekki fullnægjandi. Eftirlitsstofnun EFTA hefur nú höfðað mál gegn Íslandi fyrir EFTA-dómstólnum.“</blockquote>
-    <p class="cite-l"><strong>Gunnar Guðjónsson</strong>, Viðreisn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T133141.html#:~:text=H%C3%A6stir%C3%A9ttur%20hefur%20sagt%20okkur%20a%C3%B0%20innlei%C3%B0ingin">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T133141.html#:~:text=H%C3%A6stir%C3%A9ttur%20hefur%20sagt%20okkur%20a%C3%B0%20innlei%C3%B0ingin">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Utanríkisráðuneytið segir að Hæstiréttur hafi komist að því að innleiðing bókunar 35 hafi ekki verið fullnægjandi. ESA stefndi Íslandi fyrir EFTA-dómstólinn 30. september 2026. Fullyrðingar í sömu ræðu um Noreg og um hvenær frumvarpið var fyrst lagt fram voru ekki prófaðar.</p>
   <div class="cite src">
@@ -509,11 +551,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Brottvísunarstöð í Rúanda 2027</h3>
+  <h3>Snorri Másson</h3>
+  <p class="who">Miðflokkurinn · 18. nóvember</p>
+  <p class="topic">Brottvísunarstöð í Rúanda 2027</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Austurríki, Danmörk, Holland, Þýskaland og Grikkland ætla í sameiningu að opna fyrstu brottvísunarstöðina í Rúanda árið 2027.“</blockquote>
-    <p class="cite-l"><strong>Snorri Másson</strong>, Miðflokkurinn, 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T140418.html#:~:text=Austurr%C3%ADki%2C%20Danm%C3%B6rk%2C%20Holland%2C%20%C3%9E%C3%BDskaland%20og%20Grikkland">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T140418.html#:~:text=Austurr%C3%ADki%2C%20Danm%C3%B6rk%2C%20Holland%2C%20%C3%9E%C3%BDskaland%20og%20Grikkland">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Ríkin fimm kynntu áformin 16. nóvember og stefna á flutninga 2027. Samningur er ekki undirritaður.</p>
   <div class="cite src">
@@ -524,11 +568,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Stýrivextir 8% og verðbólga tæp 6%</h3>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 18. nóvember</p>
+  <p class="topic">Stýrivextir 8% og verðbólga tæp 6%</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Stýrivextir standa í 8% og verðbólgan í tæpum 6%.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T133159.html#:~:text=St%C3%BDrivextir%20standa%20%C3%AD%208%25%20og%20ver%C3%B0b%C3%B3lgan">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T133159.html#:~:text=St%C3%BDrivextir%20standa%20%C3%AD%208%25%20og%20ver%C3%B0b%C3%B3lgan">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Peningastefnunefnd hélt stýrivöxtum í 8% 18. nóvember. Verðbólga mældist 5,9% í október.</p>
   <div class="cite src">
@@ -539,11 +585,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Samgöngusáttmálinn: 120 í 311 milljarða, Keldnaland 50, ríkið um 90%</h3>
+  <h3>Sigurður Örn Hilmarsson</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 16. nóvember</p>
+  <p class="topic">Samgöngusáttmálinn: 120 í 311 milljarða, Keldnaland 50, ríkið um 90%</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Samgöngusáttmálinn hljóðar upp á 311 milljarða og ríkið á að bera 90% af kostnaðinum.“</blockquote>
-    <p class="cite-l"><strong>Sigurður Örn Hilmarsson</strong>, Sjálfstæðisflokkurinn, 16. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261116T144531.html#:~:text=Samg%C3%B6ngus%C3%A1ttm%C3%A1linn%20hlj%C3%B3%C3%B0ar%20upp%20%C3%A1%20311%20milljar%C3%B0a">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 16. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261116T144531.html#:~:text=Samg%C3%B6ngus%C3%A1ttm%C3%A1linn%20hlj%C3%B3%C3%B0ar%20upp%20%C3%A1%20311%20milljar%C3%B0a">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. Keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. Skipting er 87,5% ríki og 12,5% sveitarfélög, sem er rúnnað í 90%. Guðlaugur Þór Þórðarson nefndi sömu tölur.</p>
   <div class="cite src">
@@ -554,11 +602,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Stofnframlög hækkuð úr 18% í 23%</h3>
+  <h3>Árni Helgason</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 16. nóvember</p>
+  <p class="topic">Stofnframlög hækkuð úr 18% í 23%</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Framlag ríkisins var upphaflega 20% en fór upp í 23% núna í vor.“</blockquote>
-    <p class="cite-l"><strong>Árni Helgason</strong>, Sjálfstæðisflokkurinn, 16. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261116T160551.html#:~:text=Framlag%20r%C3%ADkisins%20var%20upphaflega%2020%25%20en">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 16. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261116T160551.html#:~:text=Framlag%20r%C3%ADkisins%20var%20upphaflega%2020%25%20en">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Alþingi samþykkti hækkun í júní 2026. Árni sagði upphaflega framlagið 20% en ráðuneytið talar um 18%. Frávikið er lítið.</p>
   <div class="cite src">
@@ -569,11 +619,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Sjávarafurðir og ál rúm 73% af vöruútflutningi</h3>
+  <h3>Karl Liljendal Hólmgeirsson</h3>
+  <p class="who">Miðflokkurinn · 10. nóvember</p>
+  <p class="topic">Sjávarafurðir og ál rúm 73% af vöruútflutningi</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Sjávarafurðir og ál eru rúm 73% af vöruútflutningi.“</blockquote>
-    <p class="cite-l"><strong>Karl Liljendal Hólmgeirsson</strong>, Miðflokkurinn, 10. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261110T134532.html#:~:text=Sj%C3%A1varafur%C3%B0ir%20og%20%C3%A1l%20eru%20r%C3%BAm%2073%25">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 10. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261110T134532.html#:~:text=Sj%C3%A1varafur%C3%B0ir%20og%20%C3%A1l%20eru%20r%C3%BAm%2073%25">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Sjávarafurðir voru 38,9% af útflutningsverðmæti 2025 og ál 34,5%, samtals um 73%.</p>
   <div class="cite src">
@@ -584,11 +636,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>78% au pair-leyfa til Filippseyinga</h3>
+  <h3>Jón Pétur Zimsen</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 9. nóvember</p>
+  <p class="topic">78% au pair-leyfa til Filippseyinga</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Nokkuð ljóst að langflest leyfin eru til filippseyskra stúlkna, líklega 78%.“</blockquote>
-    <p class="cite-l"><strong>Jón Pétur Zimsen</strong>, Sjálfstæðisflokkurinn, 9. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261109T190355.html#:~:text=Nokku%C3%B0%20lj%C3%B3st%20a%C3%B0%20langflest%20leyfin%20eru">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 9. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261109T190355.html#:~:text=Nokku%C3%B0%20lj%C3%B3st%20a%C3%B0%20langflest%20leyfin%20eru">Opna ræðuna á althingi.is</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Þorbjörg Sigríður Gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara Filippseyja.</p>
 
@@ -596,11 +650,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Dvalarleyfishafar utan EES: um 4.000 í um 20.000</h3>
+  <h3>Eiríkur Björn Björgvinsson</h3>
+  <p class="who">Viðreisn · 9. nóvember</p>
+  <p class="topic">Dvalarleyfishafar utan EES: um 4.000 í um 20.000</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Dvalarleyfishöfum utan EES hefur fjölgað úr um 4.000 árið 2017 í um 20.000 árið 2025.“</blockquote>
-    <p class="cite-l"><strong>Eiríkur Björn Björgvinsson</strong>, Viðreisn, 9. nóvember · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261109T165411.html">ræða 1</a></p>
+    <p class="cite-l">Ræða 9. nóvember · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261109T165411.html">ræða 1</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> Ráðuneytið segir fjöldann hafa nær fimmfaldast frá 2017. Útlendingastofnun skráði 11.820 umsóknir 2025. Þorbjörg Sigríður Gunnlaugsdóttir (Viðreisn) og Snorri Másson (Miðflokkurinn) nefndu sömu tölur.</p>
   <div class="cite src">
@@ -611,11 +667,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="ok">
   <span class="pill ok">Rétt</span>
-  <h3>Bókun 35 og málsókn ESA</h3>
+  <h3>Ingibjörg Davíðsdóttir</h3>
+  <p class="who">Miðflokkurinn · 9. nóvember</p>
+  <p class="topic">Bókun 35 og málsókn ESA</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„ESA hefur stefnt Íslandi fyrir EFTA-dómstólinn vegna bókunar 35, sem var innleidd fyrir rúmum 30 árum.“</blockquote>
-    <p class="cite-l"><strong>Ingibjörg Davíðsdóttir</strong>, Miðflokkurinn, 9. nóvember · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261109T150619.html">ræða 1</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261109T151034.html">ræða 2</a></p>
+    <p class="cite-l">Ræða 9. nóvember · Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: <a href="https://www.althingi.is/altext/raeda/158/rad20261109T150619.html">ræða 1</a>, <a href="https://www.althingi.is/altext/raeda/158/rad20261109T151034.html">ræða 2</a></p>
   </div>
   <p class="facts"><strong>Niðurstaða:</strong> ESA stefndi Íslandi 30. september. Bókunin var innleidd fyrir 34 árum.</p>
   <div class="cite src">
@@ -629,421 +687,463 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Ingibjörg Davíðsdóttir, Miðflokkurinn · 25. nóvember</p>
+  <h3>Ingibjörg Davíðsdóttir</h3>
+  <p class="who">Miðflokkurinn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Bent er á í greininni að í arðgreiðslustefnu bankans sé gert ráð fyrir að reglulegar arðgreiðslur nemi að jafnaði um 50% af hagnaði fyrra árs.“</blockquote>
-    <p class="cite-l"><strong>Ingibjörg Davíðsdóttir</strong>, Miðflokkurinn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133324.html#:~:text=Bent%20er%20%C3%A1%20%C3%AD%20greininni%20a%C3%B0">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133324.html#:~:text=Bent%20er%20%C3%A1%20%C3%AD%20greininni%20a%C3%B0">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Ingibjörg Davíðsdóttir, Miðflokkurinn · 25. nóvember</p>
+  <h3>Ingibjörg Davíðsdóttir</h3>
+  <p class="who">Miðflokkurinn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Bankinn hafi einnig greitt sérstakar arðgreiðslur, nú síðast 16 milljarða kr.“</blockquote>
-    <p class="cite-l"><strong>Ingibjörg Davíðsdóttir</strong>, Miðflokkurinn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133324.html#:~:text=Bankinn%20hafi%20einnig%20greitt%20s%C3%A9rstakar%20ar%C3%B0grei%C3%B0slur%2C">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133324.html#:~:text=Bankinn%20hafi%20einnig%20greitt%20s%C3%A9rstakar%20ar%C3%B0grei%C3%B0slur%2C">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Rósa Guðbjartsdóttir, Sjálfstæðisflokkurinn · 25. nóvember</p>
+  <h3>Rósa Guðbjartsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Og hvernig á að fá allar þær 2,3 milljónir ferðamanna sem hingað koma til landsins, sem flestir fara Gullna hringinn, til að hlaða niður smáforriti til að geta greitt þetta gjald?“</blockquote>
-    <p class="cite-l"><strong>Rósa Guðbjartsdóttir</strong>, Sjálfstæðisflokkurinn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133536.html#:~:text=Og%20hvernig%20%C3%A1%20a%C3%B0%20f%C3%A1%20allar">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133536.html#:~:text=Og%20hvernig%20%C3%A1%20a%C3%B0%20f%C3%A1%20allar">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Sigmar Guðmundsson, Viðreisn · 25. nóvember</p>
+  <h3>Sigmar Guðmundsson</h3>
+  <p class="who">Viðreisn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Við erum að sjá það í nýrri könnun sem hefur verið gerð að 72% þjóðarinnar styðja þessa tilteknu gjaldtöku með þeim hætti sem hún er skipulögð.“</blockquote>
-    <p class="cite-l"><strong>Sigmar Guðmundsson</strong>, Viðreisn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133752.html#:~:text=Vi%C3%B0%20erum%20a%C3%B0%20sj%C3%A1%20%C3%BEa%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T133752.html#:~:text=Vi%C3%B0%20erum%20a%C3%B0%20sj%C3%A1%20%C3%BEa%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Jón Pétur Zimsen, Sjálfstæðisflokkurinn · 25. nóvember</p>
+  <h3>Jón Pétur Zimsen</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Mun fleiri karlar eru heimilislausir og 90–95% fanga eru karlar.“</blockquote>
-    <p class="cite-l"><strong>Jón Pétur Zimsen</strong>, Sjálfstæðisflokkurinn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134237.html#:~:text=Mun%20fleiri%20karlar%20eru%20heimilislausir%20og">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134237.html#:~:text=Mun%20fleiri%20karlar%20eru%20heimilislausir%20og">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Karl Gauti Hjaltason, Miðflokkurinn · 25. nóvember</p>
+  <h3>Karl Gauti Hjaltason</h3>
+  <p class="who">Miðflokkurinn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Tollvörðum hefur fækkað frá 2019 úr 124 í 107 á síðasta ári og 93 á þessu ári.“</blockquote>
-    <p class="cite-l"><strong>Karl Gauti Hjaltason</strong>, Miðflokkurinn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134658.html#:~:text=Tollv%C3%B6r%C3%B0um%20hefur%20f%C3%A6kka%C3%B0%20fr%C3%A1%202019%20%C3%BAr">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134658.html#:~:text=Tollv%C3%B6r%C3%B0um%20hefur%20f%C3%A6kka%C3%B0%20fr%C3%A1%202019%20%C3%BAr">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Karl Gauti Hjaltason, Miðflokkurinn · 25. nóvember</p>
+  <h3>Karl Gauti Hjaltason</h3>
+  <p class="who">Miðflokkurinn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Tollvörðum á landamærunum í Keflavík hefur fækkað úr því að vera 63 árið 2019 í 42 nú eða um þriðjung.“</blockquote>
-    <p class="cite-l"><strong>Karl Gauti Hjaltason</strong>, Miðflokkurinn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134658.html#:~:text=Tollv%C3%B6r%C3%B0um%20%C3%A1%20landam%C3%A6runum%20%C3%AD%20Keflav%C3%ADk%20hefur">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134658.html#:~:text=Tollv%C3%B6r%C3%B0um%20%C3%A1%20landam%C3%A6runum%20%C3%AD%20Keflav%C3%ADk%20hefur">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Karl Gauti Hjaltason, Miðflokkurinn · 25. nóvember</p>
+  <h3>Karl Gauti Hjaltason</h3>
+  <p class="who">Miðflokkurinn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þar koma 95% af þeim sem inn í landið koma, yfir 2,5 milljónir manns árlega.“</blockquote>
-    <p class="cite-l"><strong>Karl Gauti Hjaltason</strong>, Miðflokkurinn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134658.html#:~:text=%C3%9Ear%20koma%2095%25%20af%20%C3%BEeim%20sem">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T134658.html#:~:text=%C3%9Ear%20koma%2095%25%20af%20%C3%BEeim%20sem">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Arna Lára Jónsdóttir, Samfylkingin · 25. nóvember</p>
+  <h3>Arna Lára Jónsdóttir</h3>
+  <p class="who">Samfylkingin · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Góð umræða hefur skapast um byggðamál á vestfirska miðlinum bb.is síðustu daga í kjölfar jákvæðra tíðinda frá Þingeyri, en grunnskólabörnum þar hefur fjölgað um 46% og íbúum hefur fjölgað um 7,8% á milli áranna 2025 og 2026.“</blockquote>
-    <p class="cite-l"><strong>Arna Lára Jónsdóttir</strong>, Samfylkingin, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T135607.html#:~:text=G%C3%B3%C3%B0%20umr%C3%A6%C3%B0a%20hefur%20skapast%20um%20bygg%C3%B0am%C3%A1l">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T135607.html#:~:text=G%C3%B3%C3%B0%20umr%C3%A6%C3%B0a%20hefur%20skapast%20um%20bygg%C3%B0am%C3%A1l">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Ingibjörg Isaksen, Framsókn · 25. nóvember</p>
+  <h3>Ingibjörg Isaksen</h3>
+  <p class="who">Framsókn · 25. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þetta er veruleikinn í okkar velferðarsamfélagi árið 2026.“</blockquote>
-    <p class="cite-l"><strong>Ingibjörg Isaksen</strong>, Framsókn, 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T140037.html#:~:text=%C3%9Eetta%20er%20veruleikinn%20%C3%AD%20okkar%20velfer%C3%B0arsamf%C3%A9lagi">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 25. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261125T140037.html#:~:text=%C3%9Eetta%20er%20veruleikinn%20%C3%AD%20okkar%20velfer%C3%B0arsamf%C3%A9lagi">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Jens Garðar Helgason, Sjálfstæðisflokkurinn · 24. nóvember</p>
+  <h3>Jens Garðar Helgason</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 24. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Með því að ráða Heiðu Kristínu sem verktaka er skattprósentan samtals 37,6% í stað þeirrar hefðbundnu sem gildir.“</blockquote>
-    <p class="cite-l"><strong>Jens Garðar Helgason</strong>, Sjálfstæðisflokkurinn, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133126.html#:~:text=Me%C3%B0%20%C3%BEv%C3%AD%20a%C3%B0%20r%C3%A1%C3%B0a%20Hei%C3%B0u%20Krist%C3%ADnu">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133126.html#:~:text=Me%C3%B0%20%C3%BEv%C3%AD%20a%C3%B0%20r%C3%A1%C3%B0a%20Hei%C3%B0u%20Krist%C3%ADnu">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Ingveldur Anna Sigurðardóttir, Sjálfstæðisflokkurinn · 24. nóvember</p>
+  <h3>Ingveldur Anna Sigurðardóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 24. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Það tók rúmlega 20 ár að koma Suðurnesjalínu 2 í gagnið, 20 ár, og á þeim tíma hefur samfélagið breyst, atvinnulífið þróast og raforkuþörfin aukist til muna.“</blockquote>
-    <p class="cite-l"><strong>Ingveldur Anna Sigurðardóttir</strong>, Sjálfstæðisflokkurinn, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133402.html#:~:text=%C3%9Ea%C3%B0%20t%C3%B3k%20r%C3%BAmlega%2020%20%C3%A1r%20a%C3%B0">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133402.html#:~:text=%C3%9Ea%C3%B0%20t%C3%B3k%20r%C3%BAmlega%2020%20%C3%A1r%20a%C3%B0">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Sigurjón Þórðarson, Flokkur fólksins · 24. nóvember</p>
+  <h3>Sigurjón Þórðarson</h3>
+  <p class="who">Flokkur fólksins · 24. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%.“</blockquote>
-    <p class="cite-l"><strong>Sigurjón Þórðarson</strong>, Flokkur fólksins, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133814.html#:~:text=%C3%9Eessi%20mikilv%C3%A6ga%20breyting%20felur%20%C3%AD%20s%C3%A9r">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T133814.html#:~:text=%C3%9Eessi%20mikilv%C3%A6ga%20breyting%20felur%20%C3%AD%20s%C3%A9r">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Gunnar Guðjónsson, Viðreisn · 24. nóvember</p>
+  <h3>Gunnar Guðjónsson</h3>
+  <p class="who">Viðreisn · 24. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður.“</blockquote>
-    <p class="cite-l"><strong>Gunnar Guðjónsson</strong>, Viðreisn, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T134519.html#:~:text=R%C3%ADkisendursko%C3%B0un%20hefur%20tv%C3%ADvegis%2C%20%C3%A1ri%C3%B0%202021%20og">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T134519.html#:~:text=R%C3%ADkisendursko%C3%B0un%20hefur%20tv%C3%ADvegis%2C%20%C3%A1ri%C3%B0%202021%20og">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Karl Gauti Hjaltason, Miðflokkurinn · 24. nóvember</p>
+  <h3>Karl Gauti Hjaltason</h3>
+  <p class="who">Miðflokkurinn · 24. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þá er enn eitt skattahækkunarfrumvarp ríkisstjórnarinnar, svonefndur bandormur 2, einnig nýkomið inn en þar á að kreista 450 milljónir út úr einstaklingum sem dettur í hug að afla sér tekna sem ná ekki 2 millj.“</blockquote>
-    <p class="cite-l"><strong>Karl Gauti Hjaltason</strong>, Miðflokkurinn, 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T135413.html#:~:text=%C3%9E%C3%A1%20er%20enn%20eitt%20skattah%C3%A6kkunarfrumvarp%20r%C3%ADkisstj%C3%B3rnarinnar%2C">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 24. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261124T135413.html#:~:text=%C3%9E%C3%A1%20er%20enn%20eitt%20skattah%C3%A6kkunarfrumvarp%20r%C3%ADkisstj%C3%B3rnarinnar%2C">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133124.html#:~:text=N%C3%BA%20t%C3%A6pum%20tveimur%20%C3%A1rum%20s%C3%AD%C3%B0ar%20eru">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133124.html#:~:text=N%C3%BA%20t%C3%A6pum%20tveimur%20%C3%A1rum%20s%C3%AD%C3%B0ar%20eru">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
+  <h3>Kristrún Frostadóttir</h3>
+  <p class="who">Samfylkingin · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Margt vel gert, annað flóknara, rúmir 800 milljarðar í uppsafnaðan halla.“</blockquote>
-    <p class="cite-l"><strong>Kristrún Frostadóttir</strong>, Samfylkingin, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133349.html#:~:text=Margt%20vel%20gert%2C%20anna%C3%B0%20fl%C3%B3knara%2C%20r%C3%BAmir">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133349.html#:~:text=Margt%20vel%20gert%2C%20anna%C3%B0%20fl%C3%B3knara%2C%20r%C3%BAmir">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„en horfist ekki í augu við það að hafa sjálf gefið út 140 milljarða útgjaldaauka um síðustu áramót þannig að af þessum 800 milljörðum á ríkisstjórn Kristrúnar Frostadóttur sjálf 140 milljarða.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=en%20horfist%20ekki%20%C3%AD%20augu%20vi%C3%B0">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=en%20horfist%20ekki%20%C3%AD%20augu%20vi%C3%B0">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af Covid.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=Af%20%C3%BEessum%20800%20millj%C3%B6r%C3%B0um%20eru%20l%C3%ADka">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=Af%20%C3%BEessum%20800%20millj%C3%B6r%C3%B0um%20eru%20l%C3%ADka">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Enn mætir hér forsætisráðherra og talar um hallann sem hún hafi erft upp á 800 milljarða kr.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=Enn%20m%C3%A6tir%20h%C3%A9r%20fors%C3%A6tisr%C3%A1%C3%B0herra%20og%20talar">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=Enn%20m%C3%A6tir%20h%C3%A9r%20fors%C3%A6tisr%C3%A1%C3%B0herra%20og%20talar">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðrún Hafsteinsdóttir, Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <h3>Guðrún Hafsteinsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Það er nú ekki mikið í samanburði við það sem fyrri ríkisstjórn þurfti að glíma við, sem var Covid upp á 300 milljarða og síðan Reykjaneseldar upp á annað hundrað milljarða.“</blockquote>
-    <p class="cite-l"><strong>Guðrún Hafsteinsdóttir</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=%C3%9Ea%C3%B0%20er%20n%C3%BA%20ekki%20miki%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T133613.html#:~:text=%C3%9Ea%C3%B0%20er%20n%C3%BA%20ekki%20miki%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
+  <h3>Kristrún Frostadóttir</h3>
+  <p class="who">Samfylkingin · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár.“</blockquote>
-    <p class="cite-l"><strong>Kristrún Frostadóttir</strong>, Samfylkingin, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=Var%C3%B0andi%20ofk%C3%A6lingu%20ver%C3%B0%20%C3%A9g%20a%C3%B0%20segja">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=Var%C3%B0andi%20ofk%C3%A6lingu%20ver%C3%B0%20%C3%A9g%20a%C3%B0%20segja">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
+  <h3>Kristrún Frostadóttir</h3>
+  <p class="who">Samfylkingin · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%.“</blockquote>
-    <p class="cite-l"><strong>Kristrún Frostadóttir</strong>, Samfylkingin, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=E%C3%B0li%20m%C3%A1lsins%20samkv%C3%A6mt%20felur%20%C3%BEa%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=E%C3%B0li%20m%C3%A1lsins%20samkv%C3%A6mt%20felur%20%C3%BEa%C3%B0%20%C3%AD">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Kristrún Frostadóttir, Samfylkingin · 23. nóvember</p>
+  <h3>Kristrún Frostadóttir</h3>
+  <p class="who">Samfylkingin · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Það er um 2,5% á meðal Íslendinga hér á landi þannig að þrátt fyrir að staðan sé erfið er hún, miðað við það sem við sjáum í mörgum öðrum löndum, ekki skelfileg en auðvitað verðum við að passa upp á þessa einstaklinga.“</blockquote>
-    <p class="cite-l"><strong>Kristrún Frostadóttir</strong>, Samfylkingin, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=%C3%9Ea%C3%B0%20er%20um%202%2C5%25%20%C3%A1%20me%C3%B0al">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134146.html#:~:text=%C3%9Ea%C3%B0%20er%20um%202%2C5%25%20%C3%A1%20me%C3%B0al">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Ólafur Adolfsson, Sjálfstæðisflokkurinn · 23. nóvember</p>
+  <h3>Ólafur Adolfsson</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„á mánuði og var krafan um vinnuframlag einungis 25 klukkustundir á viku, sem ég verð að segja að er ansi góður díll fyrir 60% starf en hins vegar ekki alveg nógu góður að mati hæstv.“</blockquote>
-    <p class="cite-l"><strong>Ólafur Adolfsson</strong>, Sjálfstæðisflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134643.html#:~:text=%C3%A1%20m%C3%A1nu%C3%B0i%20og%20var%20krafan%20um">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T134643.html#:~:text=%C3%A1%20m%C3%A1nu%C3%B0i%20og%20var%20krafan%20um">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Bergþór Ólason, Miðflokkurinn · 23. nóvember</p>
+  <h3>Bergþór Ólason</h3>
+  <p class="who">Miðflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Fyrir ekki löngu síðan voru málefni 5,3% pottsins, byggðahluta aflamarkskerfisins, í umsjón og verkahring hæstv.“</blockquote>
-    <p class="cite-l"><strong>Bergþór Ólason</strong>, Miðflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135313.html#:~:text=Fyrir%20ekki%20l%C3%B6ngu%20s%C3%AD%C3%B0an%20voru%20m%C3%A1lefni">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135313.html#:~:text=Fyrir%20ekki%20l%C3%B6ngu%20s%C3%AD%C3%B0an%20voru%20m%C3%A1lefni">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Hanna Katrín Friðriksson, Viðreisn · 23. nóvember</p>
+  <h3>Hanna Katrín Friðriksson</h3>
+  <p class="who">Viðreisn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Það eru náttúrlega ákveðin markmið, þessi 5,3% pottur liggur einmitt mjög vel við almennum markmiðum Byggðastofnunar og þar undir er auðvitað sértæki byggðakvótinn.“</blockquote>
-    <p class="cite-l"><strong>Hanna Katrín Friðriksson</strong>, Viðreisn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135541.html#:~:text=%C3%9Ea%C3%B0%20eru%20n%C3%A1tt%C3%BArlega%20%C3%A1kve%C3%B0in%20markmi%C3%B0%2C%20%C3%BEessi">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135541.html#:~:text=%C3%9Ea%C3%B0%20eru%20n%C3%A1tt%C3%BArlega%20%C3%A1kve%C3%B0in%20markmi%C3%B0%2C%20%C3%BEessi">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Bergþór Ólason, Miðflokkurinn · 23. nóvember</p>
+  <h3>Bergþór Ólason</h3>
+  <p class="who">Miðflokkurinn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„ráðherra muni aðstoða við og hvetja til raunar og styðja við með öllum tiltækum ráðum undirstofnanir sínar, að skoðaðir verði þeir samningar um breytt eignarhald sem gerðir voru á þessum viðkvæma tíma í tengslum við endurskipulagningu hluta 5,3% pottsins.“</blockquote>
-    <p class="cite-l"><strong>Bergþór Ólason</strong>, Miðflokkurinn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135728.html#:~:text=r%C3%A1%C3%B0herra%20muni%20a%C3%B0sto%C3%B0a%20vi%C3%B0%20og%20hvetja">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135728.html#:~:text=r%C3%A1%C3%B0herra%20muni%20a%C3%B0sto%C3%B0a%20vi%C3%B0%20og%20hvetja">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Halla Hrund Logadóttir, Framsókn · 23. nóvember</p>
+  <h3>Halla Hrund Logadóttir</h3>
+  <p class="who">Framsókn · 23. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Við eigum 28 sinnum meira land á hvern íbúa en að meðaltali innan Evrópusambandsins og ef við horfum á þjóðlendurnar einar og sér, sem eru 40% af Íslandi, eru þær álíka stórt svæði og þjóðríkið Danmörk.“</blockquote>
-    <p class="cite-l"><strong>Halla Hrund Logadóttir</strong>, Framsókn, 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135945.html#:~:text=Vi%C3%B0%20eigum%2028%20sinnum%20meira%20land">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 23. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261123T135945.html#:~:text=Vi%C3%B0%20eigum%2028%20sinnum%20meira%20land">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Ásthildur Lóa Þórsdóttir, Flokkur fólksins · 19. nóvember</p>
+  <h3>Ásthildur Lóa Þórsdóttir</h3>
+  <p class="who">Flokkur fólksins · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„meira í hverjum mánuði en það myndi gera af láni með 4% vöxtum.“</blockquote>
-    <p class="cite-l"><strong>Ásthildur Lóa Þórsdóttir</strong>, Flokkur fólksins, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T133816.html#:~:text=meira%20%C3%AD%20hverjum%20m%C3%A1nu%C3%B0i%20en%20%C3%BEa%C3%B0">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T133816.html#:~:text=meira%20%C3%AD%20hverjum%20m%C3%A1nu%C3%B0i%20en%20%C3%BEa%C3%B0">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Ásthildur Lóa Þórsdóttir, Flokkur fólksins · 19. nóvember</p>
+  <h3>Ásthildur Lóa Þórsdóttir</h3>
+  <p class="who">Flokkur fólksins · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Eins og staðan er í dag bera rétt um 25% skuldugra heimila mestu byrðarnar af hávaxtastefnu Seðlabankans.“</blockquote>
-    <p class="cite-l"><strong>Ásthildur Lóa Þórsdóttir</strong>, Flokkur fólksins, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T133816.html#:~:text=Eins%20og%20sta%C3%B0an%20er%20%C3%AD%20dag">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T133816.html#:~:text=Eins%20og%20sta%C3%B0an%20er%20%C3%AD%20dag">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðmundur Ingi Kristinsson, utan þingflokka · 19. nóvember</p>
+  <h3>Guðmundur Ingi Kristinsson</h3>
+  <p class="who">utan þingflokka · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þá setja þau 100 milljónir inn en síðan borga þau út 50 milljónir og þá eru 50 milljónir eftir í sjóðnum.“</blockquote>
-    <p class="cite-l"><strong>Guðmundur Ingi Kristinsson</strong>, utan þingflokka, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134522.html#:~:text=%C3%9E%C3%A1%20setja%20%C3%BEau%20100%20millj%C3%B3nir%20inn">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134522.html#:~:text=%C3%9E%C3%A1%20setja%20%C3%BEau%20100%20millj%C3%B3nir%20inn">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðmundur Ingi Kristinsson, utan þingflokka · 19. nóvember</p>
+  <h3>Guðmundur Ingi Kristinsson</h3>
+  <p class="who">utan þingflokka · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Hvað verður um þessar 50 milljónir síðar, sem verða kannski tífalt það, komnar í 500 milljónir, milljarða?“</blockquote>
-    <p class="cite-l"><strong>Guðmundur Ingi Kristinsson</strong>, utan þingflokka, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134522.html#:~:text=Hva%C3%B0%20ver%C3%B0ur%20um%20%C3%BEessar%2050%20millj%C3%B3nir">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134522.html#:~:text=Hva%C3%B0%20ver%C3%B0ur%20um%20%C3%BEessar%2050%20millj%C3%B3nir">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Guðmundur Ingi Kristinsson, utan þingflokka · 19. nóvember</p>
+  <h3>Guðmundur Ingi Kristinsson</h3>
+  <p class="who">utan þingflokka · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Jú, vegna þess að heildareignir tryggingafélaganna voru 360 milljarðar í febrúar síðastliðnum.“</blockquote>
-    <p class="cite-l"><strong>Guðmundur Ingi Kristinsson</strong>, utan þingflokka, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134522.html#:~:text=J%C3%BA%2C%20vegna%20%C3%BEess%20a%C3%B0%20heildareignir%20tryggingaf%C3%A9laganna">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134522.html#:~:text=J%C3%BA%2C%20vegna%20%C3%BEess%20a%C3%B0%20heildareignir%20tryggingaf%C3%A9laganna">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Árni Rúnar Þorvaldsson, Samfylkingin · 19. nóvember</p>
+  <h3>Árni Rúnar Þorvaldsson</h3>
+  <p class="who">Samfylkingin · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan.“</blockquote>
-    <p class="cite-l"><strong>Árni Rúnar Þorvaldsson</strong>, Samfylkingin, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134950.html#:~:text=%C3%9Eess%20vegna%20voru%20%C3%BEa%C3%B0%20mikil%20t%C3%ADmam%C3%B3t">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T134950.html#:~:text=%C3%9Eess%20vegna%20voru%20%C3%BEa%C3%B0%20mikil%20t%C3%ADmam%C3%B3t">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
+  <h3>Stefán Vagn Stefánsson</h3>
+  <p class="who">Framsókn · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti.“</blockquote>
-    <p class="cite-l"><strong>Stefán Vagn Stefánsson</strong>, Framsókn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=Ver%C3%B0b%C3%B3lgan%20er%205%2C9%25%2C%20h%C3%BAn%20var%204%2C8%25">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=Ver%C3%B0b%C3%B3lgan%20er%205%2C9%25%2C%20h%C3%BAn%20var%204%2C8%25">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
+  <h3>Stefán Vagn Stefánsson</h3>
+  <p class="who">Framsókn · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Það liggur fyrir að allt tal um vondan viðskilnað síðustu ríkisstjórnar stenst enga skoðun og ef ríkisstjórnin hefði haldið sig við fjárlög fyrri ríkisstjórnar fyrir árið 2025 hefðu þau orðið hallalaus.“</blockquote>
-    <p class="cite-l"><strong>Stefán Vagn Stefánsson</strong>, Framsókn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=%C3%9Ea%C3%B0%20liggur%20fyrir%20a%C3%B0%20allt%20tal">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=%C3%9Ea%C3%B0%20liggur%20fyrir%20a%C3%B0%20allt%20tal">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
+  <h3>Stefán Vagn Stefánsson</h3>
+  <p class="who">Framsókn · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Þeir sem hömpuðu sér og börðu sér á brjóst fyrir að skila fjárlögum með aðeins 15 milljarða kr.“</blockquote>
-    <p class="cite-l"><strong>Stefán Vagn Stefánsson</strong>, Framsókn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=%C3%9Eeir%20sem%20h%C3%B6mpu%C3%B0u%20s%C3%A9r%20og%20b%C3%B6r%C3%B0u">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=%C3%9Eeir%20sem%20h%C3%B6mpu%C3%B0u%20s%C3%A9r%20og%20b%C3%B6r%C3%B0u">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Stefán Vagn Stefánsson, Framsókn · 19. nóvember</p>
+  <h3>Stefán Vagn Stefánsson</h3>
+  <p class="who">Framsókn · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„halla sitja núna hljóðir þegar fyrir liggur að hallinn verður um 90 milljarðar.“</blockquote>
-    <p class="cite-l"><strong>Stefán Vagn Stefánsson</strong>, Framsókn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=halla%20sitja%20n%C3%BAna%20hlj%C3%B3%C3%B0ir%20%C3%BEegar%20fyrir">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135500.html#:~:text=halla%20sitja%20n%C3%BAna%20hlj%C3%B3%C3%B0ir%20%C3%BEegar%20fyrir">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Rósa Guðbjartsdóttir, Sjálfstæðisflokkurinn · 19. nóvember</p>
+  <h3>Rósa Guðbjartsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Það hefur verið metið að alls hafi 5,5 milljarðar kr.“</blockquote>
-    <p class="cite-l"><strong>Rósa Guðbjartsdóttir</strong>, Sjálfstæðisflokkurinn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135737.html#:~:text=%C3%9Ea%C3%B0%20hefur%20veri%C3%B0%20meti%C3%B0%20a%C3%B0%20alls">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T135737.html#:~:text=%C3%9Ea%C3%B0%20hefur%20veri%C3%B0%20meti%C3%B0%20a%C3%B0%20alls">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Berglind Harpa Svavarsdóttir, Sjálfstæðisflokkurinn · 19. nóvember</p>
+  <h3>Berglind Harpa Svavarsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Samband sveitarfélaga á Austurlandi hefur farið í faglegar greiningar sem sýna glögglega að aðeins um 2,9% landsmanna standa undir um fjórðungi vöruútflutnings hér á landi, sem gerir um 240 milljarða.“</blockquote>
-    <p class="cite-l"><strong>Berglind Harpa Svavarsdóttir</strong>, Sjálfstæðisflokkurinn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T140359.html#:~:text=Samband%20sveitarf%C3%A9laga%20%C3%A1%20Austurlandi%20hefur%20fari%C3%B0">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T140359.html#:~:text=Samband%20sveitarf%C3%A9laga%20%C3%A1%20Austurlandi%20hefur%20fari%C3%B0">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
 <article class="card" data-s="new">
   <span class="pill new">Óyfirfarið</span>
-  <p class="who">Berglind Harpa Svavarsdóttir, Sjálfstæðisflokkurinn · 19. nóvember</p>
+  <h3>Berglind Harpa Svavarsdóttir</h3>
+  <p class="who">Sjálfstæðisflokkurinn · 19. nóvember</p>
   <div class="cite">
     <p class="cite-h">Úr ræðu</p>
     <blockquote>„Orkuframleiðsla á Austurlandi er einnig um 30% af orkuframleiðslu hér á landi og gríðarleg tækifæri til frekari orkuframleiðslu.“</blockquote>
-    <p class="cite-l"><strong>Berglind Harpa Svavarsdóttir</strong>, Sjálfstæðisflokkurinn, 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T140359.html#:~:text=Orkuframlei%C3%B0sla%20%C3%A1%20Austurlandi%20er%20einnig%20um">Opna ræðuna á althingi.is</a></p>
+    <p class="cite-l">Ræða 19. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261119T140359.html#:~:text=Orkuframlei%C3%B0sla%20%C3%A1%20Austurlandi%20er%20einnig%20um">Opna ræðuna á althingi.is</a></p>
   </div>
 </article>
 
