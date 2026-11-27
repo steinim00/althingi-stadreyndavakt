@@ -229,8 +229,6 @@ def card(f: dict) -> str:
 def render(root: Path) -> None:
     data = root / "data"
     findings = json.loads((data / "findings.json").read_text(encoding="utf-8"))
-    cov_p = data / "coverage.json"
-    cov = json.loads(cov_p.read_text(encoding="utf-8")) if cov_p.exists() else {}
     tpl = (root / "src" / "template.html").read_text(encoding="utf-8")
     cand_p = data / "candidates.json"
     cands = json.loads(cand_p.read_text(encoding="utf-8")) if cand_p.exists() else []
@@ -279,20 +277,6 @@ def render(root: Path) -> None:
     parties = sorted({x["party"] for x in [*findings, *shown_cands] if x.get("party")})
     party_opts = "".join(f'<option value="{E(p, quote=True)}">{E(p)}</option>' for p in parties)
 
-    updated = cov.get("updated") or datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    u = datetime.strptime(updated, "%Y-%m-%d")
-    checked = sorted(f["checked"] for f in findings if f.get("checked"))
-    n_today = sum(1 for c in checked if c == updated)
-    if n_today:
-        extra = f" {n_today} {'ný niðurstaða' if n_today == 1 else 'nýjar niðurstöður'} í dag."
-    elif checked:
-        d = datetime.strptime(checked[-1], "%Y-%m-%d")
-        extra = f" Síðasta athugun {d.day}. {MONTHS[d.month - 1]}."
-    else:
-        extra = ""
-    meta = f'<p class="meta">Síðast keyrt {u.day}. {MONTHS[u.month - 1]} {u.year}.{extra}</p>'
-    meta = meta.replace('<p class="meta">', "").replace("</p>", "")
-
     filters = (
         '<div class="filters" id="nidurstodur" role="group" aria-label="Sía eftir niðurstöðu">\n'
         '  <button type="button" data-f="all" aria-pressed="true">Allt</button>\n'
@@ -312,7 +296,7 @@ def render(root: Path) -> None:
     wrong_block = (_head("wrong", "Líklega rangt") + '\n<div class="results">\n' + "\n\n".join(card(f) for f in wrong) + "\n</div>") if wrong else ""
     pages = {
         "index.html": ("", "Staðreyndavakt Alþingis",
-                       f'<h1 class="sr-only">Staðreyndavakt Alþingis</h1>\n{_hero(findings, _agenda(ag), root)}\n{tiles}\n{wrong_block}\n<p class="meta">{meta}</p>'),
+                       f'<h1 class="sr-only">Staðreyndavakt Alþingis</h1>\n{_hero(findings, _agenda(ag), root)}\n{tiles}\n{wrong_block}'),
         "nidurstodur.html": ("nidurstodur", "Niðurstöður",
                              '<h1 class="page-h">Niðurstöður</h1>\n' + filters + '\n<div class="results">\n' + "\n\n".join(cards) + "\n</div>"),
     }
