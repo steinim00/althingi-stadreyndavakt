@@ -183,6 +183,39 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 8px; padding: 20px; margin-top: 16px; color: var(--muted); text-align: center; }
 .sec-head h2 { margin-top: 32px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Flokkayfirlit: stöplar með áferð svo staða ráðist ekki af lit einum (rautt/grænt). */
+.byparty { margin-top: 36px; }
+.byparty h2 { margin-top: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 14px; padding: 0; list-style: none; font-size: 14px; color: var(--muted); }
+.legend li { display: flex; align-items: center; gap: 7px; }
+.sw { display: inline-block; width: 22px; height: 10px; border-radius: 3px; }
+.seg-wrong { background: var(--wrong); }
+.seg-open { background: repeating-linear-gradient(135deg, var(--open) 0 3px, var(--open-bg) 3px 6px); box-shadow: inset 0 0 0 1px var(--open); }
+.seg-ok { background: radial-gradient(circle, var(--ok) 1.4px, transparent 1.6px) 0 0 / 6px 6px, var(--ok-bg); box-shadow: inset 0 0 0 1px var(--ok); }
+.prow { padding: 10px 0; border-top: 1px solid var(--line); }
+.prow:first-of-type { border-top: 0; }
+.pbtn { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.pbtn:hover { color: var(--accent); text-decoration: underline; }
+.pbtn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.pbar { display: flex; gap: 2px; height: 12px; margin: 6px 0 4px; }
+.pbar i { display: block; border-radius: 2px; min-width: 6px; }
+.pbar i:first-child { border-top-left-radius: 4px; border-bottom-left-radius: 4px; }
+.pbar i:last-child { border-top-right-radius: 4px; border-bottom-right-radius: 4px; }
+.pcount { margin: 0; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.pcount b { color: var(--ink); font-weight: 700; }
+
+/* Aðferð og skýringar */
+.method dl { margin: 0 0 16px; }
+.method dt { font-weight: 700; margin-top: 12px; }
+.method dd { margin: 2px 0 0; color: var(--muted); max-width: 62ch; }
+.method ol { padding-left: 20px; margin: 0; max-width: 62ch; }
+.method li { margin-bottom: 6px; }
+.permalink { font-size: 13px; color: var(--muted); margin-left: 8px; text-decoration: none; }
+.permalink:hover { color: var(--accent); text-decoration: underline; }
+.card:target { outline: 3px solid var(--accent); outline-offset: 2px; }
+.card { scroll-margin-top: 16px; }
+.how { margin: 10px 0 0; font-size: 15px; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -193,9 +226,12 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   <h1>Staðreyndavakt Alþingis</h1>
   <p>Tölur og fullyrðingar úr ræðum þingmanna, bornar saman við opinber gögn. Allir flokkar fá sömu meðferð. Síðan uppfærist sjálfkrafa á hverjum degi.</p>
   <p class="meta">{{META}}</p>
+  <p class="how"><a href="#adferd">Hvernig á að lesa niðurstöðurnar</a></p>
 </header>
 
 {{TILES}}
+
+{{BYPARTY}}
 
 {{LIMITS}}
 
@@ -218,6 +254,27 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 {{CARDS}}
 
+<section class="method" id="adferd" aria-labelledby="adferd-h">
+<h2 id="adferd-h">Aðferð</h2>
+<p class="lede">Hvernig fullyrðingar eru valdar og hvað hver niðurstaða þýðir.</p>
+<ol>
+  <li>Nýjar ræður eru sóttar daglega úr opnum gögnum Alþingis.</li>
+  <li>Setningar með tölum og skýrum staðhæfingum eru dregnar út. Fyrirspurnir og fundarstjórn eru undanskilin.</li>
+  <li>Hver fullyrðing er borin saman við nafngreindar opinberar heimildir. Allir flokkar fá sama mælikvarða.</li>
+  <li>Niðurstöður eru unnar af gervigreind með vefleit og þarf að lesa með gagnrýni. Heimildir eru alltaf birtar svo hægt sé að athuga þær.</li>
+</ol>
+<dl>
+  <dt>Líklega rangt</dt>
+  <dd>Nafngreind opinber heimild stangast á við fullyrðinguna. Það þýðir ekki að hún hafi verið sögð gegn betri vitund.</dd>
+  <dt>Óstaðfest</dt>
+  <dd>Hvorki fannst stuðningur né andstaða í opinberum gögnum. „Fann ekki heimild“ þýðir ekki að fullyrðingin sé röng.</dd>
+  <dt>Rétt</dt>
+  <dd>Fullyrðingin stemmir við opinberar heimildir.</dd>
+  <dt>Óyfirfarið</dt>
+  <dd>Fullyrðing hefur verið dregin út en ekki sannreynd enn.</dd>
+</dl>
+</section>
+
 <h2>Heimildir</h2>
 <ul class="sources">
 {{SOURCES}}
@@ -234,6 +291,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   var party = document.getElementById('party');
   var status = document.getElementById('status');
   var empty = document.getElementById('empty');
+  var pbtns = document.querySelectorAll('[data-p]');
   var state = {f: 'all', q: '', p: ''};
 
   function norm(t) { return (t || '').toLowerCase(); }
@@ -255,6 +313,8 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
     if (state.q) params.set('q', state.q);
     if (state.p) params.set('p', state.p);
     var h = params.toString();
+    // Ekki skrifa yfir akkeri (#adferd, #seed-1) nema sía sé virk.
+    if (!h && location.hash.indexOf('=') === -1) return;
     history.replaceState(null, '', h ? '#' + h : location.pathname + location.search);
   }
 
@@ -284,6 +344,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
     b.addEventListener('click', function () {
       state.f = b.getAttribute('data-f');
       if (b.classList.contains('tile')) { var fl = document.querySelector('.filters'); if (fl) fl.scrollIntoView({behavior: 'smooth', block: 'start'}); }
+      apply();
+    });
+  });
+  pbtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.p = b.getAttribute('data-p'); party.value = state.p;
+      var fl = document.querySelector('.filters'); if (fl) fl.scrollIntoView({behavior: 'smooth', block: 'start'});
       apply();
     });
   });
