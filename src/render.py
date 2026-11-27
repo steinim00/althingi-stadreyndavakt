@@ -125,19 +125,13 @@ GOV_ORDER = ("Viðreisn", "Flokkur fólksins", "Samfylkingin")
 
 
 def _hero_stats(subset: list) -> str:
+    """Aðeins fréttnæmt á forsíðunni: óstaðfest og rétt sjást á niðurstöðusíðunni."""
     wrong = [f for f in subset if f["status"] == "wrong"]
-    n = {
-        "c": sum(1 for f in wrong if f.get("confirmed")),
-        "w": sum(1 for f in wrong if not f.get("confirmed")),
-        "o": sum(1 for f in subset if f["status"] == "open"),
-        "k": sum(1 for f in subset if f["status"] == "ok"),
-    }
+    c = sum(1 for f in wrong if f.get("confirmed"))
     return (
         '<div class="hero-stats">'
-        f'<div class="c"><b>{n["c"]}</b><span>staðfest rangt</span></div>'
-        f'<div class="w"><b>{n["w"]}</b><span>líklega rangt</span></div>'
-        f'<div class="o"><b>{n["o"]}</b><span>óstaðfest</span></div>'
-        f'<div class="k"><b>{n["k"]}</b><span>rétt</span></div></div>'
+        f'<div class="c"><b>{c}</b><span>staðfest rangt</span></div>'
+        f'<div class="w"><b>{len(wrong) - c}</b><span>líklega rangt</span></div></div>'
     )
 
 
@@ -253,9 +247,6 @@ def render(root: Path) -> None:
         '<section class="summary" aria-label="Yfirlit">\n'
         + (tile("confirmed", "Staðfest rangt", n_conf, "wrong") if n_conf else "")
         + tile("wrong", "Líklega rangt", counts["wrong"] - n_conf)
-        + tile("open", "Óstaðfest", counts["open"])
-        + tile("ok", "Rétt", counts["ok"])
-        + tile("new", "Óyfirfarið", len(cands))
         + "</section>"
     )
 
