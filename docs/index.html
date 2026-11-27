@@ -407,6 +407,11 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .ag-topic { font-weight: 400; color: var(--muted); }
 .ag-m { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
 .agenda .more { margin-top: auto; padding-top: 14px; }
+
+/* Öll box með 90° horn */
+*, *::before, *::after { border-radius: 0 !important; }
+.summary { grid-template-columns: repeat(auto-fit, minmax(150px, 260px)); }
+.hero-stats { grid-template-columns: repeat(2, 1fr); }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -424,7 +429,7 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 <div class="hero">
 <section class="hero-main" aria-label="Líklega rangar fullyrðingar">
 <div class="chips" role="tablist" aria-label="Velja hóp"><button type="button" role="tab" class="chip chip-logo" id="ht-gov" data-tab="gov" aria-controls="hp-gov" aria-label="Stjórnarflokkar: Viðreisn, Flokkur fólksins, Samfylkingin" aria-selected="true"><span class="pbadge" role="img" aria-label="Viðreisn" title="Viðreisn" style="color:#ff9a3c">xC</span><span class="pbadge" role="img" aria-label="Flokkur fólksins" title="Flokkur fólksins" style="color:#ffd43b">xF</span><span class="pbadge" role="img" aria-label="Samfylkingin" title="Samfylkingin" style="color:#ff4d5d">xS</span></button><button type="button" role="tab" class="chip chip-logo" id="ht-d" data-tab="d" aria-controls="hp-d" aria-label="Sjálfstæðisflokkurinn" aria-selected="false"><span class="pbadge" role="img" aria-label="Sjálfstæðisflokkurinn" title="Sjálfstæðisflokkurinn" style="color:#29b6f6">xD</span></button></div>
-<div class="hero-panel" role="tabpanel" id="hp-gov" aria-labelledby="ht-gov"><article class="hero-item"><span class="pill wrong confirmed">Staðfest rangt</span><p class="hero-date">18. nóvember · Þorgerður Katrín Gunnarsdóttir · Viðreisn</p><h3>Vextir „enn 1% lægri“ en við valdatöku</h3><p class="more"><a href="nidurstodur.html#seed-1">Lesa meira →</a></p></article><div class="hero-stats"><div class="c"><b>1</b><span>staðfest rangt</span></div><div class="w"><b>0</b><span>líklega rangt</span></div><div class="o"><b>15</b><span>óstaðfest</span></div><div class="k"><b>5</b><span>rétt</span></div></div></div><div class="hero-panel hidden" role="tabpanel" id="hp-d" aria-labelledby="ht-d"><p class="hero-none">Engin fullyrðing metin líklega röng.</p><div class="hero-stats"><div class="c"><b>0</b><span>staðfest rangt</span></div><div class="w"><b>0</b><span>líklega rangt</span></div><div class="o"><b>9</b><span>óstaðfest</span></div><div class="k"><b>9</b><span>rétt</span></div></div></div>
+<div class="hero-panel" role="tabpanel" id="hp-gov" aria-labelledby="ht-gov"><article class="hero-item"><span class="pill wrong confirmed">Staðfest rangt</span><p class="hero-date">18. nóvember · Þorgerður Katrín Gunnarsdóttir · Viðreisn</p><h3>Vextir „enn 1% lægri“ en við valdatöku</h3><p class="more"><a href="nidurstodur.html#seed-1">Lesa meira →</a></p></article><div class="hero-stats"><div class="c"><b>1</b><span>staðfest rangt</span></div><div class="w"><b>0</b><span>líklega rangt</span></div></div></div><div class="hero-panel hidden" role="tabpanel" id="hp-d" aria-labelledby="ht-d"><p class="hero-none">Engin fullyrðing metin líklega röng.</p><div class="hero-stats"><div class="c"><b>0</b><span>staðfest rangt</span></div><div class="w"><b>0</b><span>líklega rangt</span></div></div></div>
 <p class="more"><a href="nidurstodur.html#f=wrong">Allt líklega rangt →</a></p>
 </section>
 <section class="agenda" id="dagskra" data-date="2026-11-30" aria-labelledby="ag-h">
@@ -443,9 +448,6 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 <section class="summary" aria-label="Yfirlit">
   <a class="tile confirmed" href="nidurstodur.html#f=wrong"><span class="tile-l">Staðfest rangt</span><b>1</b></a>
   <a class="tile wrong" href="nidurstodur.html#f=wrong"><span class="tile-l">Líklega rangt</span><b>1</b></a>
-  <a class="tile open" href="nidurstodur.html#f=open"><span class="tile-l">Óstaðfest</span><b>36</b></a>
-  <a class="tile ok" href="nidurstodur.html#f=ok"><span class="tile-l">Rétt</span><b>23</b></a>
-  <a class="tile new" href="nidurstodur.html#f=new"><span class="tile-l">Óyfirfarið</span><b>0</b></a>
 </section>
 <div class="sec-head" data-sec="wrong">
 <h2>Líklega rangt</h2>
