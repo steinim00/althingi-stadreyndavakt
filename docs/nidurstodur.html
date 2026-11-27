@@ -367,6 +367,25 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .sec-head { margin: 8px 0 -4px; }
 .sec-head h2 { margin: 24px 0 0; }
 .wrap { padding-top: 32px; }
+
+/* Formin líka í haus: mynstur á stikunni og bandið fest við hana */
+.topbar { overflow: visible; }
+.art-top { position: absolute; inset: 0; width: 100%; height: calc(100% - 26px); opacity: .35; pointer-events: none; }
+.topbar-in { position: relative; }
+.topbar .brand, .topbar nav { background: var(--surface); padding: 4px 12px; border-radius: 10px; }
+[id] { scroll-margin-top: 112px; }
+
+/* Staðfest rangt er áberandi umfram líklega rangt */
+.pill.confirmed { background: var(--wrong); color: var(--surface); font-size: 13px; padding: 4px 12px; letter-spacing: .06em; }
+.card[data-confirmed] { border: 2px solid var(--wrong); border-left-width: 8px; background: linear-gradient(var(--wrong-bg), var(--surface) 110px); }
+.tile.confirmed { border-top: 6px solid var(--wrong); background: var(--wrong); }
+.tile.confirmed .tile-l, .tile.confirmed b { color: var(--surface); }
+.tile.confirmed:hover { border-color: var(--wrong); filter: brightness(1.05); }
+.summary { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.hero-stats { grid-template-columns: repeat(4, 1fr); }
+.hero-stats .c b { color: var(--wrong); }
+.hero-stats .c span { color: var(--wrong); }
+.hero-stats .w b { opacity: .75; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -374,11 +393,11 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 <body>
 <a class="skip" href="#efni">Fara í efni</a>
 <svg class="art-arches" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="arch" width="64" height="40" patternUnits="userSpaceOnUse"><path class="arc-a" d="M0 40A32 32 0 0 1 64 40"/><path class="arc-b" d="M-32 40A32 32 0 0 1 32 40M32 40A32 32 0 0 1 96 40"/></pattern></defs><rect width="100%" height="100%" fill="url(#arch)"/></svg>
-<div class="topbar"><div class="topbar-in">
+<div class="topbar"><svg class="art-top" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#arch)"/></svg><div class="topbar-in">
   <a class="brand" href="index.html"><svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="currentColor"/><path d="M16 34l12 12 22-26" fill="none" stroke="var(--surface)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Staðreyndavakt Alþingis</span></a>
   <nav aria-label="Flýtileiðir"><a href="index.html#dagskra">Dagskrá</a><a href="nidurstodur.html" aria-current="page">Niðurstöður</a></nav>
-</div></div>
-<div class="band" aria-hidden="true"><svg class="art-band" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="rib" width="32" height="32" patternUnits="userSpaceOnUse"><path class="rib-a" d="M-4 -4L36 36M36 -4L-4 36"/><path class="rib-b" d="M-4 -4L36 36M36 -4L-4 36"/></pattern></defs><rect width="100%" height="100%" fill="url(#rib)"/></svg></div>
+</div>
+<div class="band" aria-hidden="true"><svg class="art-band" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="rib" width="32" height="32" patternUnits="userSpaceOnUse"><path class="rib-a" d="M-4 -4L36 36M36 -4L-4 36"/><path class="rib-b" d="M-4 -4L36 36M36 -4L-4 36"/></pattern></defs><rect width="100%" height="100%" fill="url(#rib)"/></svg></div></div>
 <main class="wrap" id="efni" tabindex="-1">
 <h1 class="page-h">Niðurstöður</h1>
 <div class="filters" id="nidurstodur" role="group" aria-label="Sía eftir niðurstöðu">
@@ -401,8 +420,8 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 <h2>Líklega rangt eða ónákvæmt</h2>
 </div>
 
-<article class="card" id="seed-1" data-s="wrong" data-party="Viðreisn" data-search="þorgerður katrín gunnarsdóttir viðreisn vextir „enn 1% lægri“ en við valdatöku við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við. stýrivextir eru 8% eftir ákvörðun 18. nóvember. þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. munurinn er 0,5 prósentustig. miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.">
-  <span class="pill wrong">Staðfest rangt</span>
+<article class="card" id="seed-1" data-s="wrong" data-confirmed data-party="Viðreisn" data-search="þorgerður katrín gunnarsdóttir viðreisn vextir „enn 1% lægri“ en við valdatöku við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við. stýrivextir eru 8% eftir ákvörðun 18. nóvember. þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. munurinn er 0,5 prósentustig. miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.">
+  <span class="pill wrong confirmed">Staðfest rangt</span>
   <h3>Þorgerður Katrín Gunnarsdóttir</h3>
   <p class="who">Viðreisn · 18. nóvember <a class="permalink" href="#seed-1" aria-label="Tengill á þessa fullyrðingu">#</a></p>
   <p class="topic">Vextir „enn 1% lægri“ en við valdatöku</p>

@@ -111,22 +111,29 @@ GOV_ORDER = ("Viðreisn", "Flokkur fólksins", "Samfylkingin")
 
 
 def _hero_stats(subset: list) -> str:
-    n = {k: sum(1 for f in subset if f["status"] == k) for k in ("wrong", "open", "ok")}
+    wrong = [f for f in subset if f["status"] == "wrong"]
+    n = {
+        "c": sum(1 for f in wrong if f.get("confirmed")),
+        "w": sum(1 for f in wrong if not f.get("confirmed")),
+        "o": sum(1 for f in subset if f["status"] == "open"),
+        "k": sum(1 for f in subset if f["status"] == "ok"),
+    }
     return (
         '<div class="hero-stats">'
-        f'<div class="w"><b>{n["wrong"]}</b><span>líklega rangt</span></div>'
-        f'<div class="o"><b>{n["open"]}</b><span>óstaðfest</span></div>'
-        f'<div class="k"><b>{n["ok"]}</b><span>rétt</span></div></div>'
+        f'<div class="c"><b>{n["c"]}</b><span>staðfest rangt</span></div>'
+        f'<div class="w"><b>{n["w"]}</b><span>líklega rangt</span></div>'
+        f'<div class="o"><b>{n["o"]}</b><span>óstaðfest</span></div>'
+        f'<div class="k"><b>{n["k"]}</b><span>rétt</span></div></div>'
     )
 
 
 def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
-    wrong = sorted((f for f in subset if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
+    wrong = _wrong_sorted([f for f in subset if f["status"] == "wrong"])
     if wrong:
         f = wrong[0]
         body = (
             '<article class="hero-item">'
-            + ('<span class="pill wrong">Staðfest rangt</span>' if f.get("confirmed") else "") +
+            + ('<span class="pill wrong confirmed">Staðfest rangt</span>' if f.get("confirmed") else "") +
             f'<p class="hero-date">{E(_pretty(f["date"]))} · {E(f["speaker"])} · {E(f["party"])}</p>'
             f'<h3>{E(f["title"])}</h3>'
             f'<p class="more"><a href="nidurstodur.html#{E(_anchor(f), quote=True)}">Lesa meira →</a></p></article>'
@@ -169,6 +176,11 @@ def _hero(findings: list, agenda_html: str, root: Path) -> str:
     )
 
 
+def _wrong_sorted(items: list) -> list:
+    """Staðfest rangt fyrst, svo nýjustu líklega röngu."""
+    return sorted(items, key=lambda f: (bool(f.get("confirmed")), _parse(f["date"])), reverse=True)
+
+
 def _anchor(f: dict) -> str:
     return re.sub(r"[^A-Za-z0-9_-]", "-", str(f.get("key", "")))
 
@@ -199,11 +211,12 @@ def card(f: dict) -> str:
         )
         srcs = f'  <div class="cite src">\n    <p class="cite-h">Heimildir</p>\n    <ul>{links}</ul>\n  </div>'
     pill = {"wrong": "Líklega rangt", "open": "Óstaðfest", "ok": "Rétt"}[f["status"]]
-    if f.get("confirmed"):  # staðfest handvirkt af umsjónarmanni síðunnar
+    conf = bool(f.get("confirmed"))  # staðfest handvirkt af umsjónarmanni síðunnar
+    if conf:
         pill = "Staðfest rangt"
     return (
-        f'<article class="card" id="{_anchor(f)}" data-s="{f["status"]}" {_attrs(f)}>\n'
-        f'  <span class="pill {f["status"]}">{pill}</span>\n'
+        f'<article class="card" id="{_anchor(f)}" data-s="{f["status"]}"{" data-confirmed" if conf else ""} {_attrs(f)}>\n'
+        f'  <span class="pill {f["status"]}{" confirmed" if conf else ""}">{pill}</span>\n'
         f'  <h3>{E(f["speaker"])}</h3>\n'
         f'  <p class="who">{E(f["party"])} · {E(_pretty(f["date"]))}{_permalink(f)}</p>\n'
         f'  <p class="topic">{E(f["title"])}</p>\n'
@@ -227,14 +240,16 @@ def render(root: Path) -> None:
     ag = json.loads(ag_p.read_text(encoding="utf-8")) if ag_p.exists() else None
 
     counts = {k: sum(1 for f in findings if f["status"] == k) for k in ("wrong", "open", "ok")}
+    n_conf = sum(1 for f in findings if f["status"] == "wrong" and f.get("confirmed"))
 
-    def tile(cls, label, n):
-        return (f'  <a class="tile {cls}" href="nidurstodur.html#f={cls}">'
+    def tile(cls, label, n, f=None):
+        return (f'  <a class="tile {cls}" href="nidurstodur.html#f={f or cls}">'
                 f'<span class="tile-l">{label}</span><b>{n}</b></a>\n')
 
     tiles = (
         '<section class="summary" aria-label="Yfirlit">\n'
-        + tile("wrong", "Líklega rangt", counts["wrong"])
+        + (tile("confirmed", "Staðfest rangt", n_conf, "wrong") if n_conf else "")
+        + tile("wrong", "Líklega rangt", counts["wrong"] - n_conf)
         + tile("open", "Óstaðfest", counts["open"])
         + tile("ok", "Rétt", counts["ok"])
         + tile("new", "Óyfirfarið", len(cands))
@@ -244,6 +259,8 @@ def render(root: Path) -> None:
     cards = []
     for status, title, lede, _ in SECTIONS:
         items = sorted((f for f in findings if f["status"] == status), key=lambda f: _parse(f["date"]), reverse=True)
+        if status == "wrong":
+            items = _wrong_sorted(items)
         if not items:
             continue
         cards.append(_head(status, title, lede))
@@ -291,7 +308,7 @@ def render(root: Path) -> None:
         '<p class="status" id="status" role="status" aria-live="polite"></p>\n'
         '<div class="empty hidden" id="empty">Ekkert passar. <button type="button" id="reset">Hreinsa síur</button></div>'
     )
-    wrong = sorted((f for f in findings if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
+    wrong = _wrong_sorted([f for f in findings if f["status"] == "wrong"])
     wrong_block = (_head("wrong", "Líklega rangt") + '\n<div class="results">\n' + "\n\n".join(card(f) for f in wrong) + "\n</div>") if wrong else ""
     pages = {
         "index.html": ("", "Staðreyndavakt Alþingis",
