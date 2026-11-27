@@ -35,7 +35,6 @@
   --art-bg: #e9ece8;
   --art-a: #b4c1c8;
   --art-b: #d2764b;
-  --art-band: #9c2f26;
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
   color-scheme: light;
@@ -57,8 +56,7 @@
     --art-bg: #10161a;
     --art-a: #34444c;
     --art-b: #9a5a3b;
-    --art-band: #7a2a24;
-    color-scheme: dark;
+      color-scheme: dark;
   }
 }
 * { box-sizing: border-box; }
@@ -249,9 +247,9 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .hint { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
 @media print {
   :root { --bg: #fff; --surface: #fff; --ink: #000; --muted: #333; --line: #bbb; }
-  .topbar { display: none !important; }
+  .masthead { display: none !important; }
   .duo, .results { display: block; }
-  .art-arches, .art-band { display: none !important; }
+  .art-arches { display: none !important; }
   .filters, .tools, .status, .empty, .skip, .permalink, .how, .hint, .pbtn:after { display: none !important; }
   .hidden { display: block !important; }
   body { font-size: 12pt; }
@@ -281,22 +279,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .hero-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 .hero-foot a { font-weight: 600; }
 
-/* Skraut: bogamynstur og ofið band, teiknað sem SVG (engar utanaðkomandi myndir) */
+/* Skraut: bogamynstur teiknað sem SVG (engar utanaðkomandi myndir) */
 .art-arches path { fill: none; stroke-width: 1.5; }
 .arc-a { stroke: var(--art-a); }
 .arc-b { stroke: var(--art-b); }
-.rib-a { stroke: var(--art-band); stroke-width: 9; fill: none; }
-.rib-b { stroke: var(--art-bg); stroke-width: 2; fill: none; }
 
 /* Yfirbragð: efsta stika, stórar tölur, tveggja dálka uppsetning */
-[id] { scroll-margin-top: 76px; }
-.topbar { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 2px 14px rgba(20, 40, 50, .07); }
-.topbar-in { max-width: 1040px; margin: 0 auto; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--accent); text-decoration: none; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; font-size: 15px; }
-.topbar nav { display: flex; gap: 4px 20px; flex-wrap: wrap; }
-.topbar nav a { color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; padding: 6px 0; border-bottom: 2px solid transparent; }
-.topbar nav a:hover { border-bottom-color: var(--accent); }
-.topbar a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 header { padding-top: 8px; }
 .intro { font-size: 20px; line-height: 1.5; color: var(--ink); max-width: 56ch; margin: 18px 0 0; }
 .meta { margin-top: 8px; }
@@ -341,7 +330,6 @@ a.tile:hover { border-color: var(--accent); }
 .more a { text-decoration: none; }
 .more a:hover { text-decoration: underline; }
 .note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
-.topbar nav a[aria-current="page"] { border-bottom-color: var(--accent); }
 .byparty { max-width: 720px; box-shadow: none; background: none; border: 0; padding: 0; margin: 0; }
 .method { max-width: 62ch; }
 .limits { max-width: 62ch; margin-top: 28px; box-shadow: none; background: none; border: 0; padding: 0; }
@@ -359,8 +347,6 @@ a.tile:hover { border-color: var(--accent); }
 
 /* Mynstrið nær yfir alla síðuna: fast bakgrunnsmynstur, efni á hvítum flötum ofan á */
 .art-arches { position: fixed; inset: 0; top: 0; width: 100%; height: 100%; z-index: -2; opacity: .4; pointer-events: none; }
-.band { position: relative; height: 26px; background: var(--bg); border-bottom: 1px solid var(--art-band); overflow: hidden; }
-.band .art-band { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 .page-h, .sec-head h2, .meta, .status, footer { background: var(--bg); padding: 4px 14px; border-radius: 12px; display: inline-block; }
 footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .meta { display: block; width: fit-content; margin: 28px auto 0; }
@@ -368,12 +354,6 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .sec-head h2 { margin: 24px 0 0; }
 .wrap { padding-top: 32px; }
 
-/* Formin líka í haus: mynstur á stikunni og bandið fest við hana */
-.topbar { overflow: visible; }
-.art-top { position: absolute; inset: 0; width: 100%; height: calc(100% - 26px); opacity: .35; pointer-events: none; }
-.topbar-in { position: relative; }
-.topbar .brand, .topbar nav { background: var(--surface); padding: 4px 12px; border-radius: 10px; }
-[id] { scroll-margin-top: 112px; }
 
 /* Staðfest rangt er áberandi umfram líklega rangt */
 .pill.confirmed { background: var(--wrong); color: var(--surface); font-size: 13px; padding: 4px 12px; letter-spacing: .06em; }
@@ -403,6 +383,17 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .chip-logo, .chip-logo[aria-selected="true"] { background: #1b2326; border: 2px solid transparent; opacity: .6; }
 .chip-logo[aria-selected="true"] { opacity: 1; border-color: var(--accent); }
 .pbadge { min-width: 0; height: auto; padding: 0; border: 0; background: none; font-size: 19px; font-weight: 700; letter-spacing: .01em; }
+
+/* Merki og leiðsögn eru hluti af efninu, ekki föst stika */
+.masthead { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 24px; }
+.masthead .brand, .masthead nav { background: var(--bg); padding: 6px 14px; border-radius: 12px; }
+.masthead .brand { padding-left: 8px; }
+.masthead nav { display: flex; gap: 4px 20px; flex-wrap: wrap; }
+.masthead nav a { color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; padding: 6px 0; border-bottom: 2px solid transparent; }
+.masthead nav a:hover, .masthead nav a[aria-current="page"] { border-bottom-color: var(--accent); }
+.masthead a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wrap { padding-top: 24px; }
+[id] { scroll-margin-top: 16px; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -410,12 +401,11 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 <body>
 <a class="skip" href="#efni">Fara í efni</a>
 <svg class="art-arches" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="arch" width="64" height="40" patternUnits="userSpaceOnUse"><path class="arc-a" d="M0 40A32 32 0 0 1 64 40"/><path class="arc-b" d="M-32 40A32 32 0 0 1 32 40M32 40A32 32 0 0 1 96 40"/></pattern></defs><rect width="100%" height="100%" fill="url(#arch)"/></svg>
-<div class="topbar"><svg class="art-top" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="url(#arch)"/></svg><div class="topbar-in">
+<main class="wrap" id="efni" tabindex="-1">
+<div class="masthead">
   <a class="brand" href="index.html"><svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="currentColor"/><path d="M16 34l12 12 22-26" fill="none" stroke="var(--surface)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Staðreyndavakt Alþingis</span></a>
   <nav aria-label="Flýtileiðir"><a href="index.html#dagskra">Dagskrá</a><a href="nidurstodur.html">Niðurstöður</a></nav>
 </div>
-<div class="band" aria-hidden="true"><svg class="art-band" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="rib" width="32" height="32" patternUnits="userSpaceOnUse"><path class="rib-a" d="M-4 -4L36 36M36 -4L-4 36"/><path class="rib-b" d="M-4 -4L36 36M36 -4L-4 36"/></pattern></defs><rect width="100%" height="100%" fill="url(#rib)"/></svg></div></div>
-<main class="wrap" id="efni" tabindex="-1">
 <h1 class="sr-only">Staðreyndavakt Alþingis</h1>
 <div class="hero">
 <section class="hero-main" aria-label="Líklega rangar fullyrðingar">
