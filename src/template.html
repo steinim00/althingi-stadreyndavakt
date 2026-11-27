@@ -6,10 +6,18 @@
 <title>Staðreyndavakt Alþingis</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a5f'/%3E%3Cpath d='M16 34l12 12 22-26' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Tölur og fullyrðingar úr ræðum þingmanna á Alþingi, bornar saman við opinber gögn. Allir flokkar fá sama mælikvarða. Uppfærist daglega.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="is_IS">
+<meta property="og:title" content="Staðreyndavakt Alþingis">
+<meta property="og:description" content="Tölur og fullyrðingar úr ræðum þingmanna, bornar saman við opinber gögn. Allir flokkar fá sama mælikvarða.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="fonts/SourceSans3-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face { font-family: "Fraunces"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/Fraunces-600.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: normal; font-display: swap; src: url("fonts/SourceSans3-400.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 600; font-style: normal; font-display: swap; src: url("fonts/SourceSans3-600.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 700; font-style: normal; font-display: swap; src: url("fonts/SourceSans3-700.woff2") format("woff2"); }
 /* Layout: one narrow reading column; summary strip first, then findings grouped by certainty. */
 :root {
   --bg: #f4f5f3;
@@ -227,12 +235,26 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .ag-t { display: block; font-weight: 600; }
 .ag-topic { font-weight: 400; color: var(--muted); }
 .ag-m { display: block; font-size: 14px; color: var(--muted); }
+
+.skip { position: absolute; left: 12px; top: -48px; background: var(--accent); color: var(--bg); padding: 8px 14px; border-radius: 6px; z-index: 10; }
+.skip:focus { top: 12px; }
+.hint { margin: 10px 0 0; font-size: 14px; color: var(--muted); }
+@media print {
+  :root { --bg: #fff; --surface: #fff; --ink: #000; --muted: #333; --line: #bbb; }
+  .filters, .tools, .status, .empty, .skip, .permalink, .how, .hint, .pbtn:after { display: none !important; }
+  .hidden { display: block !important; }
+  body { font-size: 12pt; }
+  .wrap { max-width: none; padding: 0; }
+  .card, .agenda, .cite { break-inside: avoid; }
+  a { color: inherit; text-decoration: underline; }
+}
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
 </head>
 <body>
-<main class="wrap">
+<a class="skip" href="#efni">Fara í efni</a>
+<main class="wrap" id="efni" tabindex="-1">
 <header>
   <h1>Staðreyndavakt Alþingis</h1>
   <p>Tölur og fullyrðingar úr ræðum þingmanna, bornar saman við opinber gögn. Allir flokkar fá sömu meðferð. Síðan uppfærist sjálfkrafa á hverjum degi.</p>
@@ -262,6 +284,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   <label class="sr-only" for="party">Flokkur</label>
   <select id="party"><option value="">Allir flokkar</option>{{PARTIES}}</select>
 </div>
+<p class="hint">Líklega rangt: heimild stangast á við fullyrðinguna. Óstaðfest: engin heimild fannst. <a href="#adferd">Nánar</a></p>
 <p class="status" id="status" role="status" aria-live="polite"></p>
 <div class="empty hidden" id="empty">Engar fullyrðingar passa við valið. <button type="button" id="reset">Hreinsa síur</button></div>
 

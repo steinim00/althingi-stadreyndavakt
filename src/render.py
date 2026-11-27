@@ -249,7 +249,16 @@ def render(root: Path) -> None:
 
     updated = cov.get("updated") or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     u = datetime.strptime(updated, "%Y-%m-%d")
-    meta = f'<p class="meta">Síðast keyrt {u.day}. {MONTHS[u.month - 1]} {u.year}.</p>'
+    checked = sorted(f["checked"] for f in findings if f.get("checked"))
+    n_today = sum(1 for c in checked if c == updated)
+    if n_today:
+        extra = f" {n_today} {'ný niðurstaða' if n_today == 1 else 'nýjar niðurstöður'} í dag."
+    elif checked:
+        d = datetime.strptime(checked[-1], "%Y-%m-%d")
+        extra = f" Síðasta athugun {d.day}. {MONTHS[d.month - 1]}."
+    else:
+        extra = ""
+    meta = f'<p class="meta">Síðast keyrt {u.day}. {MONTHS[u.month - 1]} {u.year}.{extra}</p>'
     meta = meta.replace('<p class="meta">', "").replace("</p>", "")
 
     out = (tpl.replace("{{TILES}}", tiles).replace("{{LIMITS}}", "\n".join(limits))
