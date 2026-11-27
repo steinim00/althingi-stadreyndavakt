@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Staðreyndavakt Alþingis</title>
+<title>{{TITLE}}</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f3a5f'/%3E%3Cpath d='M16 34l12 12 22-26' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
 <meta name="description" content="Tölur og fullyrðingar úr ræðum þingmanna á Alþingi, bornar saman við opinber gögn. Allir flokkar fá sama mælikvarða. Uppfærist daglega.">
@@ -211,7 +211,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .seg-ok { background: radial-gradient(circle, var(--ok) 1.4px, transparent 1.6px) 0 0 / 6px 6px, var(--ok-bg); box-shadow: inset 0 0 0 1px var(--ok); }
 .prow { padding: 10px 0; border-top: 1px solid var(--line); }
 .prow:first-of-type { border-top: 0; }
-.pbtn { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.pbtn { text-decoration: none; font: inherit; font-weight: 600; color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
 .pbtn:hover { color: var(--accent); text-decoration: underline; }
 .pbtn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 .pbar { display: flex; gap: 2px; height: 12px; margin: 6px 0 4px; }
@@ -339,6 +339,29 @@ header { padding-top: 8px; }
 .results .sec-head { grid-column: 1 / -1; }
 .results .card { margin: 0; }
 .card:target { scroll-margin-top: 84px; }
+
+/* Minimalismi: færri kassar, meira loft, hlekkir í stað langs texta */
+a.tile { display: block; color: var(--ink); text-decoration: none; }
+a.tile:hover { border-color: var(--accent); }
+.page-h { font-family: var(--font-display); font-weight: 600; font-size: clamp(28px, 5vw, 38px); margin: 24px 0 18px; }
+.more { margin: 14px 0 0; font-weight: 600; }
+.more a { text-decoration: none; }
+.more a:hover { text-decoration: underline; }
+.note { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+.topbar nav a[aria-current="page"] { border-bottom-color: var(--accent); }
+.byparty { max-width: 720px; box-shadow: none; background: none; border: 0; padding: 0; margin: 0; }
+.method { max-width: 62ch; }
+.limits { max-width: 62ch; margin-top: 28px; box-shadow: none; background: none; border: 0; padding: 0; }
+.limits h2 { margin: 0 0 6px; font-size: 22px; }
+.meta { text-align: center; margin: 28px 0 0; }
+.hero-main, .hero .agenda { box-shadow: none; }
+.hero .agenda .ag-list { max-height: none; }
+.hero-art { padding-top: 56px; }
+.art-band { height: 32px; }
+.art-arches { opacity: .6; }
+.summary { margin-top: 28px; }
+.tile { box-shadow: none; }
+.hero-item h3 { font-size: 24px; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -346,79 +369,16 @@ header { padding-top: 8px; }
 <body>
 <a class="skip" href="#efni">Fara í efni</a>
 <div class="topbar"><div class="topbar-in">
-  <a class="brand" href="#efni"><svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="currentColor"/><path d="M16 34l12 12 22-26" fill="none" stroke="var(--surface)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Staðreyndavakt Alþingis</span></a>
-  <nav aria-label="Flýtileiðir"><a href="#dagskra">Dagskrá</a><a href="#flokkar">Flokkar</a><a href="#nidurstodur">Niðurstöður</a><a href="#adferd">Aðferð</a></nav>
+  <a class="brand" href="index.html"><svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="currentColor"/><path d="M16 34l12 12 22-26" fill="none" stroke="var(--surface)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Staðreyndavakt Alþingis</span></a>
+  <nav aria-label="Flýtileiðir">{{NAV}}</nav>
 </div></div>
 <main class="wrap" id="efni" tabindex="-1">
-<header>
-  <h1 class="sr-only">Staðreyndavakt Alþingis</h1>
-  <p class="intro">Tölur og fullyrðingar úr ræðum þingmanna, bornar saman við opinber gögn. Allir flokkar fá sömu meðferð. Síðan uppfærist sjálfkrafa á hverjum degi.</p>
-  <p class="meta">{{META}}</p>
-  <p class="how"><a href="#adferd">Hvernig á að lesa niðurstöðurnar</a></p>
-</header>
-
-{{AGENDA}}
-
-{{TILES}}
-
-<div class="duo">
-{{BYPARTY}}
-
-{{LIMITS}}
-</div>
-
-<div class="filters" id="nidurstodur" role="group" aria-label="Sía eftir niðurstöðu">
-  <button type="button" data-f="all" aria-pressed="true">Allt</button>
-  <button type="button" data-f="wrong" aria-pressed="false">Líklega rangt</button>
-  <button type="button" data-f="open" aria-pressed="false">Óstaðfest</button>
-  <button type="button" data-f="ok" aria-pressed="false">Rétt</button>
-  <button type="button" data-f="new" aria-pressed="false">Óyfirfarið</button>
-</div>
-
-<div class="tools" role="search">
-  <label class="sr-only" for="q">Leita í fullyrðingum og nöfnum</label>
-  <input type="search" id="q" placeholder="Leita (nafn, efni, tala…)" autocomplete="off">
-  <label class="sr-only" for="party">Flokkur</label>
-  <select id="party"><option value="">Allir flokkar</option>{{PARTIES}}</select>
-</div>
-<p class="hint">Líklega rangt: heimild stangast á við fullyrðinguna. Óstaðfest: engin heimild fannst. <a href="#adferd">Nánar</a></p>
-<p class="status" id="status" role="status" aria-live="polite"></p>
-<div class="empty hidden" id="empty">Engar fullyrðingar passa við valið. <button type="button" id="reset">Hreinsa síur</button></div>
-
-<div class="results">
-{{CARDS}}
-</div>
-
-<section class="method" id="adferd" aria-labelledby="adferd-h">
-<h2 id="adferd-h">Aðferð</h2>
-<p class="lede">Hvernig fullyrðingar eru valdar og hvað hver niðurstaða þýðir.</p>
-<ol>
-  <li>Nýjar ræður eru sóttar daglega úr opnum gögnum Alþingis.</li>
-  <li>Setningar með tölum og skýrum staðhæfingum eru dregnar út. Fyrirspurnir og fundarstjórn eru undanskilin.</li>
-  <li>Hver fullyrðing er borin saman við nafngreindar opinberar heimildir. Allir flokkar fá sama mælikvarða.</li>
-  <li>Niðurstöður eru unnar af gervigreind með vefleit og þarf að lesa með gagnrýni. Heimildir eru alltaf birtar svo hægt sé að athuga þær.</li>
-</ol>
-<dl>
-  <dt>Líklega rangt</dt>
-  <dd>Nafngreind opinber heimild stangast á við fullyrðinguna. Það þýðir ekki að hún hafi verið sögð gegn betri vitund.</dd>
-  <dt>Óstaðfest</dt>
-  <dd>Hvorki fannst stuðningur né andstaða í opinberum gögnum. „Fann ekki heimild“ þýðir ekki að fullyrðingin sé röng.</dd>
-  <dt>Rétt</dt>
-  <dd>Fullyrðingin stemmir við opinberar heimildir.</dd>
-  <dt>Óyfirfarið</dt>
-  <dd>Fullyrðing hefur verið dregin út en ekki sannreynd enn.</dd>
-</dl>
-</section>
-
-<h2>Heimildir</h2>
-<ul class="sources">
-{{SOURCES}}
-</ul>
-
-<footer>Sjálfvirk samantekt úr ræðum á althingi.is. Niðurstöður eru unnar af gervigreind með vefleit og koma ekki í stað eigin athugunar á heimildum.</footer>
+{{MAIN}}
+<footer>Sjálfvirk samantekt úr ræðum á althingi.is.</footer>
 </main>
 <script>
 (function () {
+  if (!document.getElementById('q')) return;
   var buttons = document.querySelectorAll('[data-f]');
   var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-s]'));
   var heads = Array.prototype.slice.call(document.querySelectorAll('.sec-head'));
