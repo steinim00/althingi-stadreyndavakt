@@ -86,18 +86,27 @@ def _agenda(ag: dict | None) -> str:
         d = datetime.strptime(ag["date"], "%d.%m.%Y")
     except ValueError:
         return ""
-    when = f"{WEEKDAYS[d.weekday()]} {d.day}. {MONTHS[d.month - 1]} kl. {E(ag.get('time', ''))}"
+    short_month = ["jan.", "feb.", "mars", "apr.", "maí", "jún.", "júl.", "ágú.", "sep.", "okt.", "nóv.", "des."][d.month - 1]
     lis = []
-    for it in ag["items"]:
-        title = E(it["title"])
+    for n, it in enumerate(ag["items"], 1):
+        t = it["title"]
+        title = E(t[:1].upper() + t[1:])  # Alþingi skráir heiti oft með lágstaf
+        if it.get("topic"):
+            title += f' <span class="ag-topic">({E(it["topic"])})</span>'
         if it.get("url"):
             title = f'<a href="{E(it["url"], quote=True)}">{title}</a>'
-        lis.append(f"<li>{title}</li>")
+        kind = "" if it.get("kind", "").lower() == it["title"].lower() else it.get("kind", "")
+        bits = [b for b in (kind, it.get("stage")) if b]
+        if it.get("who"):
+            bits.append(f"málshefjandi {it['who']}")
+        meta = f'<span class="ag-m">{" · ".join(E(b) for b in bits)}</span>' if bits else ""
+        lis.append(f'<li><span class="ag-n">{n}</span><div>{title}{meta}</div></li>')
     iso = d.strftime("%Y-%m-%d")
     return (
         f'<section class="agenda" id="dagskra" data-date="{iso}" aria-labelledby="ag-h">\n'
-        '<h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>\n'
-        f'<p class="lede">{E(ag.get("name", ""))} · {when}</p>\n'
+        f'<div class="ag-head"><div class="ag-date" aria-hidden="true"><b>{d.day}</b><span>{short_month}</span></div>\n'
+        '<div><h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>\n'
+        f'<p class="ag-sub">{WEEKDAYS[d.weekday()]} kl. {E(ag.get("time", ""))} · {E(ag.get("name", ""))}</p></div></div>\n'
         f'<ol class="ag-list">\n{chr(10).join(lis)}\n</ol>\n'
         '<p class="more"><a href="https://www.althingi.is/thingstorf/thingfundir-og-raedur/thingfundir/" rel="noopener">Öll dagskráin →</a></p>\n'
         "</section>"

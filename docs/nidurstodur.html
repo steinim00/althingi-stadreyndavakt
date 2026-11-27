@@ -233,16 +233,6 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .card { scroll-margin-top: 16px; }
 .how { margin: 10px 0 0; font-size: 15px; }
 
-/* Dagskrá þingfundar */
-.agenda { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 14px 18px 8px; }
-.agenda h2 { margin: 0 0 4px; font-size: 22px; }
-.agenda .lede { margin-bottom: 8px; }
-.ag-list { margin: 0; padding-left: 26px; }
-.ag-list li { padding: 8px 0; border-top: 1px solid var(--line); }
-.ag-list li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
-.ag-t { display: block; font-weight: 600; }
-.ag-topic { font-weight: 400; color: var(--muted); }
-.ag-m { display: block; font-size: 14px; color: var(--muted); }
 
 .skip { position: absolute; left: 12px; top: -48px; background: var(--accent); color: var(--bg); padding: 8px 14px; border-radius: 6px; z-index: 10; }
 .skip:focus { top: 12px; }
@@ -265,7 +255,6 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 @media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
 .hero-main, .hero .agenda { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin: 0; }
 .hero .agenda { border-left-width: 1px; display: flex; flex-direction: column; }
-.hero .agenda .ag-list { overflow-y: auto; max-height: 460px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .chip { font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 7px 12px; cursor: pointer; }
 .chip[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
@@ -338,7 +327,6 @@ a.tile:hover { border-color: var(--accent); }
 .limits h2 { margin: 0 0 6px; font-size: 22px; }
 .meta { text-align: center; margin: 28px 0 0; }
 .hero-main, .hero .agenda { box-shadow: none; }
-.hero .agenda .ag-list { max-height: none; }
 .summary { margin-top: 28px; }
 .tile { box-shadow: none; }
 .hero-item h3 { font-size: 24px; }
@@ -402,6 +390,23 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .ribbon svg { display: block; width: 100%; height: 100%; }
 .rib-a { stroke: var(--art-band); stroke-width: 9; fill: none; }
 .rib-b { stroke: var(--bg); stroke-width: 2; fill: none; }
+
+/* Dagskrá þingfundar */
+.agenda { display: flex; flex-direction: column; }
+.ag-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.ag-date { flex: none; width: 64px; height: 68px; border-radius: 12px; background: var(--accent); color: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; }
+.ag-date b { font-family: var(--font-display); font-weight: 600; font-size: 30px; }
+.ag-date span { margin-top: 5px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.agenda h2 { margin: 0; font-size: 22px; line-height: 1.2; }
+.ag-sub { margin: 3px 0 0; font-size: 14px; color: var(--muted); }
+.ag-list { list-style: none; margin: 0; padding: 0; counter-reset: none; }
+.ag-list li { display: flex; gap: 12px; padding: 11px 0; border-top: 1px solid var(--line); }
+.ag-n { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--line); color: var(--muted); font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; font-variant-numeric: tabular-nums; }
+.ag-list a { font-weight: 600; text-decoration: none; }
+.ag-list a:hover { text-decoration: underline; }
+.ag-topic { font-weight: 400; color: var(--muted); }
+.ag-m { display: block; font-size: 13px; color: var(--muted); margin-top: 2px; }
+.agenda .more { margin-top: auto; padding-top: 14px; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
