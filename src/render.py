@@ -106,6 +106,59 @@ def _agenda(ag: dict | None) -> str:
     )
 
 
+# Ríkisstjórn frá desember 2024. Uppfæra ef stjórnarsamstarf breytist.
+GOVERNMENT = ("Samfylkingin", "Viðreisn", "Flokkur fólksins")
+OPPOSITION_FOCUS = "Sjálfstæðisflokkurinn"
+
+
+def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
+    wrong = sorted((f for f in subset if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
+    sub = (f'{len(wrong)} af {len(subset)} yfirfarnum fullyrðingum metnar líklega rangar')
+    items = []
+    for f in wrong[:3]:
+        quote = f["claim"] if len(f["claim"]) <= 170 else f["claim"][:167].rsplit(" ", 1)[0] + "…"
+        items.append(
+            '<article class="hero-item">'
+            f'<p class="hero-date">{E(_pretty(f["date"]))} · {E(f["speaker"])} · {E(f["party"])}</p>'
+            f'<h3>{E(f["title"])}</h3>'
+            f'<p class="hero-quote">„{E(quote)}“</p>'
+            f'<p class="hero-more"><a href="#{E(_anchor(f), quote=True)}">Lesa meira</a></p></article>'
+        )
+    if not items:
+        counts = {k: sum(1 for f in subset if f["status"] == k) for k in ("open", "ok")}
+        items.append(
+            '<p class="hero-none">Engin fullyrðing hefur verið metin líklega röng. '
+            f'Óstaðfest: {counts["open"]}, rétt: {counts["ok"]}.</p>'
+        )
+    return (
+        f'<div class="hero-panel{"" if active else " hidden"}" role="tabpanel" id="hp-{pid}" aria-labelledby="ht-{pid}">'
+        f'<p class="hero-sub">{E(sub)}</p>{"".join(items)}</div>'
+    )
+
+
+def _hero(findings: list, agenda_html: str) -> str:
+    gov = [f for f in findings if f["party"] in GOVERNMENT]
+    opp = [f for f in findings if f["party"] == OPPOSITION_FOCUS]
+    tabs = (("gov", "Stjórnarflokkar", gov), ("d", OPPOSITION_FOCUS, opp))
+    chips = "".join(
+        f'<button type="button" role="tab" class="chip" id="ht-{i}" data-tab="{i}" aria-controls="hp-{i}" '
+        f'aria-selected="{"true" if n == 0 else "false"}">{E(lbl)}</button>'
+        for n, (i, lbl, _) in enumerate(tabs)
+    )
+    panels = "".join(_hero_panel(i, lbl, sub, n == 0) for n, (i, lbl, sub) in enumerate(tabs))
+    members = ", ".join(GOVERNMENT)
+    return (
+        '<div class="hero">\n'
+        '<section class="hero-main" aria-labelledby="hero-h">\n'
+        '<h2 id="hero-h" class="sr-only">Líklega rangar fullyrðingar</h2>\n'
+        f'<div class="chips" role="tablist" aria-label="Velja hóp">{chips}</div>\n{panels}\n'
+        f'<p class="hero-foot"><a href="#f=wrong">Allar líklega röngu fullyrðingarnar</a>'
+        f'<span>Stjórnarflokkar: {E(members)}</span></p>\n'
+        '</section>\n'
+        f'{agenda_html}\n</div>'
+    )
+
+
 def _anchor(f: dict) -> str:
     return re.sub(r"[^A-Za-z0-9_-]", "-", str(f.get("key", "")))
 
@@ -263,7 +316,7 @@ def render(root: Path) -> None:
 
     out = (tpl.replace("{{TILES}}", tiles).replace("{{LIMITS}}", "\n".join(limits))
               .replace("{{CARDS}}", "\n\n".join(cards)).replace("{{SOURCES}}", "\n".join(sources))
-              .replace("{{AGENDA}}", _agenda(ag)).replace("{{BYPARTY}}", _byparty(findings)).replace("{{META}}", meta).replace("{{PARTIES}}", party_opts))
+              .replace("{{AGENDA}}", _hero(findings, _agenda(ag))).replace("{{BYPARTY}}", _byparty(findings)).replace("{{META}}", meta).replace("{{PARTIES}}", party_opts))
     (root / "docs").mkdir(exist_ok=True)
     (root / "docs" / "index.html").write_text(out, encoding="utf-8")
 

@@ -63,7 +63,7 @@ body {
   font-size: 17px;
   line-height: 1.55;
 }
-.wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 72px; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 40px 20px 72px; }
 header h1 {
   font-family: var(--font-display);
   font-weight: 600;
@@ -248,6 +248,29 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   .card, .agenda, .cite { break-inside: avoid; }
   a { color: inherit; text-decoration: underline; }
 }
+
+/* Forsíðuborð: líklega rangt til vinstri, dagskrá þingsins til hægri */
+.wrap > :not(header):not(.hero):not(.summary):not(.byparty) { max-width: 760px; }
+.byparty, .summary { max-width: 760px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; margin-top: 28px; align-items: stretch; }
+@media (max-width: 860px) { .hero { grid-template-columns: 1fr; } }
+.hero-main, .hero .agenda { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin: 0; }
+.hero .agenda { border-left-width: 1px; display: flex; flex-direction: column; }
+.hero .agenda .ag-list { overflow-y: auto; max-height: 340px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.chip { font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; padding: 7px 12px; cursor: pointer; }
+.chip[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.hero-sub { margin: 0 0 12px; font-size: 14px; color: var(--muted); }
+.hero-item { padding: 12px 0; border-top: 1px solid var(--line); }
+.hero-item:first-of-type { border-top: 0; padding-top: 0; }
+.hero-date { margin: 0 0 4px; font-size: 14px; font-weight: 600; color: var(--accent); }
+.hero-item h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.25; margin: 0 0 6px; text-wrap: balance; }
+.hero-quote { margin: 0 0 6px; color: var(--muted); }
+.hero-more { margin: 0; font-weight: 600; }
+.hero-none { margin: 8px 0 12px; font-size: 18px; max-width: 46ch; }
+.hero-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; margin: 14px 0 0; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.hero-foot a { font-weight: 600; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -262,6 +285,13 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   <p class="how"><a href="#adferd">Hvernig á að lesa niðurstöðurnar</a></p>
 </header>
 
+<div class="hero">
+<section class="hero-main" aria-labelledby="hero-h">
+<h2 id="hero-h" class="sr-only">Líklega rangar fullyrðingar</h2>
+<div class="chips" role="tablist" aria-label="Velja hóp"><button type="button" role="tab" class="chip" id="ht-gov" data-tab="gov" aria-controls="hp-gov" aria-selected="true">Stjórnarflokkar</button><button type="button" role="tab" class="chip" id="ht-d" data-tab="d" aria-controls="hp-d" aria-selected="false">Sjálfstæðisflokkurinn</button></div>
+<div class="hero-panel" role="tabpanel" id="hp-gov" aria-labelledby="ht-gov"><p class="hero-sub">1 af 21 yfirfarnum fullyrðingum metnar líklega rangar</p><article class="hero-item"><p class="hero-date">18. nóvember · Þorgerður Katrín Gunnarsdóttir · Viðreisn</p><h3>Vextir „enn 1% lægri“ en við valdatöku</h3><p class="hero-quote">„Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.“</p><p class="hero-more"><a href="#seed-1">Lesa meira</a></p></article></div><div class="hero-panel hidden" role="tabpanel" id="hp-d" aria-labelledby="ht-d"><p class="hero-sub">0 af 18 yfirfarnum fullyrðingum metnar líklega rangar</p><p class="hero-none">Engin fullyrðing hefur verið metin líklega röng. Óstaðfest: 9, rétt: 9.</p></div>
+<p class="hero-foot"><a href="#f=wrong">Allar líklega röngu fullyrðingarnar</a><span>Stjórnarflokkar: Samfylkingin, Viðreisn, Flokkur fólksins</span></p>
+</section>
 <section class="agenda" id="dagskra" data-date="2026-11-30" data-ended="false" aria-labelledby="ag-h">
 <h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>
 <p class="lede">44. fundur · mánudagur 30. nóvember kl. 13:30 · 4 dagskrárliðir. <a href="https://www.althingi.is/thingstorf/thingfundir-og-raedur/thingfundir/" rel="noopener">Dagskrá á althingi.is</a></p>
@@ -272,6 +302,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 <li><span class="ag-t"><a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=158&amp;mnr=364">breyting á ýmsum lögum vegna sameiningar sýslumannsembætta</a></span><span class="ag-m">Frumvarp til laga · 1. umræða</span></li>
 </ol>
 </section>
+</div>
 
 <section class="summary" aria-label="Yfirlit">
   <button type="button" class="tile wrong" data-f="wrong"><b>2</b><span>líklega röng eða ónákvæm</span></button>
@@ -1510,6 +1541,20 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   // Dagsetning í Reykjavík (UTC) svo fyrirsögnin passi þótt síðan hafi ekki verið endurgerð í dag
   var today = new Date().toISOString().slice(0, 10), d = sec.getAttribute('data-date');
   label.textContent = d === today ? 'Dagskrá Alþingis í dag' : (d > today ? 'Næsti þingfundur' : 'Síðasti þingfundur');
+})();
+</script>
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.chip[data-tab]');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (x) {
+        var on = x === t;
+        x.setAttribute('aria-selected', on ? 'true' : 'false');
+        document.getElementById('hp-' + x.getAttribute('data-tab')).classList.toggle('hidden', !on);
+      });
+    });
+  });
 })();
 </script>
 </body>
