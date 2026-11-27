@@ -101,6 +101,10 @@ def _agenda(ag: dict | None) -> str:
 # Ríkisstjórn frá desember 2024. Uppfæra ef stjórnarsamstarf breytist.
 GOVERNMENT = ("Samfylkingin", "Viðreisn", "Flokkur fólksins")
 OPPOSITION_FOCUS = "Sjálfstæðisflokkurinn"
+# Listabókstafir. Merki flokkanna eru sótt úr docs/logos/x<stafur>.(svg|png|webp);
+# vanti skrá birtist hlutlaus bókstafsmerking í staðinn.
+LIST_LETTER = {"Viðreisn": "C", "Flokkur fólksins": "F", "Samfylkingin": "S", "Sjálfstæðisflokkurinn": "D"}
+GOV_ORDER = ("Viðreisn", "Flokkur fólksins", "Samfylkingin")
 
 
 ART = (
@@ -144,13 +148,23 @@ def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
     )
 
 
-def _hero(findings: list, agenda_html: str) -> str:
+def _logo(root: Path, party: str) -> str:
+    letter = LIST_LETTER[party]
+    for ext in ("svg", "png", "webp", "jpg"):
+        if (root / "docs" / "logos" / f"x{letter}.{ext}").exists():
+            return f'<img class="plogo" src="logos/x{letter}.{ext}" alt="{E(party)}" title="{E(party)}">'
+    return f'<span class="pbadge" role="img" aria-label="{E(party)}" title="{E(party)}">x{letter}</span>'
+
+
+def _hero(findings: list, agenda_html: str, root: Path) -> str:
     gov = [f for f in findings if f["party"] in GOVERNMENT]
     opp = [f for f in findings if f["party"] == OPPOSITION_FOCUS]
     tabs = (("gov", "Stjórnarflokkar", gov), ("d", OPPOSITION_FOCUS, opp))
+    marks = {"gov": "".join(_logo(root, p) for p in GOV_ORDER), "d": _logo(root, OPPOSITION_FOCUS)}
+    names = {"gov": "Stjórnarflokkar: " + ", ".join(GOV_ORDER), "d": OPPOSITION_FOCUS}
     chips = "".join(
-        f'<button type="button" role="tab" class="chip" id="ht-{i}" data-tab="{i}" aria-controls="hp-{i}" '
-        f'aria-selected="{"true" if n == 0 else "false"}">{E(lbl)}</button>'
+        f'<button type="button" role="tab" class="chip chip-logo" id="ht-{i}" data-tab="{i}" aria-controls="hp-{i}" '
+        f'aria-label="{E(names[i], quote=True)}" aria-selected="{"true" if n == 0 else "false"}">{marks[i]}</button>'
         for n, (i, lbl, _) in enumerate(tabs)
     )
     panels = "".join(_hero_panel(i, lbl, sub, n == 0) for n, (i, lbl, sub) in enumerate(tabs))
@@ -354,7 +368,7 @@ def render(root: Path) -> None:
     )
     pages = {
         "index.html": ("", "Staðreyndavakt Alþingis",
-                       f'<h1 class="sr-only">Staðreyndavakt Alþingis</h1>\n{_hero(findings, _agenda(ag))}\n{tiles}\n<p class="meta">{meta}</p>'),
+                       f'<h1 class="sr-only">Staðreyndavakt Alþingis</h1>\n{_hero(findings, _agenda(ag), root)}\n{tiles}\n<p class="meta">{meta}</p>'),
         "nidurstodur.html": ("nidurstodur", "Niðurstöður",
                              '<h1 class="page-h">Niðurstöður</h1>\n' + filters + '\n<div class="results">\n' + "\n\n".join(cards) + "\n</div>"),
         "flokkar.html": ("flokkar", "Flokkar", '<h1 class="page-h">Flokkar</h1>\n' + _byparty(findings)),
