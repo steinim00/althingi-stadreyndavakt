@@ -41,24 +41,30 @@ def _speech_link(url: str, claim: str) -> str:
     return url + (f"#:~:text={frag}" if frag else "")
 
 
-def _speech_block(f: dict, extra_class: str = "") -> str:
+def _speech_link_html(f: dict) -> str:
     if f.get("speech"):
-        href = _speech_link(f["speech"], f["claim"])
-        link = f'<a href="{E(href, quote=True)}">Opna ræðuna á althingi.is</a>'
-    elif f.get("speech_guess"):
-        links = ", ".join(
-            f'<a href="{E(u, quote=True)}">ræða {i}</a>' for i, u in enumerate(f["speech_guess"], 1)
+        return f'<a href="{E(_speech_link(f["speech"], f["claim"]), quote=True)}">Ræðan →</a>'
+    if f.get("speech_guess"):
+        return "Ræður þann dag: " + ", ".join(
+            f'<a href="{E(u, quote=True)}">{i}</a>' for i, u in enumerate(f["speech_guess"], 1)
         )
-        link = f"Ekki tókst að finna nákvæma ræðu. Ræður þingmannsins þann dag: {links}"
-    else:
-        link = "Slóð á ræðuna fannst ekki."
-    return (
-        f'  <div class="cite{extra_class}">\n'
-        f'    <p class="cite-h">Úr ræðu</p>\n'
-        f'    <blockquote>„{E(f["claim"])}“</blockquote>\n'
-        f'    <p class="cite-l">Ræða {E(_pretty(f["date"]))} · {link}</p>\n'
-        f"  </div>"
-    )
+    return ""
+
+
+def _speech_block(f: dict, extra_class: str = "") -> str:
+    """Stutt tilvitnun og hlekkir (ræðan og heimildir) í einni línu."""
+    links = [x for x in [_speech_link_html(f)] if x]
+    links += [f'<a href="{E(s["url"], quote=True)}">{E(s["title"])}</a>' for s in f.get("sources", [])]
+    line = f'  <p class="links">{" · ".join(links)}</p>\n' if links else ""
+    return f'  <blockquote class="q">„{E(f["claim"])}“</blockquote>\n{line}'.rstrip("\n")
+
+
+def _short_facts(text: str) -> str:
+    """Fyrsta setning (hámark ~170 stafir) sýnileg, restin undir „Nánar“."""
+    m = re.match(r"(.{40,170}?[.!?])(\s+)(.+)", text, re.S)
+    if not m or len(text) <= 190:
+        return E(text)
+    return f'{E(m.group(1))} <details><summary>Nánar</summary>{E(m.group(3))}</details>'
 
 
 def _attrs(f: dict) -> str:
@@ -145,20 +151,19 @@ def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
     )
 
 
-# Litir flokkanna (nálgun) og læsilegur textalitur ofan á hverjum þeirra. Stillt hér.
+# Litir flokkanna (nálgun), valdir til að sjást vel á dökkum flipa.
 PARTY_COLOR = {
-    "Viðreisn": ("#f58220", "#1b2326"),
-    "Flokkur fólksins": ("#ffc93d", "#1b2326"),
-    "Samfylkingin": ("#d3212f", "#ffffff"),
-    "Sjálfstæðisflokkurinn": ("#00adef", "#0b1a22"),
+    "Viðreisn": "#ff9a3c",
+    "Flokkur fólksins": "#ffd43b",
+    "Samfylkingin": "#ff4d5d",
+    "Sjálfstæðisflokkurinn": "#29b6f6",
 }
 
 
 def _logo(root: Path, party: str) -> str:
-    """Listabókstafur flokksins (xC o.s.frv.) í lit flokksins."""
-    bg, fg = PARTY_COLOR[party]
+    """Listabókstafur flokksins (xC o.s.frv.), aðeins stafirnir í lit flokksins."""
     return (f'<span class="pbadge" role="img" aria-label="{E(party)}" title="{E(party)}" '
-            f'style="background:{bg};color:{fg};border-color:{bg}">x{LIST_LETTER[party]}</span>')
+            f'style="color:{PARTY_COLOR[party]}">x{LIST_LETTER[party]}</span>')
 
 
 def _hero(findings: list, agenda_html: str, root: Path) -> str:
@@ -196,27 +201,11 @@ def _permalink(f: dict) -> str:
     return f' <a class="permalink" href="#{E(_anchor(f), quote=True)}" aria-label="Tengill á þessa fullyrðingu">#</a>' if f.get("key") else ""
 
 
-def _checked(f: dict) -> str:
-    if not f.get("checked"):
-        return ""
-    try:
-        d = datetime.strptime(f["checked"], "%Y-%m-%d")
-        return f" <span class=\"checked\">(Athugað {d.day}. {MONTHS[d.month - 1]}.)</span>"
-    except ValueError:
-        return ""
-
-
 def _head(status: str, title: str, lede: str = "") -> str:
     return f'<div class="sec-head" data-sec="{status}">\n<h2>{E(title)}</h2>\n</div>'
 
 
 def card(f: dict) -> str:
-    srcs = ""
-    if f.get("sources"):
-        links = "".join(
-            f'<li><a href="{E(s["url"], quote=True)}">{E(s["title"])}</a></li>' for s in f["sources"]
-        )
-        srcs = f'  <div class="cite src">\n    <p class="cite-h">Heimildir</p>\n    <ul>{links}</ul>\n  </div>'
     pill = {"wrong": "Líklega rangt", "open": "Óstaðfest", "ok": "Rétt"}[f["status"]]
     conf = bool(f.get("confirmed"))  # staðfest handvirkt af umsjónarmanni síðunnar
     if conf:
@@ -228,8 +217,8 @@ def card(f: dict) -> str:
         f'  <p class="who">{E(f["party"])} · {E(_pretty(f["date"]))}{_permalink(f)}</p>\n'
         f'  <p class="topic">{E(f["title"])}</p>\n'
         f'{_speech_block(f)}\n'
-        f'  <p class="facts"><strong>Niðurstaða:</strong> {E(f["facts"])}{_checked(f)}</p>\n'
-        f"{srcs}\n</article>"
+        f'  <p class="facts">{_short_facts(f["facts"])}</p>\n'
+        "</article>"
     )
 
 
