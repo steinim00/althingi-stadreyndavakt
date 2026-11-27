@@ -101,8 +101,7 @@ def _agenda(ag: dict | None) -> str:
 # Ríkisstjórn frá desember 2024. Uppfæra ef stjórnarsamstarf breytist.
 GOVERNMENT = ("Samfylkingin", "Viðreisn", "Flokkur fólksins")
 OPPOSITION_FOCUS = "Sjálfstæðisflokkurinn"
-# Listabókstafir. Merki flokkanna eru sótt úr docs/logos/x<stafur>.(svg|png|webp);
-# vanti skrá birtist hlutlaus bókstafsmerking í staðinn.
+# Listabókstafir flokkanna.
 LIST_LETTER = {"Viðreisn": "C", "Flokkur fólksins": "F", "Samfylkingin": "S", "Sjálfstæðisflokkurinn": "D"}
 GOV_ORDER = ("Viðreisn", "Flokkur fólksins", "Samfylkingin")
 
@@ -146,12 +145,20 @@ def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
     )
 
 
+# Litir flokkanna (nálgun) og læsilegur textalitur ofan á hverjum þeirra. Stillt hér.
+PARTY_COLOR = {
+    "Viðreisn": ("#f58220", "#1b2326"),
+    "Flokkur fólksins": ("#ffc93d", "#1b2326"),
+    "Samfylkingin": ("#d3212f", "#ffffff"),
+    "Sjálfstæðisflokkurinn": ("#00adef", "#0b1a22"),
+}
+
+
 def _logo(root: Path, party: str) -> str:
-    letter = LIST_LETTER[party]
-    for ext in ("svg", "png", "webp", "jpg"):
-        if (root / "docs" / "logos" / f"x{letter}.{ext}").exists():
-            return f'<img class="plogo" src="logos/x{letter}.{ext}" alt="{E(party)}" title="{E(party)}">'
-    return f'<span class="pbadge" role="img" aria-label="{E(party)}" title="{E(party)}">x{letter}</span>'
+    """Listabókstafur flokksins (xC o.s.frv.) í lit flokksins."""
+    bg, fg = PARTY_COLOR[party]
+    return (f'<span class="pbadge" role="img" aria-label="{E(party)}" title="{E(party)}" '
+            f'style="background:{bg};color:{fg};border-color:{bg}">x{LIST_LETTER[party]}</span>')
 
 
 def _hero(findings: list, agenda_html: str, root: Path) -> str:
