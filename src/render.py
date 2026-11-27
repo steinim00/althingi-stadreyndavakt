@@ -124,6 +124,16 @@ ART = (
 )
 
 
+def _hero_stats(subset: list) -> str:
+    n = {k: sum(1 for f in subset if f["status"] == k) for k in ("wrong", "open", "ok")}
+    return (
+        '<div class="hero-stats">'
+        f'<div class="w"><b>{n["wrong"]}</b><span>líklega rangt</span></div>'
+        f'<div class="o"><b>{n["open"]}</b><span>óstaðfest</span></div>'
+        f'<div class="k"><b>{n["ok"]}</b><span>rétt</span></div></div>'
+    )
+
+
 def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
     wrong = sorted((f for f in subset if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
     sub = (f'{len(wrong)} af {len(subset)} yfirfarnum fullyrðingum metnar líklega rangar')
@@ -145,7 +155,7 @@ def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
         )
     return (
         f'<div class="hero-panel{"" if active else " hidden"}" role="tabpanel" id="hp-{pid}" aria-labelledby="ht-{pid}">'
-        f'<p class="hero-sub">{E(sub)}</p>{"".join(items)}</div>'
+        f'<p class="hero-sub">{E(sub)}</p>{"".join(items)}{_hero_stats(subset)}</div>'
     )
 
 
@@ -200,7 +210,7 @@ def _byparty(findings: list) -> str:
     top = max(sum(v.values()) for _, v in order)
     labels = {"wrong": "líklega rangt", "open": "óstaðfest", "ok": "rétt"}
     out = [
-        '<section class="byparty" aria-labelledby="bp-h">',
+        '<section class="byparty" id="flokkar" aria-labelledby="bp-h">',
         '<h2 id="bp-h">Eftir flokkum</h2>',
         '<p class="lede">Fjöldi yfirfarinna fullyrðinga á flokk. Úrtakið er ekki slembiúrtak, svo ekki er hægt að álykta um flokkana af þessu einu. Smelltu á flokk til að sía.</p>',
         '<ul class="legend" aria-hidden="true">'
@@ -262,13 +272,17 @@ def render(root: Path) -> None:
     ag = json.loads(ag_p.read_text(encoding="utf-8")) if ag_p.exists() else None
 
     counts = {k: sum(1 for f in findings if f["status"] == k) for k in ("wrong", "open", "ok")}
+    def tile(cls, label, n, cap):
+        return (f'  <button type="button" class="tile {cls}" data-f="{cls}"><span class="tile-l">{label}</span>'
+                f'<b>{n}</b><span class="tile-c">{cap}</span></button>\n')
+
     tiles = (
         '<section class="summary" aria-label="Yfirlit">\n'
-        f'  <button type="button" class="tile wrong" data-f="wrong"><b>{counts["wrong"]}</b><span>líklega röng eða ónákvæm</span></button>\n'
-        f'  <button type="button" class="tile open" data-f="open"><b>{counts["open"]}</b><span>óstaðfest</span></button>\n'
-        f'  <button type="button" class="tile ok" data-f="ok"><b>{counts["ok"]}</b><span>staðfest rétt</span></button>\n'
-        f'  <button type="button" class="tile new" data-f="new"><b>{len(cands)}</b><span>óyfirfarnar fullyrðingar</span></button>\n'
-        "</section>"
+        + tile("wrong", "Líklega rangt", counts["wrong"], "heimild stangast á við fullyrðinguna")
+        + tile("open", "Óstaðfest", counts["open"], "engin heimild fannst")
+        + tile("ok", "Rétt", counts["ok"], "stemmir við heimildir")
+        + tile("new", "Óyfirfarið", len(cands), "bíða yfirferðar")
+        + "</section>"
     )
 
     gaps = [
