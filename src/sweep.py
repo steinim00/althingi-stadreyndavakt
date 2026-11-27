@@ -6,6 +6,8 @@ er hætt og hægt að keyra aftur síðar; það sem er búið er ekki sótt aft
 framhjá vörn vefsins.
 """
 import json
+import os
+import re
 import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -14,6 +16,9 @@ from . import extract, fetch
 from .run import MIN_SPEECH_CHARS, _html_url, claim_key
 
 TYPES = {"ræða", "flutningsræða", "svar"}  # andsvör o.fl. eru stutt og sleppt
+# FOCUS_RE=<regex> takmarkar yfirferðina við mál þar sem heitið passar (t.d. störf þingsins og
+# óundirbúnar fyrirspurnir) og sleppir þá reglunni um að sleppa fyrirspurnum.
+FOCUS = re.compile(os.environ["FOCUS_RE"], re.IGNORECASE) if os.environ.get("FOCUS_RE") else None
 
 
 def all_speeches(session, lthing: int) -> list[dict]:
@@ -39,7 +44,12 @@ def all_speeches(session, lthing: int) -> list[dict]:
                 rec["mheiti"] = txt
             elif t == "html":
                 rec["html"] = txt.replace("http://", "https://")
-        if rec["xml"] and rec["teg"] in TYPES and not extract.is_skippable(rec["mheiti"], rec["teg"]):
+        if not rec["xml"] or rec["teg"] not in TYPES:
+            continue
+        if FOCUS is not None:
+            if FOCUS.search(rec["mheiti"]):
+                out.append(rec)
+        elif not extract.is_skippable(rec["mheiti"], rec["teg"]):
             out.append(rec)
     return out
 
