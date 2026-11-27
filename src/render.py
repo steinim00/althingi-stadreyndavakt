@@ -94,7 +94,7 @@ def _agenda(ag: dict | None) -> str:
         if it.get("to"):
             meta += (" · " if meta else "") + f"Til svara: {E(it['to'])}"
         topic = f' <span class="ag-topic">({E(it["topic"])})</span>' if it.get("topic") else ""
-        lis.append(f'<li><span class="ag-t">{title}{topic}</span><span class="ag-m">{meta}</span></li>')
+        lis.append(f'<li><span class="ag-t">{title}{topic}</span>{f'<span class="ag-m">{meta}</span>' if meta else ''}</li>')
     iso = d.strftime("%Y-%m-%d")
     return (
         f'<section class="agenda" id="dagskra" data-date="{iso}" data-ended="{str(bool(ag.get("ended"))).lower()}" '
