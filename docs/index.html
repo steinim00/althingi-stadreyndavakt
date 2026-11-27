@@ -45,21 +45,6 @@
     color-scheme: dark;
   }
 }
-:root[data-theme="dark"] {
-  --bg: #14191b;
-  --surface: #1c2326;
-  --ink: #e6ebe9;
-  --muted: #9aa6a9;
-  --line: #2f3a3e;
-  --accent: #7fc0d6;
-  --wrong: #f0988d;
-  --wrong-bg: #3a2220;
-  --open: #e5c066;
-  --open-bg: #38301a;
-  --ok: #86c9a0;
-  --ok-bg: #1d3226;
-  color-scheme: dark;
-}
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -97,9 +82,12 @@ header p { margin: 0; color: var(--muted); max-width: 62ch; }
 }
 .tile b { display: block; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .tile span { font-size: 14px; color: var(--muted); }
-.tile.wrong { border: 5px solid var(--wrong); }
-.card[data-s="wrong"] { border: 5px solid var(--wrong); }
-.cite-l strong { color: var(--ink); font-weight: 800; }
+.tile.wrong { border-left-color: var(--wrong); }
+.card { border-left-width: 4px; }
+.card[data-s="wrong"] { border-left-color: var(--wrong); }
+.card[data-s="open"] { border-left-color: var(--open); }
+.card[data-s="ok"] { border-left-color: var(--ok); }
+.cite-l strong { color: var(--ink); font-weight: 700; }
 .tile.open { border-left-color: var(--open); }
 .tile.ok { border-left-color: var(--ok); }
 .tile.new { border-left-color: var(--muted); }
@@ -142,10 +130,9 @@ h2 {
   padding: 16px 18px;
   margin: 0 0 14px;
 }
-.card h3 { font-size: 22px; font-weight: 800; margin: 6px 0 2px; line-height: 1.25; }
-.card .who { margin: 0 0 8px; font-size: 15px; color: var(--muted); }
+.card h3 { font-size: 22px; font-weight: 700; margin: 6px 0 2px; line-height: 1.25; }
 .card .topic { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--ink); }
-.who { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+.who { font-size: 15px; color: var(--muted); margin: 0 0 8px; }
 .card p { margin: 0 0 10px; }
 .card p:last-child { margin-bottom: 0; }
 .pill {
@@ -181,6 +168,21 @@ td.bad { color: var(--wrong); text-decoration: line-through; text-decoration-thi
 .sources li { margin-bottom: 4px; }
 a { color: var(--accent); }
 footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0 0; }
+.tools input[type="search"], .tools select {
+  font: inherit; font-size: 15px; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; min-width: 0;
+}
+.tools input[type="search"] { flex: 1 1 220px; }
+.tools select { flex: 0 1 190px; }
+.tools input:focus-visible, .tools select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.tools label { font-size: 14px; color: var(--muted); }
+.status { margin: 14px 0 0; font-size: 14px; color: var(--muted); min-height: 1.5em; }
+.status button { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 8px; padding: 20px; margin-top: 16px; color: var(--muted); text-align: center; }
+.sec-head h2 { margin-top: 32px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -217,10 +219,21 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   <button type="button" data-f="new" aria-pressed="false">Óyfirfarið</button>
 </div>
 
+<div class="tools" role="search">
+  <label class="sr-only" for="q">Leita í fullyrðingum og nöfnum</label>
+  <input type="search" id="q" placeholder="Leita (nafn, efni, tala…)" autocomplete="off">
+  <label class="sr-only" for="party">Flokkur</label>
+  <select id="party"><option value="">Allir flokkar</option><option value="Flokkur fólksins">Flokkur fólksins</option><option value="Framsókn">Framsókn</option><option value="Miðflokkurinn">Miðflokkurinn</option><option value="Samfylkingin">Samfylkingin</option><option value="Sjálfstæðisflokkurinn">Sjálfstæðisflokkurinn</option><option value="Viðreisn">Viðreisn</option><option value="utan þingflokka">utan þingflokka</option></select>
+</div>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+<div class="empty hidden" id="empty">Engar fullyrðingar passa við valið. <button type="button" id="reset">Hreinsa síur</button></div>
+
+<div class="sec-head" data-sec="wrong">
 <h2>Líklega rangt eða ónákvæmt</h2>
 <p class="lede">Þessar fullyrðingar standast ekki þau gögn sem fundust. Það er ekki sama og að þær séu vísvitandi rangar.</p>
+</div>
 
-<article class="card" data-s="wrong">
+<article class="card" data-s="wrong" data-party="Viðreisn" data-search="þorgerður katrín gunnarsdóttir viðreisn vextir „enn 1% lægri“ en við valdatöku við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við. stýrivextir eru 8% eftir ákvörðun 18. nóvember. þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. munurinn er 0,5 prósentustig. miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.">
   <span class="pill wrong">Líklega rangt</span>
   <h3>Þorgerður Katrín Gunnarsdóttir</h3>
   <p class="who">Viðreisn · 18. nóvember</p>
@@ -237,7 +250,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="wrong">
+<article class="card" data-s="wrong" data-party="Framsókn" data-search="stefán vagn stefánsson framsókn halli ársins 2026 „úr 28 milljörðum í 90“ hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90. fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. hvorug talan hans passar. lokatala samþykktra fjárlaga fannst ekki.">
   <span class="pill wrong">Líklega rangt</span>
   <h3>Stefán Vagn Stefánsson</h3>
   <p class="who">Framsókn · 18. nóvember</p>
@@ -254,10 +267,12 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
+<div class="sec-head" data-sec="open">
 <h2>Óstaðfest</h2>
 <p class="lede">Hvorki fannst stuðningur né andstaða í opinberum gögnum.</p>
+</div>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="jón pétur zimsen sjálfstæðisflokkurinn „90–95% fanga eru karlar“ mun fleiri karlar eru heimilislausir og 90–95% fanga eru karlar. hlutfall kvenna í íslenskum fangelsum var 8 til rúmlega 11% árið 2022 og fangelsismálastofnun segir það aldrei hafa verið hærra, svo hlutfall karla er líklega um 89–92%. talan er nærri lagi en efri hluti bilsins (95%) virðist of hár. nákvæm tala núna fannst ekki.">
   <span class="pill open">Óstaðfest</span>
   <h3>Jón Pétur Zimsen</h3>
   <p class="who">Sjálfstæðisflokkurinn · 25. nóvember</p>
@@ -274,7 +289,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Viðreisn" data-search="sigmar guðmundsson viðreisn „72% þjóðarinnar styðja þessa gjaldtöku“ við erum að sjá það í nýrri könnun sem hefur verið gerð að 72% þjóðarinnar styðja þessa tilteknu gjaldtöku með þeim hætti sem hún er skipulögð. ég fann hvorki könnunina né töluna 72%. frumvarpið sjálft staðfestir gjaldið (4.500 kr., 3.000 kr. utan háannar) en ekki stuðninginn.">
   <span class="pill open">Óstaðfest</span>
   <h3>Sigmar Guðmundsson</h3>
   <p class="who">Viðreisn · 25. nóvember</p>
@@ -291,7 +306,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Miðflokkurinn" data-search="karl gauti hjaltason miðflokkurinn tollverðir í keflavík 63 → 42 tollvörðum á landamærunum í keflavík hefur fækkað úr því að vera 63 árið 2019 í 42 nú eða um þriðjung. í svari ráðherra voru tollverðir í keflavík 58 árið 2019 en ekki 63. munurinn gæti stafað af ólíkri talningu. formaður tollvarðafélagsins staðfestir fækkun á landsvísu úr 124 í 93, en 42 í keflavík fannst ekki.">
   <span class="pill open">Óstaðfest</span>
   <h3>Karl Gauti Hjaltason</h3>
   <p class="who">Miðflokkurinn · 25. nóvember</p>
@@ -308,7 +323,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Miðflokkurinn" data-search="karl gauti hjaltason miðflokkurinn 95% koma inn um keflavík, yfir 2,5 milljónir árlega þar koma 95% af þeim sem inn í landið koma, yfir 2,5 milljónir manns árlega. um 2,25 milljónir erlendra ferðamanna fóru um keflavík árið 2025 og við bætast íslendingar. hlutfallið 95% fannst ekki, svo tölurnar eru óstaðfestar.">
   <span class="pill open">Óstaðfest</span>
   <h3>Karl Gauti Hjaltason</h3>
   <p class="who">Miðflokkurinn · 25. nóvember</p>
@@ -325,7 +340,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Samfylkingin" data-search="arna lára jónsdóttir samfylkingin þingeyri: börnum +46%, íbúum +7,8% góð umræða hefur skapast um byggðamál á vestfirska miðlinum bb.is síðustu daga í kjölfar jákvæðra tíðinda frá þingeyri, en grunnskólabörnum þar hefur fjölgað um 46% og íbúum hefur fjölgað um 7,8% á milli áranna 2025 og 2026. bæjarins besta greindi frá 46% fjölgun grunnskólanema, úr 37 í vor í 54, en það er innan eins árs frá vori til hausts. íbúar voru 289 í ársbyrjun 2026. ég fann ekki íbúafjöldann 2025 og gat því ekki staðfest 7,8%.">
   <span class="pill open">Óstaðfest</span>
   <h3>Arna Lára Jónsdóttir</h3>
   <p class="who">Samfylkingin · 25. nóvember</p>
@@ -342,7 +357,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Framsókn" data-search="ingibjörg isaksen framsókn „þetta er veruleikinn í velferðarsamfélaginu 2026“ þetta er veruleikinn í okkar velferðarsamfélagi árið 2026. þetta er mat og áhersla en ekki mælanleg fullyrðing.">
   <span class="pill open">Óstaðfest</span>
   <h3>Ingibjörg Isaksen</h3>
   <p class="who">Framsókn · 25. nóvember</p>
@@ -356,7 +371,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Flokkur fólksins" data-search="sigurjón þórðarson flokkur fólksins bætur hækka um 7,3% í stað 4% þessi mikilvæga breyting felur í sér að greiðslur til eldri borgara og öryrkja hækka um 7,3% um áramótin en hefðu að óbreyttu hækkað um 4%. lög frá mars 2026 binda hækkun almannatrygginga við launavísitölu frá 1. janúar 2027 (þó aldrei minna en verðlag). talan 7,3% og samanburðurinn við 4% fundust ekki í fjárlagagögnum. óstaðfest.">
   <span class="pill open">Óstaðfest</span>
   <h3>Sigurjón Þórðarson</h3>
   <p class="who">Flokkur fólksins · 24. nóvember</p>
@@ -373,7 +388,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Viðreisn" data-search="gunnar guðjónsson viðreisn ríkisendurskoðun „tvívegis, 2021 og 2023“ um sameiningu menningarstofnana ríkisendurskoðun hefur tvívegis, árið 2021 og 2023, hvatt til þess að kannað verði hvort sameina megi menningarstofnanir ríkisins eða auka samvinnu þeirra og starfshópur um skýrari stöðu eignarhalds og reksturs hljómsveitarinnar hefur verið boðaður. skýrsla ríkisendurskoðunar um stofnanir ríkisins frá desember 2021 og eftirfylgniskýrsla í október 2026 nefna tækifæri til að sameina stofnanir í menningarmálum. skýrsla frá 2023 fannst um sinfóníuhljómsveitina en ekki hvort hún hvetji til sameiningar. því aðeins hluti staðfestur.">
   <span class="pill open">Óstaðfest</span>
   <h3>Gunnar Guðjónsson</h3>
   <p class="who">Viðreisn · 24. nóvember</p>
@@ -390,7 +405,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Samfylkingin" data-search="sigmundur ernir rúnarsson samfylkingin atkvæði hjá un women: „39:1“ og „arabalöndin greiddu með“ þau fóru 39:1. hvert var þetta eina ríki? bandaríkin sem banna orðið kynjajafnrétti í dag. arabalöndin greiddu atkvæði með kynjajafnrétti en ekki bandaríkin. bandaríkin voru ein á móti í atkvæðagreiðslu í kvennanefnd sameinuðu þjóðanna (csw) í mars 2026, sem var í fyrsta sinn sem greidd voru atkvæði um samþykktina. þar voru 37 með, ekki 39, og sex sátu hjá, þar á meðal egyptaland og sádi-arabía, svo „arabalöndin greiddu með“ stenst ekki fyrir þá atkvæðagreiðslu. það er óvíst hvort hann á við þessa atkvæðagreiðslu eða aðra hjá un women, og atkvæðagreiðslan var um niðurstöður nefndarinnar, ekki um orðið „kynjajafnrétti“ sérstaklega. ósamræmið er nægilegt til að tölurnar teljist óstaðfestar.">
   <span class="pill open">Óstaðfest</span>
   <h3>Sigmundur Ernir Rúnarsson</h3>
   <p class="who">Samfylkingin · 24. nóvember</p>
@@ -407,7 +422,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Samfylkingin" data-search="árni rúnar þorvaldsson samfylkingin „nýr samgöngusáttmáli samþykktur fyrir einu ári síðan“ nýr samgöngusáttmáli samþykktur hér fyrir einu ári síðan eða svo, sá fyrsti síðan 2020 uppfærður samgöngusáttmáli var undirritaður 21. ágúst 2024, rúmlega tveimur árum fyrr, og sá fyrsti 26. september 2019. hann sagði sjálfur 19. nóvember að uppfærslan væri „fyrir tveimur árum“. mögulegt er að hann eigi við samgönguáætlun, sem ég athugaði ekki. þess vegna óstaðfest.">
   <span class="pill open">Óstaðfest</span>
   <h3>Árni Rúnar Þorvaldsson</h3>
   <p class="who">Samfylkingin · 24. nóvember</p>
@@ -424,7 +439,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="ingveldur anna sigurðardóttir sjálfstæðisflokkurinn suðurnesjalína 2 „rúmlega 20 ár“ það tók rúmlega 20 ár að koma suðurnesjalínu 2 í gagnið, 20 ár, og á þeim tíma hefur samfélagið breyst, atvinnulífið þróast og raforkuþörfin aukist til muna. bæjarráð lýsti því árið 2021 að undirbúningur hefði staðið „á annan áratug“ og landsnet sótti um framkvæmdaleyfi 2014. hvort línan sé komin í gagnið og hvenær undirbúningur hófst nákvæmlega var ekki staðfest.">
   <span class="pill open">Óstaðfest</span>
   <h3>Ingveldur Anna Sigurðardóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 24. nóvember</p>
@@ -441,7 +456,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Miðflokkurinn" data-search="karl gauti hjaltason miðflokkurinn bandormur 2: 450 milljónir úr tekjulágum einstaklingum þá er enn eitt skattahækkunarfrumvarp ríkisstjórnarinnar, svonefndur bandormur 2, einnig nýkomið inn en þar á að kreista 450 milljónir út úr einstaklingum sem dettur í hug að afla sér tekna sem ná ekki 2 millj. ég fann ekki matið á tekjuáhrifum sem vísað er í. fullyrðingin er óstaðfest.">
   <span class="pill open">Óstaðfest</span>
   <h3>Karl Gauti Hjaltason</h3>
   <p class="who">Miðflokkurinn · 24. nóvember</p>
@@ -455,7 +470,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Samfylkingin" data-search="kristrún frostadóttir samfylkingin atvinnuleysi „um 4,3%“ eðli málsins samkvæmt felur það í sér hægingu en ég ætla samt að segja að atvinnuleysi, þó að það sé óþægilegt og það sé alltaf erfitt fyrir fólk að ganga í gegnum það, mælist um 4,3%. vinnumálastofnun mældi skráð atvinnuleysi 4,0% í september 2026. október-talan fannst ekki. vinnumarkaðskönnun hagstofunnar sýnir hærri tölur (árstíðaleiðrétt 5,7% í september), svo talan fer eftir mælikvarða. ekki hægt að segja til um hvort 4,3% sé rétt.">
   <span class="pill open">Óstaðfest</span>
   <h3>Kristrún Frostadóttir</h3>
   <p class="who">Samfylkingin · 23. nóvember</p>
@@ -472,7 +487,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Samfylkingin" data-search="kristrún frostadóttir samfylkingin „0% hagvöxtur á mann í sjö til átta ár“ varðandi ofkælingu verð ég að segja að það er ekki eðlileg hagspeki, eins og tíðkaðist hér í áraraðir, að útþenja hagkerfið fyrst og fremst með mjög mikilli fólksfjölgun og kostnaðarsamri aukningu í velferðarkerfinu sem fól í sér að þrátt fyrir að hér mældist hagvöxtur sem stuðlaði að tekjuauka hjá ríkinu stórjókst annar kostnaður því það var 0% hagvöxtur á mann hér í sjö til átta ár. ég fann engin gögn sem staðfesta eða hrekja þetta. mat á hagvexti á mann fer eftir því hvaða tímabil og mælikvarði er notaður. óstaðfest.">
   <span class="pill open">Óstaðfest</span>
   <h3>Kristrún Frostadóttir</h3>
   <p class="who">Samfylkingin · 23. nóvember</p>
@@ -489,7 +504,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="guðrún hafsteinsdóttir sjálfstæðisflokkurinn covid 300 ma. og reykjaneseldar „annað hundrað milljarða“ það er nú ekki mikið í samanburði við það sem fyrri ríkisstjórn þurfti að glíma við, sem var covid upp á 300 milljarða og síðan reykjaneseldar upp á annað hundrað milljarða. í áliti meiri hluta fjárlaganefndar kemur fram að beinn kostnaður ríkissjóðs vegna allra efnahagsáfalla og náttúruvár síðasta áratug hafi verið tæpir 338 milljarðar. það rúmast ekki með 300 milljörðum í covid og yfir 100 í reykjaneseldum, nema mælt sé á ólíkan hátt. ráðuneytið mat covid-kostnað um 320 milljarða árið 2023, þannig að ósamræmið liggur í aðferðinni, ekki endilega í tölunni.">
   <span class="pill open">Óstaðfest</span>
   <h3>Guðrún Hafsteinsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
@@ -506,7 +521,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Samfylkingin" data-search="kristrún frostadóttir samfylkingin „rúmir 800 milljarðar í uppsafnaðan halla“ margt vel gert, annað flóknara, rúmir 800 milljarðar í uppsafnaðan halla. stjórnvöld segja ríkissjóð hafa verið rekinn með halla átta ár samfleytt. ég fann ekki heildarupphæðina 800 milljarðar í opinberu gagni og hún fer eftir því hvaða ár og mælikvarði eru notuð.">
   <span class="pill open">Óstaðfest</span>
   <h3>Kristrún Frostadóttir</h3>
   <p class="who">Samfylkingin · 23. nóvember</p>
@@ -523,7 +538,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="guðrún hafsteinsdóttir sjálfstæðisflokkurinn „ríkisstjórnin á sjálf 140 milljarða af 800“ en horfist ekki í augu við það að hafa sjálf gefið út 140 milljarða útgjaldaauka um síðustu áramót þannig að af þessum 800 milljörðum á ríkisstjórn kristrúnar frostadóttur sjálf 140 milljarða. ég fann enga heimild fyrir 140 milljarða útgjaldaaukanum. hvort hann er réttur fer eftir því hvernig hann er reiknaður.">
   <span class="pill open">Óstaðfest</span>
   <h3>Guðrún Hafsteinsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
@@ -537,7 +552,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="guðrún hafsteinsdóttir sjálfstæðisflokkurinn „hallinn sem hún erfði upp á 800 milljarða“ enn mætir hér forsætisráðherra og talar um hallann sem hún hafi erft upp á 800 milljarða kr. sama tala og áður (800 milljarðar) og hún fannst ekki í opinberu gagni. um hana er pólitískur ágreiningur og hún fer eftir því hvort átt er við uppsafnaðan halla eða skuldaaukningu.">
   <span class="pill open">Óstaðfest</span>
   <h3>Guðrún Hafsteinsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
@@ -554,7 +569,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Samfylkingin" data-search="kristrún frostadóttir samfylkingin atvinnuleysi „um 2,5% meðal íslendinga“ það er um 2,5% á meðal íslendinga hér á landi þannig að þrátt fyrir að staðan sé erfið er hún, miðað við það sem við sjáum í mörgum öðrum löndum, ekki skelfileg en auðvitað verðum við að passa upp á þessa einstaklinga. skráð atvinnuleysi allra var 4,0% í júní 2026. talan 2,5% gæti átt við íslendinga eingöngu, en ég fann ekki sundurliðun sem staðfestir hana.">
   <span class="pill open">Óstaðfest</span>
   <h3>Kristrún Frostadóttir</h3>
   <p class="who">Samfylkingin · 23. nóvember</p>
@@ -571,7 +586,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="ólafur adolfsson sjálfstæðisflokkurinn 25 klst. vinnuframlag á viku fyrir 60% starf á mánuði og var krafan um vinnuframlag einungis 25 klukkustundir á viku, sem ég verð að segja að er ansi góður díll fyrir 60% starf en hins vegar ekki alveg nógu góður að mati hæstv. tilvitnunin segir hvorki um hvaða starf eða samning er að ræða. ég fann enga heimild.">
   <span class="pill open">Óstaðfest</span>
   <h3>Ólafur Adolfsson</h3>
   <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
@@ -585,7 +600,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Miðflokkurinn" data-search="bergþór ólason miðflokkurinn umsjón 5,3% pottsins fyrir ekki löngu síðan voru málefni 5,3% pottsins, byggðahluta aflamarkskerfisins, í umsjón og verkahring hæstv. fullyrðingin er um hver fór með málaflokkinn og snýr fremur að stjórnsýslu en tölum. ekki sannreynt.">
   <span class="pill open">Óstaðfest</span>
   <h3>Bergþór Ólason</h3>
   <p class="who">Miðflokkurinn · 23. nóvember</p>
@@ -599,7 +614,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Viðreisn" data-search="hanna katrín friðriksson viðreisn „5,3% potturinn liggur vel við markmiðum byggðastofnunar“ það eru náttúrlega ákveðin markmið, þessi 5,3% pottur liggur einmitt mjög vel við almennum markmiðum byggðastofnunar og þar undir er auðvitað sértæki byggðakvótinn. þetta er mat ráðherra á samræmi við markmið, ekki mælanleg staðreynd.">
   <span class="pill open">Óstaðfest</span>
   <h3>Hanna Katrín Friðriksson</h3>
   <p class="who">Viðreisn · 23. nóvember</p>
@@ -613,7 +628,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Miðflokkurinn" data-search="bergþór ólason miðflokkurinn samningar um breytt eignarhald á „viðkvæmum tíma“ ráðherra muni aðstoða við og hvetja til raunar og styðja við með öllum tiltækum ráðum undirstofnanir sínar, að skoðaðir verði þeir samningar um breytt eignarhald sem gerðir voru á þessum viðkvæma tíma í tengslum við endurskipulagningu hluta 5,3% pottsins. þetta er skoðun og lýsing á tímasetningu, ekki mælanleg fullyrðing.">
   <span class="pill open">Óstaðfest</span>
   <h3>Bergþór Ólason</h3>
   <p class="who">Miðflokkurinn · 23. nóvember</p>
@@ -627,7 +642,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Framsókn" data-search="halla hrund logadóttir framsókn land á íbúa 28 sinnum meira en esb; þjóðlendur ígildi danmerkur við eigum 28 sinnum meira land á hvern íbúa en að meðaltali innan evrópusambandsins og ef við horfum á þjóðlendurnar einar og sér, sem eru 40% af íslandi, eru þær álíka stórt svæði og þjóðríkið danmörk. danmörk er 43.094 km² og ísland um 103.000 km², svo 40% af íslandi (um 41.000 km²) er nærri flatarmáli danmerkur. ég staðfesti hvorki að þjóðlendur séu 40% né tölu esb í leitinni.">
   <span class="pill open">Óstaðfest</span>
   <h3>Halla Hrund Logadóttir</h3>
   <p class="who">Framsókn · 23. nóvember</p>
@@ -644,7 +659,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Framsókn" data-search="stefán vagn stefánsson framsókn hefðu fjárlög 2025 orðið hallalaus? það liggur fyrir að allt tal um vondan viðskilnað síðustu ríkisstjórnar stenst enga skoðun og ef ríkisstjórnin hefði haldið sig við fjárlög fyrri ríkisstjórnar fyrir árið 2025 hefðu þau orðið hallalaus. fjárlög 2025 sem fyrri stjórn samþykkti gerðu ráð fyrir tæplega 63 milljarða halla. hallinn varð um 35 milljarðar samkvæmt mati ráðuneytisins. engin heimild sýnir að óbreytt fjárlög hefðu verið hallalaus, en fullyrðingin er tilgáta um hvað hefði gerst og ekki beinlínis hægt að afsanna hana.">
   <span class="pill open">Óstaðfest</span>
   <h3>Stefán Vagn Stefánsson</h3>
   <p class="who">Framsókn · 19. nóvember</p>
@@ -661,7 +676,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Flokkur fólksins" data-search="ásthildur lóa þórsdóttir flokkur fólksins vaxtamunur á 50 m. kr. láni meira í hverjum mánuði en það myndi gera af láni með 4% vöxtum. útreikningurinn byggir á vaxtastigi sem ekki kemur fram í tilvitnuninni. ég fann ekki heimild til að staðfesta upphæðina, en talan er af þeirri stærðargráðu sem vaxtamunur af svo háu láni gefur.">
   <span class="pill open">Óstaðfest</span>
   <h3>Ásthildur Lóa Þórsdóttir</h3>
   <p class="who">Flokkur fólksins · 19. nóvember</p>
@@ -675,7 +690,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Flokkur fólksins" data-search="ásthildur lóa þórsdóttir flokkur fólksins „rétt um 25% skuldugra heimila bera mestu byrðarnar“ eins og staðan er í dag bera rétt um 25% skuldugra heimila mestu byrðarnar af hávaxtastefnu seðlabankans. ég fann enga greiningu seðlabankans eða annarra sem setur töluna 25% fram með þessum hætti. fullyrðingin er því óstaðfest.">
   <span class="pill open">Óstaðfest</span>
   <h3>Ásthildur Lóa Þórsdóttir</h3>
   <p class="who">Flokkur fólksins · 19. nóvember</p>
@@ -689,7 +704,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="utan þingflokka" data-search="guðmundur ingi kristinsson utan þingflokka tryggingafélag: 100 m. inn og 50 m. út þá setja þau 100 milljónir inn en síðan borga þau út 50 milljónir og þá eru 50 milljónir eftir í sjóðnum. um er að ræða dæmi þingmannsins um hvernig sjóður gæti þróast, ekki mælanlega staðreynd.">
   <span class="pill open">Óstaðfest</span>
   <h3>Guðmundur Ingi Kristinsson</h3>
   <p class="who">utan þingflokka · 19. nóvember</p>
@@ -703,7 +718,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="utan þingflokka" data-search="guðmundur ingi kristinsson utan þingflokka „verða kannski tífalt það, 500 milljónir“ hvað verður um þessar 50 milljónir síðar, sem verða kannski tífalt það, komnar í 500 milljónir, milljarða? þetta er spurning og tilgáta um framtíðarþróun og því ekki hægt að sannreyna hana.">
   <span class="pill open">Óstaðfest</span>
   <h3>Guðmundur Ingi Kristinsson</h3>
   <p class="who">utan þingflokka · 19. nóvember</p>
@@ -717,7 +732,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Framsókn" data-search="stefán vagn stefánsson framsókn „hallinn verður um 90 milljarðar“ halla sitja núna hljóðir þegar fyrir liggur að hallinn verður um 90 milljarðar. opinberar tölur sem ég fann eru lægri: fjárlög 2025 gerðu ráð fyrir tæplega 63 ma.kr. halla og mat ráðuneytisins í desember 2025 var um 35 ma.kr. ég fann ekki heimild fyrir 90 milljörðum. hún gæti átt við aðra mælingu eða annað ár, svo ég flokka þetta sem óstaðfest en ekki rangt.">
   <span class="pill open">Óstaðfest</span>
   <h3>Stefán Vagn Stefánsson</h3>
   <p class="who">Framsókn · 19. nóvember</p>
@@ -734,7 +749,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="rósa guðbjartsdóttir sjálfstæðisflokkurinn „metið að alls hafi 5,5 milljarðar“ það hefur verið metið að alls hafi 5,5 milljarðar kr. tilvitnunin sýnir hvorki hvað er metið né hver mat það. ég fann enga heimild.">
   <span class="pill open">Óstaðfest</span>
   <h3>Rósa Guðbjartsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 19. nóvember</p>
@@ -748,7 +763,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="berglind harpa svavarsdóttir sjálfstæðisflokkurinn austurland: um 30% orkuframleiðslu orkuframleiðsla á austurlandi er einnig um 30% af orkuframleiðslu hér á landi og gríðarleg tækifæri til frekari orkuframleiðslu. kárahnjúkavirkjun (690 mw) var um fjórðungur uppsetts afls landsins árið 2014. hlutdeild í framleiðslu núna fannst ekki, svo 30% er hvorki staðfest né afsönnuð.">
   <span class="pill open">Óstaðfest</span>
   <h3>Berglind Harpa Svavarsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 19. nóvember</p>
@@ -765,7 +780,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Viðreisn" data-search="þorgerður katrín gunnarsdóttir viðreisn skatttekjur „undir 24%“ og samanburður við 2013–2016 skatttekjur eru að fara undir 24% af landsframleiðslu á næsta ári. árin 2013–2016 voru þær 27, 28 og 29%. fjármálaráðuneytið segir skatta og tryggingagjöld ríkissjóðs 27,0% af landsframleiðslu 2027. ef tryggingagjöld eru undanskilin gæti 24% staðist, en þá gæti samanburðurinn við fyrri ár notað aðra skilgreiningu. tölurnar frá 2013–2016 fundust ekki.">
   <span class="pill open">Óstaðfest</span>
   <h3>Þorgerður Katrín Gunnarsdóttir</h3>
   <p class="who">Viðreisn · 18. nóvember</p>
@@ -782,7 +797,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Sjálfstæðisflokkurinn" data-search="guðlaugur þór þórðarson sjálfstæðisflokkurinn hlutdeild strætó 5% samkvæmt ferðavenjum 2025 samkvæmt ferðavenjum 2025 nýtir enn aðeins 5% fólks strætó. talan fannst ekki í niðurstöðum könnunarinnar sem birtust í júlí 2026. þar kemur fram að um 41% landsmanna greiddu fyrir strætóferð haustið 2025, en það er annar mælikvarði en hlutdeild í ferðum.">
   <span class="pill open">Óstaðfest</span>
   <h3>Guðlaugur Þór Þórðarson</h3>
   <p class="who">Sjálfstæðisflokkurinn · 16. nóvember</p>
@@ -799,7 +814,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Flokkur fólksins" data-search="sigurjón þórðarson flokkur fólksins endurmat hafró á þorskstofni 2019 samkvæmt þingskjölum telur hafró þorskstofninn hafa verið 270.000 tonnum minni árið 2019 en hann var mældur. hvorki þingskjalið né önnur heimild fannst. stofnmat hafró 2019 gaf ráðgjöf upp á 272.411 tonn, sem er ekki sama stærð. nákvæmasta leiðin er að spyrja hafró eða atvinnuveganefnd.">
   <span class="pill open">Óstaðfest</span>
   <h3>Sigurjón Þórðarson</h3>
   <p class="who">Flokkur fólksins · 10. nóvember</p>
@@ -816,7 +831,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="open">
+<article class="card" data-s="open" data-party="Miðflokkurinn" data-search="bergþór ólason miðflokkurinn mat á sundabraut: 130 milljarðar nefndir af ráðherra mat á sundabraut og hvalfjarðargöngum fór úr 130 í 200 milljarða á fimm mánuðum og ráðherra nefndi 130. ráðherra neitaði að hafa nefnt töluna. ekki fannst hver nefndi 130 fyrst. eyjólfur ármannsson sagði að enginn gæti kostnaðarmetið verkið fyrr en ljóst væri hvort það yrðu göng eða brú.">
   <span class="pill open">Óstaðfest</span>
   <h3>Bergþór Ólason</h3>
   <p class="who">Miðflokkurinn · nóvember 2026</p>
@@ -833,10 +848,12 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
+<div class="sec-head" data-sec="ok">
 <h2>Staðfest rétt</h2>
 <p class="lede">Þessar fullyrðingar stemma við opinberar heimildir.</p>
+</div>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Miðflokkurinn" data-search="karl gauti hjaltason miðflokkurinn tollvörðum hefur fækkað úr 124 í 93 tollvörðum hefur fækkað frá 2019 úr 124 í 107 á síðasta ári og 93 á þessu ári. formaður tollvarðafélags íslands sagði 2. nóvember 2026 að starfandi tollvörðum hefði fækkað úr 124 í 93 á innan við áratug, sem samræmist tölum þingmannsins. millitalan 107 og upphafsárið 2019 voru ekki staðfest sérstaklega.">
   <span class="pill ok">Rétt</span>
   <h3>Karl Gauti Hjaltason</h3>
   <p class="who">Miðflokkurinn · 25. nóvember</p>
@@ -853,7 +870,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Miðflokkurinn" data-search="ingibjörg davíðsdóttir miðflokkurinn arðgreiðslustefna bankans: um 50% af hagnaði bent er á í greininni að í arðgreiðslustefnu bankans sé gert ráð fyrir að reglulegar arðgreiðslur nemi að jafnaði um 50% af hagnaði fyrra árs. landsbankinn greiðir reglulegan arð sem nemur um 50% af hagnaði fyrra árs samkvæmt arðgreiðslustefnu. greinin sem þingmaðurinn vísar í var ekki lesin, þannig að þetta byggir á því að átt sé við landsbankann, en tölurnar passa.">
   <span class="pill ok">Rétt</span>
   <h3>Ingibjörg Davíðsdóttir</h3>
   <p class="who">Miðflokkurinn · 25. nóvember</p>
@@ -870,7 +887,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Miðflokkurinn" data-search="ingibjörg davíðsdóttir miðflokkurinn sérstök arðgreiðsla 16 milljarðar bankinn hafi einnig greitt sérstakar arðgreiðslur, nú síðast 16 milljarða kr. aðalfundur landsbankans 18. mars 2026 samþykkti sérstaka arðgreiðslu upp á 16,1 milljarð króna, auk reglulegra greiðslna. þetta passar við „16 milljarða“, ef átt er við landsbankann.">
   <span class="pill ok">Rétt</span>
   <h3>Ingibjörg Davíðsdóttir</h3>
   <p class="who">Miðflokkurinn · 25. nóvember</p>
@@ -887,7 +904,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="rósa guðbjartsdóttir sjálfstæðisflokkurinn 2,3 milljónir ferðamanna og hvernig á að fá allar þær 2,3 milljónir ferðamanna sem hingað koma til landsins, sem flestir fara gullna hringinn, til að hlaða niður smáforriti til að geta greitt þetta gjald? ferðamálastofa mælir 2.267.638 brottfarir erlendra farþega um keflavíkurflugvöll árið 2025, sem samræmist 2,3 milljónum.">
   <span class="pill ok">Rétt</span>
   <h3>Rósa Guðbjartsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 25. nóvember</p>
@@ -904,7 +921,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Viðreisn" data-search="pawel bartoszek viðreisn stofnun atvinnuveganna tekur til starfa um áramót um áramótin tekur t.d. til starfa ný stofnun atvinnuveganna. þar verða fiskistofa, matvælastofnun og verðlagsstofa skiptaverðs sameinaðar í eina stofnun auk þess sem verkefni flytjast frá heilbrigðiseftirlitum sveitarfélaga. lög nr. 85/2026 taka gildi 1. janúar 2027 og leggja niður matvælastofnun, fiskistofu og verðlagsstofu skiptaverðs. matvælaeftirlit heilbrigðisnefnda sveitarfélaga flyst til nýju stofnunarinnar. fullyrðingar um sýslumannsembætti og afstöðu stjórnarandstöðunnar í sömu ræðu voru ekki prófaðar.">
   <span class="pill ok">Rétt</span>
   <h3>Pawel Bartoszek</h3>
   <p class="who">Viðreisn · 24. nóvember</p>
@@ -921,7 +938,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Samfylkingin" data-search="dagbjört hákonardóttir samfylkingin yfirlýsing um stafrænt fullveldi 6. nóvember þann 6. nóvember sl. samþykktu ráðherrar norðurlandanna og eystrasaltsríkjanna sameiginlega yfirlýsingu um að styrkja einmitt þetta, stafrænt fullveldi norrænir og baltneskir ráðherrar stafvæðingar samþykktu sameiginlega yfirlýsingu um stafrænt fullveldi á fundi í kaupmannahöfn 6. nóvember 2026. seinni hluti setningarinnar, um stefnumótun á norðurlandaráðsþingi í helsinki, var ekki prófaður.">
   <span class="pill ok">Rétt</span>
   <h3>Dagbjört Hákonardóttir</h3>
   <p class="who">Samfylkingin · 24. nóvember</p>
@@ -938,7 +955,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="jens garðar helgason sjálfstæðisflokkurinn verktaki: samanlögð skattprósenta 37,6% með því að ráða heiðu kristínu sem verktaka er skattprósentan samtals 37,6% í stað þeirrar hefðbundnu sem gildir. skatturinn birtir 20% tekjuskatt félaga og 22% skatt á arð. samanlagt gera þau 37,6% (20% + 22% af þeim 80% sem eftir eru). talan stenst því ef átt er við einkahlutafélag sem greiðir arð.">
   <span class="pill ok">Rétt</span>
   <h3>Jens Garðar Helgason</h3>
   <p class="who">Sjálfstæðisflokkurinn · 24. nóvember</p>
@@ -955,7 +972,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="guðrún hafsteinsdóttir sjálfstæðisflokkurinn stýrivextir 8% og verðbólga 5,9% nú tæpum tveimur árum síðar eru stýrivextir 8% og verðbólga 5,9%. seðlabankinn hélt stýrivöxtum óbreyttum í 8% 18. nóvember 2026. verðbólga var 5,9% í október. hvort tvennt stenst.">
   <span class="pill ok">Rétt</span>
   <h3>Guðrún Hafsteinsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
@@ -972,7 +989,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="guðrún hafsteinsdóttir sjálfstæðisflokkurinn covid kostaði yfir 300 milljarða af þessum 800 milljörðum eru líka yfir 300 milljarðar í beinan kostnað af covid. fjármálaráðuneytið mat að af 450 milljörðum í mótvægisaðgerðir hafi um 320 milljarðar haft bein áhrif á afkomu ríkissjóðs. það samræmist „yfir 300 milljörðum“, en tölur eru breytilegar eftir því hvernig er talið (aðrar áætlanir nefna hátt í 300). hvort allur uppsafnaði hallinn sé 800 milljarðar var ekki prófað. athugið: í áliti meiri hluta fjárlaganefndar er heildarkostnaður allra áfalla og náttúruvár síðasta áratug nefndur tæpir 338 milljarðar, svo tölurnar fara eftir því hvernig er talið.">
   <span class="pill ok">Rétt</span>
   <h3>Guðrún Hafsteinsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 23. nóvember</p>
@@ -989,7 +1006,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Framsókn" data-search="stefán vagn stefánsson framsókn verðbólga 5,9% verðbólgan er 5,9%, hún var 4,8% þegar ríkisstjórnin tók við, og verkefnið var að berja niður verðbólgu og vexti. árstaktur verðbólgu var 5,9% í október 2026 samkvæmt hagstofunni (óbreytt frá september). seinni hluti fullyrðingarinnar, að hún hafi verið 4,8% við valdatöku, var ekki flettur upp sérstaklega.">
   <span class="pill ok">Rétt</span>
   <h3>Stefán Vagn Stefánsson</h3>
   <p class="who">Framsókn · 19. nóvember</p>
@@ -1006,7 +1023,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Samfylkingin" data-search="árni rúnar þorvaldsson samfylkingin samgöngusáttmáli 2019 og uppfærsla fyrir tveimur árum þess vegna voru það mikil tímamót þegar ríkið og sex sveitarfélög á höfuðborgarsvæðinu undirrituðu samgöngusáttmála fyrir svæðið árið 2019, sem var svo uppfærður af sömu aðilum fyrir tveimur árum síðan. sáttmálinn var fyrst undirritaður 26. september 2019 og uppfærður 21. ágúst 2024 af ríkinu og sex sveitarfélögum (garðabæ, hafnarfirði, kópavogi, mosfellsbæ, reykjavík og seltjarnarnesi). það stenst.">
   <span class="pill ok">Rétt</span>
   <h3>Árni Rúnar Þorvaldsson</h3>
   <p class="who">Samfylkingin · 19. nóvember</p>
@@ -1023,7 +1040,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Viðreisn" data-search="gunnar guðjónsson viðreisn hæstiréttur og esa um bókun 35 hæstiréttur hefur sagt okkur að innleiðingin sé ekki fullnægjandi. eftirlitsstofnun efta hefur nú höfðað mál gegn íslandi fyrir efta-dómstólnum. utanríkisráðuneytið segir að hæstiréttur hafi komist að því að innleiðing bókunar 35 hafi ekki verið fullnægjandi. esa stefndi íslandi fyrir efta-dómstólinn 30. september 2026. fullyrðingar í sömu ræðu um noreg og um hvenær frumvarpið var fyrst lagt fram voru ekki prófaðar.">
   <span class="pill ok">Rétt</span>
   <h3>Gunnar Guðjónsson</h3>
   <p class="who">Viðreisn · 19. nóvember</p>
@@ -1040,7 +1057,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="utan þingflokka" data-search="guðmundur ingi kristinsson utan þingflokka heildareignir tryggingafélaga 360 milljarðar jú, vegna þess að heildareignir tryggingafélaganna voru 360 milljarðar í febrúar síðastliðnum. seðlabankinn birti að heildareignir vátryggingafélaga hefðu numið 361,9 milljörðum króna í lok janúar 2026, sem samræmist 360 milljörðum í febrúar.">
   <span class="pill ok">Rétt</span>
   <h3>Guðmundur Ingi Kristinsson</h3>
   <p class="who">utan þingflokka · 19. nóvember</p>
@@ -1057,7 +1074,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Framsókn" data-search="stefán vagn stefánsson framsókn fjárlög með 15 milljarða halla þeir sem hömpuðu sér og börðu sér á brjóst fyrir að skila fjárlögum með aðeins 15 milljarða kr. í greinargerð með frumvarpi til fjárlaga 2026 var áætlað að afkoma ríkissjóðs yrði neikvæð um rúma 15 milljarða, sem samræmist fullyrðingunni.">
   <span class="pill ok">Rétt</span>
   <h3>Stefán Vagn Stefánsson</h3>
   <p class="who">Framsókn · 19. nóvember</p>
@@ -1074,7 +1091,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="berglind harpa svavarsdóttir sjálfstæðisflokkurinn austurland: 2,9% landsmanna og fjórðungur vöruútflutnings samband sveitarfélaga á austurlandi hefur farið í faglegar greiningar sem sýna glögglega að aðeins um 2,9% landsmanna standa undir um fjórðungi vöruútflutnings hér á landi, sem gerir um 240 milljarða. greining analytica fyrir ssa sýnir að austurland standi undir um fjórðungi vöruútflutningstekna þótt þar búi innan við þrjú prósent landsmanna. ssa nefndi 230 milljarða á haustþingi 2025, svo 240 milljarðar eru nærri lagi en ég staðfesti ekki nákvæmlega þá tölu.">
   <span class="pill ok">Rétt</span>
   <h3>Berglind Harpa Svavarsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 19. nóvember</p>
@@ -1091,7 +1108,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Miðflokkurinn" data-search="snorri másson miðflokkurinn brottvísunarstöð í rúanda 2027 austurríki, danmörk, holland, þýskaland og grikkland ætla í sameiningu að opna fyrstu brottvísunarstöðina í rúanda árið 2027. ríkin fimm kynntu áformin 16. nóvember og stefna á flutninga 2027. samningur er ekki undirritaður.">
   <span class="pill ok">Rétt</span>
   <h3>Snorri Másson</h3>
   <p class="who">Miðflokkurinn · 18. nóvember</p>
@@ -1108,7 +1125,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="guðrún hafsteinsdóttir sjálfstæðisflokkurinn stýrivextir 8% og verðbólga tæp 6% stýrivextir standa í 8% og verðbólgan í tæpum 6%. peningastefnunefnd hélt stýrivöxtum í 8% 18. nóvember. verðbólga mældist 5,9% í október.">
   <span class="pill ok">Rétt</span>
   <h3>Guðrún Hafsteinsdóttir</h3>
   <p class="who">Sjálfstæðisflokkurinn · 18. nóvember</p>
@@ -1125,7 +1142,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="sigurður örn hilmarsson sjálfstæðisflokkurinn samgöngusáttmálinn: 120 í 311 milljarða, keldnaland 50, ríkið um 90% samgöngusáttmálinn hljóðar upp á 311 milljarða og ríkið á að bera 90% af kostnaðinum. sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. skipting er 87,5% ríki og 12,5% sveitarfélög, sem er rúnnað í 90%. guðlaugur þór þórðarson nefndi sömu tölur.">
   <span class="pill ok">Rétt</span>
   <h3>Sigurður Örn Hilmarsson</h3>
   <p class="who">Sjálfstæðisflokkurinn · 16. nóvember</p>
@@ -1142,7 +1159,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="árni helgason sjálfstæðisflokkurinn stofnframlög hækkuð úr 18% í 23% framlag ríkisins var upphaflega 20% en fór upp í 23% núna í vor. alþingi samþykkti hækkun í júní 2026. árni sagði upphaflega framlagið 20% en ráðuneytið talar um 18%. frávikið er lítið.">
   <span class="pill ok">Rétt</span>
   <h3>Árni Helgason</h3>
   <p class="who">Sjálfstæðisflokkurinn · 16. nóvember</p>
@@ -1159,7 +1176,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Miðflokkurinn" data-search="karl liljendal hólmgeirsson miðflokkurinn sjávarafurðir og ál rúm 73% af vöruútflutningi sjávarafurðir og ál eru rúm 73% af vöruútflutningi. sjávarafurðir voru 38,9% af útflutningsverðmæti 2025 og ál 34,5%, samtals um 73%.">
   <span class="pill ok">Rétt</span>
   <h3>Karl Liljendal Hólmgeirsson</h3>
   <p class="who">Miðflokkurinn · 10. nóvember</p>
@@ -1176,7 +1193,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Sjálfstæðisflokkurinn" data-search="jón pétur zimsen sjálfstæðisflokkurinn 78% au pair-leyfa til filippseyinga nokkuð ljóst að langflest leyfin eru til filippseyskra stúlkna, líklega 78%. þorbjörg sigríður gunnlaugsdóttir ráðherra nefndi sömu tölu í framsögu: 766 leyfi 2017–2024, þar af 78% til ríkisborgara filippseyja.">
   <span class="pill ok">Rétt</span>
   <h3>Jón Pétur Zimsen</h3>
   <p class="who">Sjálfstæðisflokkurinn · 9. nóvember</p>
@@ -1190,7 +1207,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Viðreisn" data-search="eiríkur björn björgvinsson viðreisn dvalarleyfishafar utan ees: um 4.000 í um 20.000 dvalarleyfishöfum utan ees hefur fjölgað úr um 4.000 árið 2017 í um 20.000 árið 2025. ráðuneytið segir fjöldann hafa nær fimmfaldast frá 2017. útlendingastofnun skráði 11.820 umsóknir 2025. þorbjörg sigríður gunnlaugsdóttir (viðreisn) og snorri másson (miðflokkurinn) nefndu sömu tölur.">
   <span class="pill ok">Rétt</span>
   <h3>Eiríkur Björn Björgvinsson</h3>
   <p class="who">Viðreisn · 9. nóvember</p>
@@ -1207,7 +1224,7 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   </div>
 </article>
 
-<article class="card" data-s="ok">
+<article class="card" data-s="ok" data-party="Miðflokkurinn" data-search="ingibjörg davíðsdóttir miðflokkurinn bókun 35 og málsókn esa esa hefur stefnt íslandi fyrir efta-dómstólinn vegna bókunar 35, sem var innleidd fyrir rúmum 30 árum. esa stefndi íslandi 30. september. bókunin var innleidd fyrir 34 árum.">
   <span class="pill ok">Rétt</span>
   <h3>Ingibjörg Davíðsdóttir</h3>
   <p class="who">Miðflokkurinn · 9. nóvember</p>
@@ -1292,17 +1309,75 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 <script>
 (function () {
   var buttons = document.querySelectorAll('[data-f]');
-  var cards = document.querySelectorAll('.card[data-s]');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-s]'));
+  var heads = Array.prototype.slice.call(document.querySelectorAll('.sec-head'));
+  var q = document.getElementById('q');
+  var party = document.getElementById('party');
+  var status = document.getElementById('status');
+  var empty = document.getElementById('empty');
+  var state = {f: 'all', q: '', p: ''};
+
+  function norm(t) { return (t || '').toLowerCase(); }
+
+  function readHash() {
+    var params = new URLSearchParams(location.hash.replace(/^#/, ''));
+    state.f = params.get('f') || 'all';
+    state.q = params.get('q') || '';
+    state.p = params.get('p') || '';
+    if (!document.querySelector('[data-f="' + state.f + '"]')) state.f = 'all';
+    q.value = state.q;
+    party.value = state.p;
+    if (party.value !== state.p) state.p = '';
+  }
+
+  function writeHash() {
+    var params = new URLSearchParams();
+    if (state.f !== 'all') params.set('f', state.f);
+    if (state.q) params.set('q', state.q);
+    if (state.p) params.set('p', state.p);
+    var h = params.toString();
+    history.replaceState(null, '', h ? '#' + h : location.pathname + location.search);
+  }
+
+  function apply() {
+    var needle = norm(state.q).trim();
+    var shown = 0;
+    buttons.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-f') === state.f ? 'true' : 'false'); });
+    cards.forEach(function (c) {
+      var ok = (state.f === 'all' || c.getAttribute('data-s') === state.f)
+        && (!state.p || c.getAttribute('data-party') === state.p)
+        && (!needle || (c.getAttribute('data-search') || '').indexOf(needle) !== -1);
+      c.classList.toggle('hidden', !ok);
+      if (ok) shown++;
+    });
+    heads.forEach(function (h) {
+      var s = h.getAttribute('data-sec');
+      var any = cards.some(function (c) { return c.getAttribute('data-s') === s && !c.classList.contains('hidden'); });
+      h.classList.toggle('hidden', !any);
+    });
+    var filtered = state.f !== 'all' || state.p || needle;
+    status.textContent = filtered ? 'Sýni ' + shown + ' af ' + cards.length + ' fullyrðingum.' : '';
+    empty.classList.toggle('hidden', shown !== 0);
+    writeHash();
+  }
+
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
-      var f = b.getAttribute('data-f');
-      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-f') === f ? 'true' : 'false'); });
+      state.f = b.getAttribute('data-f');
       if (b.classList.contains('tile')) { var fl = document.querySelector('.filters'); if (fl) fl.scrollIntoView({behavior: 'smooth', block: 'start'}); }
-      cards.forEach(function (c) {
-        c.classList.toggle('hidden', f !== 'all' && c.getAttribute('data-s') !== f);
-      });
+      apply();
     });
   });
+  q.addEventListener('input', function () { state.q = q.value; apply(); });
+  party.addEventListener('change', function () { state.p = party.value; apply(); });
+  document.getElementById('reset').addEventListener('click', function () {
+    state = {f: 'all', q: '', p: ''}; q.value = ''; party.value = ''; apply();
+  });
+  window.addEventListener('hashchange', function () {
+    if (location.hash.indexOf('=') !== -1 || location.hash === '') { readHash(); apply(); }
+  });
+  readHash();
+  apply();
 })();
 </script>
 </body>

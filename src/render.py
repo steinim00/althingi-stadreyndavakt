@@ -60,6 +60,16 @@ def _speech_block(f: dict, extra_class: str = "") -> str:
     )
 
 
+def _attrs(f: dict) -> str:
+    """data-* fyrir leit og flokkasíu á spjaldi (JS í template.html)."""
+    hay = " ".join(str(f.get(k, "")) for k in ("speaker", "party", "title", "claim", "facts")).lower()
+    return f'data-party="{E(f["party"], quote=True)}" data-search="{E(hay, quote=True)}"'
+
+
+def _head(status: str, title: str, lede: str) -> str:
+    return f'<div class="sec-head" data-sec="{status}">\n<h2>{E(title)}</h2>\n<p class="lede">{lede}</p>\n</div>'
+
+
 def card(f: dict) -> str:
     srcs = ""
     if f.get("sources"):
@@ -69,7 +79,7 @@ def card(f: dict) -> str:
         srcs = f'  <div class="cite src">\n    <p class="cite-h">Heimildir</p>\n    <ul>{links}</ul>\n  </div>'
     pill = {"wrong": "Líklega rangt", "open": "Óstaðfest", "ok": "Rétt"}[f["status"]]
     return (
-        f'<article class="card" data-s="{f["status"]}">\n'
+        f'<article class="card" data-s="{f["status"]}" {_attrs(f)}>\n'
         f'  <span class="pill {f["status"]}">{pill}</span>\n'
         f'  <h3>{E(f["speaker"])}</h3>\n'
         f'  <p class="who">{E(f["party"])} · {E(_pretty(f["date"]))}</p>\n'
@@ -120,17 +130,21 @@ def render(root: Path) -> None:
         items = sorted((f for f in findings if f["status"] == status), key=lambda f: _parse(f["date"]), reverse=True)
         if not items:
             continue
-        cards.append(f"<h2>{title}</h2>\n<p class=\"lede\">{lede}</p>")
+        cards.append(_head(status, title, lede))
         cards += [card(f) for f in items]
 
     if cands:
-        cards.append("<h2>Óyfirfarið</h2>\n<p class=\"lede\">Tölur og fullyrðingar sem hafa verið dregnar út úr ræðum en ekki sannreyndar enn. Þær eru hvorki staðfestar né hraktar.</p>")
+        cards.append(_head("new", "Óyfirfarið", "Tölur og fullyrðingar sem hafa verið dregnar út úr ræðum en ekki sannreyndar enn. Þær eru hvorki staðfestar né hraktar."))
         for c in sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:60]:
             cards.append(
-                '<article class="card" data-s="new">\n  <span class="pill new">Óyfirfarið</span>\n'
+                f'<article class="card" data-s="new" {_attrs(c)}>\n  <span class="pill new">Óyfirfarið</span>\n'
                 f'  <h3>{E(c["speaker"])}</h3>\n  <p class="who">{E(c["party"])} · {E(_pretty(c["date"]))}</p>\n'
                 f'{_speech_block({**c, "speaker": c["speaker"], "party": c["party"]})}\n</article>'
             )
+
+    shown_cands = sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:60]
+    parties = sorted({x["party"] for x in [*findings, *shown_cands] if x.get("party")})
+    party_opts = "".join(f'<option value="{E(p, quote=True)}">{E(p)}</option>' for p in parties)
 
     seen_urls, sources = set(), []
     for f in findings:
@@ -146,7 +160,7 @@ def render(root: Path) -> None:
 
     out = (tpl.replace("{{TILES}}", tiles).replace("{{LIMITS}}", "\n".join(limits))
               .replace("{{CARDS}}", "\n\n".join(cards)).replace("{{SOURCES}}", "\n".join(sources))
-              .replace("{{META}}", meta))
+              .replace("{{META}}", meta).replace("{{PARTIES}}", party_opts))
     (root / "docs").mkdir(exist_ok=True)
     (root / "docs" / "index.html").write_text(out, encoding="utf-8")
 

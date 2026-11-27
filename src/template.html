@@ -45,21 +45,6 @@
     color-scheme: dark;
   }
 }
-:root[data-theme="dark"] {
-  --bg: #14191b;
-  --surface: #1c2326;
-  --ink: #e6ebe9;
-  --muted: #9aa6a9;
-  --line: #2f3a3e;
-  --accent: #7fc0d6;
-  --wrong: #f0988d;
-  --wrong-bg: #3a2220;
-  --open: #e5c066;
-  --open-bg: #38301a;
-  --ok: #86c9a0;
-  --ok-bg: #1d3226;
-  color-scheme: dark;
-}
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body {
@@ -97,9 +82,12 @@ header p { margin: 0; color: var(--muted); max-width: 62ch; }
 }
 .tile b { display: block; font-size: 30px; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .tile span { font-size: 14px; color: var(--muted); }
-.tile.wrong { border: 5px solid var(--wrong); }
-.card[data-s="wrong"] { border: 5px solid var(--wrong); }
-.cite-l strong { color: var(--ink); font-weight: 800; }
+.tile.wrong { border-left-color: var(--wrong); }
+.card { border-left-width: 4px; }
+.card[data-s="wrong"] { border-left-color: var(--wrong); }
+.card[data-s="open"] { border-left-color: var(--open); }
+.card[data-s="ok"] { border-left-color: var(--ok); }
+.cite-l strong { color: var(--ink); font-weight: 700; }
 .tile.open { border-left-color: var(--open); }
 .tile.ok { border-left-color: var(--ok); }
 .tile.new { border-left-color: var(--muted); }
@@ -142,10 +130,9 @@ h2 {
   padding: 16px 18px;
   margin: 0 0 14px;
 }
-.card h3 { font-size: 22px; font-weight: 800; margin: 6px 0 2px; line-height: 1.25; }
-.card .who { margin: 0 0 8px; font-size: 15px; color: var(--muted); }
+.card h3 { font-size: 22px; font-weight: 700; margin: 6px 0 2px; line-height: 1.25; }
 .card .topic { margin: 0 0 4px; font-size: 16px; font-weight: 600; color: var(--ink); }
-.who { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+.who { font-size: 15px; color: var(--muted); margin: 0 0 8px; }
 .card p { margin: 0 0 10px; }
 .card p:last-child { margin-bottom: 0; }
 .pill {
@@ -181,6 +168,21 @@ td.bad { color: var(--wrong); text-decoration: line-through; text-decoration-thi
 .sources li { margin-bottom: 4px; }
 a { color: var(--accent); }
 footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0 0; }
+.tools input[type="search"], .tools select {
+  font: inherit; font-size: 15px; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; min-width: 0;
+}
+.tools input[type="search"] { flex: 1 1 220px; }
+.tools select { flex: 0 1 190px; }
+.tools input:focus-visible, .tools select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.tools label { font-size: 14px; color: var(--muted); }
+.status { margin: 14px 0 0; font-size: 14px; color: var(--muted); min-height: 1.5em; }
+.status button { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: 8px; padding: 20px; margin-top: 16px; color: var(--muted); text-align: center; }
+.sec-head h2 { margin-top: 32px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -205,6 +207,15 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   <button type="button" data-f="new" aria-pressed="false">Óyfirfarið</button>
 </div>
 
+<div class="tools" role="search">
+  <label class="sr-only" for="q">Leita í fullyrðingum og nöfnum</label>
+  <input type="search" id="q" placeholder="Leita (nafn, efni, tala…)" autocomplete="off">
+  <label class="sr-only" for="party">Flokkur</label>
+  <select id="party"><option value="">Allir flokkar</option>{{PARTIES}}</select>
+</div>
+<p class="status" id="status" role="status" aria-live="polite"></p>
+<div class="empty hidden" id="empty">Engar fullyrðingar passa við valið. <button type="button" id="reset">Hreinsa síur</button></div>
+
 {{CARDS}}
 
 <h2>Heimildir</h2>
@@ -217,17 +228,75 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 <script>
 (function () {
   var buttons = document.querySelectorAll('[data-f]');
-  var cards = document.querySelectorAll('.card[data-s]');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card[data-s]'));
+  var heads = Array.prototype.slice.call(document.querySelectorAll('.sec-head'));
+  var q = document.getElementById('q');
+  var party = document.getElementById('party');
+  var status = document.getElementById('status');
+  var empty = document.getElementById('empty');
+  var state = {f: 'all', q: '', p: ''};
+
+  function norm(t) { return (t || '').toLowerCase(); }
+
+  function readHash() {
+    var params = new URLSearchParams(location.hash.replace(/^#/, ''));
+    state.f = params.get('f') || 'all';
+    state.q = params.get('q') || '';
+    state.p = params.get('p') || '';
+    if (!document.querySelector('[data-f="' + state.f + '"]')) state.f = 'all';
+    q.value = state.q;
+    party.value = state.p;
+    if (party.value !== state.p) state.p = '';
+  }
+
+  function writeHash() {
+    var params = new URLSearchParams();
+    if (state.f !== 'all') params.set('f', state.f);
+    if (state.q) params.set('q', state.q);
+    if (state.p) params.set('p', state.p);
+    var h = params.toString();
+    history.replaceState(null, '', h ? '#' + h : location.pathname + location.search);
+  }
+
+  function apply() {
+    var needle = norm(state.q).trim();
+    var shown = 0;
+    buttons.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-f') === state.f ? 'true' : 'false'); });
+    cards.forEach(function (c) {
+      var ok = (state.f === 'all' || c.getAttribute('data-s') === state.f)
+        && (!state.p || c.getAttribute('data-party') === state.p)
+        && (!needle || (c.getAttribute('data-search') || '').indexOf(needle) !== -1);
+      c.classList.toggle('hidden', !ok);
+      if (ok) shown++;
+    });
+    heads.forEach(function (h) {
+      var s = h.getAttribute('data-sec');
+      var any = cards.some(function (c) { return c.getAttribute('data-s') === s && !c.classList.contains('hidden'); });
+      h.classList.toggle('hidden', !any);
+    });
+    var filtered = state.f !== 'all' || state.p || needle;
+    status.textContent = filtered ? 'Sýni ' + shown + ' af ' + cards.length + ' fullyrðingum.' : '';
+    empty.classList.toggle('hidden', shown !== 0);
+    writeHash();
+  }
+
   buttons.forEach(function (b) {
     b.addEventListener('click', function () {
-      var f = b.getAttribute('data-f');
-      buttons.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-f') === f ? 'true' : 'false'); });
+      state.f = b.getAttribute('data-f');
       if (b.classList.contains('tile')) { var fl = document.querySelector('.filters'); if (fl) fl.scrollIntoView({behavior: 'smooth', block: 'start'}); }
-      cards.forEach(function (c) {
-        c.classList.toggle('hidden', f !== 'all' && c.getAttribute('data-s') !== f);
-      });
+      apply();
     });
   });
+  q.addEventListener('input', function () { state.q = q.value; apply(); });
+  party.addEventListener('change', function () { state.p = party.value; apply(); });
+  document.getElementById('reset').addEventListener('click', function () {
+    state = {f: 'all', q: '', p: ''}; q.value = ''; party.value = ''; apply();
+  });
+  window.addEventListener('hashchange', function () {
+    if (location.hash.indexOf('=') !== -1 || location.hash === '') { readHash(); apply(); }
+  });
+  readHash();
+  apply();
 })();
 </script>
 </body>
