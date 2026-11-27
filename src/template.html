@@ -252,7 +252,6 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   .topbar { display: none !important; }
   .duo, .results { display: block; }
   .art-arches, .art-band { display: none !important; }
-  .hero-art { padding: 0; background: none; }
   .filters, .tools, .status, .empty, .skip, .permalink, .how, .hint, .pbtn:after { display: none !important; }
   .hidden { display: block !important; }
   body { font-size: 12pt; }
@@ -283,17 +282,11 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .hero-foot a { font-weight: 600; }
 
 /* Skraut: bogamynstur og ofið band, teiknað sem SVG (engar utanaðkomandi myndir) */
-.hero-art { position: relative; isolation: isolate; margin-top: 28px; padding: 68px 24px 24px; border-radius: 16px; overflow: hidden; background: var(--art-bg); }
-.hero-art .hero { margin-top: 0; }
-.art-arches, .art-band { position: absolute; left: 0; width: 100%; z-index: -1; }
-.art-arches { top: 0; height: 100%; }
 .art-arches path { fill: none; stroke-width: 1.5; }
 .arc-a { stroke: var(--art-a); }
 .arc-b { stroke: var(--art-b); }
-.art-band { top: 0; height: 44px; background: var(--art-bg); border-bottom: 1px solid var(--art-band); }
 .rib-a { stroke: var(--art-band); stroke-width: 9; fill: none; }
 .rib-b { stroke: var(--art-bg); stroke-width: 2; fill: none; }
-@media (max-width: 860px) { .hero-art { padding: 60px 12px 12px; border-radius: 12px; } }
 
 /* Yfirbragð: efsta stika, stórar tölur, tveggja dálka uppsetning */
 [id] { scroll-margin-top: 76px; }
@@ -356,9 +349,6 @@ a.tile:hover { border-color: var(--accent); }
 .meta { text-align: center; margin: 28px 0 0; }
 .hero-main, .hero .agenda { box-shadow: none; }
 .hero .agenda .ag-list { max-height: none; }
-.hero-art { padding-top: 56px; }
-.art-band { height: 32px; }
-.art-arches { opacity: .6; }
 .summary { margin-top: 28px; }
 .tile { box-shadow: none; }
 .hero-item h3 { font-size: 24px; }
@@ -366,19 +356,32 @@ a.tile:hover { border-color: var(--accent); }
 .chip-logo { display: inline-flex; align-items: center; gap: 10px; padding: 6px 12px; min-height: 40px; }
 .plogo { display: block; height: 26px; width: auto; max-width: 64px; object-fit: contain; }
 .pbadge { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; height: 26px; padding: 0 6px; border: 1.5px solid currentColor; border-radius: 5px; font-size: 14px; font-weight: 700; letter-spacing: .02em; text-transform: none; }
+
+/* Mynstrið nær yfir alla síðuna: fast bakgrunnsmynstur, efni á hvítum flötum ofan á */
+.art-arches { position: fixed; inset: 0; top: 0; width: 100%; height: 100%; z-index: -2; opacity: .4; pointer-events: none; }
+.band { position: relative; height: 26px; background: var(--bg); border-bottom: 1px solid var(--art-band); overflow: hidden; }
+.band .art-band { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.page-h, .sec-head h2, .meta, .status, footer { background: var(--bg); padding: 4px 14px; border-radius: 12px; display: inline-block; }
+footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
+.meta { display: block; width: fit-content; margin: 28px auto 0; }
+.sec-head { margin: 8px 0 -4px; }
+.sec-head h2 { margin: 24px 0 0; }
+.wrap { padding-top: 32px; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
 </head>
 <body>
 <a class="skip" href="#efni">Fara í efni</a>
+<svg class="art-arches" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="arch" width="64" height="40" patternUnits="userSpaceOnUse"><path class="arc-a" d="M0 40A32 32 0 0 1 64 40"/><path class="arc-b" d="M-32 40A32 32 0 0 1 32 40M32 40A32 32 0 0 1 96 40"/></pattern></defs><rect width="100%" height="100%" fill="url(#arch)"/></svg>
 <div class="topbar"><div class="topbar-in">
   <a class="brand" href="index.html"><svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true" focusable="false"><rect width="64" height="64" rx="14" fill="currentColor"/><path d="M16 34l12 12 22-26" fill="none" stroke="var(--surface)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Staðreyndavakt Alþingis</span></a>
   <nav aria-label="Flýtileiðir">{{NAV}}</nav>
 </div></div>
+<div class="band" aria-hidden="true"><svg class="art-band" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="rib" width="32" height="32" patternUnits="userSpaceOnUse"><path class="rib-a" d="M-4 -4L36 36M36 -4L-4 36"/><path class="rib-b" d="M-4 -4L36 36M36 -4L-4 36"/></pattern></defs><rect width="100%" height="100%" fill="url(#rib)"/></svg></div>
 <main class="wrap" id="efni" tabindex="-1">
 {{MAIN}}
-<footer>Sjálfvirk samantekt úr ræðum á althingi.is.</footer>
+<footer>Sjálfvirk samantekt úr ræðum á althingi.is. Niðurstöður eru unnar af gervigreind með vefleit; lestu heimildirnar sjálf/ur.</footer>
 </main>
 <script>
 (function () {
