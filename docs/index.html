@@ -386,6 +386,23 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .hero-stats .c b { color: var(--wrong); }
 .hero-stats .c span { color: var(--wrong); }
 .hero-stats .w b { opacity: .75; }
+
+/* Styttri spjöld: engir innri kassar, hlekkir í einni línu */
+.card { padding: 14px 18px; }
+.card h3 { font-size: 18px; margin: 4px 0 0; }
+.card .who { margin: 0 0 6px; }
+.card .topic { margin: 0 0 6px; font-size: 16px; }
+.q { margin: 0 0 6px; padding-left: 12px; border-left: 3px solid var(--accent); color: var(--ink); }
+.links { margin: 0 0 8px; font-size: 14px; color: var(--muted); }
+.facts { margin: 0; font-size: 15px; }
+.facts details { display: inline; }
+.facts summary { display: inline; cursor: pointer; color: var(--accent); font-weight: 600; }
+.facts details[open] summary { display: block; margin-top: 4px; }
+
+/* Flokksbókstafir: aðeins stafirnir í lit flokksins, engin box */
+.chip-logo, .chip-logo[aria-selected="true"] { background: #1b2326; border: 2px solid transparent; opacity: .6; }
+.chip-logo[aria-selected="true"] { opacity: 1; border-color: var(--accent); }
+.pbadge { min-width: 0; height: auto; padding: 0; border: 0; background: none; font-size: 19px; font-weight: 700; letter-spacing: .01em; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -402,7 +419,7 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 <h1 class="sr-only">Staðreyndavakt Alþingis</h1>
 <div class="hero">
 <section class="hero-main" aria-label="Líklega rangar fullyrðingar">
-<div class="chips" role="tablist" aria-label="Velja hóp"><button type="button" role="tab" class="chip chip-logo" id="ht-gov" data-tab="gov" aria-controls="hp-gov" aria-label="Stjórnarflokkar: Viðreisn, Flokkur fólksins, Samfylkingin" aria-selected="true"><span class="pbadge" role="img" aria-label="Viðreisn" title="Viðreisn" style="background:#f58220;color:#1b2326;border-color:#f58220">xC</span><span class="pbadge" role="img" aria-label="Flokkur fólksins" title="Flokkur fólksins" style="background:#ffc93d;color:#1b2326;border-color:#ffc93d">xF</span><span class="pbadge" role="img" aria-label="Samfylkingin" title="Samfylkingin" style="background:#d3212f;color:#ffffff;border-color:#d3212f">xS</span></button><button type="button" role="tab" class="chip chip-logo" id="ht-d" data-tab="d" aria-controls="hp-d" aria-label="Sjálfstæðisflokkurinn" aria-selected="false"><span class="pbadge" role="img" aria-label="Sjálfstæðisflokkurinn" title="Sjálfstæðisflokkurinn" style="background:#00adef;color:#0b1a22;border-color:#00adef">xD</span></button></div>
+<div class="chips" role="tablist" aria-label="Velja hóp"><button type="button" role="tab" class="chip chip-logo" id="ht-gov" data-tab="gov" aria-controls="hp-gov" aria-label="Stjórnarflokkar: Viðreisn, Flokkur fólksins, Samfylkingin" aria-selected="true"><span class="pbadge" role="img" aria-label="Viðreisn" title="Viðreisn" style="color:#ff9a3c">xC</span><span class="pbadge" role="img" aria-label="Flokkur fólksins" title="Flokkur fólksins" style="color:#ffd43b">xF</span><span class="pbadge" role="img" aria-label="Samfylkingin" title="Samfylkingin" style="color:#ff4d5d">xS</span></button><button type="button" role="tab" class="chip chip-logo" id="ht-d" data-tab="d" aria-controls="hp-d" aria-label="Sjálfstæðisflokkurinn" aria-selected="false"><span class="pbadge" role="img" aria-label="Sjálfstæðisflokkurinn" title="Sjálfstæðisflokkurinn" style="color:#29b6f6">xD</span></button></div>
 <div class="hero-panel" role="tabpanel" id="hp-gov" aria-labelledby="ht-gov"><article class="hero-item"><span class="pill wrong confirmed">Staðfest rangt</span><p class="hero-date">18. nóvember · Þorgerður Katrín Gunnarsdóttir · Viðreisn</p><h3>Vextir „enn 1% lægri“ en við valdatöku</h3><p class="more"><a href="nidurstodur.html#seed-1">Lesa meira →</a></p></article><div class="hero-stats"><div class="c"><b>1</b><span>staðfest rangt</span></div><div class="w"><b>0</b><span>líklega rangt</span></div><div class="o"><b>15</b><span>óstaðfest</span></div><div class="k"><b>5</b><span>rétt</span></div></div></div><div class="hero-panel hidden" role="tabpanel" id="hp-d" aria-labelledby="ht-d"><p class="hero-none">Engin fullyrðing metin líklega röng.</p><div class="hero-stats"><div class="c"><b>0</b><span>staðfest rangt</span></div><div class="w"><b>0</b><span>líklega rangt</span></div><div class="o"><b>9</b><span>óstaðfest</span></div><div class="k"><b>9</b><span>rétt</span></div></div></div>
 <p class="more"><a href="nidurstodur.html#f=wrong">Allt líklega rangt →</a></p>
 </section>
@@ -434,16 +451,9 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
   <h3>Þorgerður Katrín Gunnarsdóttir</h3>
   <p class="who">Viðreisn · 18. nóvember <a class="permalink" href="#seed-1" aria-label="Tengill á þessa fullyrðingu">#</a></p>
   <p class="topic">Vextir „enn 1% lægri“ en við valdatöku</p>
-  <div class="cite">
-    <p class="cite-h">Úr ræðu</p>
-    <blockquote>„Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.“</blockquote>
-    <p class="cite-l">Ræða 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T133419.html#:~:text=Vi%C3%B0%20erum%20enn%20me%C3%B0%201%25%20l%C3%A6gri">Opna ræðuna á althingi.is</a></p>
-  </div>
-  <p class="facts"><strong>Niðurstaða:</strong> Stýrivextir eru 8% eftir ákvörðun 18. nóvember. Þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. Munurinn er 0,5 prósentustig. Miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega. <span class="checked">(Athugað 25. nóvember.)</span></p>
-  <div class="cite src">
-    <p class="cite-h">Heimildir</p>
-    <ul><li><a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a></li><li><a href="https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf">Seðlabankinn: yfirlýsing 20. nóvember 2024</a></li></ul>
-  </div>
+  <blockquote class="q">„Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.“</blockquote>
+  <p class="links"><a href="https://www.althingi.is/altext/raeda/158/rad20261118T133419.html#:~:text=Vi%C3%B0%20erum%20enn%20me%C3%B0%201%25%20l%C3%A6gri">Ræðan →</a> · <a href="https://www.mbl.is/frettir/innlent/2026/11/18/tekst_vonandi_an_thess_ad_valda_enn_meiri_skada/">Mbl.is: stýrivextir óbreyttir í 8%</a> · <a href="https://sedlabanki.is/library/Skraarsafn/Peningamal/2024/november-2024/PM24_4_yfirlysing.pdf">Seðlabankinn: yfirlýsing 20. nóvember 2024</a></p>
+  <p class="facts">Stýrivextir eru 8% eftir ákvörðun 18. nóvember. <details><summary>Nánar</summary>Þeir voru 8,5% eftir ákvörðun 20. nóvember 2024. Munurinn er 0,5 prósentustig. Miðað er við að ríkisstjórnin hafi tekið við í lok desember 2024 og að vextir hafi þá verið óbreyttir; það var ekki flett upp sérstaklega.</details></p>
 </article>
 
 <article class="card" id="seed-2" data-s="wrong" data-party="Framsókn" data-search="stefán vagn stefánsson framsókn halli ársins 2026 „úr 28 milljörðum í 90“ hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90. fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. hvorug talan hans passar. lokatala samþykktra fjárlaga fannst ekki.">
@@ -451,16 +461,9 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
   <h3>Stefán Vagn Stefánsson</h3>
   <p class="who">Framsókn · 18. nóvember <a class="permalink" href="#seed-2" aria-label="Tengill á þessa fullyrðingu">#</a></p>
   <p class="topic">Halli ársins 2026 „úr 28 milljörðum í 90“</p>
-  <div class="cite">
-    <p class="cite-h">Úr ræðu</p>
-    <blockquote>„Hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.“</blockquote>
-    <p class="cite-l">Ræða 18. nóvember · <a href="https://www.althingi.is/altext/raeda/158/rad20261118T134815.html#:~:text=Hallinn%20%C3%A1%20fj%C3%A1rl%C3%B6gum%20fyrir%20%C3%A1ri%C3%B0%202026">Opna ræðuna á althingi.is</a></p>
-  </div>
-  <p class="facts"><strong>Niðurstaða:</strong> Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki. <span class="checked">(Athugað 25. nóvember.)</span></p>
-  <div class="cite src">
-    <p class="cite-h">Heimildir</p>
-    <ul><li><a href="https://www.althingi.is/altext/raeda/157/rad20251202T143152.html">Alþingi: framsaga um fjárlög 2026</a></li><li><a href="https://www.althingi.is/altext/erindi/158/158-4.pdf">Alþingi: kynning á frumvarpi 2027</a></li></ul>
-  </div>
+  <blockquote class="q">„Hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.“</blockquote>
+  <p class="links"><a href="https://www.althingi.is/altext/raeda/158/rad20261118T134815.html#:~:text=Hallinn%20%C3%A1%20fj%C3%A1rl%C3%B6gum%20fyrir%20%C3%A1ri%C3%B0%202026">Ræðan →</a> · <a href="https://www.althingi.is/altext/raeda/157/rad20251202T143152.html">Alþingi: framsaga um fjárlög 2026</a> · <a href="https://www.althingi.is/altext/erindi/158/158-4.pdf">Alþingi: kynning á frumvarpi 2027</a></p>
+  <p class="facts">Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). <details><summary>Nánar</summary>Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki.</details></p>
 </article>
 </div>
 </main>

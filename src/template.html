@@ -386,6 +386,23 @@ footer { display: block; border-radius: 12px; margin-top: 44px; border-top: 0; }
 .hero-stats .c b { color: var(--wrong); }
 .hero-stats .c span { color: var(--wrong); }
 .hero-stats .w b { opacity: .75; }
+
+/* Styttri spjöld: engir innri kassar, hlekkir í einni línu */
+.card { padding: 14px 18px; }
+.card h3 { font-size: 18px; margin: 4px 0 0; }
+.card .who { margin: 0 0 6px; }
+.card .topic { margin: 0 0 6px; font-size: 16px; }
+.q { margin: 0 0 6px; padding-left: 12px; border-left: 3px solid var(--accent); color: var(--ink); }
+.links { margin: 0 0 8px; font-size: 14px; color: var(--muted); }
+.facts { margin: 0; font-size: 15px; }
+.facts details { display: inline; }
+.facts summary { display: inline; cursor: pointer; color: var(--accent); font-weight: 600; }
+.facts details[open] summary { display: block; margin-top: 4px; }
+
+/* Flokksbókstafir: aðeins stafirnir í lit flokksins, engin box */
+.chip-logo, .chip-logo[aria-selected="true"] { background: #1b2326; border: 2px solid transparent; opacity: .6; }
+.chip-logo[aria-selected="true"] { opacity: 1; border-color: var(--accent); }
+.pbadge { min-width: 0; height: auto; padding: 0; border: 0; background: none; font-size: 19px; font-weight: 700; letter-spacing: .01em; }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
