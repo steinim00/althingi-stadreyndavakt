@@ -86,23 +86,15 @@ def _agenda(ag: dict | None) -> str:
         title = E(it["title"])
         if it.get("url"):
             title = f'<a href="{E(it["url"], quote=True)}">{title}</a>'
-        kind = "" if it.get("kind", "").lower() == it["title"].lower() else it.get("kind")
-        bits = [b for b in (kind, it.get("stage")) if b]
-        meta = " · ".join(E(b) for b in bits)
-        if it.get("who"):
-            meta += (" · " if meta else "") + f"Málshefjandi: {E(it['who'])}"
-        if it.get("to"):
-            meta += (" · " if meta else "") + f"Til svara: {E(it['to'])}"
-        topic = f' <span class="ag-topic">({E(it["topic"])})</span>' if it.get("topic") else ""
-        lis.append(f'<li><span class="ag-t">{title}{topic}</span>{f'<span class="ag-m">{meta}</span>' if meta else ''}</li>')
+        lis.append(f"<li>{title}</li>")
     iso = d.strftime("%Y-%m-%d")
     return (
-        f'<section class="agenda" id="dagskra" data-date="{iso}" data-ended="{str(bool(ag.get("ended"))).lower()}" '
-        'aria-labelledby="ag-h">\n'
-        f'<h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>\n'
-        f'<p class="lede">{E(ag.get("name", ""))} · {when} · {len(ag["items"])} dagskrárliðir. '
-        '<a href="https://www.althingi.is/thingstorf/thingfundir-og-raedur/thingfundir/" rel="noopener">Dagskrá á althingi.is</a></p>\n'
-        f'<ol class="ag-list">\n{chr(10).join(lis)}\n</ol>\n</section>'
+        f'<section class="agenda" id="dagskra" data-date="{iso}" aria-labelledby="ag-h">\n'
+        '<h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>\n'
+        f'<p class="lede">{E(ag.get("name", ""))} · {when}</p>\n'
+        f'<ol class="ag-list">\n{chr(10).join(lis)}\n</ol>\n'
+        '<p class="more"><a href="https://www.althingi.is/thingstorf/thingfundir-og-raedur/thingfundir/" rel="noopener">Öll dagskráin →</a></p>\n'
+        "</section>"
     )
 
 
@@ -136,26 +128,19 @@ def _hero_stats(subset: list) -> str:
 
 def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
     wrong = sorted((f for f in subset if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
-    sub = (f'{len(wrong)} af {len(subset)} yfirfarnum fullyrðingum metnar líklega rangar')
-    items = []
-    for f in wrong[:3]:
-        quote = f["claim"] if len(f["claim"]) <= 170 else f["claim"][:167].rsplit(" ", 1)[0] + "…"
-        items.append(
+    if wrong:
+        f = wrong[0]
+        body = (
             '<article class="hero-item">'
             f'<p class="hero-date">{E(_pretty(f["date"]))} · {E(f["speaker"])} · {E(f["party"])}</p>'
             f'<h3>{E(f["title"])}</h3>'
-            f'<p class="hero-quote">„{E(quote)}“</p>'
-            f'<p class="hero-more"><a href="#{E(_anchor(f), quote=True)}">Lesa meira</a></p></article>'
+            f'<p class="more"><a href="nidurstodur.html#{E(_anchor(f), quote=True)}">Lesa meira →</a></p></article>'
         )
-    if not items:
-        counts = {k: sum(1 for f in subset if f["status"] == k) for k in ("open", "ok")}
-        items.append(
-            '<p class="hero-none">Engin fullyrðing hefur verið metin líklega röng. '
-            f'Óstaðfest: {counts["open"]}, rétt: {counts["ok"]}.</p>'
-        )
+    else:
+        body = '<p class="hero-none">Engin fullyrðing metin líklega röng.</p>'
     return (
         f'<div class="hero-panel{"" if active else " hidden"}" role="tabpanel" id="hp-{pid}" aria-labelledby="ht-{pid}">'
-        f'<p class="hero-sub">{E(sub)}</p>{"".join(items)}{_hero_stats(subset)}</div>'
+        f'{body}{_hero_stats(subset)}</div>'
     )
 
 
@@ -169,14 +154,11 @@ def _hero(findings: list, agenda_html: str) -> str:
         for n, (i, lbl, _) in enumerate(tabs)
     )
     panels = "".join(_hero_panel(i, lbl, sub, n == 0) for n, (i, lbl, sub) in enumerate(tabs))
-    members = ", ".join(GOVERNMENT)
     return (
         f'<div class="hero-art">{ART}\n<div class="hero">\n'
-        '<section class="hero-main" aria-labelledby="hero-h">\n'
-        '<h2 id="hero-h" class="sr-only">Líklega rangar fullyrðingar</h2>\n'
+        '<section class="hero-main" aria-label="Líklega rangar fullyrðingar">\n'
         f'<div class="chips" role="tablist" aria-label="Velja hóp">{chips}</div>\n{panels}\n'
-        f'<p class="hero-foot"><a href="#f=wrong">Allar líklega röngu fullyrðingarnar</a>'
-        f'<span>Stjórnarflokkar: {E(members)}</span></p>\n'
+        '<p class="more"><a href="nidurstodur.html#f=wrong">Allt líklega rangt →</a></p>\n'
         '</section>\n'
         f'{agenda_html}\n</div></div>'
     )
@@ -208,11 +190,9 @@ def _byparty(findings: list) -> str:
         return ""
     order = sorted(rows.items(), key=lambda kv: (-sum(kv[1].values()), kv[0]))
     top = max(sum(v.values()) for _, v in order)
-    labels = {"wrong": "líklega rangt", "open": "óstaðfest", "ok": "rétt"}
+    labels = {"wrong": "rangt", "open": "óstaðfest", "ok": "rétt"}
     out = [
-        '<section class="byparty" id="flokkar" aria-labelledby="bp-h">',
-        '<h2 id="bp-h">Eftir flokkum</h2>',
-        '<p class="lede">Fjöldi yfirfarinna fullyrðinga á flokk. Úrtakið er ekki slembiúrtak, svo ekki er hægt að álykta um flokkana af þessu einu. Smelltu á flokk til að sía.</p>',
+        '<section class="byparty" id="flokkar">',
         '<ul class="legend" aria-hidden="true">'
         '<li><span class="sw seg-wrong"></span>Líklega rangt</li>'
         '<li><span class="sw seg-open"></span>Óstaðfest</li>'
@@ -224,18 +204,20 @@ def _byparty(findings: list) -> str:
             f'<i class="seg-{k}" style="flex:{v[k]} 1 0"></i>' for k in ("wrong", "open", "ok") if v[k]
         )
         text = " · ".join(f"<b>{v[k]}</b> {labels[k]}" for k in ("wrong", "open", "ok"))
+        href = "nidurstodur.html#p=" + urllib.parse.quote(party)
         out.append(
             '<div class="prow">'
-            f'<button type="button" class="pbtn" data-p="{E(party, quote=True)}">{E(party)}</button>'
+            f'<a class="pbtn" href="{E(href, quote=True)}">{E(party)}</a>'
             f'<div class="pbar" style="width:{total / top * 100:.1f}%" aria-hidden="true">{segs}</div>'
             f'<p class="pcount">{text}</p></div>'
         )
+    out.append('<p class="note">Úrtakið er ekki slembiúrtak.</p>')
     out.append("</section>")
     return "\n".join(out)
 
 
-def _head(status: str, title: str, lede: str) -> str:
-    return f'<div class="sec-head" data-sec="{status}">\n<h2>{E(title)}</h2>\n<p class="lede">{lede}</p>\n</div>'
+def _head(status: str, title: str, lede: str = "") -> str:
+    return f'<div class="sec-head" data-sec="{status}">\n<h2>{E(title)}</h2>\n</div>'
 
 
 def card(f: dict) -> str:
@@ -272,16 +254,17 @@ def render(root: Path) -> None:
     ag = json.loads(ag_p.read_text(encoding="utf-8")) if ag_p.exists() else None
 
     counts = {k: sum(1 for f in findings if f["status"] == k) for k in ("wrong", "open", "ok")}
-    def tile(cls, label, n, cap):
-        return (f'  <button type="button" class="tile {cls}" data-f="{cls}"><span class="tile-l">{label}</span>'
-                f'<b>{n}</b><span class="tile-c">{cap}</span></button>\n')
+
+    def tile(cls, label, n):
+        return (f'  <a class="tile {cls}" href="nidurstodur.html#f={cls}">'
+                f'<span class="tile-l">{label}</span><b>{n}</b></a>\n')
 
     tiles = (
         '<section class="summary" aria-label="Yfirlit">\n'
-        + tile("wrong", "Líklega rangt", counts["wrong"], "heimild stangast á við fullyrðinguna")
-        + tile("open", "Óstaðfest", counts["open"], "engin heimild fannst")
-        + tile("ok", "Rétt", counts["ok"], "stemmir við heimildir")
-        + tile("new", "Óyfirfarið", len(cands), "bíða yfirferðar")
+        + tile("wrong", "Líklega rangt", counts["wrong"])
+        + tile("open", "Óstaðfest", counts["open"])
+        + tile("ok", "Rétt", counts["ok"])
+        + tile("new", "Óyfirfarið", len(cands))
         + "</section>"
     )
 
@@ -290,13 +273,13 @@ def render(root: Path) -> None:
         for d, v in sorted((cov.get("days") or {}).items(), key=lambda kv: _parse(kv[0]))
         if v["read"] < v["total"]
     ]
-    limits = ['<section class="limits" aria-label="Takmarkanir">', "  <strong>Hvað þetta nær yfir</strong>", "  <ul>"]
-    limits.append("    <li>Sjálfvirki hlutinn finnur aðeins setningar með tölum. Staðreyndavillur án talna (rangar fullyrðingar um atburði, lög, landafræði eða hvað einhver sagði) finnast ekki sjálfkrafa heldur aðeins þegar ræða er lesin í heild. Túlkun, rökstuðningur og pólitískt mat eru ekki metin. Fyrirspurnir og fundarstjórn eru undanskilin.</li>")
-    limits.append("    <li>„Fann ekki heimild“ þýðir ekki að fullyrðingin sé röng.</li>")
+    limits = ['<section class="limits" aria-label="Takmarkanir">', "  <h2>Takmarkanir</h2>", "  <ul>"]
+    limits.append("    <li>Aðeins setningar með tölum finnast sjálfkrafa. Túlkun og pólitískt mat er ekki metið.</li>")
+    limits.append("    <li>„Óstaðfest“ þýðir ekki að fullyrðingin sé röng.</li>")
     if cov.get("start"):
-        limits.append(f"    <li>Sjálfvirk lestur nær yfir ræður frá {_pretty(cov['start'])}. Eldri niðurstöður voru unnar handvirkt og ná ekki yfir allar ræður.</li>")
+        limits.append(f"    <li>Sjálfvirkur lestur nær yfir ræður frá {_pretty(cov['start'])}. Eldri niðurstöður eru handunnar.</li>")
     if gaps:
-        limits.append("    <li>Ólesið enn: " + "; ".join(E(g) for g in gaps) + ". Vörn vefsins getur lokað á sókn og þá er ekki reynt að komast framhjá henni.</li>")
+        limits.append("    <li>Ólesið enn: " + "; ".join(E(g) for g in gaps) + ".</li>")
     limits += ["  </ul>", "</section>"]
 
     cards = []
@@ -341,11 +324,55 @@ def render(root: Path) -> None:
     meta = f'<p class="meta">Síðast keyrt {u.day}. {MONTHS[u.month - 1]} {u.year}.{extra}</p>'
     meta = meta.replace('<p class="meta">', "").replace("</p>", "")
 
-    out = (tpl.replace("{{TILES}}", tiles).replace("{{LIMITS}}", "\n".join(limits))
-              .replace("{{CARDS}}", "\n\n".join(cards)).replace("{{SOURCES}}", "\n".join(sources))
-              .replace("{{AGENDA}}", _hero(findings, _agenda(ag))).replace("{{BYPARTY}}", _byparty(findings)).replace("{{META}}", meta).replace("{{PARTIES}}", party_opts))
+    filters = (
+        '<div class="filters" id="nidurstodur" role="group" aria-label="Sía eftir niðurstöðu">\n'
+        '  <button type="button" data-f="all" aria-pressed="true">Allt</button>\n'
+        '  <button type="button" data-f="wrong" aria-pressed="false">Líklega rangt</button>\n'
+        '  <button type="button" data-f="open" aria-pressed="false">Óstaðfest</button>\n'
+        '  <button type="button" data-f="ok" aria-pressed="false">Rétt</button>\n'
+        '  <button type="button" data-f="new" aria-pressed="false">Óyfirfarið</button>\n</div>\n'
+        '<div class="tools" role="search">\n'
+        '  <label class="sr-only" for="q">Leita</label>\n'
+        '  <input type="search" id="q" placeholder="Leita…" autocomplete="off">\n'
+        '  <label class="sr-only" for="party">Flokkur</label>\n'
+        f'  <select id="party"><option value="">Allir flokkar</option>{party_opts}</select>\n</div>\n'
+        '<p class="status" id="status" role="status" aria-live="polite"></p>\n'
+        '<div class="empty hidden" id="empty">Ekkert passar. <button type="button" id="reset">Hreinsa síur</button></div>'
+    )
+    method = (
+        '<section class="method" id="adferd">\n'
+        "<ol>\n"
+        "  <li>Nýjar ræður eru sóttar daglega úr opnum gögnum Alþingis.</li>\n"
+        "  <li>Setningar með tölum eru dregnar út og bornar saman við opinberar heimildir.</li>\n"
+        "  <li>Niðurstöður eru unnar af gervigreind með vefleit. Lestu heimildirnar sjálf/ur.</li>\n"
+        "</ol>\n<dl>\n"
+        "  <dt>Líklega rangt</dt><dd>Opinber heimild stangast á við fullyrðinguna.</dd>\n"
+        "  <dt>Óstaðfest</dt><dd>Engin heimild fannst, hvorki með né á móti.</dd>\n"
+        "  <dt>Rétt</dt><dd>Stemmir við opinberar heimildir.</dd>\n"
+        "  <dt>Óyfirfarið</dt><dd>Dregið út en ekki sannreynt enn.</dd>\n"
+        "</dl>\n</section>"
+    )
+    pages = {
+        "index.html": ("", "Staðreyndavakt Alþingis",
+                       f'<h1 class="sr-only">Staðreyndavakt Alþingis</h1>\n{_hero(findings, _agenda(ag))}\n{tiles}\n<p class="meta">{meta}</p>'),
+        "nidurstodur.html": ("nidurstodur", "Niðurstöður",
+                             '<h1 class="page-h">Niðurstöður</h1>\n' + filters + '\n<div class="results">\n' + "\n\n".join(cards) + "\n</div>"),
+        "flokkar.html": ("flokkar", "Flokkar", '<h1 class="page-h">Flokkar</h1>\n' + _byparty(findings)),
+        "adferd.html": ("adferd", "Aðferð",
+                        '<h1 class="page-h">Aðferð</h1>\n' + method + "\n" + "\n".join(limits)
+                        + '\n<h2>Heimildir</h2>\n<ul class="sources">\n' + "\n".join(sources) + "\n</ul>"),
+    }
+    nav_items = (("index.html#dagskra", "Dagskrá", None), ("nidurstodur.html", "Niðurstöður", "nidurstodur"),
+                 ("flokkar.html", "Flokkar", "flokkar"), ("adferd.html", "Aðferð", "adferd"))
     (root / "docs").mkdir(exist_ok=True)
-    (root / "docs" / "index.html").write_text(out, encoding="utf-8")
+    for fname, (cur, title, main) in pages.items():
+        nav = "".join(
+            f'<a href="{h}"' + (' aria-current="page"' if key and key == cur else "") + f">{lbl}</a>"
+            for h, lbl, key in nav_items
+        )
+        full_title = title if fname == "index.html" else f"{title} · Staðreyndavakt Alþingis"
+        out = tpl.replace("{{MAIN}}", main).replace("{{NAV}}", nav).replace("{{TITLE}}", E(full_title))
+        (root / "docs" / fname).write_text(out, encoding="utf-8")
 
 
 if __name__ == "__main__":
