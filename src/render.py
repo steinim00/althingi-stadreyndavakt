@@ -111,6 +111,19 @@ GOVERNMENT = ("Samfylkingin", "Viðreisn", "Flokkur fólksins")
 OPPOSITION_FOCUS = "Sjálfstæðisflokkurinn"
 
 
+ART = (
+    '<svg class="art-arches" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">'
+    '<defs><pattern id="arch" width="64" height="40" patternUnits="userSpaceOnUse">'
+    '<path class="arc-a" d="M0 40A32 32 0 0 1 64 40"/>'
+    '<path class="arc-b" d="M-32 40A32 32 0 0 1 32 40M32 40A32 32 0 0 1 96 40"/></pattern></defs>'
+    '<rect width="100%" height="100%" fill="url(#arch)"/></svg>'
+    '<svg class="art-band" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">'
+    '<defs><pattern id="rib" width="32" height="32" patternUnits="userSpaceOnUse">'
+    '<path class="rib-a" d="M-4 -4L36 36M36 -4L-4 36"/><path class="rib-b" d="M-4 -4L36 36M36 -4L-4 36"/></pattern></defs>'
+    '<rect width="100%" height="100%" fill="url(#rib)"/></svg>'
+)
+
+
 def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
     wrong = sorted((f for f in subset if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
     sub = (f'{len(wrong)} af {len(subset)} yfirfarnum fullyrðingum metnar líklega rangar')
@@ -148,14 +161,14 @@ def _hero(findings: list, agenda_html: str) -> str:
     panels = "".join(_hero_panel(i, lbl, sub, n == 0) for n, (i, lbl, sub) in enumerate(tabs))
     members = ", ".join(GOVERNMENT)
     return (
-        '<div class="hero">\n'
+        f'<div class="hero-art">{ART}\n<div class="hero">\n'
         '<section class="hero-main" aria-labelledby="hero-h">\n'
         '<h2 id="hero-h" class="sr-only">Líklega rangar fullyrðingar</h2>\n'
         f'<div class="chips" role="tablist" aria-label="Velja hóp">{chips}</div>\n{panels}\n'
         f'<p class="hero-foot"><a href="#f=wrong">Allar líklega röngu fullyrðingarnar</a>'
         f'<span>Stjórnarflokkar: {E(members)}</span></p>\n'
         '</section>\n'
-        f'{agenda_html}\n</div>'
+        f'{agenda_html}\n</div></div>'
     )
 
 
