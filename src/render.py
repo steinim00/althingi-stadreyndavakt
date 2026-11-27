@@ -126,6 +126,7 @@ def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
         f = wrong[0]
         body = (
             '<article class="hero-item">'
+            + ('<span class="pill wrong">Staðfest rangt</span>' if f.get("confirmed") else "") +
             f'<p class="hero-date">{E(_pretty(f["date"]))} · {E(f["speaker"])} · {E(f["party"])}</p>'
             f'<h3>{E(f["title"])}</h3>'
             f'<p class="more"><a href="nidurstodur.html#{E(_anchor(f), quote=True)}">Lesa meira →</a></p></article>'
@@ -198,6 +199,8 @@ def card(f: dict) -> str:
         )
         srcs = f'  <div class="cite src">\n    <p class="cite-h">Heimildir</p>\n    <ul>{links}</ul>\n  </div>'
     pill = {"wrong": "Líklega rangt", "open": "Óstaðfest", "ok": "Rétt"}[f["status"]]
+    if f.get("confirmed"):  # staðfest handvirkt af umsjónarmanni síðunnar
+        pill = "Staðfest rangt"
     return (
         f'<article class="card" id="{_anchor(f)}" data-s="{f["status"]}" {_attrs(f)}>\n'
         f'  <span class="pill {f["status"]}">{pill}</span>\n'
@@ -288,9 +291,11 @@ def render(root: Path) -> None:
         '<p class="status" id="status" role="status" aria-live="polite"></p>\n'
         '<div class="empty hidden" id="empty">Ekkert passar. <button type="button" id="reset">Hreinsa síur</button></div>'
     )
+    wrong = sorted((f for f in findings if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
+    wrong_block = (_head("wrong", "Líklega rangt") + '\n<div class="results">\n' + "\n\n".join(card(f) for f in wrong) + "\n</div>") if wrong else ""
     pages = {
         "index.html": ("", "Staðreyndavakt Alþingis",
-                       f'<h1 class="sr-only">Staðreyndavakt Alþingis</h1>\n{_hero(findings, _agenda(ag), root)}\n{tiles}\n<p class="meta">{meta}</p>'),
+                       f'<h1 class="sr-only">Staðreyndavakt Alþingis</h1>\n{_hero(findings, _agenda(ag), root)}\n{tiles}\n{wrong_block}\n<p class="meta">{meta}</p>'),
         "nidurstodur.html": ("nidurstodur", "Niðurstöður",
                              '<h1 class="page-h">Niðurstöður</h1>\n' + filters + '\n<div class="results">\n' + "\n\n".join(cards) + "\n</div>"),
     }
