@@ -10,7 +10,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from . import check, extract, fetch
+from . import agenda, check, extract, fetch
 from .render import render
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -144,6 +144,15 @@ def main() -> int:
     except fetch.Blocked as e:
         print(f"Ræðulisti lokaður: {e}")
         speeches, blocked = [], True
+
+    try:
+        ag = agenda.fetch_agenda(session)
+        if ag:
+            save("agenda.json", ag)
+    except fetch.Blocked as e:
+        print(f"Dagskrá lokuð: {e}")
+    except Exception as e:  # dagskráin má ekki stöðva restina af keyrslunni
+        print(f"Dagskrá brotnaði: {e}")
 
     chosen = []
     for s in speeches:

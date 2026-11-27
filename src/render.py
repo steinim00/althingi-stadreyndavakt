@@ -1,6 +1,7 @@
 """Býr til docs/index.html úr data/*.json og src/template.html."""
 import html
 import json
+import re
 import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
@@ -60,6 +61,160 @@ def _speech_block(f: dict, extra_class: str = "") -> str:
     )
 
 
+def _attrs(f: dict) -> str:
+    """data-* fyrir leit og flokkasíu á spjaldi (JS í template.html)."""
+    hay = " ".join(str(f.get(k, "")) for k in ("speaker", "party", "title", "claim", "facts")).lower()
+    return f'data-party="{E(f["party"], quote=True)}" data-search="{E(hay, quote=True)}"'
+
+
+WEEKDAYS = ["mánudagur", "þriðjudagur", "miðvikudagur", "fimmtudagur", "föstudagur",
+            "laugardagur", "sunnudagur"]
+
+
+def _agenda(ag: dict | None) -> str:
+    """Dagskrá næsta þingfundar. Fyrirsögnin ("í dag" / "næsti") er stillt í vafranum
+    út frá data-date, svo hún úreldist ekki milli keyrslna."""
+    if not ag or not ag.get("items"):
+        return ""
+    try:
+        d = datetime.strptime(ag["date"], "%d.%m.%Y")
+    except ValueError:
+        return ""
+    when = f"{WEEKDAYS[d.weekday()]} {d.day}. {MONTHS[d.month - 1]} kl. {E(ag.get('time', ''))}"
+    lis = []
+    for it in ag["items"]:
+        title = E(it["title"])
+        if it.get("url"):
+            title = f'<a href="{E(it["url"], quote=True)}">{title}</a>'
+        kind = "" if it.get("kind", "").lower() == it["title"].lower() else it.get("kind")
+        bits = [b for b in (kind, it.get("stage")) if b]
+        meta = " · ".join(E(b) for b in bits)
+        if it.get("who"):
+            meta += (" · " if meta else "") + f"Málshefjandi: {E(it['who'])}"
+        if it.get("to"):
+            meta += (" · " if meta else "") + f"Til svara: {E(it['to'])}"
+        topic = f' <span class="ag-topic">({E(it["topic"])})</span>' if it.get("topic") else ""
+        lis.append(f'<li><span class="ag-t">{title}{topic}</span>{f'<span class="ag-m">{meta}</span>' if meta else ''}</li>')
+    iso = d.strftime("%Y-%m-%d")
+    return (
+        f'<section class="agenda" id="dagskra" data-date="{iso}" data-ended="{str(bool(ag.get("ended"))).lower()}" '
+        'aria-labelledby="ag-h">\n'
+        f'<h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>\n'
+        f'<p class="lede">{E(ag.get("name", ""))} · {when} · {len(ag["items"])} dagskrárliðir. '
+        '<a href="https://www.althingi.is/thingstorf/thingfundir-og-raedur/thingfundir/" rel="noopener">Dagskrá á althingi.is</a></p>\n'
+        f'<ol class="ag-list">\n{chr(10).join(lis)}\n</ol>\n</section>'
+    )
+
+
+# Ríkisstjórn frá desember 2024. Uppfæra ef stjórnarsamstarf breytist.
+GOVERNMENT = ("Samfylkingin", "Viðreisn", "Flokkur fólksins")
+OPPOSITION_FOCUS = "Sjálfstæðisflokkurinn"
+
+
+def _hero_panel(pid: str, label: str, subset: list, active: bool) -> str:
+    wrong = sorted((f for f in subset if f["status"] == "wrong"), key=lambda f: _parse(f["date"]), reverse=True)
+    sub = (f'{len(wrong)} af {len(subset)} yfirfarnum fullyrðingum metnar líklega rangar')
+    items = []
+    for f in wrong[:3]:
+        quote = f["claim"] if len(f["claim"]) <= 170 else f["claim"][:167].rsplit(" ", 1)[0] + "…"
+        items.append(
+            '<article class="hero-item">'
+            f'<p class="hero-date">{E(_pretty(f["date"]))} · {E(f["speaker"])} · {E(f["party"])}</p>'
+            f'<h3>{E(f["title"])}</h3>'
+            f'<p class="hero-quote">„{E(quote)}“</p>'
+            f'<p class="hero-more"><a href="#{E(_anchor(f), quote=True)}">Lesa meira</a></p></article>'
+        )
+    if not items:
+        counts = {k: sum(1 for f in subset if f["status"] == k) for k in ("open", "ok")}
+        items.append(
+            '<p class="hero-none">Engin fullyrðing hefur verið metin líklega röng. '
+            f'Óstaðfest: {counts["open"]}, rétt: {counts["ok"]}.</p>'
+        )
+    return (
+        f'<div class="hero-panel{"" if active else " hidden"}" role="tabpanel" id="hp-{pid}" aria-labelledby="ht-{pid}">'
+        f'<p class="hero-sub">{E(sub)}</p>{"".join(items)}</div>'
+    )
+
+
+def _hero(findings: list, agenda_html: str) -> str:
+    gov = [f for f in findings if f["party"] in GOVERNMENT]
+    opp = [f for f in findings if f["party"] == OPPOSITION_FOCUS]
+    tabs = (("gov", "Stjórnarflokkar", gov), ("d", OPPOSITION_FOCUS, opp))
+    chips = "".join(
+        f'<button type="button" role="tab" class="chip" id="ht-{i}" data-tab="{i}" aria-controls="hp-{i}" '
+        f'aria-selected="{"true" if n == 0 else "false"}">{E(lbl)}</button>'
+        for n, (i, lbl, _) in enumerate(tabs)
+    )
+    panels = "".join(_hero_panel(i, lbl, sub, n == 0) for n, (i, lbl, sub) in enumerate(tabs))
+    members = ", ".join(GOVERNMENT)
+    return (
+        '<div class="hero">\n'
+        '<section class="hero-main" aria-labelledby="hero-h">\n'
+        '<h2 id="hero-h" class="sr-only">Líklega rangar fullyrðingar</h2>\n'
+        f'<div class="chips" role="tablist" aria-label="Velja hóp">{chips}</div>\n{panels}\n'
+        f'<p class="hero-foot"><a href="#f=wrong">Allar líklega röngu fullyrðingarnar</a>'
+        f'<span>Stjórnarflokkar: {E(members)}</span></p>\n'
+        '</section>\n'
+        f'{agenda_html}\n</div>'
+    )
+
+
+def _anchor(f: dict) -> str:
+    return re.sub(r"[^A-Za-z0-9_-]", "-", str(f.get("key", "")))
+
+
+def _permalink(f: dict) -> str:
+    return f' <a class="permalink" href="#{E(_anchor(f), quote=True)}" aria-label="Tengill á þessa fullyrðingu">#</a>' if f.get("key") else ""
+
+
+def _checked(f: dict) -> str:
+    if not f.get("checked"):
+        return ""
+    try:
+        d = datetime.strptime(f["checked"], "%Y-%m-%d")
+        return f" <span class=\"checked\">(Athugað {d.day}. {MONTHS[d.month - 1]}.)</span>"
+    except ValueError:
+        return ""
+
+
+def _byparty(findings: list) -> str:
+    rows: dict = {}
+    for f in findings:
+        rows.setdefault(f["party"], {"wrong": 0, "open": 0, "ok": 0})[f["status"]] += 1
+    if not rows:
+        return ""
+    order = sorted(rows.items(), key=lambda kv: (-sum(kv[1].values()), kv[0]))
+    top = max(sum(v.values()) for _, v in order)
+    labels = {"wrong": "líklega rangt", "open": "óstaðfest", "ok": "rétt"}
+    out = [
+        '<section class="byparty" aria-labelledby="bp-h">',
+        '<h2 id="bp-h">Eftir flokkum</h2>',
+        '<p class="lede">Fjöldi yfirfarinna fullyrðinga á flokk. Úrtakið er ekki slembiúrtak, svo ekki er hægt að álykta um flokkana af þessu einu. Smelltu á flokk til að sía.</p>',
+        '<ul class="legend" aria-hidden="true">'
+        '<li><span class="sw seg-wrong"></span>Líklega rangt</li>'
+        '<li><span class="sw seg-open"></span>Óstaðfest</li>'
+        '<li><span class="sw seg-ok"></span>Rétt</li></ul>',
+    ]
+    for party, v in order:
+        total = sum(v.values())
+        segs = "".join(
+            f'<i class="seg-{k}" style="flex:{v[k]} 1 0"></i>' for k in ("wrong", "open", "ok") if v[k]
+        )
+        text = " · ".join(f"<b>{v[k]}</b> {labels[k]}" for k in ("wrong", "open", "ok"))
+        out.append(
+            '<div class="prow">'
+            f'<button type="button" class="pbtn" data-p="{E(party, quote=True)}">{E(party)}</button>'
+            f'<div class="pbar" style="width:{total / top * 100:.1f}%" aria-hidden="true">{segs}</div>'
+            f'<p class="pcount">{text}</p></div>'
+        )
+    out.append("</section>")
+    return "\n".join(out)
+
+
+def _head(status: str, title: str, lede: str) -> str:
+    return f'<div class="sec-head" data-sec="{status}">\n<h2>{E(title)}</h2>\n<p class="lede">{lede}</p>\n</div>'
+
+
 def card(f: dict) -> str:
     srcs = ""
     if f.get("sources"):
@@ -69,13 +224,13 @@ def card(f: dict) -> str:
         srcs = f'  <div class="cite src">\n    <p class="cite-h">Heimildir</p>\n    <ul>{links}</ul>\n  </div>'
     pill = {"wrong": "Líklega rangt", "open": "Óstaðfest", "ok": "Rétt"}[f["status"]]
     return (
-        f'<article class="card" data-s="{f["status"]}">\n'
+        f'<article class="card" id="{_anchor(f)}" data-s="{f["status"]}" {_attrs(f)}>\n'
         f'  <span class="pill {f["status"]}">{pill}</span>\n'
         f'  <h3>{E(f["speaker"])}</h3>\n'
-        f'  <p class="who">{E(f["party"])} · {E(_pretty(f["date"]))}</p>\n'
+        f'  <p class="who">{E(f["party"])} · {E(_pretty(f["date"]))}{_permalink(f)}</p>\n'
         f'  <p class="topic">{E(f["title"])}</p>\n'
         f'{_speech_block(f)}\n'
-        f'  <p class="facts"><strong>Niðurstaða:</strong> {E(f["facts"])}</p>\n'
+        f'  <p class="facts"><strong>Niðurstaða:</strong> {E(f["facts"])}{_checked(f)}</p>\n'
         f"{srcs}\n</article>"
     )
 
@@ -90,6 +245,8 @@ def render(root: Path) -> None:
     cands = json.loads(cand_p.read_text(encoding="utf-8")) if cand_p.exists() else []
     _fk = {f["key"] for f in findings}
     cands = [c for c in cands if c["key"] not in _fk]
+    ag_p = data / "agenda.json"
+    ag = json.loads(ag_p.read_text(encoding="utf-8")) if ag_p.exists() else None
 
     counts = {k: sum(1 for f in findings if f["status"] == k) for k in ("wrong", "open", "ok")}
     tiles = (
@@ -120,17 +277,21 @@ def render(root: Path) -> None:
         items = sorted((f for f in findings if f["status"] == status), key=lambda f: _parse(f["date"]), reverse=True)
         if not items:
             continue
-        cards.append(f"<h2>{title}</h2>\n<p class=\"lede\">{lede}</p>")
+        cards.append(_head(status, title, lede))
         cards += [card(f) for f in items]
 
     if cands:
-        cards.append("<h2>Óyfirfarið</h2>\n<p class=\"lede\">Tölur og fullyrðingar sem hafa verið dregnar út úr ræðum en ekki sannreyndar enn. Þær eru hvorki staðfestar né hraktar.</p>")
+        cards.append(_head("new", "Óyfirfarið", "Tölur og fullyrðingar sem hafa verið dregnar út úr ræðum en ekki sannreyndar enn. Þær eru hvorki staðfestar né hraktar."))
         for c in sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:60]:
             cards.append(
-                '<article class="card" data-s="new">\n  <span class="pill new">Óyfirfarið</span>\n'
+                f'<article class="card" id="{_anchor(c)}" data-s="new" {_attrs(c)}>\n  <span class="pill new">Óyfirfarið</span>\n'
                 f'  <h3>{E(c["speaker"])}</h3>\n  <p class="who">{E(c["party"])} · {E(_pretty(c["date"]))}</p>\n'
                 f'{_speech_block({**c, "speaker": c["speaker"], "party": c["party"]})}\n</article>'
             )
+
+    shown_cands = sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:60]
+    parties = sorted({x["party"] for x in [*findings, *shown_cands] if x.get("party")})
+    party_opts = "".join(f'<option value="{E(p, quote=True)}">{E(p)}</option>' for p in parties)
 
     seen_urls, sources = set(), []
     for f in findings:
@@ -141,12 +302,21 @@ def render(root: Path) -> None:
 
     updated = cov.get("updated") or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     u = datetime.strptime(updated, "%Y-%m-%d")
-    meta = f'<p class="meta">Síðast keyrt {u.day}. {MONTHS[u.month - 1]} {u.year}.</p>'
+    checked = sorted(f["checked"] for f in findings if f.get("checked"))
+    n_today = sum(1 for c in checked if c == updated)
+    if n_today:
+        extra = f" {n_today} {'ný niðurstaða' if n_today == 1 else 'nýjar niðurstöður'} í dag."
+    elif checked:
+        d = datetime.strptime(checked[-1], "%Y-%m-%d")
+        extra = f" Síðasta athugun {d.day}. {MONTHS[d.month - 1]}."
+    else:
+        extra = ""
+    meta = f'<p class="meta">Síðast keyrt {u.day}. {MONTHS[u.month - 1]} {u.year}.{extra}</p>'
     meta = meta.replace('<p class="meta">', "").replace("</p>", "")
 
     out = (tpl.replace("{{TILES}}", tiles).replace("{{LIMITS}}", "\n".join(limits))
               .replace("{{CARDS}}", "\n\n".join(cards)).replace("{{SOURCES}}", "\n".join(sources))
-              .replace("{{META}}", meta))
+              .replace("{{AGENDA}}", _hero(findings, _agenda(ag))).replace("{{BYPARTY}}", _byparty(findings)).replace("{{META}}", meta).replace("{{PARTIES}}", party_opts))
     (root / "docs").mkdir(exist_ok=True)
     (root / "docs" / "index.html").write_text(out, encoding="utf-8")
 
