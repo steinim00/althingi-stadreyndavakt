@@ -67,6 +67,45 @@ def _attrs(f: dict) -> str:
     return f'data-party="{E(f["party"], quote=True)}" data-search="{E(hay, quote=True)}"'
 
 
+WEEKDAYS = ["mánudagur", "þriðjudagur", "miðvikudagur", "fimmtudagur", "föstudagur",
+            "laugardagur", "sunnudagur"]
+
+
+def _agenda(ag: dict | None) -> str:
+    """Dagskrá næsta þingfundar. Fyrirsögnin ("í dag" / "næsti") er stillt í vafranum
+    út frá data-date, svo hún úreldist ekki milli keyrslna."""
+    if not ag or not ag.get("items"):
+        return ""
+    try:
+        d = datetime.strptime(ag["date"], "%d.%m.%Y")
+    except ValueError:
+        return ""
+    when = f"{WEEKDAYS[d.weekday()]} {d.day}. {MONTHS[d.month - 1]} kl. {E(ag.get('time', ''))}"
+    lis = []
+    for it in ag["items"]:
+        title = E(it["title"])
+        if it.get("url"):
+            title = f'<a href="{E(it["url"], quote=True)}">{title}</a>'
+        kind = "" if it.get("kind", "").lower() == it["title"].lower() else it.get("kind")
+        bits = [b for b in (kind, it.get("stage")) if b]
+        meta = " · ".join(E(b) for b in bits)
+        if it.get("who"):
+            meta += (" · " if meta else "") + f"Málshefjandi: {E(it['who'])}"
+        if it.get("to"):
+            meta += (" · " if meta else "") + f"Til svara: {E(it['to'])}"
+        topic = f' <span class="ag-topic">({E(it["topic"])})</span>' if it.get("topic") else ""
+        lis.append(f'<li><span class="ag-t">{title}{topic}</span><span class="ag-m">{meta}</span></li>')
+    iso = d.strftime("%Y-%m-%d")
+    return (
+        f'<section class="agenda" id="dagskra" data-date="{iso}" data-ended="{str(bool(ag.get("ended"))).lower()}" '
+        'aria-labelledby="ag-h">\n'
+        f'<h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>\n'
+        f'<p class="lede">{E(ag.get("name", ""))} · {when} · {len(ag["items"])} dagskrárliðir. '
+        '<a href="https://www.althingi.is/thingstorf/thingfundir-og-raedur/thingfundir/" rel="noopener">Dagskrá á althingi.is</a></p>\n'
+        f'<ol class="ag-list">\n{chr(10).join(lis)}\n</ol>\n</section>'
+    )
+
+
 def _anchor(f: dict) -> str:
     return re.sub(r"[^A-Za-z0-9_-]", "-", str(f.get("key", "")))
 
@@ -153,6 +192,8 @@ def render(root: Path) -> None:
     cands = json.loads(cand_p.read_text(encoding="utf-8")) if cand_p.exists() else []
     _fk = {f["key"] for f in findings}
     cands = [c for c in cands if c["key"] not in _fk]
+    ag_p = data / "agenda.json"
+    ag = json.loads(ag_p.read_text(encoding="utf-8")) if ag_p.exists() else None
 
     counts = {k: sum(1 for f in findings if f["status"] == k) for k in ("wrong", "open", "ok")}
     tiles = (
@@ -213,7 +254,7 @@ def render(root: Path) -> None:
 
     out = (tpl.replace("{{TILES}}", tiles).replace("{{LIMITS}}", "\n".join(limits))
               .replace("{{CARDS}}", "\n\n".join(cards)).replace("{{SOURCES}}", "\n".join(sources))
-              .replace("{{BYPARTY}}", _byparty(findings)).replace("{{META}}", meta).replace("{{PARTIES}}", party_opts))
+              .replace("{{AGENDA}}", _agenda(ag)).replace("{{BYPARTY}}", _byparty(findings)).replace("{{META}}", meta).replace("{{PARTIES}}", party_opts))
     (root / "docs").mkdir(exist_ok=True)
     (root / "docs" / "index.html").write_text(out, encoding="utf-8")
 

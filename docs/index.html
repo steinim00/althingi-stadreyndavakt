@@ -216,6 +216,17 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
 .card:target { outline: 3px solid var(--accent); outline-offset: 2px; }
 .card { scroll-margin-top: 16px; }
 .how { margin: 10px 0 0; font-size: 15px; }
+
+/* Dagskrá þingfundar */
+.agenda { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 14px 18px 8px; }
+.agenda h2 { margin: 0 0 4px; font-size: 22px; }
+.agenda .lede { margin-bottom: 8px; }
+.ag-list { margin: 0; padding-left: 26px; }
+.ag-list li { padding: 8px 0; border-top: 1px solid var(--line); }
+.ag-list li::marker { color: var(--muted); font-variant-numeric: tabular-nums; }
+.ag-t { display: block; font-weight: 600; }
+.ag-topic { font-weight: 400; color: var(--muted); }
+.ag-m { display: block; font-size: 14px; color: var(--muted); }
 .hidden { display: none; }
 @media (prefers-reduced-motion: no-preference) { .filters button { transition: background .15s; } }
 </style>
@@ -228,6 +239,17 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   <p class="meta">Síðast keyrt 27. nóvember 2026.</p>
   <p class="how"><a href="#adferd">Hvernig á að lesa niðurstöðurnar</a></p>
 </header>
+
+<section class="agenda" id="dagskra" data-date="2026-11-30" data-ended="false" aria-labelledby="ag-h">
+<h2 id="ag-h"><span id="ag-label">Næsti þingfundur</span></h2>
+<p class="lede">44. fundur · mánudagur 30. nóvember kl. 13:30 · 4 dagskrárliðir. <a href="https://www.althingi.is/thingstorf/thingfundir-og-raedur/thingfundir/" rel="noopener">Dagskrá á althingi.is</a></p>
+<ol class="ag-list">
+<li><span class="ag-t"><a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/bferill/?ltg=158&amp;mnr=246">óundirbúinn fyrirspurnatími</a></span><span class="ag-m"></span></li>
+<li><span class="ag-t"><a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/bferill/?ltg=158&amp;mnr=253">Stafrænt kynferðisofbeldi</a></span><span class="ag-m">sérstök umræða · Málshefjandi: Diljá Mist Einarsdóttir · Til svara: dómsmálaráðherra</span></li>
+<li><span class="ag-t"><a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=158&amp;mnr=134">Evrópska efnahagssvæðið</a> <span class="ag-topic">(bókun 35)</span></span><span class="ag-m">Frumvarp til laga · 2. umræða</span></li>
+<li><span class="ag-t"><a href="https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=158&amp;mnr=364">breyting á ýmsum lögum vegna sameiningar sýslumannsembætta</a></span><span class="ag-m">Frumvarp til laga · 1. umræða</span></li>
+</ol>
+</section>
 
 <section class="summary" aria-label="Yfirlit">
   <button type="button" class="tile wrong" data-f="wrong"><b>2</b><span>líklega röng eða ónákvæm</span></button>
@@ -1456,6 +1478,15 @@ footer { margin-top: 44px; font-size: 14px; color: var(--muted); border-top: 1px
   });
   readHash();
   apply();
+})();
+</script>
+<script>
+(function () {
+  var sec = document.getElementById('dagskra'), label = document.getElementById('ag-label');
+  if (!sec || !label) return;
+  // Dagsetning í Reykjavík (UTC) svo fyrirsögnin passi þótt síðan hafi ekki verið endurgerð í dag
+  var today = new Date().toISOString().slice(0, 10), d = sec.getAttribute('data-date');
+  label.textContent = d === today ? 'Dagskrá Alþingis í dag' : (d > today ? 'Næsti þingfundur' : 'Síðasti þingfundur');
 })();
 </script>
 </body>

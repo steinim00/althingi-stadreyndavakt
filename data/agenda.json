@@ -1,0 +1,51 @@
+{
+ "lthing": "158",
+ "fundur": "44",
+ "name": "44. fundur",
+ "date": "30.11.2026",
+ "time": "13:30",
+ "started": false,
+ "ended": false,
+ "items": [
+  {
+   "nr": "1",
+   "title": "óundirbúinn fyrirspurnatími",
+   "topic": "",
+   "kind": "óundirbúinn fyrirspurnatími",
+   "stage": "",
+   "who": "",
+   "to": "",
+   "url": "https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/bferill/?ltg=158&mnr=246"
+  },
+  {
+   "nr": "2",
+   "title": "Stafrænt kynferðisofbeldi",
+   "topic": "",
+   "kind": "sérstök umræða",
+   "stage": "",
+   "who": "Diljá Mist Einarsdóttir",
+   "to": "dómsmálaráðherra",
+   "url": "https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/bferill/?ltg=158&mnr=253"
+  },
+  {
+   "nr": "3",
+   "title": "Evrópska efnahagssvæðið",
+   "topic": "bókun 35",
+   "kind": "Frumvarp til laga",
+   "stage": "2. umræða",
+   "who": "",
+   "to": "",
+   "url": "https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=158&mnr=134"
+  },
+  {
+   "nr": "4",
+   "title": "breyting á ýmsum lögum vegna sameiningar sýslumannsembætta",
+   "topic": "",
+   "kind": "Frumvarp til laga",
+   "stage": "1. umræða",
+   "who": "",
+   "to": "",
+   "url": "https://www.althingi.is/thingstorf/thingmalalistar-eftir-thingum/ferill/?ltg=158&mnr=364"
+  }
+ ]
+}
