@@ -7,6 +7,7 @@ Reglur:
 """
 import re
 import time
+from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
 
 import requests
@@ -38,9 +39,21 @@ def _local(tag: str) -> str:
     return tag.split("}")[-1]
 
 
+def _recent(dagur: str, days: int) -> bool:
+    try:
+        d = datetime.strptime(dagur, "%d.%m.%Y")
+    except ValueError:
+        return True
+    return (datetime.now(timezone.utc).replace(tzinfo=None) - d).days <= days
+
+
 def speech_list(session: requests.Session, lthing: int, days: int = 100) -> list[dict]:
-    """Ræðulisti síðustu `days` daga (hámark 100 hjá Alþingi)."""
-    xml = _get(session, f"{BASE}/altext/xml/raedulisti/?dagar={min(days, 100)}")
+    """Ræðulisti síðustu `days` daga.
+
+    Færibreytan ?dagar=N hjá Alþingi er óáreiðanleg (N=10 og N=100 skila tómum lista),
+    svo allt þingið er sótt og síað hér.
+    """
+    xml = _get(session, f"{BASE}/altext/xml/raedulisti/?lthing={lthing}")
     root = ET.fromstring(xml.encode("utf-8"))
     out = []
     for el in root.iter():
@@ -67,7 +80,7 @@ def speech_list(session: requests.Session, lthing: int, days: int = 100) -> list
                 rec["mheiti"] = txt
             elif t == "html":
                 rec["html"] = txt.replace("http://", "https://")
-        if rec["xml"] or rec["html"]:
+        if (rec["xml"] or rec["html"]) and _recent(rec["dagur"], days):
             if not rec["xml"]:  # smíða XML-slóð úr HTML-slóð
                 rec["xml"] = rec["html"].replace("/altext/raeda/", "/xml/").replace(
                     "/xml/158/", "/xml/158/raedur/").replace(".html", ".xml")
