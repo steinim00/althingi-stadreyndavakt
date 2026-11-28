@@ -19,7 +19,7 @@ LTHING = int(os.environ.get("LTHING", "158"))
 START = datetime.strptime(os.environ.get("START_DATE", "2026-11-19"), "%Y-%m-%d")
 MAX_FETCH = int(os.environ.get("MAX_FETCH", "150"))
 MAX_CLAIMS = int(os.environ.get("MAX_CLAIMS", "40"))
-MAX_CANDIDATES = int(os.environ.get("MAX_CANDIDATES", "300"))
+MAX_CANDIDATES = int(os.environ.get("MAX_CANDIDATES", "5000"))
 MIN_SPEECH_CHARS = 300  # styttri ræður eru nær alltaf fundarstjórn
 
 
