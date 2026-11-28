@@ -1149,5 +1149,309 @@
   "facts": "Þetta er mat og áhersla en ekki mælanleg fullyrðing.",
   "sources": [],
   "checked": "2026-11-26"
+ },
+ {
+  "key": "942527454fb3",
+  "status": "ok",
+  "title": "Ríkisborgararéttur: 1.057 árið 2025, 68% fleiri",
+  "claim": "Í fyrra fengu 1.057 manns íslenskt ríkisfang, 68% fleiri en árið áður.",
+  "speaker": "Nanna Margrét Gunnlaugsdóttir",
+  "party": "Miðflokkurinn",
+  "date": "16.09.2026",
+  "facts": "Útlendingastofnun veitti 1.057 manns ríkisborgararétt árið 2025, 68% fleiri en árið 2024 (631). Tölurnar ná til ákvarðana stofnunarinnar, ekki til þeirra sem fengu ríkisborgararétt með lögum frá Alþingi.",
+  "sources": [
+   {
+    "title": "Útlendingastofnun: Árið 2025 í tölum",
+    "url": "https://island.is/frett/arid-2025-i-toelum"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260916T135035.html"
+ },
+ {
+  "key": "42c1d6e669fe",
+  "status": "ok",
+  "title": "Bankaskattur lækkaður um 61% árið 2020",
+  "claim": "Í tíð fyrri ríkisstjórnar árið 2020 var bankaskatturinn lækkaður úr 0,38% í 0,15% sem var 61% lækkun.",
+  "speaker": "Ásthildur Lóa Þórsdóttir",
+  "party": "Flokkur fólksins",
+  "date": "22.09.2026",
+  "facts": "Lög frá 2019 lækkuðu sérstakan skatt á fjármálafyrirtæki úr 0,376% í 0,145%, sem er 61% lækkun. Með lögum nr. 25/2020 tók lækkunin gildi strax í stað þess að koma í áföngum. Ræðumaður nefnir 0,38% og 0,15%, sem eru námundaðar tölur.",
+  "sources": [
+   {
+    "title": "Skatturinn: Skattar vegna fjármálaþjónustu",
+    "url": "https://www.skatturinn.is/atvinnurekstur/skattar-og-gjold/skattar-vegna-fjarmalathjonustu/"
+   },
+   {
+    "title": "Stjórnarráðið: Svigrúm fjármálafyrirtækja aukið (2020)",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2020-01-23-Svigrum-fjarmalafyrirtaekja-aukid"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260922T134909.html"
+ },
+ {
+  "key": "e0d54c8c0361",
+  "status": "open",
+  "title": "Hagnaður banka: 88 milljarðar 2024 og 94 milljarðar 2025",
+  "claim": "Ef bara er litið til síðustu tveggja ára þá högnuðust bankarnir um 88 milljarða árið 2024 og 94 milljarða árið 2025.",
+  "speaker": "Ásthildur Lóa Þórsdóttir",
+  "party": "Flokkur fólksins",
+  "date": "22.09.2026",
+  "facts": "Árið 2025 var hagnaður Landsbankans 38,0 ma., Íslandsbanka 25,2 ma. og Arion banka um 30 ma. (samtals um 93–95 ma.), svo talan fyrir 2025 stemmir. Fyrir 2024 fundust aðeins tölur fyrir Landsbankann (37,5 ma.) og Íslandsbanka (24,2 ma.); heildartalan 88 ma. er ekki staðfest hér.",
+  "sources": [
+   {
+    "title": "Landsbankinn: Uppgjör 2025",
+    "url": "https://www.landsbankinn.is/uploads/documents/arsskyrsluroguppgjor/consolidated-financial-report-2025-press-release-is.pdf"
+   },
+   {
+    "title": "Íslandsbanki: Samstæðureikningur 2025",
+    "url": "https://cdn.islandsbanki.is/image/upload/v1/documents/ISB_Samstaeduarsreikningur_2025.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260922T134909.html"
+ },
+ {
+  "key": "a9cb57ca1eac",
+  "status": "ok",
+  "title": "PISA 2025: 44% án grunnhæfni í lesskilningi",
+  "claim": "Núna hafa 44% 15 ára ungmenna ekki grunnfærni í lesskilningi.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "15.09.2026",
+  "facts": "Samkvæmt mennta- og barnamálaráðuneytinu bjuggu 56% íslenskra nemenda yfir grunnhæfni í lesskilningi í PISA 2025, svo 44% gerðu það ekki.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: PISA 2025",
+    "url": "https://www.stjornarradid.is/frettir/grein/pisa-2025-lesskilningur-og-staerdfraedi-versnar-en-thrautseigja-og-sterk-felagstengsl-i-nami-og-skola/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T133534.html"
+ },
+ {
+  "key": "3f0764f68592",
+  "status": "open",
+  "title": "PISA 2025: 422 stig í lesskilningi, 2% í efstu þrepum",
+  "claim": "Ísland mælist nú með 422 PISA-stig í lesskilningi og þar af 2% í efstu þrepunum, einungis 2%.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "15.09.2026",
+  "facts": "Ráðuneytið nefnir að afburðahæfni mældist aðeins hjá 2–4% nemenda (eftir greinum) og að frammistaðan dali í lesskilningi. Töluna 422 stig fann ég ekki í þeim heimildum sem ég hafði aðgang að.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: PISA 2025",
+    "url": "https://www.stjornarradid.is/frettir/grein/pisa-2025-lesskilningur-og-staerdfraedi-versnar-en-thrautseigja-og-sterk-felagstengsl-i-nami-og-skola/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T133534.html"
+ },
+ {
+  "key": "28d189f8920f",
+  "status": "ok",
+  "title": "Fjárlagafrumvarp 2027: tekjur 1.708 milljarðar",
+  "claim": "Heildartekjur í þessu fjárlagafrumvarpi fara úr 1.592 milljörðum í 1.708 milljarða, þ.e.",
+  "speaker": "Karl Gauti Hjaltason",
+  "party": "Miðflokkurinn",
+  "date": "10.09.2026",
+  "facts": "Í greinargerð frumvarpsins eru heildartekjur 2027 áætlaðar 1.708 ma.kr. og heildargjöld 1.704 ma.kr. Upphafstalan fyrir 2026 (1.592 ma.) var ekki staðfest.",
+  "sources": [
+   {
+    "title": "Fjárlög 2027, greinargerð: Markmið í ríkisfjármálum",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/3-markmid-i-rikisfjarmalum"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T121843.html"
+ },
+ {
+  "key": "2d703b13e22b",
+  "status": "ok",
+  "title": "Uppsafnaður halli 2019–2026: 866 milljarðar",
+  "claim": "Þetta gerist eftir átta ára tímabil þar sem samanlagður halli frá 2019 til loka þessa árs er áætlaður 866 milljarðar.",
+  "speaker": "Dagur B. Eggertsson",
+  "party": "Samfylkingin",
+  "date": "10.09.2026",
+  "facts": "Fjármálaráðuneytið segir samanlagðan halla síðustu ára nema 866 ma.kr. (í lykiltölum: yfir 850 ma.kr. fyrir 2019–2026).",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: Langvinnur hallarekstur stöðvaður",
+    "url": "https://www.stjornarradid.is/frettir/grein/2026-09-07-langvinnur-hallarekstur-stodvadur/"
+   },
+   {
+    "title": "Nokkrar lykiltölur fjárlagafrumvarpsins",
+    "url": "https://www.stjornarradid.is/page/552d26c1-3fe6-4676-8684-907587dd8934"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T114847.html"
+ },
+ {
+  "key": "914a256c5d70",
+  "status": "ok",
+  "title": "Vaxtagjöld 155 milljarðar á næsta ári",
+  "claim": "Vaxtagjöld ríkissjóðs stefna í 169 milljarða á þessu ári og verða samkvæmt frumvarpinu 155 milljarðar á næsta ári.",
+  "speaker": "Dagur B. Eggertsson",
+  "party": "Samfylkingin",
+  "date": "10.09.2026",
+  "facts": "Frumvarpið áætlar vaxtagjöld ríkissjóðs 2027 um 155 ma.kr. (2,8% af landsframleiðslu). Talan 169 ma. fyrir yfirstandandi ár var ekki staðfest.",
+  "sources": [
+   {
+    "title": "Fjárlög 2027, greinargerð: Markmið í ríkisfjármálum",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/3-markmid-i-rikisfjarmalum"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T114847.html"
+ },
+ {
+  "key": "97aa1e1bb205",
+  "status": "ok",
+  "title": "Af 80 milljarða aðgerðum eru um 44 á útgjaldahlið",
+  "claim": "Af 80 milljarða aðhaldsaðgerðum eru um 44 milljarðar á útgjaldahliðinni.",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "10.09.2026",
+  "facts": "Ráðstafanir til að draga úr útgjaldavexti nema 44,2 ma.kr. og tekjuráðstafanir 34,1 ma.kr., samtals um 78 ma.kr.",
+  "sources": [
+   {
+    "title": "Nokkrar lykiltölur fjárlagafrumvarpsins",
+    "url": "https://www.stjornarradid.is/page/552d26c1-3fe6-4676-8684-907587dd8934"
+   },
+   {
+    "title": "Stjórnarráðið: Langvinnur hallarekstur stöðvaður",
+    "url": "https://www.stjornarradid.is/frettir/grein/2026-09-07-langvinnur-hallarekstur-stodvadur/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T180919.html"
+ },
+ {
+  "key": "8d86f0d01f3b",
+  "status": "ok",
+  "title": "Skatta- og gjaldahækkanir upp á 34 milljarða",
+  "claim": "Nú á að hækka skatta og gjöld um 34 milljarða til viðbótar við þá 30 milljarða sem voru lagðir á þjóðina fyrir tæpu ári síðan.",
+  "speaker": "Jens Garðar Helgason",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "09.09.2026",
+  "facts": "Tekjuráðstafanir frumvarpsins eru metnar á 34,1 ma.kr. árið 2027, þar af 24,1 ma.kr. nýjar ráðstafanir. Fullyrðingin um 30 ma. hækkun í fyrra fannst ekki.",
+  "sources": [
+   {
+    "title": "Nokkrar lykiltölur fjárlagafrumvarpsins",
+    "url": "https://www.stjornarradid.is/page/552d26c1-3fe6-4676-8684-907587dd8934"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260909T204553.html"
+ },
+ {
+  "key": "75a404f43d82",
+  "status": "ok",
+  "title": "Fjárlög 2026 gerðu ráð fyrir 28 milljarða halla",
+  "claim": "En halli ársins 2026 sýnir hvers vegna það skiptir máli því að fjárlög þessa árs gerðu ráð fyrir 28 milljarða halla.",
+  "speaker": "Ingibjörg Isaksen",
+  "party": "Framsókn",
+  "date": "10.09.2026",
+  "facts": "Fjárlög 2026 gerðu ráð fyrir rúmlega 28 ma.kr. halla (0,5% af landsframleiðslu). Fullyrðingin um að hallinn stefni í nærri 70 ma. var ekki staðfest hér.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: Fjárlög fyrir árið 2026 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/19/Fjarlog-fyrir-arid-2026-samthykkt-Markviss-forgangsrodun-i-thagu-grunnthjonustu-og-innvida/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T130652.html"
+ },
+ {
+  "key": "fd145c82d0d6",
+  "status": "ok",
+  "title": "45% fjölgun hjúkrunarrýma á landsvísu",
+  "claim": "Það jafngildir hvorki meira né minna en 45% fjölgun hjúkrunarrýma á landsvísu.",
+  "speaker": "Inga Sæland",
+  "party": "Flokkur fólksins",
+  "date": "09.09.2026",
+  "facts": "Áætlun ráðuneytisins gerir ráð fyrir 1.355 nýjum hjúkrunarrýmum fyrir lok árs 2030 og 3.062 voru til í árslok 2025, sem er um 44% fjölgun.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: Ríflega 1.500 hjúkrunarrými fyrir lok árs 2030",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/03/16/Riflega-1.500-hjukrunarrymi-tekin-i-gagnid-fyrir-lok-ars-2030-/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260909T201915.html"
+ },
+ {
+  "key": "4f65f4d9fdcf",
+  "status": "open",
+  "title": "Hjúkrunarrýmum fjölgaði um 69 á fimm árum síðustu ríkisstjórnar",
+  "claim": "Til samanburðar fjölgaði hjúkrunarrýmum um einungis 69 á fimm árum síðustu ríkisstjórnar.",
+  "speaker": "Inga Sæland",
+  "party": "Flokkur fólksins",
+  "date": "09.09.2026",
+  "facts": "Talan fannst ekki. Heimild ráðuneytisins segir að hjúkrunarrýmum hafi fjölgað um ríflega 40 á ári árið 2017–2024, sem virðist ekki stemma, en tímabilin eru ekki þau sömu.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: Ríflega 1.500 hjúkrunarrými fyrir lok árs 2030",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026/03/16/Riflega-1.500-hjukrunarrymi-tekin-i-gagnid-fyrir-lok-ars-2030-/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260909T201915.html"
+ },
+ {
+  "key": "534b91588b46",
+  "status": "open",
+  "title": "40% af víðernum Evrópu er á Íslandi",
+  "claim": "Um 40% af víðernum Evrópu er að finna hér á Íslandi og ábyrgð okkar er mikil þegar kemur að því að varðveita þau því þetta eru ómetanleg verðmæti.",
+  "speaker": "Ása Berglind Hjálmarsdóttir",
+  "party": "Samfylkingin",
+  "date": "16.09.2026",
+  "facts": "Heimildir tala um að Ísland geymi um 43% af 1% villtustu svæða Evrópu (Carver o.fl. 2023). Talan 40% tengist oftast hlutfalli víðerna af Íslandi sjálfu, svo fullyrðingin er ónákvæm.",
+  "sources": [
+   {
+    "title": "Land (2023): Wilderness quality í Evrópu",
+    "url": "https://doaj.org/article/29688343dd34464eafc097ae00a470d4"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260916T140252.html"
+ },
+ {
+  "key": "db473146dac7",
+  "status": "open",
+  "title": "Viðhald vega: 12,8 milljarðar 2024, 17,6 á næsta ári",
+  "claim": "Stóru fréttirnar eru þær að viðhald vega, sem var 12,8 milljarðar árið 2024, verður 17,6 milljarðar á næsta ári.",
+  "speaker": "Arna Lára Jónsdóttir",
+  "party": "Samfylkingin",
+  "date": "15.09.2026",
+  "facts": "Samgönguáætlun segir að viðhaldsfé hafi verið um 12–13 ma.kr. á ári og fari í 17,5 ma. árið 2026 og 20 ma. á ári frá 2027. Töluna 17,6 ma. fyrir 2027 fann ég ekki.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: Fjármálaáætlun 2027–2031, samgöngur",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarmalaaaetlun/fjarmalaaaetlun-2027-2031/stefnumotun-malefnasvida/kafli/11"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T134757.html"
+ },
+ {
+  "key": "1237be0112c8",
+  "status": "ok",
+  "title": "Verðbólga 5,9%",
+  "claim": "Hún mælist nú 5,9% og hefur farið fram úr verðlagsforsendum kjarasamninga á almennum vinnumarkaði.",
+  "speaker": "Ragnhildur Jónsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "06.10.2026",
+  "facts": "Tólf mánaða verðbólga mældist 5,9% í október 2026, óbreytt frá september (heimild: Trading Economics, annarrar handar; staðfestu á hagstofa.is).",
+  "sources": [
+   {
+    "title": "Trading Economics: Iceland inflation holds at 5.9%",
+    "url": "https://tradingeconomics.com/iceland/inflation-cpi/news/596205"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T134949.html"
  }
 ]
