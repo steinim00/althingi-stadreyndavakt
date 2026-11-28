@@ -30,18 +30,18 @@
   "speaker": "Stefán Vagn Stefánsson",
   "party": "Framsókn",
   "date": "18.11.2026",
-  "facts": "Fjárlagafrumvarp 2026 gerði ráð fyrir rúmlega 15 milljarða halla (0,3% af landsframleiðslu). Fjárlagafrumvarp 2027 metur afkomu 2026 á −1,3% af landsframleiðslu, um 70 milljarða miðað við landsframleiðslu upp á um 5.300 milljarða. Hvorug talan hans passar. Lokatala samþykktra fjárlaga fannst ekki.",
+  "facts": "Talan 28 milljarðar er rétt: fjárlög 2026 gerðu ráð fyrir rúmlega 28 ma.kr. halla. En talan 90 stenst ekki: samkvæmt fjárlagafrumvarpi 2027 er halli ársins 2026 áætlaður um 67 ma.kr. (−1,3% af landsframleiðslu), það er rúmlega 39 ma.kr. umfram fjárlög.",
   "sources": [
    {
-    "title": "Alþingi: framsaga um fjárlög 2026",
-    "url": "https://www.althingi.is/altext/raeda/157/rad20251202T143152.html"
+    "title": "Fjárlög 2027, greinargerð: Afkomuhorfur ársins 2026",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/3-markmid-i-rikisfjarmalum"
    },
    {
-    "title": "Alþingi: kynning á frumvarpi 2027",
-    "url": "https://www.althingi.is/altext/erindi/158/158-4.pdf"
+    "title": "Stjórnarráðið: Fjárlög fyrir árið 2026 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/19/Fjarlog-fyrir-arid-2026-samthykkt-Markviss-forgangsrodun-i-thagu-grunnthjonustu-og-innvida/"
    }
   ],
-  "checked": "2026-11-25",
+  "checked": "2026-11-28",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T134815.html"
  },
  {
@@ -808,25 +808,25 @@
  },
  {
   "key": "5718e227cc13",
-  "status": "open",
-  "title": "„Hallinn verður um 90 milljarðar“",
+  "status": "wrong",
+  "title": "Halli ársins 2026 „um 90 milljarðar“",
   "claim": "halla sitja núna hljóðir þegar fyrir liggur að hallinn verður um 90 milljarðar.",
   "speaker": "Stefán Vagn Stefánsson",
   "party": "Framsókn",
   "date": "19.11.2026",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261119T135500.html",
-  "facts": "Opinberar tölur sem ég fann eru lægri: fjárlög 2025 gerðu ráð fyrir tæplega 63 ma.kr. halla og mat ráðuneytisins í desember 2025 var um 35 ma.kr. Ég fann ekki heimild fyrir 90 milljörðum. Hún gæti átt við aðra mælingu eða annað ár, svo ég flokka þetta sem óstaðfest en ekki rangt.",
+  "facts": "Fjárlagafrumvarp 2027 metur halla ársins 2026 um 67 ma.kr. (−1,3% af landsframleiðslu), rúmlega 39 ma.kr. umfram fjárlög (28 ma.kr.). Talan 90 ma.kr. kemur hvergi fram í frumvarpinu og er um 23 ma.kr. hærri en opinbera matið.",
   "sources": [
    {
-    "title": "Fjármálaráðuneytið: fjárlög 2025 samþykkt",
-    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2024/11/18/Fjarlog-fyrir-arid-2025-samthykkt-a-Althingi-Aframhaldandi-adhald-sem-stydur-vid-laekkun-verdbolgu/"
+    "title": "Fjárlög 2027, greinargerð: Afkomuhorfur ársins 2026",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/3-markmid-i-rikisfjarmalum"
    },
    {
-    "title": "Fjármálaráðuneytið: uppgjör janúar–september 2025",
-    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/12/Uppgjor-rikissjods-fyrir-januarseptember-2025-Betri-afkomuhorfur-fyrir-arid-i-heild/"
+    "title": "Stjórnarráðið: Fjárlög fyrir árið 2026 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/19/Fjarlog-fyrir-arid-2026-samthykkt-Markviss-forgangsrodun-i-thagu-grunnthjonustu-og-innvida/"
    }
   ],
-  "checked": "2026-11-26"
+  "checked": "2026-11-28"
  },
  {
   "key": "7c5b9844e8e8",
@@ -1256,7 +1256,7 @@
   "speaker": "Karl Gauti Hjaltason",
   "party": "Miðflokkurinn",
   "date": "10.09.2026",
-  "facts": "Í greinargerð frumvarpsins eru heildartekjur 2027 áætlaðar 1.708 ma.kr. og heildargjöld 1.704 ma.kr. Upphafstalan fyrir 2026 (1.592 ma.) var ekki staðfest.",
+  "facts": "Heildartekjur 2027 eru áætlaðar 1.708 ma.kr. og heildargjöld 1.704 ma.kr. Tekjur 2026 samkvæmt fjárlögum voru um 1.592 ma.kr. (áætlaðar nú 1.601 ma.kr., tæplega 8 ma.kr. umfram fjárlög). Tölurnar stemma.",
   "sources": [
    {
     "title": "Fjárlög 2027, greinargerð: Markmið í ríkisfjármálum",
@@ -1471,5 +1471,71 @@
   ],
   "checked": "2026-11-28",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261110T135707.html"
+ },
+ {
+  "key": "6961c2fec4c9",
+  "status": "ok",
+  "title": "Horfur 2026: 67,5 milljarða halli",
+  "claim": "Núverandi horfur gera hins vegar ráð fyrir 67,5 milljarða halla.",
+  "speaker": "Ragnhildur Jónsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "06.10.2026",
+  "facts": "Fjárlög 2026 gerðu ráð fyrir rúmlega 28 ma.kr. halla. Samkvæmt fjárlagafrumvarpi 2027 er afkoman nú áætluð neikvæð um rúmlega 39 ma.kr. umfram fjárlög, eða −1,3% af landsframleiðslu (tekjur 1.601 ma.kr., gjöld 1.668 ma.kr., halli um 67 ma.kr.).",
+  "sources": [
+   {
+    "title": "Fjárlög 2027, greinargerð: Afkomuhorfur ársins 2026",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/3-markmid-i-rikisfjarmalum"
+   },
+   {
+    "title": "Stjórnarráðið: Fjárlög fyrir árið 2026 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/19/Fjarlog-fyrir-arid-2026-samthykkt-Markviss-forgangsrodun-i-thagu-grunnthjonustu-og-innvida/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T134949.html"
+ },
+ {
+  "key": "75583d0f1bc0",
+  "status": "ok",
+  "title": "Halli ársins 2026 eykst um um 40 milljarða",
+  "claim": "Þessi metútgjaldaaukning dugði ekki þessari vinstri stjórn því samkvæmt áætlun er gert ráð fyrir að hallinn aukist um sirka 40 milljarða á þessu ári og stöðugleikareglan sennilega löngu gleymd.",
+  "speaker": "Nanna Margrét Gunnlaugsdóttir",
+  "party": "Miðflokkurinn",
+  "date": "15.09.2026",
+  "facts": "Afkoman er áætluð rúmlega 39 ma.kr. verri en fjárlög 2026 gerðu ráð fyrir.",
+  "sources": [
+   {
+    "title": "Fjárlög 2027, greinargerð: Afkomuhorfur ársins 2026",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/3-markmid-i-rikisfjarmalum"
+   },
+   {
+    "title": "Stjórnarráðið: Fjárlög fyrir árið 2026 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/19/Fjarlog-fyrir-arid-2026-samthykkt-Markviss-forgangsrodun-i-thagu-grunnthjonustu-og-innvida/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T133318.html"
+ },
+ {
+  "key": "64fb0a6e1bcb",
+  "status": "ok",
+  "title": "Sjúkratryggingar 12 milljörðum fram úr áætlun",
+  "claim": "Sjúkratryggingar eru að fara 12 milljarða fram úr áætlun.",
+  "speaker": "Guðlaugur Þór Þórðarson",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "10.09.2026",
+  "facts": "Fjárlagafrumvarp 2027 gerir ráð fyrir að útgjöld Sjúkratrygginga Íslands verði um 12 ma.kr. meiri en fjárlög 2026 gerðu ráð fyrir.",
+  "sources": [
+   {
+    "title": "Fjárlög 2027, greinargerð: Afkomuhorfur ársins 2026",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/3-markmid-i-rikisfjarmalum"
+   },
+   {
+    "title": "Stjórnarráðið: Fjárlög fyrir árið 2026 samþykkt",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2025/12/19/Fjarlog-fyrir-arid-2026-samthykkt-Markviss-forgangsrodun-i-thagu-grunnthjonustu-og-innvida/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T111619.html"
  }
 ]
