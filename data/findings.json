@@ -1537,5 +1537,523 @@
   ],
   "checked": "2026-11-28",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T111619.html"
+ },
+ {
+  "key": "8a9be450df67",
+  "status": "ok",
+  "title": "Stýrivextir 8% og verðbólga tæp 6%",
+  "claim": "Á meðan standa stýrivextir í 8% og verðbólgan í tæpum 6%.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "18.11.2026",
+  "facts": "Meginvextir Seðlabankans voru áfram 8,00% eftir ákvörðun 18. nóvember 2026 og verðbólga mældist 5,9% í október.",
+  "sources": [
+   {
+    "title": "Seðlabankinn: yfirlýsing peningastefnunefndar 18. nóvember 2026",
+    "url": "https://sedlabanki.is/frettir-og-utgefid-efni/grein/yfirlysing-peningastefnunefndar-18-november-2026"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T133159.html"
+ },
+ {
+  "key": "c7287e0cd549",
+  "status": "ok",
+  "title": "Óbreyttir vextir og verðbólga helmingist 2027",
+  "claim": "Við vitum núna eftir morguninn að vextir eru óbreyttir og Seðlabankinn spáir því að verðbólga minnki um helming árið 2027.",
+  "speaker": "Þorgerður Katrín Gunnarsdóttir",
+  "party": "Viðreisn",
+  "date": "18.11.2026",
+  "facts": "Vöxtum var haldið í 8% 18. nóvember. Verðbólga var 5,9% í október og samkvæmt Peningamálum á hún að vera komin í 3% undir lok árs 2027. Staðfestingin nær til þess sem bankinn spáir, ekki þess hvort spáin rætist.",
+  "sources": [
+   {
+    "title": "Seðlabankinn: yfirlýsing peningastefnunefndar 18. nóvember 2026",
+    "url": "https://sedlabanki.is/frettir-og-utgefid-efni/grein/yfirlysing-peningastefnunefndar-18-november-2026"
+   },
+   {
+    "title": "Seðlabankinn: Peningamál 2026/4",
+    "url": "https://sedlabanki.is/frettir-og-utgefid-efni/grein/peningamal-2026-4"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T135055.html"
+ },
+ {
+  "key": "29b9f0f5b786",
+  "status": "ok",
+  "title": "Verðbólga 5,9% og hærri en við stjórnarskiptin",
+  "claim": "Verðbólga stendur í 5,9% og hefur hækkað á vakt þessarar ríkisstjórnar.",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "18.11.2026",
+  "facts": "Verðbólga mældist 5,9% í október 2026. Í desember 2024, þegar ríkisstjórnin tók við, var 12 mánaða verðbólga 4,8% samkvæmt Hagstofunni. Ekki er metið hvað olli hækkuninni.",
+  "sources": [
+   {
+    "title": "Seðlabankinn: yfirlýsing peningastefnunefndar 18. nóvember 2026",
+    "url": "https://sedlabanki.is/frettir-og-utgefid-efni/grein/yfirlysing-peningastefnunefndar-18-november-2026"
+   },
+   {
+    "title": "Hagstofan: vísitala neysluverðs í desember 2024",
+    "url": "https://hagstofa.is/utgafur/frettasafn/verdlag/visitala-neysluverds-i-desember-2024/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T134815.html"
+ },
+ {
+  "key": "e24de6a2e1d0",
+  "status": "open",
+  "title": "Hagvaxtarforsenda fjárlaga 1,8% og spá Seðlabankans 1,2%",
+  "claim": "Ríkisstjórnin byggir fjárlagafrumvarpið á 1,8% hagvexti á næsta ári en Seðlabankinn spáir 1,2%.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "18.11.2026",
+  "facts": "Staðfest er að Seðlabankinn spáir 1,2% hagvexti 2027. Töluna 1,8% í forsendum fjárlagafrumvarpsins tókst ekki að staðfesta í þeim hluta frumvarpsins sem var lesinn.",
+  "sources": [
+   {
+    "title": "Seðlabankinn: Peningamál 2026/4",
+    "url": "https://sedlabanki.is/frettir-og-utgefid-efni/grein/peningamal-2026-4"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T133159.html"
+ },
+ {
+  "key": "df495371318a",
+  "status": "open",
+  "title": "Seðlabankinn og 17 milljarða halli",
+  "claim": "Efnahagsspá Seðlabankans er upp á 17 milljarða halla.",
+  "speaker": "Jens Garðar Helgason",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "18.11.2026",
+  "facts": "Afkomuspá ríkissjóðs 2027 kemur ekki fram í vefsamantekt Peningamála. Skýrslan í heild var ekki lesin, svo talan er hvorki staðfest né hrakin.",
+  "sources": [
+   {
+    "title": "Seðlabankinn: Peningamál 2026/4",
+    "url": "https://sedlabanki.is/frettir-og-utgefid-efni/grein/peningamal-2026-4"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T135613.html"
+ },
+ {
+  "key": "67502ea55cca",
+  "status": "open",
+  "title": "Seðlabankinn: „16–17 milljarðar“ í stað núlls",
+  "claim": "Nú hefur Seðlabanki Íslands komið fram og sagt: Heyrðu, núllið verður ekki núll, það verður 16–17 milljarða kr.",
+  "speaker": "Stefán Vagn Stefánsson",
+  "party": "Framsókn",
+  "date": "18.11.2026",
+  "facts": "Afkomuspá ríkissjóðs 2027 kemur ekki fram í vefsamantekt Peningamála. Skýrslan í heild var ekki lesin, svo talan er hvorki staðfest né hrakin.",
+  "sources": [
+   {
+    "title": "Seðlabankinn: Peningamál 2026/4",
+    "url": "https://sedlabanki.is/frettir-og-utgefid-efni/grein/peningamal-2026-4"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T135302.html"
+ },
+ {
+  "key": "f74c1c367e5a",
+  "status": "open",
+  "title": "Útgjöld um 30% af landsframleiðslu, minnst í áratug",
+  "claim": "Hér er mikið talað um útgjöld og tekjur þegar staðreynd málsins er sú að útgjöld samkvæmt þessu fjárlagafrumvarpi eru í kringum 30% af landsframleiðslu og hafa ekki verið lægri, þetta er með því minnsta sem við höfum séð í á áratug.",
+  "speaker": "Kristrún Frostadóttir",
+  "party": "Samfylkingin",
+  "date": "16.11.2026",
+  "facts": "Í fjárlagafrumvarpi 2027 fundust tekjur upp á 30,6% af landsframleiðslu, en það er ekki sama stærð og útgjöld. Útgjaldahlutfall og samanburður síðustu tíu ára fékkst ekki staðfestur.",
+  "sources": [
+   {
+    "title": "Frumvarp til fjárlaga fyrir árið 2027",
+    "url": "https://www.stjornarradid.is/library/?itemid=6d41488b-6385-438f-8ae7-0eedddffe8fe"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T134530.html"
+ },
+ {
+  "key": "9b95a350f2f3",
+  "status": "ok",
+  "title": "Virðisaukaskattur á baðlón úr 11% í 24%",
+  "claim": "Samhliða eru áform um að hækka virðisaukaskatt á baðlón úr 11% í 24%, auk annarra breytinga sem snerta greinina.",
+  "speaker": "Guðrún Hafsteinsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "18.11.2026",
+  "facts": "Samkvæmt fjárlagafrumvarpi 2027 færast gufuböð og baðlón úr 11% þrepinu í almenna þrepið, sem er 24%. Áætlaður tekjuauki er 4 ma.kr. Um frumvarp er að ræða.",
+  "sources": [
+   {
+    "title": "Fjárlagafrumvarp 2027, greinargerð: tekjur",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/"
+   },
+   {
+    "title": "Alþingi: þingskjal 2, 158. þing",
+    "url": "https://www.althingi.is/altext/pdf/158/s/0002.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T165703.html"
+ },
+ {
+  "key": "44e645372b49",
+  "status": "ok",
+  "title": "Fyrirhuguð hækkun skatts á baðlón",
+  "claim": "Það kom fram gagnrýni á fyrirhugaða hækkun virðisaukaskatts á baðlónum úr 11% í 24%.",
+  "speaker": "Þorgrímur Sigmundsson",
+  "party": "Miðflokkurinn",
+  "date": "17.11.2026",
+  "facts": "Hækkun virðisaukaskatts á baðlón úr 11% í 24% er í fjárlagafrumvarpi 2027. Staðfestingin nær til áformanna, ekki umfangs gagnrýninnar.",
+  "sources": [
+   {
+    "title": "Fjárlagafrumvarp 2027, greinargerð: tekjur",
+    "url": "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/greinargerd/kafli/4-tekjur-a1-hluta-rikissjods/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T133823.html"
+ },
+ {
+  "key": "ff47c396119f",
+  "status": "ok",
+  "title": "Ferðamálastefna til 2030",
+  "claim": "Árið 2024 var á Alþingi samþykkt þingsályktun um ferðamálastefnu til ársins 2030 þar sem framtíðarsýnin var að íslensk ferðaþjónusta verði leiðandi í sjálfbærri þróun.",
+  "speaker": "Hanna Katrín Friðriksson",
+  "party": "Viðreisn",
+  "date": "18.11.2026",
+  "facts": "Alþingi samþykkti ferðamálastefnu til 2030 í júní 2024. Þar segir að framtíðarsýn íslenskrar ferðaþjónustu sé að vera leiðandi í sjálfbærri þróun.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: Ferðamálastefna til 2030",
+    "url": "https://www.stjornarradid.is/verkefni/atvinnuvegir/ferdathjonusta/ferdamalastefna/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T161141.html"
+ },
+ {
+  "key": "dc9ad5ebd206",
+  "status": "open",
+  "title": "Stuðningur við gjaldið: yfir 70% með, 24,6% á móti",
+  "claim": "Yfir 70% þeirra sem tóku afstöðu styðja málið, 70%, en eingöngu 24,6% eru andvíg áformunum.",
+  "speaker": "Hanna Katrín Friðriksson",
+  "party": "Viðreisn",
+  "date": "18.11.2026",
+  "facts": "Opinber eða frumbirt heimild um könnunina fannst ekki. Til staðfestingar vantar niðurstöður könnunaraðilans, spurninguna og úrtakið.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: frumvarp um náttúru- og innviðagjald",
+    "url": "https://stjornarradid.is/efst-a-baugi/frettir/stok-frett/2026-09-22-frumvarp-um-natturu-og-innvidagjald-lagt-fram-i-samradsgatt/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T161141.html"
+ },
+ {
+  "key": "b5103cad63e4",
+  "status": "ok",
+  "title": "PISA 2025: lækkun um 4 stig og 28% nemenda af erlendum uppruna",
+  "claim": "Hlutfall nemenda sem ná grunnhæfni lækkaði um 4 prósentustig, bæði í lesskilningi og í stærðfræði, og aðeins 28% nemenda af erlendum uppruna búa yfir grunnhæfni í lesskilningi.",
+  "speaker": "Sandra Sigurðardóttir",
+  "party": "Viðreisn",
+  "date": "17.11.2026",
+  "facts": "Hlutfall nemenda með grunnhæfni lækkaði um 4 prósentustig í bæði lesskilningi og stærðfræðilæsi. 28% nemenda af erlendum uppruna búa yfir grunnhæfni í lesskilningi.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: niðurstöður PISA 2025",
+    "url": "https://www.stjornarradid.is/frettir/grein/pisa-2025-lesskilningur-og-staerdfraedi-versnar-en-thrautseigja-og-sterk-felagstengsl-i-nami-og-skola/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T141002.html"
+ },
+ {
+  "key": "79ace8faae3d",
+  "status": "ok",
+  "title": "PISA 2025: 44% án grunnfærni í lesskilningi",
+  "claim": "Hér kom fram að 44% nemenda eru ekki með grunnfærni í lesskilningi.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "17.11.2026",
+  "facts": "56% íslenskra nemenda náðu grunnhæfni í lesskilningi í PISA 2025, það er um 44% náðu henni ekki.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: niðurstöður PISA 2025",
+    "url": "https://www.stjornarradid.is/frettir/grein/pisa-2025-lesskilningur-og-staerdfraedi-versnar-en-thrautseigja-og-sterk-felagstengsl-i-nami-og-skola/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T141718.html"
+ },
+ {
+  "key": "7d65b0b0ff7a",
+  "status": "open",
+  "title": "„Rúm 30% basla við bókstafinn“ og 44% án grunnfærni",
+  "claim": "Við skröpum botninn; rúm 30% basla við bókstafinn og 44% eru ekki með grunnfærni í lesskilningi.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "17.11.2026",
+  "facts": "Talan 44% stemmir við PISA 2025 (56% náðu grunnhæfni). Heimild fyrir því að rúm 30% „basli við bókstafinn“ fannst ekki; til þess þarf íslensku rannsóknina sem vísað er til.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: niðurstöður PISA 2025",
+    "url": "https://www.stjornarradid.is/frettir/grein/pisa-2025-lesskilningur-og-staerdfraedi-versnar-en-thrautseigja-og-sterk-felagstengsl-i-nami-og-skola/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T141718.html"
+ },
+ {
+  "key": "7e8b0255e5ae",
+  "status": "ok",
+  "title": "51% auglýsingafjár til erlendra aðila 2024",
+  "claim": "Það eru erlendu tæknirisarnir sem tóku 51% auglýsingafjár á Íslandi árið 2024 og ef við myndum gera nýja könnun núna væri þetta mögulega hærra hlutfall.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "17.11.2026",
+  "facts": "Samkvæmt Hagstofunni fór 51% af 29,4 ma.kr. auglýsingagreiðslum 2024, tæpir 15 ma.kr., til erlendra miðla. Hagstofan talar um erlenda miðla, ekki aðeins tæknirisa. Spáin um hærra hlutfall nú er ekki metin.",
+  "sources": [
+   {
+    "title": "Hagstofan: auglýsingatekjur 2024",
+    "url": "https://hagstofa.is/utgafur/frettasafn/midlun/auglysingatekjur-2024"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T161435.html"
+ },
+ {
+  "key": "3027bc7d6367",
+  "status": "ok",
+  "title": "Erlendir aðilar með um 51% auglýsingafjár",
+  "claim": "Það er ljóst að hlutdeild alþjóðlegra tæknirisa og streymisveitna í þessum tekjum hefur aukist verulega og þær tóku til sín um 51% af auglýsingafjármagni árið 2024.",
+  "speaker": "Árni Rúnar Þorvaldsson",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Samkvæmt Hagstofunni fór 51% auglýsingagreiðslna 2024 til erlendra miðla, og greiðslur til þeirra hafa nær 26-faldast frá 2009.",
+  "sources": [
+   {
+    "title": "Hagstofan: auglýsingatekjur 2024",
+    "url": "https://hagstofa.is/utgafur/frettasafn/midlun/auglysingatekjur-2024"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T175807.html"
+ },
+ {
+  "key": "24a9e9441a89",
+  "status": "ok",
+  "title": "Auglýsingatekjur fjölmiðla 36% minni en 2016",
+  "claim": "Auglýsingatekjur fjölmiðla voru til að mynda 36% minni á síðasta ári en þær voru þegar þær voru hæstar árið 2016 og 8% minni en þær voru árið 2010.",
+  "speaker": "Árni Rúnar Þorvaldsson",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Samkvæmt Hagstofunni voru auglýsingatekjur fjölmiðla 2024 um 36% minni en 2016 og 8% minni en 2010.",
+  "sources": [
+   {
+    "title": "Hagstofan: fjölmiðlatekjur 2024",
+    "url": "https://hagstofa.is/utgafur/frettasafn/midlun/fjolmidlatekjur-2024/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T175807.html"
+ },
+ {
+  "key": "649db51684e4",
+  "status": "ok",
+  "title": "Greinargerð: hlutdeild RÚV úr 20% í tæp 29%",
+  "claim": "Í greinargerðinni kemur fram að hlutdeild RÚV í auglýsingatekjum innlendra fjölmiðla hafi farið úr 20% árið 2022 í tæp 29% árið 2024.",
+  "speaker": "Jón Pétur Zimsen",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "17.11.2026",
+  "facts": "Í þingskjali 366 segir að hlutdeild RÚV hafi verið 20% árið 2022 og tæp 29% árið 2024 samkvæmt Hagstofunni. Staðfest er að þetta stendur í greinargerðinni. Athugið að í frétt Hagstofunnar um 2024 er hlutdeild RÚV í auglýsingatekjum sögð 22% (21% 2023) en tæp 29% eiga þar við allar fjölmiðlatekjur. Mismunurinn var ekki skýrður.",
+  "sources": [
+   {
+    "title": "Alþingi: þingskjal 366, 158. þing",
+    "url": "https://www.althingi.is/altext/pdf/158/s/0366.pdf"
+   },
+   {
+    "title": "Hagstofan: fjölmiðlatekjur 2024",
+    "url": "https://hagstofa.is/utgafur/frettasafn/midlun/fjolmidlatekjur-2024/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T161435.html"
+ },
+ {
+  "key": "88f24a8ad1f0",
+  "status": "ok",
+  "title": "Framlag til RÚV skerðist um 10% af auglýsingatekjum",
+  "claim": "Í fyrsta lagi er lagt til að dregið verði úr fjárframlagi ríkisins til Ríkisútvarpsins sem nemur 10% af auglýsingatekjum Ríkisútvarpsins.",
+  "speaker": "Logi Einarsson",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Í frumvarpinu á þingskjali 366 er lagt til að framlag ríkisins skerðist sem nemur 10% af tekjum RÚV af viðskiptaboðum, með gildistöku 1. janúar 2027.",
+  "sources": [
+   {
+    "title": "Alþingi: þingskjal 366, 158. þing",
+    "url": "https://www.althingi.is/altext/pdf/158/s/0366.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T152110.html"
+ },
+ {
+  "key": "139c02164a92",
+  "status": "ok",
+  "title": "Frumvarp um umsvif RÚV á auglýsingamarkaði",
+  "claim": "menningar-, nýsköpunar- og háskólaráðherra er lagt til að reyna að takmarka umsvif RÚV á auglýsingamarkaði með þeim hætti að dregið verði úr fjárframlagi ríkisins til RÚV sem nemi 10% af auglýsingatekjum RÚV.",
+  "speaker": "Árni Rúnar Þorvaldsson",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Í frumvarpinu á þingskjali 366 er lagt til að framlag ríkisins skerðist sem nemur 10% af auglýsingatekjum RÚV.",
+  "sources": [
+   {
+    "title": "Alþingi: þingskjal 366, 158. þing",
+    "url": "https://www.althingi.is/altext/pdf/158/s/0366.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T175807.html"
+ },
+ {
+  "key": "141a43a02112",
+  "status": "ok",
+  "title": "Sjálfstæður réttur feðra 2001–2003",
+  "claim": "Árið 2001 fengu feður einn mánuð í sjálfstæðan rétt, 2002 fengu þeir tvo mánuði og árið 2003 fengu feður þrjá mánuði í sjálfstætt orlof.",
+  "speaker": "Ragna Sigurðardóttir",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Samkvæmt Vinnumálastofnun var réttur feðra einn mánuður 2001, tveir 2002 og þrír 2003.",
+  "sources": [
+   {
+    "title": "Vinnumálastofnun: ársskýrsla Fæðingarorlofssjóðs 2024",
+    "url": "https://assets.ctfassets.net/8k0h54kbe6bj/2Q0Ay0mTF4o6ImjNkk8obc/1f0741c2e4c94f91e5b639e9f51d945d/VMS-arsskyrsla-faedingarorlofsjods-2024-220725.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T145844.html"
+ },
+ {
+  "key": "c7e258e46d7f",
+  "status": "ok",
+  "title": "Fæðingarorlof lengt í 10 og svo 12 mánuði",
+  "claim": "Við vorum lengi eftirbátar annarra Norðurlanda með samtals níu mánaða fæðingarorlof sem loks var lengt árið 2020, fyrst í tíu mánuði og loks í tólf mánuði árið 2021.",
+  "speaker": "Ragna Sigurðardóttir",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Stjórnarráðið lýsti lengingu úr níu í tíu mánuði fyrir börn fædd frá 1. janúar 2020 og í tólf mánuði frá 1. janúar 2021. Frumvarp 2020 staðfestir 12 mánuði frá 2021. Samanburður við önnur Norðurlönd var ekki metinn.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: lenging í áföngum (2019)",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2019/09/09/Fleiri-foreldrar-nyta-rett-til-faedingarorlofs/"
+   },
+   {
+    "title": "Stjórnarráðið: frumvarp samþykkt í ríkisstjórn (2020)",
+    "url": "https://www.stjornarradid.is/efst-a-baugi/frettir/stok-frett/2020/11/17/Frumvarp-um-faedingar-og-foreldraorlof-samthykkt-i-rikisstjorn/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T145844.html"
+ },
+ {
+  "key": "f08da513e9f6",
+  "status": "open",
+  "title": "Sjálfstæður réttur feðra í tvær vikur 1998",
+  "claim": "Árið 1998 fengu feður sjálfstæðan rétt til tveggja vikna fæðingarorlofs, tveggja vikna orlofs.",
+  "speaker": "Ragna Sigurðardóttir",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Opinber heimild sem staðfestir tveggja vikna rétt árið 1998 fékkst ekki lesin. Til þess þarf lagatextann frá þeim tíma.",
+  "sources": [
+   {
+    "title": "Vinnumálastofnun: ársskýrsla Fæðingarorlofssjóðs 2024",
+    "url": "https://assets.ctfassets.net/8k0h54kbe6bj/2Q0Ay0mTF4o6ImjNkk8obc/1f0741c2e4c94f91e5b639e9f51d945d/VMS-arsskyrsla-faedingarorlofsjods-2024-220725.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T145844.html"
+ },
+ {
+  "key": "e267ed18aade",
+  "status": "open",
+  "title": "Meðalnýting feðra: 115 dagar og 131 dagur",
+  "claim": "Þegar óframseljanlegur réttur feðra var lengdur í fjóra mánuði á árinu 2020 jókst meðalnýting þeirra í 115 daga og við lengingu réttarins í sex vikur árið 2021 jókst hún enn frekar eða í 131 dag.",
+  "speaker": "Ragnar Þór Ingólfsson",
+  "party": "Flokkur fólksins",
+  "date": "17.11.2026",
+  "facts": "115 dagar fyrir 2020 stemma. Um 131 dag ber heimildum ekki saman á læsilegan hátt: ársskýrsla Vinnumálastofnunar tengir töluna við 2022, en eldri skýrsla ráðherra gaf 126 daga fyrir 2021 til bráðabirgða. Uppfærða tölu fyrir 2021 vantar.",
+  "sources": [
+   {
+    "title": "Vinnumálastofnun: ársskýrsla Fæðingarorlofssjóðs 2024",
+    "url": "https://assets.ctfassets.net/8k0h54kbe6bj/2Q0Ay0mTF4o6ImjNkk8obc/1f0741c2e4c94f91e5b639e9f51d945d/VMS-arsskyrsla-faedingarorlofsjods-2024-220725.pdf"
+   },
+   {
+    "title": "Alþingi: skýrsla ráðherra, þingskjal 1613, 153. þing",
+    "url": "https://www.althingi.is/altext/pdf/153/s/1613.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T150222.html"
+ },
+ {
+  "key": "323a32f34980",
+  "status": "open",
+  "title": "Meðalnýting feðra 2009, 2011 og 2019",
+  "claim": "Í kjölfar efnahagshrunsins dró þó úr meðalnýtingu feðra, úr 98 dögum árið 2009 í 86 daga árið 2011, en hún jókst á ný og var 91 dagur árið 2019.",
+  "speaker": "Ragnar Þór Ingólfsson",
+  "party": "Flokkur fólksins",
+  "date": "17.11.2026",
+  "facts": "Ársskýrsla Vinnumálastofnunar nefnir hækkun úr 91 í 115 daga árið 2020, sem styður 91 dag fyrir 2019, en árið kemur ekki skýrt fram. Tölurnar fyrir 2009 og 2011 eru ekki í lesnum texta.",
+  "sources": [
+   {
+    "title": "Vinnumálastofnun: ársskýrsla Fæðingarorlofssjóðs 2024",
+    "url": "https://assets.ctfassets.net/8k0h54kbe6bj/2Q0Ay0mTF4o6ImjNkk8obc/1f0741c2e4c94f91e5b639e9f51d945d/VMS-arsskyrsla-faedingarorlofsjods-2024-220725.pdf"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T150222.html"
+ },
+ {
+  "key": "adade568997e",
+  "status": "ok",
+  "title": "Loftbrú: 40% afsláttur af sex flugleggjum",
+  "claim": "Markmiðið var að jafna aðgengi landsbyggðarinnar að þjónustu, með 40% afslætti af sex flugleggjum á ári.",
+  "speaker": "Berglind Harpa Svavarsdóttir",
+  "party": "Sjálfstæðisflokkurinn",
+  "date": "17.11.2026",
+  "facts": "Stjórnarráðið lýsir Loftbrú sem 40% afslætti af allt að sex flugleggjum á ári. Frá áramótum stendur til að breyta prósentunni í fasta upphæð, 7.000 kr. á legg.",
+  "sources": [
+   {
+    "title": "Stjórnarráðið: nýtt fyrirkomulag Loftbrúar",
+    "url": "https://www.stjornarradid.is/frettir/grein/2026-10-23-nytt-fyrirkomulag-afslattarkoda-loftbruar-fost-kronutala-i-stad-prosentu/"
+   }
+  ],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T134701.html"
+ },
+ {
+  "key": "0fb784ce012a",
+  "status": "open",
+  "title": "1,7% nýframkvæmdafjár til Suðurnesja 2015–2025",
+  "claim": "Á árunum 2015–2025 fóru aðeins 1,7% fjármagns í nýframkvæmdir í vegagerð til Suðurnesja þótt þar búi um 8% landsmanna.",
+  "speaker": "Sverrir Bergmann Magnússon",
+  "party": "Samfylkingin",
+  "date": "17.11.2026",
+  "facts": "Opinber sundurliðun á fjármagni til nýframkvæmda eftir landshlutum fannst ekki. Til staðfestingar vantar gögn frá Vegagerðinni eða ráðuneyti.",
+  "sources": [],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T134447.html"
+ },
+ {
+  "key": "3ae5954f959a",
+  "status": "open",
+  "title": "Breytilegir vextir Landsbankans um 10,35%",
+  "claim": "vextir hjá Landsbankanum um 10,35% og það eru breytilegir vextir.",
+  "speaker": "Ásthildur Lóa Þórsdóttir",
+  "party": "Flokkur fólksins",
+  "date": "17.11.2026",
+  "facts": "Vaxtatafla bankans fékkst ekki lesin. Til staðfestingar þarf að vita hvaða lánaflokk er átt við og skoða vaxtatöflu sem gilti á ræðudegi.",
+  "sources": [],
+  "checked": "2026-11-28",
+  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T145342.html"
  }
 ]
