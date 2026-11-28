@@ -144,22 +144,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260916T134618.html"
  },
  {
-  "key": "60a39765d9f2",
-  "speaker": "Nanna Margrét Gunnlaugsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "16.09.2026",
-  "claim": "Pólverjum og Litáum hefur fækkað um tæplega 1.200 frá því í desember, meira en tvöföld sú fækkun sem ráðherra státar sig af.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260916T135035.html"
- },
- {
-  "key": "96b7fa765658",
-  "speaker": "Kolbrún Áslaugar Baldursdóttir",
-  "party": "Flokkur fólksins",
-  "date": "16.09.2026",
-  "claim": "Þar eru áætlanir um að auka framlög til heilbrigðismála um 16,2 milljarða, framlög til málefna barna og fjölskyldna um 8,8 milljarða og framlög til menntamála og atvinnustefnu verða aukin um 4,5 milljarða kr.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260916T135249.html"
- },
- {
   "key": "3dea51a8a5df",
   "speaker": "Dagbjört Hákonardóttir",
   "party": "Samfylkingin",
@@ -238,14 +222,6 @@
   "date": "22.09.2026",
   "claim": "Bara á þessum tveimur árum var samanlagður hagnaður bankanna heilir 182 milljarðar, þ.e.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260922T134909.html"
- },
- {
-  "key": "b0cdd5b5591a",
-  "speaker": "Ása Berglind Hjálmarsdóttir",
-  "party": "Samfylkingin",
-  "date": "22.09.2026",
-  "claim": "Með núverandi aðgerðum stefnir Ísland í aðeins 21% samdrátt í samfélagslosun árið 2030 en markmiðið er 41%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260922T135126.html"
  },
  {
   "key": "7228aa5af3d2",
@@ -344,14 +320,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T134949.html"
  },
  {
-  "key": "1187fa31bb97",
-  "speaker": "Eydís Ásbjörnsdóttir",
-  "party": "Samfylkingin",
-  "date": "07.10.2026",
-  "claim": "Sem þingmaður Norðausturkjördæmis og fyrrum bæjarfulltrúi í Fjarðabyggð þekki ég vel umræðuna um Drekasvæðið og þau tækifæri sem þar kunna að vera, enda er þetta ekki ný umræða og ágætt að rifja upp að norsk og kínversk olíufélög skiluðu inn leyfum sínum á Drekasvæðinu árið 2018.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261007T133302.html"
- },
- {
   "key": "7e44c48d23c2",
   "speaker": "Kristján Þórður Snæbjarnarson",
   "party": "Samfylkingin",
@@ -406,14 +374,6 @@
   "date": "07.10.2026",
   "claim": "Vísir dró út svar frá ráðuneytinu nú í vikunni um hluta áformanna sem eru lögð til í nýju frumvarpi, sér í lagi um þetta 2,8 milljarða tekjuþak Ríkisútvarpsins sem er hluti af svona hraðbankaáformum hæstv.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261007T135833.html"
- },
- {
-  "key": "3ac6d12599bd",
-  "speaker": "Arna Lára Jónsdóttir",
-  "party": "Samfylkingin",
-  "date": "14.10.2026",
-  "claim": "Fjárlagafrumvarp fyrir árið 2027 stefnir að hallalausum rekstri ríkissjóðs.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261014T133931.html"
  },
  {
   "key": "6497598078ea",
@@ -752,14 +712,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261110T135919.html"
  },
  {
-  "key": "babc09791c40",
-  "speaker": "Kolbrún Áslaugar Baldursdóttir",
-  "party": "Flokkur fólksins",
-  "date": "10.11.2026",
-  "claim": "Árið 2025 birti Matvælaöryggisstofnun Evrópu vísindalegt mat á velferð minka og annarra loðdýra.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261110T140127.html"
- },
- {
   "key": "39ece9b0d4bf",
   "speaker": "Sigurjón Þórðarson",
   "party": "Flokkur fólksins",
@@ -984,28 +936,12 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T121843.html"
  },
  {
-  "key": "8071c34e22ba",
-  "speaker": "Sigurjón Þórðarson",
-  "party": "Flokkur fólksins",
-  "date": "10.09.2026",
-  "claim": "elli- og örorkulífeyrisþegar, og bætur samkvæmt lögum um félagslega aðstoð hækki um 7,3% frá 1.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T123720.html"
- },
- {
   "key": "fa68cd2196da",
   "speaker": "Sigurjón Þórðarson",
   "party": "Flokkur fólksins",
   "date": "10.09.2026",
   "claim": "Vaxtakostnaður ríkisins er nú um 148 milljarðar kr.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T123720.html"
- },
- {
-  "key": "ca794235c179",
-  "speaker": "Ingibjörg Isaksen",
-  "party": "Framsókn",
-  "date": "10.09.2026",
-  "claim": "Ríkisstjórnin áætlar að það verði 4,7 milljarða afgangur af 1.700 milljarða veltu.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T130652.html"
  },
  {
   "key": "811bd91d48be",
@@ -1045,14 +981,6 @@
   "party": "Sjálfstæðisflokkurinn",
   "date": "10.09.2026",
   "claim": "Fjárveiting til Vegagerðarinnar lækkar úr 34,7 milljörðum í 32,9 milljarða og framlög til Betri samgangna úr 6,9 milljörðum í 5,1 milljarða.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T140405.html"
- },
- {
-  "key": "3a520de302aa",
-  "speaker": "Njáll Trausti Friðbertsson",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "10.09.2026",
-  "claim": "Baðlón eiga að fara í almennt virðisaukaskattsþrep, það eru 4 milljarðar við að hækka úr 11% í 24%.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T140405.html"
  },
  {
@@ -1416,14 +1344,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T184030.html"
  },
  {
-  "key": "d296e4d1341a",
-  "speaker": "Guðrún Hafsteinsdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "10.09.2026",
-  "claim": "Nú á að lækka endurgreiðslu virðisaukaskatts af vinnu við íbúðarhúsnæði úr 35% í 20%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T184201.html"
- },
- {
   "key": "319b515baa34",
   "speaker": "Kristrún Frostadóttir",
   "party": "Samfylkingin",
@@ -1552,14 +1472,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T190515.html"
  },
  {
-  "key": "1c6265466603",
-  "speaker": "Þorgerður Katrín Gunnarsdóttir",
-  "party": "Viðreisn",
-  "date": "10.09.2026",
-  "claim": "Eins og kunnugt er stefnir ríkisstjórnin að því að Ísland verji 1,5% af vergri landsframleiðslu til varnartengdra innviða og verkefna eigi síðar en árið 2035 og jafnvel fyrr eins og ákveðið var á leiðtogafundi Atlantshafsbandalagsins í júlí í fyrra og er hér um að ræða vörðu á þeirri vegferð.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T190515.html"
- },
- {
   "key": "70e2b8c47adf",
   "speaker": "Þorgerður Katrín Gunnarsdóttir",
   "party": "Viðreisn",
@@ -1582,14 +1494,6 @@
   "date": "10.09.2026",
   "claim": "auknu framlagi til að efla aðalskrifstofu utanríkisráðuneytisins á sama tíma og ríkisstjórnin setur ríkisstofnunum markmið um fækkun stöðugilda eða um 1%.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T194004.html"
- },
- {
-  "key": "866db2895054",
-  "speaker": "Sigurður Ingi Jóhannsson",
-  "party": "Framsókn",
-  "date": "10.09.2026",
-  "claim": "Mun það styrkja húsnæðismarkaðinn að lækka endurgreiðslurnar úr 35% í 20%?",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T194502.html"
  },
  {
   "key": "3e5e8de3c96c",
@@ -1704,14 +1608,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T200756.html"
  },
  {
-  "key": "3fc09443a004",
-  "speaker": "Jón Pétur Zimsen",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "10.09.2026",
-  "claim": "Þegar 44% barna ná ekki grunnfærni í lesskilningi og hæstv.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T201417.html"
- },
- {
   "key": "0c1787bf6a70",
   "speaker": "Inga Sæland",
   "party": "Flokkur fólksins",
@@ -1734,14 +1630,6 @@
   "date": "10.09.2026",
   "claim": "En hagræðingarkrafa er til staðar upp á 1,2%, hér eins og annars staðar, og við munum standa hana af okkur og ég ber lítinn kvíðboga fyrir því ef satt skal segja.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T201642.html"
- },
- {
-  "key": "1af156e2aa98",
-  "speaker": "Jón Pétur Zimsen",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "10.09.2026",
-  "claim": "OECD sagði um Ísland í fyrra að meira en 40 stiga lækkun á meðalárangri PISA frá 2006–2022 gæti dregið úr heildarframleiðni um meira en 5% sem eru u.þ.b.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T201855.html"
  },
  {
   "key": "e082bed83dc8",
@@ -1869,14 +1757,6 @@
   "party": "Framsókn",
   "date": "10.09.2026",
   "claim": "Ef við horfum á árin 2020, 2021 og 2022 þá útskýrist hallareksturinn að mörgu leyti af Covid-aðgerðum og jarðeldum á Reykjanesskaga sem er um 570 milljarðar.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T210849.html"
- },
- {
-  "key": "74d90ace4b9d",
-  "speaker": "Ingibjörg Isaksen",
-  "party": "Framsókn",
-  "date": "10.09.2026",
-  "claim": "Hún hefur verið mjög gagnrýnin á síðustu ríkisstjórn og mig langar aðeins að fara yfir tölur sem koma fram í fjárlagafrumvarpinu varðandi uppsafnaðan halla, af því að það er verið að tala um þessa 866 milljarða.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260910T210849.html"
  },
  {
@@ -2136,14 +2016,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T120623.html"
  },
  {
-  "key": "2de71d56097a",
-  "speaker": "Ingibjörg Isaksen",
-  "party": "Framsókn",
-  "date": "11.09.2026",
-  "claim": "Lækkunin til Betri samgangna er 2 milljarðar en síðan er líka verið að hagræða þegar kemur að viðhaldi og nýframkvæmdum.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T120754.html"
- },
- {
   "key": "71b1f8ed95af",
   "speaker": "Ingibjörg Isaksen",
   "party": "Framsókn",
@@ -2157,14 +2029,6 @@
   "party": "Flokkur fólksins",
   "date": "11.09.2026",
   "claim": "Það sem við erum að gera miðað við síðustu ríkisstjórn er að árið 2024 voru þau að leggja 12,8 milljarða kr.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T120955.html"
- },
- {
-  "key": "5553b8e73222",
-  "speaker": "Eyjólfur Ármannsson",
-  "party": "Flokkur fólksins",
-  "date": "11.09.2026",
-  "claim": "Við erum að fara í 351 milljarða í framkvæmdafé samkvæmt samgönguáætlun, hækkun um 90 milljarða.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T120955.html"
  },
  {
@@ -2366,14 +2230,6 @@
   "date": "11.09.2026",
   "claim": "Þegar við horfum síðan til þess að þegar lögin taka gildi þá erum við að fækka sýslumönnunum sjálfum og þegar litið er til þessa 1%, sýslumenn farnir utan sýslumanns Íslands sem eftir starfar, þá hefur þetta ekki áhrif á þau störf sem þarna eru.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T131608.html"
- },
- {
-  "key": "ad189dc630a8",
-  "speaker": "Njáll Trausti Friðbertsson",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "11.09.2026",
-  "claim": "Þegar varnarliðið yfirgaf Ísland í september árið 2006, fyrir réttum 20 árum, hurfu úr landi fimm öflugar björgunarþyrlur.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T132127.html"
  },
  {
   "key": "c5c0e2f1e294",
@@ -2680,35 +2536,11 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T145907.html"
  },
  {
-  "key": "32d45a304ca2",
-  "speaker": "Alma D. Möller",
-  "party": "Samfylkingin",
-  "date": "11.09.2026",
-  "claim": "Stærsti einstaki þátturinn eru 5,4 milljarðar vegna raunvaxtar sem endurspeglar aukna þjónustuþörf vegna fólksfjölgunar og öldrunar þjóðarinnar.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T145907.html"
- },
- {
-  "key": "280ae20712b4",
-  "speaker": "Rósa Guðbjartsdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "11.09.2026",
-  "claim": "Á síðasta áratug lækkaði komugjald úr 1.200 í 500 kr., gjöld aldraðra og öryrkja voru felld niður og önnur lykilgjöld fryst árum saman.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T150413.html"
- },
- {
   "key": "bb16dbf1024b",
   "speaker": "María Rut Kristinsdóttir",
   "party": "Viðreisn",
   "date": "11.09.2026",
   "claim": "Það kostar að reka samfélag og það kostar að reka gott samfélag og ég fagna því að hlutfall grunnkerfa í þessu fjárlagafrumvarpi af heildarútgjöldum hefur ekki verið jafn hátt frá því í Covid eða 63,64%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T151146.html"
- },
- {
-  "key": "5d79c45c6815",
-  "speaker": "María Rut Kristinsdóttir",
-  "party": "Viðreisn",
-  "date": "11.09.2026",
-  "claim": "Með öðrum orðum erum við að ná að verja grunnkerfin okkar þrátt fyrir það aðhald sem hér er boðað, það eru 44 milljarðar í aðhald og svo tekjur á móti.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T151146.html"
  },
  {
@@ -2848,14 +2680,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T162607.html"
  },
  {
-  "key": "b7be93503b88",
-  "speaker": "Bergþór Ólason",
-  "party": "Miðflokkurinn",
-  "date": "11.09.2026",
-  "claim": "laga um opinber fjármál, í orðskýringum, með leyfi forseta: „Eftirgjöf á skattkröfu á hendur skattgreiðanda vegna sérstakra aðstæðna eða atvika.“ Þetta á auðvitað ekki við um samanburð á 24% virðisaukaskattsþrepinu og 11% virðisaukaskattsþrepinu.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260911T170952.html"
- },
- {
   "key": "ff3cf69b6638",
   "speaker": "Bergþór Ólason",
   "party": "Miðflokkurinn",
@@ -2973,14 +2797,6 @@
   "party": "Flokkur fólksins",
   "date": "14.09.2026",
   "claim": "Varðandi það sem fyrri ríkisstjórn var að gera í vegamálum þá áætlaði hún í kringum 13 milljarða í viðhald.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T134325.html"
- },
- {
-  "key": "94c61f21ddf6",
-  "speaker": "Eyjólfur Ármannsson",
-  "party": "Flokkur fólksins",
-  "date": "14.09.2026",
-  "claim": "Við erum núna að leggja fram 351 milljarð á fyrstu fimm árum samgönguáætlunar.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T134325.html"
  },
  {
@@ -3160,14 +2976,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T140847.html"
  },
  {
-  "key": "ca0c05242c23",
-  "speaker": "Ragnar Þór Ingólfsson",
-  "party": "Flokkur fólksins",
-  "date": "14.09.2026",
-  "claim": "Fjárheimild Fæðingarorlofssjóðs árið 2027 er áætluð tæpir 35,7 milljarðar kr.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T141057.html"
- },
- {
   "key": "5738b7ef2cf6",
   "speaker": "Guðlaugur Þór Þórðarson",
   "party": "Sjálfstæðisflokkurinn",
@@ -3200,14 +3008,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T143508.html"
  },
  {
-  "key": "974453c6f4a3",
-  "speaker": "Ingibjörg Isaksen",
-  "party": "Framsókn",
-  "date": "14.09.2026",
-  "claim": "Fjármunir til hlutdeildarlána eru takmarkaðir um 5,5 milljarða kr.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T144328.html"
- },
- {
   "key": "60f11e42df2b",
   "speaker": "Ragnar Þór Ingólfsson",
   "party": "Flokkur fólksins",
@@ -3222,14 +3022,6 @@
   "date": "14.09.2026",
   "claim": "Yfir tveggja ára tímabil er um 9% raunlækkun að ræða.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T145542.html"
- },
- {
-  "key": "f20d0e14dd71",
-  "speaker": "Stefán Vagn Stefánsson",
-  "party": "Framsókn",
-  "date": "14.09.2026",
-  "claim": "Við höfum enga hugmynd um hvernig á að gera þetta og miðað við þau fjárframlög sem fara til húsnæðismála á þessu ári sjáum við að miðað við fjárlagaárið 2026–2027 eru framlögin að fara úr 25 milljörðum í tæpa 22, niður um rúma 3 milljarða.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260914T150554.html"
  },
  {
   "key": "aadb7971262a",
@@ -3560,14 +3352,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T162513.html"
  },
  {
-  "key": "bec22f8f3031",
-  "speaker": "Hildur Sverrisdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "15.09.2026",
-  "claim": "Annað atriði sem mig langar að fjalla um er mikil skattheimta á ferðaþjónustuna með beinni skattheimtu á baðlón þar sem á að færa þau úr 11% virðisaukaskattsþrepi, sem ferðaþjónustan er alla jafna í, yfir í 24%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T162513.html"
- },
- {
   "key": "a0c3faf2fa8c",
   "speaker": "Hildur Sverrisdóttir",
   "party": "Sjálfstæðisflokkurinn",
@@ -3616,14 +3400,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T165623.html"
  },
  {
-  "key": "dfbf5e82de61",
-  "speaker": "Inga Sæland",
-  "party": "Flokkur fólksins",
-  "date": "15.09.2026",
-  "claim": "Vinna hófst sem sagt árið 2018 við endurskoðun lagaumhverfis þjónustu við börn.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T165623.html"
- },
- {
   "key": "01baf48b81bb",
   "speaker": "Inga Sæland",
   "party": "Flokkur fólksins",
@@ -3638,22 +3414,6 @@
   "date": "15.09.2026",
   "claim": "Í fjárlagafrumvarpinu er verið að taka 1,1 milljarð út sem tengist farsældinni og greiðslunni inn í jöfnunarsjóð.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T183509.html"
- },
- {
-  "key": "249badd37f70",
-  "speaker": "Eyjólfur Ármannsson",
-  "party": "Flokkur fólksins",
-  "date": "15.09.2026",
-  "claim": "Rannsókn sem unnin var árið 2020 leiddi í ljós að sveitarstjórnarstig með 30 sveitarfélögum fæli í sér hagræðingu 3 til 5 milljarða árlega fyrir sveitarstjórnarstigið í heild sem gæti nýst í betri þjónustu eða lækkun á álögum á íbúa.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T185215.html"
- },
- {
-  "key": "398b7ed74819",
-  "speaker": "Eyjólfur Ármannsson",
-  "party": "Flokkur fólksins",
-  "date": "15.09.2026",
-  "claim": "Í samræmi við ákvæði gildandi sveitarstjórnarlaga fór innviðaráðuneytið eftir sveitarstjórnarkosningarnar árið 2022 fram á að tíu sveitarfélög með færri en 250 íbúa skiluðu áliti um getu þeirra til að sinna lögbundnum verkefnum og um kosti sameininga.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260915T185215.html"
  },
  {
   "key": "2cd0b4e9dd93",
@@ -3773,14 +3533,6 @@
   "party": "Viðreisn",
   "date": "16.09.2026",
   "claim": "Hækkunin er því hlutfallslega meiri en sú 25% hækkun sem tilskipunin kveður almennt á um.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260916T152905.html"
- },
- {
-  "key": "e6a1a0001d45",
-  "speaker": "Hanna Katrín Friðriksson",
-  "party": "Viðreisn",
-  "date": "16.09.2026",
-  "claim": "Í öðru lagi er síðan í þessu frumvarpi lögð til hækkun um 25% á endurskoðunarmörkum í lögunum, þ.e.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260916T152905.html"
  },
  {
@@ -3960,14 +3712,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260917T145446.html"
  },
  {
-  "key": "c2edfda15744",
-  "speaker": "Jón Pétur Zimsen",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "17.09.2026",
-  "claim": "Árið 2026 greiðir einstaklingur sem uppfyllir tekjuskilyrðin 22.400 kr.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260917T154304.html"
- },
- {
   "key": "e474423f3ceb",
   "speaker": "Jón Pétur Zimsen",
   "party": "Sjálfstæðisflokkurinn",
@@ -4008,14 +3752,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260917T155820.html"
  },
  {
-  "key": "36ac96e9488c",
-  "speaker": "Sigmundur Davíð Gunnlaugsson",
-  "party": "Miðflokkurinn",
-  "date": "17.09.2026",
-  "claim": "Á móti eigum við Íslendingar rétt á 75% þessara jarðefna sem eru innan okkar lögsögu og 25% af því sem er utan okkar lögsögu, í þá lögsögu sem Noregur hefur stjórn á.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260917T161423.html"
- },
- {
   "key": "d5b6078ac03a",
   "speaker": "Sigmundur Davíð Gunnlaugsson",
   "party": "Miðflokkurinn",
@@ -4038,14 +3774,6 @@
   "date": "17.09.2026",
   "claim": "Samkvæmt rannsóknum Sagex-olíufélagsins frá 2006 er megnið af þeim svæðum sem líklegast er að geymi olíu- og gaslindir innan íslenskrar lögsögu.“ Svo eigum við 25% Noregsmegin ef þeir hefja vinnslu þar og þau 25% bara fáum við án þess að þurfa að gera nokkuð.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260917T164039.html"
- },
- {
-  "key": "62a2356fbf71",
-  "speaker": "Halla Hrund Logadóttir",
-  "party": "Framsókn",
-  "date": "17.09.2026",
-  "claim": "Raforkukostnaður heimila hefur hækkað á tímabilinu 2020–2025 um tæplega 11% á föstu verðlagi sem er umfram verðbólgu.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260917T165649.html"
  },
  {
   "key": "4ed25f7ed217",
@@ -4142,14 +3870,6 @@
   "date": "21.09.2026",
   "claim": "Frá því að Rússlandsher réðst inn í Úkraínu árið 2022 hafa Íslendingar, líkt og aðrar Evrópuþjóðir, sýnt samstöðu með úkraínsku þjóðinni.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260921T152627.html"
- },
- {
-  "key": "c9fe61379ad4",
-  "speaker": "Eyjólfur Ármannsson",
-  "party": "Flokkur fólksins",
-  "date": "21.09.2026",
-  "claim": "Netöryggisstofnun Evrópusambandsins var upphaflega sett á laggirnar árið 2004 en með þessari reglugerð var stofnuninni veitt varanlegt umboð og hlutverk hennar víkkað verulega.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260921T154235.html"
  },
  {
   "key": "4bc6cab4669b",
@@ -4336,14 +4056,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20260924T150542.html"
  },
  {
-  "key": "10fc9a13b080",
-  "speaker": "Alma D. Möller",
-  "party": "Samfylkingin",
-  "date": "24.09.2026",
-  "claim": "Þar af eru 24% fullorðinna og 7,5% barna með offitu.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20260924T150542.html"
- },
- {
   "key": "77bee186bc8d",
   "speaker": "Alma D. Möller",
   "party": "Samfylkingin",
@@ -4406,14 +4118,6 @@
   "date": "05.10.2026",
   "claim": "Ríkisstjórn sem nú er við völd hefur lækkað það niður í 4,5 milljarða.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261005T133731.html"
- },
- {
-  "key": "045a5d6c92aa",
-  "speaker": "Guðrún Hafsteinsdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "05.10.2026",
-  "claim": "Nú boðar ríkisstjórn undir hennar forystu tæplega 16% hækkun kílómetragjaldsins.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261005T133947.html"
  },
  {
   "key": "8f1b325abef4",
@@ -4488,22 +4192,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261005T145513.html"
  },
  {
-  "key": "861073b1226d",
-  "speaker": "Kristrún Frostadóttir",
-  "party": "Samfylkingin",
-  "date": "05.10.2026",
-  "claim": "Setning nýrra laga um opinber fjármál árið 2015 var mikið framfaraskref en í þeim er kveðið á um að stefnumörkun í opinberum fjármálum, þ.e.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261005T145513.html"
- },
- {
-  "key": "6ee8bbfebdad",
-  "speaker": "Ragnar Þór Ingólfsson",
-  "party": "Flokkur fólksins",
-  "date": "05.10.2026",
-  "claim": "Þar af eru heil 94,5% þeirra samninga með mánaðarlegri vísitölubindingu.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261005T151240.html"
- },
- {
   "key": "0e57931bb25a",
   "speaker": "Kristján Þórður Snæbjarnarson",
   "party": "Samfylkingin",
@@ -4552,27 +4240,11 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T140737.html"
  },
  {
-  "key": "ac9f19de62b2",
-  "speaker": "Þorgerður Katrín Gunnarsdóttir",
-  "party": "Viðreisn",
-  "date": "06.10.2026",
-  "claim": "Afstaða stofnunarinnar er ekki ný af nálinni, en ESA tók málið fyrst upp árið 2012.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T140737.html"
- },
- {
   "key": "ffac1d8ad5d7",
   "speaker": "Sigríður Á. Andersen",
   "party": "Miðflokkurinn",
   "date": "06.10.2026",
   "claim": "Árið 1990 vildum við ekki ganga svo langt að innleiða bókun 35.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T145139.html"
- },
- {
-  "key": "c3e20806de23",
-  "speaker": "Sigríður Á. Andersen",
-  "party": "Miðflokkurinn",
-  "date": "06.10.2026",
-  "claim": "Sjoppan fór að djöflast í þessu máli og benti á þetta og íslensku lögunum um skaðsemisábyrgð var breytt árið 2014, 10.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T145139.html"
  },
  {
@@ -4624,14 +4296,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T164102.html"
  },
  {
-  "key": "5c8db6e3de49",
-  "speaker": "Guðrún Hafsteinsdóttir",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "06.10.2026",
-  "claim": "Árið 2015 tilkynntu íslensk stjórnvöld sambandinu að Ísland hygðist ekki hefja aðildarviðræður að nýju og að ekki bæri lengur að líta á Ísland sem umsóknarríki.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T172822.html"
- },
- {
   "key": "45688d91ee7e",
   "speaker": "Ingibjörg Davíðsdóttir",
   "party": "Miðflokkurinn",
@@ -4654,14 +4318,6 @@
   "date": "06.10.2026",
   "claim": "Ég hef einnig á fyrri stigum vitnað til skrifa Jóns Steinars Gunnlaugssonar, einnig fyrrverandi hæstaréttardómara, sem ritaði eftirfarandi árið 2023, og hefur raunar nýverið einnig, ég er bara ekki með það hérna með mér, tjáð sig um þetta mál.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T190423.html"
- },
- {
-  "key": "9abe9b1ff7e2",
-  "speaker": "Grímur Grímsson",
-  "party": "Viðreisn",
-  "date": "06.10.2026",
-  "claim": "Eftirlitsstofnun EFTA, ESA, sendi okkur formlegar athugasemdir fyrir tæpum áratug og rökstutt álit árið 2020 og hefur nú vísað máli gegn Íslandi til EFTA-dómstólsins með vísan til þess að íslensk lög tryggi ekki að innleiddar EES-reglur haldi gildi sínu til fulls í samræmi við ákvæði bókunar 35 við samninginn um EES.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261006T192939.html"
  },
  {
   "key": "ff8599495400",
@@ -4720,14 +4376,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261007T144141.html"
  },
  {
-  "key": "2d921d91da03",
-  "speaker": "Nanna Margrét Gunnlaugsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "07.10.2026",
-  "claim": "Það var gert ráð fyrir 5,2% krónutöluhækkunum og hvað ætla þau að gera?",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261007T144141.html"
- },
- {
   "key": "7c0e1ae2fa47",
   "speaker": "Jens Garðar Helgason",
   "party": "Sjálfstæðisflokkurinn",
@@ -4758,14 +4406,6 @@
   "date": "07.10.2026",
   "claim": "Mig minnir að talan sé eitthvað á milli 85 og 90%, fólk vill eiga sitt eigið þak yfir höfuðið og ríkisstjórnin, í hverju málinu á fætur öðru, dregur úr tækifærum og möguleikum fólks til þess.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261007T152213.html"
- },
- {
-  "key": "03e8ca946382",
-  "speaker": "Stefán Vagn Stefánsson",
-  "party": "Framsókn",
-  "date": "07.10.2026",
-  "claim": "Kílómetragjaldið er að fara að hækka um 15%, jafnvel hátt í 16%, sem mun leggjast þungt á heimilin í landinu og þetta er ofan á þá hækkun sem var í fyrra þegar kílómetragjaldið var hækkað um rúma 3 milljarða.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261007T155911.html"
  },
  {
   "key": "65d95a88318c",
@@ -4854,14 +4494,6 @@
   "date": "08.10.2026",
   "claim": "febrúar árið 2025 um að niðurstaða af samtali hennar við fjármálaráðherra væri að láta af áformum, eiga samtal og samráð við bændur áður en haldið væri áfram.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261008T142321.html"
- },
- {
-  "key": "5430e900e745",
-  "speaker": "Hanna Katrín Friðriksson",
-  "party": "Viðreisn",
-  "date": "08.10.2026",
-  "claim": "Staðreyndin er sú að búvörusamningar voru framlengdir óbreyttir út árið 2027, þ.e.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261008T142452.html"
  },
  {
   "key": "4ff7cd9630c3",
@@ -5072,28 +4704,12 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261013T141928.html"
  },
  {
-  "key": "93d9268eb0e1",
-  "speaker": "Eiríkur Björn Björgvinsson",
-  "party": "Viðreisn",
-  "date": "13.10.2026",
-  "claim": "Samkvæmt ESPAD-rannsókninni frá 2024 höfðu 13% íslenskra 15–16 ára ungmenna prófað sígarettur samanborið við 32% að meðaltali í Evrópu.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261013T142933.html"
- },
- {
   "key": "b1fa95be999b",
   "speaker": "Eiríkur Björn Björgvinsson",
   "party": "Viðreisn",
   "date": "13.10.2026",
   "claim": "Aðeins 4,2% ungmenna höfðu reykt síðastliðna 30 daga.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261013T142933.html"
- },
- {
-  "key": "9cfb7c394e66",
-  "speaker": "Jóhann Páll Jóhannsson",
-  "party": "Samfylkingin",
-  "date": "13.10.2026",
-  "claim": "Fyrri ríkisstjórn Sjálfstæðisflokks, Framsóknarflokks og Vinstri grænna hafði forgöngu um það árið 2021 að markmið um kolefnishlutleysi árið 2040 var bundið í lög.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261013T145308.html"
  },
  {
   "key": "eba4d6eb55ea",
@@ -5117,14 +4733,6 @@
   "party": "Miðflokkurinn",
   "date": "13.10.2026",
   "claim": "Það er mjög erfitt að ná þessum viðbótar 10–15% til þess að verða 100% endurnýjanlegt orkuland.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261013T152947.html"
- },
- {
-  "key": "cb5ef7481f7f",
-  "speaker": "Sigríður Á. Andersen",
-  "party": "Miðflokkurinn",
-  "date": "13.10.2026",
-  "claim": "Evrópusambandið hefur sett sér markmið af svipuðum toga en þó teygt allverulega á því, hefur sett sér markmið um kolefnishlutleysi árið 2050.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261013T152947.html"
  },
  {
@@ -5208,14 +4816,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261014T143906.html"
  },
  {
-  "key": "cce5b8690274",
-  "speaker": "Jón Pétur Zimsen",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "14.10.2026",
-  "claim": "Þegar norska ríkisstjórnin lagði til afnám erfðafjárskatts árið 2013 var rökstuðningurinn ekki síður skýr í stjórnarfrumvarpinu.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261014T143906.html"
- },
- {
   "key": "c680ba4d03ff",
   "speaker": "Þorgrímur Sigmundsson",
   "party": "Miðflokkurinn",
@@ -5237,14 +4837,6 @@
   "party": "Samfylkingin",
   "date": "14.10.2026",
   "claim": "Þetta þýðir að fyrir barn sem fæðist í desember 2026 er viðmiðið árið 2025 og allt árið 2026 telst þá ekki með.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261014T160038.html"
- },
- {
-  "key": "2012a44b7bf3",
-  "speaker": "Ragna Sigurðardóttir",
-  "party": "Samfylkingin",
-  "date": "14.10.2026",
-  "claim": "Viðmiðunartímabil fæðingarorlofsgreiðslna hér á landi var tekið til endurskoðunar í meginatriðum árið 2008, fyrir um 18 árum.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261014T160038.html"
  },
  {
@@ -5424,22 +5016,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261019T135223.html"
  },
  {
-  "key": "c4b9a78085e3",
-  "speaker": "Jón Pétur Zimsen",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "19.10.2026",
-  "claim": "OECD hefur jafnframt varað við því að hnignun námsárangurs geti dregið úr framleiðni þjóðarinnar um meira en 5% til lengri tíma litið eða rúmlega 250 milljarða á ári hverju.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261019T135737.html"
- },
- {
-  "key": "4e10083300bb",
-  "speaker": "Dagur B. Eggertsson",
-  "party": "Samfylkingin",
-  "date": "19.10.2026",
-  "claim": "OECD gerði greiningu í Lissabon þar sem sýnt var fram á að hægt væri að fækka stæðum um allt að 94%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261019T143853.html"
- },
- {
   "key": "31ad5c8c4fa6",
   "speaker": "Dagur B. Eggertsson",
   "party": "Samfylkingin",
@@ -5462,14 +5038,6 @@
   "date": "20.10.2026",
   "claim": "Sama á við um forráðamenn kirkna sem reistar voru árið 1940 eða fyrr.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261020T140626.html"
- },
- {
-  "key": "41bc987ed332",
-  "speaker": "Jóhann Páll Jóhannsson",
-  "party": "Samfylkingin",
-  "date": "20.10.2026",
-  "claim": "Árið 2025 voru 48 aðilar, þar á meðal þrír opinberir aðilar, sem féllu undir CBAM-kerfið þar sem þeir flytja inn 50 tonn eða meira af CBAM-vörum.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261020T141137.html"
  },
  {
   "key": "d492678a1f32",
@@ -5526,22 +5094,6 @@
   "date": "20.10.2026",
   "claim": "Það þarf 2% af flatarmáli Íslands til að binda allt kolefni á Íslandi ef þar væri plantað öflugum skógum, t.d.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261020T151927.html"
- },
- {
-  "key": "08e20fb445ab",
-  "speaker": "Ingibjörg Davíðsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "20.10.2026",
-  "claim": "Af þessum 48 er tilgreint að það séu tíu aðilar sem eru með um 90% af innflutningnum og sérstaklega tilgreint að áhrifin muni aðallega falla á stóra innflytjendur.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261020T154059.html"
- },
- {
-  "key": "edcd60ea772b",
-  "speaker": "Árni Helgason",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "20.10.2026",
-  "claim": "eftir því að það er sett undanþága í þetta mál um að þetta eigi ekki við þá sem flytja inn minna en 50 tonn á ári.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261020T161624.html"
  },
  {
   "key": "665d9345e0d9",
@@ -5638,14 +5190,6 @@
   "date": "21.10.2026",
   "claim": "október í fyrra, árið 2025, tók ég mál þessu tengt upp hér á hv.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261021T144426.html"
- },
- {
-  "key": "49215569294f",
-  "speaker": "Nanna Margrét Gunnlaugsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "21.10.2026",
-  "claim": "Mig langar líka að ná að fara yfir þær staðreyndir að þegar Ríkisendurskoðun fór yfir störf embættisins árið 2016 kom fram að 94 mál sem höfðu verið í vinnslu voru búin að vera það í meira en tvö ár, 45 þeirra í meira en fjögur ár og lengsta rannsóknin var sögð hafa tekið sex ár en í raun má segja að sum málin séu enn í gangi, nærri því 20 árum síðar.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261021T150054.html"
  },
  {
   "key": "2b88ac63d905",
@@ -5829,14 +5373,6 @@
   "party": "Viðreisn",
   "date": "22.10.2026",
   "claim": "Samtök orkusveitarfélaga hafa barist fyrir þessu máli frá stofnun eða frá árinu 2011 og málið hefur verið til meðferðar í stjórnkerfinu í heilan áratug, allt frá því að fyrsti starfshópurinn var skipaður árið 2016.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261022T152443.html"
- },
- {
-  "key": "6463dc3a2a4b",
-  "speaker": "Sandra Sigurðardóttir",
-  "party": "Viðreisn",
-  "date": "22.10.2026",
-  "claim": "Í núverandi kerfi renna um 57% af fasteignaskattstekjum vegna orkuvinnslu til aðeins þriggja sveitarfélaga.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261022T152443.html"
  },
  {
@@ -6168,22 +5704,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261103T163910.html"
  },
  {
-  "key": "a850037905a2",
-  "speaker": "Grímur Grímsson",
-  "party": "Viðreisn",
-  "date": "03.11.2026",
-  "claim": "nóvember 2000 við samning Sameinuðu þjóðanna gegn fjölþjóðlegri, skipulagðri glæpastarfsemi frá sama degi, sem fullgiltur var árið 2010, og er ætlað að koma í veg fyrir, uppræta og refsa fyrir mansal, einkum kvenna og barna.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261103T165654.html"
- },
- {
-  "key": "cba28164f422",
-  "speaker": "Grímur Grímsson",
-  "party": "Viðreisn",
-  "date": "03.11.2026",
-  "claim": "maí 2005, sem fullgiltur var árið 2012, að hver samningsaðili skuli leitast við að draga úr eftirspurn sem stuðli að hvers kyns misneytingu, einkum kvenna og barna, sem leiði til mansals með því að efla aðgerðir á sviði löggjafar.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261103T165654.html"
- },
- {
   "key": "a6e8ebd0e733",
   "speaker": "Ingveldur Anna Sigurðardóttir",
   "party": "Sjálfstæðisflokkurinn",
@@ -6312,14 +5832,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261104T175816.html"
  },
  {
-  "key": "7f3276754d38",
-  "speaker": "Þórarinn Ingi Pétursson",
-  "party": "Framsókn",
-  "date": "04.11.2026",
-  "claim": "Heiðagæsinni hefur sömuleiðis fjölgað gríðarlega á undanförnum árum og nú er talið að stofninn sé um 500.000 fuglar.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261104T175816.html"
- },
- {
   "key": "216b9e0b5980",
   "speaker": "Stefán Vagn Stefánsson",
   "party": "Framsókn",
@@ -6350,22 +5862,6 @@
   "date": "05.11.2026",
   "claim": "Varðandi Kjalarnesveg er Vegagerðin búin að bjóða út, ef ég man rétt, fyrsta áfanga nú þegar og það verða núna 2 milljarðar, held ég að það sé, á ári sem fara í þann veghluta sem er framkvæmd á vegum Vegagerðarinnar en ekki Ganga og brúar.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261105T140548.html"
- },
- {
-  "key": "69866fab1d7f",
-  "speaker": "Dagur B. Eggertsson",
-  "party": "Samfylkingin",
-  "date": "05.11.2026",
-  "claim": "Ég minni í fyrsta lagi á að Alþjóðadómstóllinn í Haag komst árið 2024 að þeirri niðurstöðu í mikilvægu áliti að áframhaldandi vera og stjórn Ísraels á hernumdu palestínsku landsvæðunum væri ólögmæt samkvæmt alþjóðalögum.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261105T143928.html"
- },
- {
-  "key": "fd7ab0a3f0fa",
-  "speaker": "Þorgerður Katrín Gunnarsdóttir",
-  "party": "Viðreisn",
-  "date": "05.11.2026",
-  "claim": "Á Gaza hefur Palestínumönnum verið þröngvað inn á þriðjung þess landsvæðis sem þeir áður bjuggu á, um 82% bygginga eru skemmdar eða algerlega ónýtar og um 1,4 milljónir manna þurfa á matvælaaðstoð að halda.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261105T144505.html"
  },
  {
   "key": "58f050ec7a44",
@@ -6824,14 +6320,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261110T195642.html"
  },
  {
-  "key": "a4ab174b0e2e",
-  "speaker": "Þórarinn Ingi Pétursson",
-  "party": "Framsókn",
-  "date": "10.11.2026",
-  "claim": "Ef ég fer rétt með, frú forseti, eru útlán Byggðastofnunar í dag til landbúnaðar eitthvað um 30 milljarðar og Byggðastofnun er algjör lykilstofnun í því að nýliðun og kynslóðaskipti geti átt sér stað í landbúnaði.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261110T195642.html"
- },
- {
   "key": "623b06d9c142",
   "speaker": "Ingveldur Anna Sigurðardóttir",
   "party": "Sjálfstæðisflokkurinn",
@@ -6928,28 +6416,12 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261111T135447.html"
  },
  {
-  "key": "5c6cbf02ced4",
-  "speaker": "Ragnar Þór Ingólfsson",
-  "party": "Flokkur fólksins",
-  "date": "11.11.2026",
-  "claim": "þingmaður nefnir að þær breytingar sem voru gerðar á stofnframlagakerfinu, þegar stofnframlög voru hækkuð úr 18% í 23%, skiluðu kannski ekki þeirri innspýtingu sem til var ætlað.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261111T135842.html"
- },
- {
   "key": "a33029420e09",
   "speaker": "Árni Helgason",
   "party": "Sjálfstæðisflokkurinn",
   "date": "11.11.2026",
   "claim": "Verktakar reka sig á 11–12% vöxtum, hafa þurft að verja stórfé í kostnað til að fá lóðir o.s.frv.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261111T140111.html"
- },
- {
-  "key": "2ed6661c87c3",
-  "speaker": "Inga Sæland",
-  "party": "Flokkur fólksins",
-  "date": "11.11.2026",
-  "claim": "En samkvæmt sáttinni sem Meta gerði þá voru þeir tilbúnir, því þeir vildu allt annað en að málið færi fyrir Hæstarétt Bandaríkjanna, til að greiða hvorki meira né minna en 17,1 milljarð Bandaríkjadala, sem nemur um 2.000 milljörðum íslenskra króna, til þess að þurfa ekki að fara fyrir dóm með málið.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261111T152737.html"
  },
  {
   "key": "31c390e765e8",
@@ -6974,22 +6446,6 @@
   "date": "11.11.2026",
   "claim": "Þessi fátækt hefur einungis vaxið og er núna á bilinu 11–15%.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261111T175718.html"
- },
- {
-  "key": "514997b66475",
-  "speaker": "Kolbrún Áslaugar Baldursdóttir",
-  "party": "Flokkur fólksins",
-  "date": "11.11.2026",
-  "claim": "Við vitum að barnabætur skipta verulegu máli og samkvæmt skýrslunni draga barnabætur og húsnæðisbætur saman úr lágtekjuhlutfalli barnafjölskyldna um rúm 26%.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261111T183140.html"
- },
- {
-  "key": "356a42204000",
-  "speaker": "Anna María Jónsdóttir",
-  "party": "Samfylkingin",
-  "date": "11.11.2026",
-  "claim": "Í skýrslunni kemur fram að um 12–13% barna búi undir lágtekjumörkum, eða eitt af hverjum átta börnum.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261111T184728.html"
  },
  {
   "key": "6e6273cce0d9",
@@ -7080,28 +6536,12 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T142441.html"
  },
  {
-  "key": "2c495d746ea8",
-  "speaker": "Dagur B. Eggertsson",
-  "party": "Samfylkingin",
-  "date": "16.11.2026",
-  "claim": "Samgöngusáttmálinn markaði mikil tímamót með samkomulagi ríkis og sveitarfélaganna á höfuðborgarsvæðinu 2019 og hann var uppfærður árið 2024.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T143814.html"
- },
- {
   "key": "ddf48da2ff30",
   "speaker": "Sigurður Ingi Jóhannsson",
   "party": "Framsókn",
   "date": "16.11.2026",
   "claim": "Það var einfaldlega ekki hægt að koma þeim öllum fyrir innan samgönguáætlunar vegna þeirra krafna um að nú væri komið að höfuðborgarsvæðinu því það hefði verið gerður samningur við ríkisstjórnina 2009–2013 um að gera ekkert í tíu ár og setja 1 milljarð í almenningssamgöngur í staðinn, ekkert í tíu ár.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T144048.html"
- },
- {
-  "key": "03ec980f2260",
-  "speaker": "Sigurður Örn Hilmarsson",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "16.11.2026",
-  "claim": "Það er af óþekktri stærðargráðu, samgöngusáttmálinn hljóðar upp á 311 milljarða og þar af á ríkið að bera 90% af kostnaðinum.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T144531.html"
  },
  {
   "key": "35a0f55a5551",
@@ -7280,14 +6720,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T183843.html"
  },
  {
-  "key": "5e19edfd5510",
-  "speaker": "Nanna Margrét Gunnlaugsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "16.11.2026",
-  "claim": "Starfshópur um gullhúðun lagði til árið 2024 að í greinargerð með svona frumvörpum yrði farið yfir þær heimildir sem tilskipun gefur og sagt hvort þær væru nýttar og af hverju ekki.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T183843.html"
- },
- {
   "key": "15fc98457d52",
   "speaker": "Nanna Margrét Gunnlaugsdóttir",
   "party": "Miðflokkurinn",
@@ -7376,14 +6808,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T150222.html"
  },
  {
-  "key": "863d3b179e50",
-  "speaker": "Ragnar Þór Ingólfsson",
-  "party": "Flokkur fólksins",
-  "date": "17.11.2026",
-  "claim": "Eftir að þriggja mánaða óframseljanlegur réttur feðra hafði verið innleiddur árið 2003 hélst meðalnýting þeirra almennt nálægt þremur mánuðum.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T150222.html"
- },
- {
   "key": "75a5fb55f8ea",
   "speaker": "Snorri Másson",
   "party": "Miðflokkurinn",
@@ -7406,14 +6830,6 @@
   "date": "17.11.2026",
   "claim": "Það eru 30 milljarðar í pottinum eða eitthvað slíkt.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T155410.html"
- },
- {
-  "key": "4738d31a48c6",
-  "speaker": "Jón Pétur Zimsen",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "17.11.2026",
-  "claim": "Þar er sláandi munur þar sem 83% vinstri manna segja að RÚV sé óháð en einungis 36,5% hægri manna.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T161435.html"
  },
  {
   "key": "02175fa56519",
@@ -7445,14 +6861,6 @@
   "party": "Sjálfstæðisflokkurinn",
   "date": "17.11.2026",
   "claim": "Í ágætri úttekt Viðskiptaráðs frá árinu 2025 er farið yfir tölulegar staðreyndir um málið, að starfsmönnum eða starfsfólki einkarekinna fjölmiðla hafi fækkað um 70% frá árinu 2008, úr 2.040 manns í 640.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T170225.html"
- },
- {
-  "key": "b030bcea212e",
-  "speaker": "Sigurður Örn Hilmarsson",
-  "party": "Sjálfstæðisflokkurinn",
-  "date": "17.11.2026",
-  "claim": "Þá hefur hlutdeild innlendra einkarekinna fjölmiðla í auglýsingatekjum minnkað um 39 prósentustig, úr 81% árið 2009 niður í 42% árið 2023.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T170225.html"
  },
  {
@@ -7592,14 +7000,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T200600.html"
  },
  {
-  "key": "5a1bfa9cac82",
-  "speaker": "Nanna Margrét Gunnlaugsdóttir",
-  "party": "Miðflokkurinn",
-  "date": "17.11.2026",
-  "claim": "Samkvæmt frumvarpinu má örfélag ekki nota hnappinn ef það á eignir yfir 200 milljónir.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261117T202003.html"
- },
- {
   "key": "16c4af67b1c1",
   "speaker": "Nanna Margrét Gunnlaugsdóttir",
   "party": "Miðflokkurinn",
@@ -7656,14 +7056,6 @@
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T133419.html"
  },
  {
-  "key": "5e89dd775664",
-  "speaker": "Þorgerður Katrín Gunnarsdóttir",
-  "party": "Viðreisn",
-  "date": "18.11.2026",
-  "claim": "Við erum enn með 1% lægri vexti heldur en þeir voru þegar þessi ríkisstjórn tók við.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T133419.html"
- },
- {
   "key": "cbe34bac982f",
   "speaker": "Þorgerður Katrín Gunnarsdóttir",
   "party": "Viðreisn",
@@ -7694,14 +7086,6 @@
   "date": "18.11.2026",
   "claim": "Já, við fórum til að mynda í viðhaldi á vegum úr 12 milljörðum hjá síðustu ríkisstjórn yfir í 17 milljarða hjá þessari og við erum að fara í 23 milljarða svo einhver dæmi séu tekin.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T134625.html"
- },
- {
-  "key": "bb30ba085c7a",
-  "speaker": "Stefán Vagn Stefánsson",
-  "party": "Framsókn",
-  "date": "18.11.2026",
-  "claim": "Jú, þetta þýðir að hallinn á fjárlögum fyrir árið 2026 hefur farið úr 28 milljörðum í 90.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T134815.html"
  },
  {
   "key": "c828f5ddaa19",
@@ -7798,14 +7182,6 @@
   "date": "18.11.2026",
   "claim": "Atvinnuvegafjárfestingar bara á þessu ári eru að aukast um 6% þannig að það er ekkert sem bendir til þess að þessi mikla fjárfesting sé að minnka.",
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T140241.html"
- },
- {
-  "key": "82d01cac0294",
-  "speaker": "Snorri Másson",
-  "party": "Miðflokkurinn",
-  "date": "18.11.2026",
-  "claim": "Að undanförnu hefur verið fjallað um það í fréttum að Austurríki, Danmörk, Holland, Þýskaland og Grikkland ætli í sameiningu að opna fyrstu brottvísunarstöðina í Rúanda árið 2027.",
-  "speech": "https://www.althingi.is/altext/raeda/158/rad20261118T140418.html"
  },
  {
   "key": "d93e276efd2b",
