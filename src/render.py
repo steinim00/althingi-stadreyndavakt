@@ -262,14 +262,14 @@ def render(root: Path) -> None:
 
     if cands:
         cards.append(_head("new", "Óyfirfarið", "Tölur og fullyrðingar sem hafa verið dregnar út úr ræðum en ekki sannreyndar enn. Þær eru hvorki staðfestar né hraktar."))
-        for c in sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:60]:
+        for c in sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:300]:
             cards.append(
                 f'<article class="card" id="{_anchor(c)}" data-s="new" {_attrs(c)}>\n  <span class="pill new">Óyfirfarið</span>\n'
                 f'  <h3>{E(c["speaker"])}</h3>\n  <p class="who">{E(c["party"])} · {E(_pretty(c["date"]))}</p>\n'
                 f'{_speech_block({**c, "speaker": c["speaker"], "party": c["party"]})}\n</article>'
             )
 
-    shown_cands = sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:60]
+    shown_cands = sorted(cands, key=lambda c: _parse(c["date"]), reverse=True)[:300]
     parties = sorted({x["party"] for x in [*findings, *shown_cands] if x.get("party")})
     party_opts = "".join(f'<option value="{E(p, quote=True)}">{E(p)}</option>' for p in parties)
 
