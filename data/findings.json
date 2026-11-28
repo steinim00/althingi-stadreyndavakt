@@ -182,13 +182,13 @@
  },
  {
   "key": "seed-10",
-  "status": "ok",
+  "status": "open",
   "title": "Samgöngusáttmálinn: 120 í 311 milljarða, Keldnaland 50, ríkið um 90%",
   "claim": "Samgöngusáttmálinn hljóðar upp á 311 milljarða og ríkið á að bera 90% af kostnaðinum.",
   "speaker": "Sigurður Örn Hilmarsson",
   "party": "Sjálfstæðisflokkurinn",
   "date": "16.11.2026",
-  "facts": "Sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. Keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. Skipting er 87,5% ríki og 12,5% sveitarfélög, sem er rúnnað í 90%. Guðlaugur Þór Þórðarson nefndi sömu tölur.",
+  "facts": "Sáttmálinn 2019 var 120 milljarðar og uppfærður sáttmáli 311. Keldnaland var metið á 15 milljarða og er áætlað 50 í uppfærðri áætlun. Skipting er 87,5% ríki og 12,5% sveitarfélög, ekki 90%. Hlutinn um 90% er því ekki staðfestur nákvæmlega. Guðlaugur Þór Þórðarson nefndi sömu tölur.",
   "sources": [
    {
     "title": "Stjórnarráðið: uppfærður samgöngusáttmáli 2024",
@@ -203,7 +203,7 @@
     "url": "https://www.althingi.is/altext/158/s/0254.html"
    }
   ],
-  "checked": "2026-11-25",
+  "checked": "2026-11-28",
   "tries": 0,
   "speech": "https://www.althingi.is/altext/raeda/158/rad20261116T144531.html"
  },
